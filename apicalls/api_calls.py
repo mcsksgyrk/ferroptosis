@@ -57,3 +57,44 @@ def get_uni_id_mapping_results(job_id):
                 raise Exception(job["jobStatus"])
         else:
             return job
+
+
+def convert_to_uniprot_id(db, ids, human=True):
+    fromDB = db
+    toDB = "UniProtKB-Swiss-Prot"
+    res, rip = execute_uniprot_api_calls(ids=ids, fromDB=fromDB,
+                                         toDB=toDB, human=human)
+    return res, rip
+
+
+def convert_from_uniprot_id(db, ids, human=True):
+    fromDB = "UniProtKB_AC-ID"
+    toDB = db
+    res, rip = execute_uniprot_api_calls(ids=ids, fromDB=fromDB,
+                                         toDB=toDB, human=human)
+    return res, rip
+
+
+def parse_results(results, fromDB, toDB):
+    if "UniProt" in toDB:
+        return results['results'][0]['to']['primaryAccession']
+    elif "UniProt" in fromDB:
+        return results['results'][0]['to']
+
+
+def execute_uniprot_api_calls(ids, fromDB, toDB, human=True):
+    res_dict = dict()
+    rippers = []
+    for i in ids:
+        print(i)
+        job_id = submit_uni_id_mapping(
+            fromDB=fromDB, toDB=toDB, ids=[i], human=human
+        )
+        results = get_uni_id_mapping_results(job_id)
+        try:
+            res_dict[i] = parse_results(results, fromDB, toDB)
+        except IndexError:
+            print(f'ripped id {i} with job id {job_id}')
+            rippers.append(i)
+
+    return res_dict, rippers
