@@ -1,0 +1,14 @@
+bioentity,bioentity_label,taxon_label,panther_family_label,type,source,synonym
+UniProtKB:P15559,NQO1,Homo sapiens,nad p h oxidoreductase-related pthr10204,protein,UniProtKB,DIA4|NMOR1
+UniProtKB:Q13501,SQSTM1,Homo sapiens,sequestosome 1-related pthr15090,protein,UniProtKB,ORCA|OSIL
+UniProtKB:Q9UPY5,SLC7A11,Homo sapiens,amino acid transporter pthr11785,protein,UniProtKB
+UniProtKB:Q16236,NFE2L2,Homo sapiens,nuclear factor erythroid 2-related factor pthr24411,protein,UniProtKB,NRF2
+UniProtKB:O75845,SC5D,Homo sapiens,sterol desaturase pthr11863,protein,UniProtKB,SC5DL
+UniProtKB:Q92982,NINJ1,Homo sapiens,ninjurin-related pthr12316,protein,UniProtKB
+UniProtKB:P36969,GPX4,Homo sapiens,glutathione peroxidase pthr11592,protein,UniProtKB
+UniProtKB:P02794,FTH1,Homo sapiens,ferritin pthr11431,protein,UniProtKB,FTH|FTHL6|OK/SW-cl.84|PIG15
+UniProtKB:Q92504,SLC39A7,Homo sapiens,zinc transporter slc39a7  histidine-rich membrane protein ke4 pthr16950,protein,UniProtKB,HKE4|RING5
+UniProtKB:Q9BRQ8,AIFM2,Homo sapiens,apoptosis-inducing factor 1 pthr43735,protein,UniProtKB,AMID|PRG3
+UniProtKB:Q5U3C3,TMEM164,Homo sapiens,uncharacterized pthr20948,protein,UniProtKB
+UniProtKB:Q9UBM7,DHCR7,Homo sapiens,delta(14)-sterol reductase pthr21257,protein,UniProtKB,D7SR
+UniProtKB:P09601,HMOX1,Homo sapiens,heme oxygenase pthr10720,protein,UniProtKB,HO|HO1

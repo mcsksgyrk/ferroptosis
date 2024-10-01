@@ -1,0 +1,247 @@
+id,rcd,molecule,name,pubchemcid,pmid,remark,latestupdate,datasource
+1,Ferroptosis,Fer-1,Ferrostatin-1,4068248,22632970,,2020/12/31,FerrDb team
+2,Ferroptosis,DFO,Deferoxamine,2973,22632970,,2020/12/31,FerrDb team
+3,Ferroptosis,Trolox,Trolox,40634,22632970,,2020/12/31,FerrDb team
+4,Ferroptosis,U0126,U0126,3006531,22632970,,2020/12/31,FerrDb team
+5,Ferroptosis,CHX,Cycloheximide,6197,22632970,,2020/12/31,FerrDb team
+6,Ferroptosis,AOA,Aminooxyacetic acid,286,22632970,,2020/12/31,FerrDb team
+7,Ferroptosis,CPX,Ciclopirox olamine,38911,22632970,,2020/12/31,FerrDb team
+8,Ferroptosis,Ebselen,Ebselen,3194,22632970,,2020/12/31,FerrDb team
+9,Ferroptosis,Beta-Mercaptoethanol,Beta-Mercaptoethanol,1567,22632970,,2020/12/31,FerrDb team
+10,Ferroptosis,DPI,Diphenylene iodonium,3101,22632970,,2020/12/31,FerrDb team
+11,Ferroptosis,GKT137831,GKT137831,58496428,22632970,,2020/12/31,FerrDb team
+12,Ferroptosis,6-AN,6-aminonicotinamide,9500,22632970,,2020/12/31,FerrDb team
+13,Ferroptosis,Fer-1,Ferrostatin-1,4068248,24592866,,2020/12/31,FerrDb team
+14,Ferroptosis,Zileuton,Zileuton,60490,26235588,,2020/12/31,FerrDb team
+15,Ferroptosis,Baicalein,Baicalein,5281605,27037021,,2020/12/31,FerrDb team
+16,Ferroptosis,XJB-5-131,XJB-5-131,11693686,27725964,,2020/12/31,FerrDb team
+17,Ferroptosis,JP4-039,JP4-039,44596286,27725964,,2020/12/31,FerrDb team
+18,Ferroptosis,vitamin E,vitamin E,14985,27262435,,2020/12/31,FerrDb team
+19,Ferroptosis,Fer-1,Ferrostatin-1,4068248,28386601,,2020/12/31,FerrDb team
+20,Ferroptosis,Lip-1,Liproxstatin-1,135735917,28386601,,2020/12/31,FerrDb team
+21,Ferroptosis,Lip-1,Liproxstatin-1,135735917,28489094,,2020/12/31,FerrDb team
+22,Ferroptosis,LA,alpha-Lipoic acid,864,29126071,,2020/12/31,FerrDb team
+23,Ferroptosis,Puerarin,Puerarin,5281807,29427658,,2020/12/31,FerrDb team
+24,Ferroptosis,Compound 37,Fer-1 analogue 37,_NA_,30354101,,2020/12/31,FerrDb team
+25,Ferroptosis,Compound 38,Fer-1 analogue 38,_NA_,30354101,,2020/12/31,FerrDb team
+26,Ferroptosis,Compound 39,Fer-1 analogue 39,_NA_,30354101,,2020/12/31,FerrDb team
+27,Ferroptosis,Curcumin,Curcumin,969516,30736288,,2020/12/31,FerrDb team
+28,Ferroptosis,EGCG,(-)-epigallocatechin-3-gallate,65064,30736288,,2020/12/31,FerrDb team
+29,Ferroptosis,Curcumin,Curcumin,969516,31034781,,2020/12/31,FerrDb team
+30,Ferroptosis,Quercetin,Quercetin,5280343,31224575,PMID is not reachable. Please use doi: 10.1093/cdn/nzz031.P06-056-19,2020/12/31,FerrDb team
+31,Ferroptosis,Baicalein,Baicalein,5281605,31231224,,2020/12/31,FerrDb team
+32,Ferroptosis,Artepillin C,Artepillin C,5472440,31299294,,2020/12/31,FerrDb team
+33,Ferroptosis,Kaempferide,Kaempferide,5281666,31299294,,2020/12/31,FerrDb team
+34,Ferroptosis,Kaempferol,Kaempferol,5280863,31299294,,2020/12/31,FerrDb team
+35,Ferroptosis,Carvacrol,Carvacrol,10364,31470002,,2020/12/31,FerrDb team
+36,Ferroptosis,Edaravone,Edaravone,4021,31479686,,2020/12/31,FerrDb team
+37,Ferroptosis,IM-93,Indolylmaleimide derivative IM-93,_NA_,31531196,,2020/12/31,FerrDb team
+38,Ferroptosis,Glycyrrhizin,Glycyrrhizin,14982,31545489,,2020/12/31,FerrDb team
+39,Ferroptosis,Gastrodin,Gastrodin,115067,31698019,,2020/12/31,FerrDb team
+40,Ferroptosis,Rifampicin,Rifampicin,135398735,31767624,,2020/12/31,FerrDb team
+41,Ferroptosis,Promethazine,Promethazine,4927,31767624,,2020/12/31,FerrDb team
+42,Ferroptosis,Omeprazole,Omeprazole,4594,31767624,,2020/12/31,FerrDb team
+43,Ferroptosis,Indole-3-carbinol,Indole-3-carbinol,3712,31767624,,2020/12/31,FerrDb team
+44,Ferroptosis,Carvedilol,Carvedilol,2585,31767624,,2020/12/31,FerrDb team
+45,Ferroptosis,Propranolol,Propranolol,4946,31767624,,2020/12/31,FerrDb team
+46,Ferroptosis,Estradiol,Estradiol,5757,31767624,,2021/5/17,FerrDb team
+47,Ferroptosis,BMS536924,BMS536924,135440466,33377232,,2021/6/30,FerrDb team
+48,Ferroptosis,Carnosic acid,Carnosic acid,65126,33333051,,2021/7/14,FerrDb team
+49,Ferroptosis,Lapatinib,lapatinib,208908,33362556,,2021/7/16,FerrDb team
+50,Ferroptosis,Thioctic acid,Thioctic acid,864,33241887,,2021/7/19,FerrDb team
+51,Ferroptosis,H2S,Hydrogen sulfide,402,33290842,,2021/7/21,FerrDb team
+52,Ferroptosis,Melatonin,Melatonin,896,33343809,,2021/7/26,FerrDb team
+53,Ferroptosis,Melatonin,Melatonin,896,33206394,,2021/7/28,FerrDb team
+54,Ferroptosis,ICA,Icariin,5318997,33365072,,2021/7/28,FerrDb team
+55,Ferroptosis,DATS,diallyl trisulfide,16315,33168263,,2021/8/21,FerrDb team
+56,Ferroptosis,DMTS,dimethyl trisulfide,19310,33168263,,2021/8/21,FerrDb team
+57,Ferroptosis,galangin,galangin,5281616,33127512,,2021/8/21,FerrDb team
+58,Ferroptosis,EGCG,(-)-epigallocatechin-3-gallate,65064,33069855,,2021/8/30,FerrDb team
+59,Ferroptosis,Dynasore,Dynasore,_NA_,33050207,,2021/8/30,FerrDb team
+60,Ferroptosis,Quercetin,Quercetin,5280343,32992479,,2021/9/6,FerrDb team
+61,Ferroptosis,Tocilizumab mimotope,Tocilizumab mimotope,_NA_,32979361,,2021/9/6,FerrDb team
+62,Ferroptosis,BG,Ginkgolide B,_NA_,32976958,,2021/9/6,FerrDb team
+63,Ferroptosis,(+)-clausenamide,(+)-clausenamide,128412,32951003,,2021/9/10,FerrDb team
+64,Ferroptosis,EX-527,EX-527,_NA_,32896720,,2021/9/27,FerrDb team
+65,Ferroptosis,5-azacitidine,5-azacitidine,9444,32896720,,2021/9/27,FerrDb team
+66,Ferroptosis,Curculigoside,Curculigoside,158845,32861798,,2021/10/8,FerrDb team
+67,Ferroptosis,XJB-5-131,XJB-5-131,11693686,32796819,,2021/10/14,FerrDb team
+68,Ferroptosis,Quercetin,Quercetin,5280343,33364059,,2021/11/5,FerrDb team
+69,Ferroptosis,SIH,salicylaldehyde isonicotinoyl hydrazone,10323,32690135,,2021/11/9,FerrDb team
+70,Ferroptosis,Lip-1,Liproxstatin-1,135735917,32690135,,2021/11/9,FerrDb team
+71,Ferroptosis,Glutathione,Glutathione,124886,32690135,,2021/11/9,FerrDb team
+72,Ferroptosis,Melatonin,Melatonin,896,32679060,,2021/11/11,FerrDb team
+73,Ferroptosis,OA,Oleic acid,445639,32652074,,2021/11/11,FerrDb team
+74,Ferroptosis,Irisin,Irisin,_NA_,32583428,,2021/11/18,FerrDb team
+75,Ferroptosis,Fer-1,Ferrostatin-1,4068248,32593899,,2021/11/18,FerrDb team
+76,Ferroptosis,Cystine,Cystine,67678,32685019,,2021/11/20,FerrDb team
+77,Ferroptosis,Cysteine,Cysteine,5862,32685019,,2021/11/20,FerrDb team
+78,Ferroptosis,Bilirubin,Bilirubin,5280352,32612533,,2021/11/21,FerrDb team
+79,Ferroptosis,CCA,Cryptochlorogenic acid,9798666,32606852,,2021/11/25,FerrDb team
+80,Ferroptosis,EGCG,(-)-Epigallocatechin-3-gallate,65064,33335755,,2021/11/30,FerrDb team
+81,Ferroptosis,PAC,Proanthocyanidin,108065,32474063,,2021/11/30,FerrDb team
+82,Ferroptosis,Ebselen,Ebselen,3194,32083771,,2021/12/1,FerrDb team
+83,Ferroptosis,CQ,Clioquinol,2788,32424108,,2021/12/1,FerrDb team
+84,Ferroptosis,Fer-1,Ferrostatin-1,4068248,32419644,,2021/12/1,FerrDb team
+85,Ferroptosis,Fer-1,Ferrostatin-1,4068248,32416440,,2021/12/1,FerrDb team
+86,Ferroptosis,Dex,Dexmedetomidine,5311068,32377745,_NA_,2021/12/7,FerrDb team
+87,Ferroptosis,CyPPA,CyPPA,909822,32327637,_NA_,2021/12/9,FerrDb team
+88,Ferroptosis,Apigenin,Apigenin,5280443,32327603,_NA_,2021/12/9,FerrDb team
+89,Ferroptosis,DFP,Deferiprone,2972,32276637,_NA_,2021/12/9,FerrDb team
+90,Ferroptosis,Beta-Mercaptoethanol,Beta-Mercaptoethanol,1567,32283634,β-mercaptoethanol in article.,2021/12/9,FerrDb team
+91,Ferroptosis,Rosi,Rosiglitazone,77999,32283634,An inhibitor of ACSL4.,2021/12/9,FerrDb team
+92,Ferroptosis,Cysteine,Cysteine,5862,32241947,_NA_,2021/12/15,FerrDb team
+93,Ferroptosis,Lip-1,Liproxstatin-1,135735917,32219613,_NA_,2021/12/16,FerrDb team
+94,Ferroptosis,Quercetin,Quercetin,5280343,32131401,_NA_,2021/12/22,FerrDb team
+95,Ferroptosis,QDAD,Quercetin Diels-Alder anti-Dimer,_NA_,32131401,A series of compounds.,2021/12/22,FerrDb team
+96,Ferroptosis,Fer-1,ferrostatin-1,4068248,32161620,_NA_,2021/12/22,FerrDb team
+97,Ferroptosis,Nutlin-3,Nutlin-3,216345,32079652,nutlin in article.,2021/12/30,FerrDb team
+98,Ferroptosis,Butein,Butein,5281222,32033283,_NA_,2021/12/30,FerrDb team
+99,Ferroptosis,Butin,Butin,92775,32033283,( S)-Butin in article.,2021/12/30,FerrDb team
+100,Ferroptosis,Paricalcitol,Paricalcitol,5281104,31996668,_NA_,2021/12/30,FerrDb team
+101,Ferroptosis,DFP,Deferiprone,2972,32107172,_NA_,2021/12/30,FerrDb team
+102,Ferroptosis,NTE,Naotaifang Extract,_NA_,32107172,"The recipe for NTE consists of four traditional Chinese herbal medicines: Radix Astragali (Huangqi) 40 g, Rhizoma chuanxiong (Chuangxiong) 10 g, Pheretima (Dilong) 15 g, and Bombyx batryticatus (Jiangcan) 15 g.",2021/12/30,FerrDb team
+103,Ferroptosis,FG-4592,Roxadustat,11256664,32051732,_NA_,2021/12/30,FerrDb team
+104,Ferroptosis,MEL23,MDM2 Inhibitor VII,_NA_,32079652,_NA_,2021/12/31,FerrDb team
+105,Ferroptosis,Gastrodin,Gastrodin,115067,32115506,_NA_,2022/1/7,FerrDb team
+106,Ferroptosis,Fer-1,Ferrostatin-1,4068248,31901729,_NA_,2022/1/7,FerrDb team
+107,Ferroptosis,Omeprazole,Omeprazole,4594,31767624,_NA_,2022/1/7,FerrDb team
+108,Ferroptosis,Indole-3-carbinol,Indole-3-carbinol,3712,31767624,_NA_,2022/1/7,FerrDb team
+109,Ferroptosis,Rifampicin,Rifampicin,135398735,31767624,_NA_,2022/1/7,FerrDb team
+110,Ferroptosis,Promethazine,Promethazine,4927,31767624,_NA_,2022/1/7,FerrDb team
+111,Ferroptosis,Carvedilol,Carvedilol,2585,31767624,_NA_,2022/1/7,FerrDb team
+112,Ferroptosis,Propranolol,Propranolol,4946,31767624,_NA_,2022/1/7,FerrDb team
+113,Ferroptosis,Estradiol,Estradiol,5757,31767624,_NA_,2022/1/7,FerrDb team
+114,Ferroptosis,T3,triiodothyronine,5920,31767624,_NA_,2022/1/7,FerrDb team
+115,Ferroptosis,Gastrodin,Gastrodin,115067,31698019,_NA_,2022/1/7,FerrDb team
+116,Ferroptosis,Carboplatin,Carboplatin,426756,31641008,_NA_,2022/1/10,FerrDb team
+117,Ferroptosis,Bim1,Bisindolylmaleimide i,2396,31173656,_NA_,2022/1/10,FerrDb team
+118,Ferroptosis,Gö6976,Go-6976,3501,31173656,_NA_,2022/1/10,FerrDb team
+119,Ferroptosis,DPI,Diphenylene iodonium,3101,31173656,_NA_,2022/1/10,FerrDb team
+120,Ferroptosis,GKT137831,GKT137831,58496428,31173656,_NA_,2022/1/10,FerrDb team
+121,Ferroptosis,RR-11a,"(2,5-dioxopyrrolidin-1-yl) (E)-4-[(2-amino-2-oxoethyl)-[[(2S)-2-[[(2S)-2-(phenylmethoxycarbonylamino)propanoyl]amino]propanoyl]amino]amino]-4-oxobut-2-enoate",88556687,33431801,_NA_,2022/1/19,FerrDb team
+122,Ferroptosis,Nuciferine,Nuciferine,10146,33450067,_NA_,2022/1/19,FerrDb team
+123,Ferroptosis,Baicalein,Baicalein,5281605,34015760,_NA_,2022/1/26,FerrDb team
+124,Ferroptosis,Cystine,Cystine,67678,33897873,_NA_,2022/2/10,FerrDb team
+125,Ferroptosis,Fer-1,Ferrostatin-1,4068248,33631670,_NA_,2022/2/10,FerrDb team
+126,Ferroptosis,DFO,Deferoxamine,2973,34175430,_NA_,2022/2/10,FerrDb team
+127,Ferroptosis,Chebulagic Acid,Chebulagic Acid,442674,34299576,_NA_,2022/2/12,FerrDb team
+128,Ferroptosis,Chebulinic Acid,Chebulinic Acid,72284,34299576,_NA_,2022/2/12,FerrDb team
+129,Ferroptosis,Panaxydol,Panaxydol,5283280,33653364,_NA_,2022/2/12,FerrDb team
+130,Ferroptosis,IRN,Isorhynchophylline,3037048,33942214,_NA_,2022/2/12,FerrDb team
+131,Ferroptosis,Bazedoxifene,Bazedoxifene,154257,33686292,_NA_,2022/2/15,FerrDb team
+132,Ferroptosis,INK128,Sapanisertib,45375953,33686292,_NA_,2022/2/15,FerrDb team
+133,Ferroptosis,AZD8055,"[5-[2,4-Bis((3S)-3-methylmorpholin-4-yl)pyrido[2,3-d]pyrimidin-7-yl]-2-methoxyphenyl]methanol",25262965,33686292,_NA_,2022/2/15,FerrDb team
+134,Ferroptosis,Kaempferol,Kaempferol,5280863,34206421,_NA_,2022/2/23,FerrDb team
+135,Ferroptosis,Ruxo,ruxolitinib,25126798,33991524,_NA_,2022/2/24,FerrDb team
+136,Ferroptosis,Melatonin,Melatonin,896,34883251,_NA_,2022/2/24,FerrDb team
+137,Ferroptosis,ADC,Ajudecunoid C,_NA_,34303035,A compound isolated from A. nipponensis.,2022/2/24,FerrDb team
+138,Ferroptosis,DMF,Dimethyl fumarate,637568,33931960,_NA_,2022/2/24,FerrDb team
+139,Ferroptosis,Sev,Sevoflurane,5206,33774026,_NA_,2022/3/2,FerrDb team
+140,Ferroptosis,Polydatin,Polydatin,5281718,33839410,_NA_,2022/3/2,FerrDb team
+141,Ferroptosis,D‐mannose,D‐mannose,18950,34561933,_NA_,2022/3/2,FerrDb team
+142,Ferroptosis,NMN,Nicotinamide mononucleotide,4661174,34626772,_NA_,2022/3/2,FerrDb team
+143,Ferroptosis,Cd,Cadmium,23973,34051661,Long-term exposure to Cd inhibits ferroptosis; Induces ferroptosis in other article.,2022/3/3,FerrDb team
+144,Ferroptosis,"1,25(OH)2D3",Calcitriol,5280453,34768761,_NA_,2022/3/7,FerrDb team
+145,Ferroptosis,Atorvastatin,Atorvastatin,60823,34438345,_NA_,2022/3/8,FerrDb team
+146,Ferroptosis,α-Toc,α-tocopherol,14985,34267193,A vitamin E analog,2022/3/8,FerrDb team
+147,Ferroptosis,Se,Selenium,6326970,34413521,_NA_,2022/3/8,FerrDb team
+148,Ferroptosis,αT,α-tocopherol,14985,34172811,A vitamin E analog,2022/3/9,FerrDb team
+149,Ferroptosis,Wed,Wedelolactone,5281813,34246777,_NA_,2022/3/9,FerrDb team
+150,Ferroptosis,Res,Resveratrol,445154,34530090,_NA_,2022/3/9,FerrDb team
+151,Ferroptosis,AS-IV,Astragaloside IV,13943297,33656642,_NA_,2022/3/9,FerrDb team
+152,Ferroptosis,Fer-1,Ferrostatin-1,4068248,34388454,_NA_,2022/3/9,FerrDb team
+162,Ferroptosis,Otssp167,Otssp167,135398499,34144192,_NA_,2022/3/15,FerrDb team
+163,Ferroptosis,C3G,Cyanidin-3-glucoside,12303220,33628391,_NA_,2022/3/15,FerrDb team
+164,Ferroptosis,ADA-409-052,ADA-409-052,_NA_,33568697,A condensed benzo[b]thiazine derivative small molecule with an arylthiazine backbone.,2022/3/16,FerrDb team
+165,Ferroptosis,NaHS,Sodium hydrosulfide,28015,33945828,_NA_,2022/3/16,FerrDb team
+168,Ferroptosis,GB,ginkgolide-B,6324617,34332327,_NA_,2022/3/20,FerrDb team
+169,Ferroptosis,GIF-2114,GIF-2114,_NA_,34407426,"N, N-dimethylaniline derivative.",2022/3/21,FerrDb team
+170,Ferroptosis,GIF-2197-r,GIF-2197-r,_NA_,34407426,"N, N-dimethylaniline derivative.",2022/3/21,FerrDb team
+171,Ferroptosis,CY,Carthamin yellow,_NA_,33576458,A flavonoid compound.,2022/3/21,FerrDb team
+172,Ferroptosis,Ponatinib,Ponatinib,24826799,33675785,_NA_,2022/3/21,FerrDb team
+173,Ferroptosis,Deferoxamine,Deferoxamine,2973,33675785,_NA_,2022/3/21,FerrDb team
+174,Ferroptosis,Se,Selenium,6326970,34116104,_NA_,2022/3/21,FerrDb team
+175,Ferroptosis,Melatonin,Melatonin,896,34364124,_NA_,2022/3/21,FerrDb team
+176,Ferroptosis,DA,dehydroabietic acid,94391,33590347,_NA_,2022/3/21,FerrDb team
+177,Ferroptosis,GAA,Gossypol acetic acid,_NA_,34827665,A natural product taken from the seeds of cotton plants.,2022/3/21,FerrDb team
+178,Ferroptosis,DATS,diallyl trisulfide,16315,33168263,Not 100% inhibitory to ferroptosis.,2022/3/21,FerrDb team
+179,Ferroptosis,DMTS,dimethyl trisulfide,19310,33168263,Not 100% inhibitory to ferroptosis.,2022/3/21,FerrDb team
+180,Ferroptosis,PAN,Paeonol,11092,33906483,_NA_,2022/3/21,FerrDb team
+181,Ferroptosis,EMPA,Empagliflozin,11949646,34301253,_NA_,2022/3/21,FerrDb team
+182,Ferroptosis,GS-4997,Selonsertib,71245288,33858114,Apoptosis signal-regulating kinase 1 inhibitor.,2022/3/22,FerrDb team
+183,Ferroptosis,S3QEL,site IIIQo electron leak,_NA_,33493440,A specific suppressor of superoxide production from complex III.,2022/3/30,FerrDb team
+184,Ferroptosis,TSA,Tanshinone IIA,164676,34454174,_NA_,2022/3/30,FerrDb team
+185,Ferroptosis,CAT,capsiate,9839519,33779497,_NA_,2022/3/31,FerrDb team
+186,Ferroptosis,Dex,Dexmedetomidine,5311068,34916824,_NA_,2022/4/6,FerrDb team
+187,Ferroptosis,Gap27,H-Ser-Arg-Pro-Thr-Glu-Lys-Thr-Ile-Phe-Ile-Ile-OH,9920128,34785303,_NA_,2022/4/6,FerrDb team
+188,Ferroptosis,DXZ,Dexrazoxane,71384,34336950,_NA_,2022/4/7,FerrDb team
+189,Ferroptosis,LXA4,Lipoxin A4,5280914,34048148,_NA_,2022/4/7,FerrDb team
+190,Ferroptosis,Lip-1,Liproxstatin-1,135735917,32985488,_NA_,2022/4/7,FerrDb team
+191,Ferroptosis,VBIT-12,N-[[1-(1-naphthalenylmethyl)-4-(phenylamino)-4-piperidinyl]carbonyl]-glycine,134347604,34401974,_NA_,2022/4/7,FerrDb team
+192,Ferroptosis,Baicalin,Baicalin,64982,33815110,_NA_,2022/4/7,FerrDb team
+193,Ferroptosis,Baicalin,Baicalin,64982,34704542,_NA_,2022/4/7,FerrDb team
+194,Ferroptosis,UTI,Ulinastatin,105102,34306342,_NA_,2022/4/8,FerrDb team
+195,Ferroptosis,N2L,N2L,_NA_,34171402,A niacin-lipoic acid dimer derivative.,2022/4/8,FerrDb team
+196,Ferroptosis,NAR,Naringenin,932,34699317,_NA_,2022/4/10,FerrDb team
+197,Ferroptosis,ICA,Icariin,5318997,34407320,_NA_,2022/4/10,FerrDb team
+198,Ferroptosis,RSV,Resveratrol,445154,34813903,_NA_,2022/4/10,FerrDb team
+199,Ferroptosis,MCTR1,Maresin conjugates in tissue regeneration 1,122368871,34961563,_NA_,2022/4/11,FerrDb team
+200,Ferroptosis,Melatonin,Melatonin,896,34335271,_NA_,2022/4/12,FerrDb team
+201,Ferroptosis,ISL,isoliquiritigenin,638278,34791966,_NA_,2022/4/12,FerrDb team
+202,Ferroptosis,FA,Ferulic acid,445858,34935700,_NA_,2022/4/12,FerrDb team
+203,Ferroptosis,Curcumin,Curcumin,969516,34787501,_NA_,2022/4/12,FerrDb team
+204,Ferroptosis,vitamin E,vitamin E,14985,34779994,_NA_,2022/4/12,FerrDb team
+205,Ferroptosis,Pue,Puerarin,5281807,34422728,_NA_,2022/4/12,FerrDb team
+206,Ferroptosis,Met,Metformin,4091,33513420,_NA_,2022/4/12,FerrDb team
+207,Ferroptosis,TXL,Tongxinluo,_NA_,34740097,A traditional and multifunctional Chinese medicine.,2022/4/12,FerrDb team
+208,Ferroptosis,DMF,Dimethyl fumarate,637568,34153667,_NA_,2022/4/12,FerrDb team
+209,Ferroptosis,Dau,Dauricine,73400,34469757,_NA_,2022/4/17,FerrDb team
+210,Ferroptosis,Lip-1,Liproxstatin-1,135735917,34511597,_NA_,2022/4/17,FerrDb team
+211,Ferroptosis,necrostatin-1,necrostatin-1,2828334,34572979,_NA_,2022/4/17,FerrDb team
+212,Ferroptosis,Geraniin,Geraniin,3001497,33590718,An ellagitannin bearing hexahydroxydiphenoyl (HHDP) and dehydrohexahydroxydiphenoyl (DHHDP) groups.,2022/4/17,FerrDb team
+213,Ferroptosis,Fluvastatin,Fluvastatin,446155,34594412,_NA_,2022/4/17,FerrDb team
+214,Ferroptosis,UAMC-3203,4-(cyclohexylamino)-3-[(phenylmethyl)amino]-N-[2-(1-piperazinyl)ethyl]-benzenesulfonamide,137701965,34618729,_NA_,2022/4/17,FerrDb team
+215,Ferroptosis,DFO,Deferoxamine,2973,34618729,_NA_,2022/4/17,FerrDb team
+216,Ferroptosis,STM,Stigmasterol,5280794,34806937,_NA_,2022/4/18,FerrDb team
+217,Ferroptosis,ETO,Etomidate,667484,34091586,_NA_,2022/4/18,FerrDb team
+218,Ferroptosis,Fra,Fraxetin,5273569,34650699,_NA_,2022/4/18,FerrDb team
+219,Ferroptosis,Se,Selenium,6326970,34745435,_NA_,2022/4/18,FerrDb team
+220,Ferroptosis,CTLD,Compound Tongluo Decoction,_NA_,34536518,_NA_,2022/4/18,FerrDb team
+221,Ferroptosis,Klotho,Klotho,_NA_,34592245,A substance but not a compound.,2022/4/18,FerrDb team
+222,Ferroptosis,Tectorigenin,Tectorigenin,5281811,34964161,_NA_,2022/4/25,FerrDb team
+223,Ferroptosis,APS,Astragalus polysaccharide,2782115,34562468,_NA_,2022/4/25,FerrDb team
+224,Ferroptosis,Vitamin B6,Pyridoxine,1054,35002705,_NA_,2022/4/25,FerrDb team
+225,Ferroptosis,Fer-1,Ferrostatin-1,4068248,34787054,_NA_,2022/4/25,FerrDb team
+226,Ferroptosis,Olanzapine,Olanzapine,135398745,34562639,_NA_,2022/4/25,FerrDb team
+227,Ferroptosis,Baicalin,Baicalin,64982,33935719,_NA_,2022/4/25,FerrDb team
+228,Ferroptosis,Fer-1,Ferrostatin-1,4068248,34952157,_NA_,2022/4/25,FerrDb team
+229,Ferroptosis,EGCG,(-)-Epigallocatechin-3-gallate,65064,34775319,_NA_,2022/4/25,FerrDb team
+230,Ferroptosis,LIRA,liraglutide,16134956,34480710,_NA_,2022/4/25,FerrDb team
+231,Ferroptosis,N-acetylcysteine,N-acetylcysteine,12035,34850077,_NA_,2022/5/5,FerrDb team
+232,Ferroptosis,H2S,Hydrogen sulfide,402,34952420,_NA_,2022/5/5,FerrDb team
+233,Ferroptosis,Zinc,Zinc,23994,33951302,_NA_,2022/5/5,FerrDb team
+234,Ferroptosis,Thioctic acid,Thioctic acid,864,34630132,_NA_,2022/5/5,FerrDb team
+235,Ferroptosis,HSYA,Hydroxysafflor yellow A,6443665,34923102,_NA_,2022/5/5,FerrDb team
+236,Ferroptosis,AHSYB,anhydrosafflor yellow B,102240413,34923102,_NA_,2022/5/5,FerrDb team
+237,Ferroptosis,Dihydroquercetin,Taxifolin,439533,34942457,_NA_,2022/5/5,FerrDb team
+238,Ferroptosis,Cysteine,Cysteine,5862,34917232,_NA_,2022/5/5,FerrDb team
+239,Ferroptosis,AS-IV,Astragaloside IV,13943297,34760046,_NA_,2022/5/5,FerrDb team
+240,Ferroptosis,NO,Nitric oxide,145068,34329739,_NA_,2022/5/5,FerrDb team
+241,Ferroptosis,Tangeretin,Tangeretin,68077,34570416,_NA_,2022/5/5,FerrDb team
+242,Ferroptosis,Cystine,Cystine,67678,34679678,_NA_,2022/5/5,FerrDb team
+243,Ferroptosis,Methionine,Methionine,6137,34679678,_NA_,2022/5/5,FerrDb team
+244,Ferroptosis,TSG,Tetrahydroxy stilbene glycoside,_NA_,34333354,_NA_,2022/5/5,FerrDb team
+245,Ferroptosis,TBHQ,tert-Butylhydroquinone,16043,34794379,_NA_,2022/5/5,FerrDb team
+246,Ferroptosis,Fucoidan,Fucoidan,129532628,34677456,_NA_,2022/5/7,FerrDb team
+247,Ferroptosis,moracin N,moracin N,641376,34281775,Isolated and identified from mulberry leaf.,2022/5/11,FerrDb team
+248,Ferroptosis,Chrysophanol,Chrysophanol,10208,34572468,"Chrysophanol is a component of Rheum officinale Baill, a traditional Chinese medicine that has been clinically used to treat renal disease.",2022/5/11,FerrDb team
+249,Ferroptosis,HC,Histochrome,_NA_,34679760,_NA_,2022/5/11,FerrDb team
+250,Ferroptosis,CoQ10,Coenzyme Q10,5281915,34200321,_NA_,2022/5/11,FerrDb team
+251,Ferroptosis,Ze 450,Ze 450,_NA_,34573064,Cimicifuga racemosa extract.,2022/5/15,FerrDb team
+252,Ferroptosis,Baicalein,Baicalein,5281605,34207230,_NA_,2022/5/15,FerrDb team
+253,Ferroptosis,Ses,Sesamin,72307,34825691,_NA_,2022/5/16,FerrDb team
+254,Ferroptosis,I3P,Indole-3-pyruvic,803,33646117,_NA_,2022/5/16,FerrDb team
+255,Ferroptosis,Loganin,Loganin,87691,33572597,_NA_,2022/5/16,FerrDb team
+256,Ferroptosis,Lyc,Lycopene,446925,33615188,_NA_,2022/5/16,FerrDb team
+257,Ferroptosis,YA,Tyrosine-Alanine,4078684,34822485,_NA_,2022/5/24,FerrDb team
