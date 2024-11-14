@@ -98,3 +98,14 @@ def execute_uniprot_api_calls(ids, fromDB, toDB, human=True):
             rippers.append(i)
 
     return res_dict, rippers
+
+
+def get_from_reactome(uniprotID,species="Homo sapiens"):
+    URL_REACTOM = "https://reactome.org/ContentService/data/mapping/UniProt/P42345/pathways?species=Homo%20sapiens"
+        r = requests.post(
+            f"{UNIPROT_URL}/idmapping/run",
+            data={"from": fromDB, "to": toDB, "ids": ids},
+            )
+    r.raise_for_status()
+    return r.json()["jobId"]
+
