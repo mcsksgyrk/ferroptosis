@@ -2,10 +2,10 @@ import requests
 import time
 import json
 import re
-import pickle
 
 POLLING_INTERVAL = 3
 UNIPROT_URL = "https://rest.uniprot.org"
+REACTOME_URL = "https://reactome.org/ContentService"
 
 
 def make_kegg_api_call(mol_name):
@@ -100,12 +100,22 @@ def execute_uniprot_api_calls(ids, fromDB, toDB, human=True):
     return res_dict, rippers
 
 
-def get_from_reactome(uniprotID,species="Homo sapiens"):
-    URL_REACTOM = "https://reactome.org/ContentService/data/mapping/UniProt/P42345/pathways?species=Homo%20sapiens"
-        r = requests.post(
-            f"{UNIPROT_URL}/idmapping/run",
-            data={"from": fromDB, "to": toDB, "ids": ids},
+def map_pr_to_pathways(uniprotID, species="9606"):
+    r = requests.get(
+            f"{REACTOME_URL}/data/mapping/UniProt/{uniprotID}/pathways?species={species}"
             )
     r.raise_for_status()
-    return r.json()["jobId"]
+    return parse_reactome_resp_pathways(r.json())
 
+
+def parse_reactome_resp_pathways(resp):
+    pathways = []
+    if isinstance(resp, list):
+        for item in resp:
+            pathways.append(item['stId'])
+    else:
+        pathways.append(resp['stId'])
+    return pathways
+
+
+map_pr_to_pathways("PTEN")
