@@ -186,16 +186,3 @@ class PsimiSQL:
         self.db.commit()
 
         self.db.close()
-
-
-test_db = PsimiSQL('network_db_seed.sql')
-test_node = {"name": "rakosPr",
-             "gene_name": "mcisti",
-             "tax_id": 69,
-             "pathways": "rout56"
-            }
-test_db.insert_node(test_node)
-test_node_update = test_db.get_node("rakosPr", 69)
-test_node_update['pathways'] = "miskolc"
-test_node_update.items()
-test_db.update_node(test_node_update)
