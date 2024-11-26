@@ -140,10 +140,9 @@ class PsimiSQL:
                 `interactor_a_node_name`,
                 `interactor_b_node_name`,
                 `source_db`,
-                `interaction_identifiers`,
                 `interaction_types`
                 )
-                VALUES ( ?, ?, ?, ?, ?, ?, ?)
+                VALUES ( ?, ?, ?, ?, ?, ?)
                 """
 
         tup = (
@@ -152,7 +151,6 @@ class PsimiSQL:
             interactor_a_dict['name'],
             interactor_b_dict['name'],
             edge_dict['source_db'],
-            edge_dict['interaction_identifiers'],
             edge_dict['interaction_types']
         )
 
