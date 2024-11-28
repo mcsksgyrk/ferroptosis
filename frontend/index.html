@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Interactive Graph</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .node circle {
+            fill: #69b3a2;
+            stroke: #333;
+            stroke-width: 2px;
+        }
+        .node text {
+            font-size: 12px;
+            pointer-events: none;
+        }
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <svg width="800" height="600"></svg>
+    <script>
+        const width = 800;
+        const height = 600;
+
+        // Fetch data from the backend
+        fetch('/graph-data')
+            .then(response => response.json())
+            .then(data => {
+                const svg = d3.select("svg");
+                const simulation = d3.forceSimulation(data.nodes)
+                    .force("link", d3.forceLink(data.edges).id(d => d.id))
+                    .force("charge", d3.forceManyBody().strength(-200))
+                    .force("center", d3.forceCenter(width / 2, height / 2));
+
+                // Add links
+                const link = svg.selectAll(".link")
+                    .data(data.edges)
+                    .enter().append("line")
+                    .attr("class", "link")
+                    .style("stroke-width", d => Math.sqrt(d.weight));
+
+                // Add nodes
+                const node = svg.selectAll(".node")
+                    .data(data.nodes)
+                    .enter().append("g")
+                    .attr("class", "node")
+                    .call(d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended));
+
+                node.append("circle")
+                    .attr("r", 10);
+
+                node.append("text")
+                    .text(d => d.label)
+                    .attr("x", 12)
+                    .attr("y", 3);
+
+                // Update simulation
+                simulation.on("tick", () => {
+                    link
+                        .attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y);
+
+                    node
+                        .attr("transform", d => `translate(${d.x},${d.y})`);
+                });
+
+                function dragstarted(event, d) {
+                    if (!event.active) simulation.alphaTarget(0.3).restart();
+                    d.fx = d.x;
+                    d.fy = d.y;
+                }
+
+                function dragged(event, d) {
+                    d.fx = event.x;
+                    d.fy = event.y;
+                }
+
+                function dragended(event, d) {
+                    if (!event.active) simulation.alphaTarget(0);
+                    d.fx = null;
+                    d.fy = null;
+                }
+            });
+    </script>
+</body>
+</html>
