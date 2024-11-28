@@ -1,0 +1,43 @@
+.node circle {
+    fill: #69b3a2;
+    stroke: #333;
+    stroke-width: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node text {
+    font-size: 12px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.node.faded circle {
+    opacity: 0.2;
+}
+
+.node.faded text {
+    opacity: 0.2;
+}
+
+.link.faded {
+    opacity: 0.1;
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+}

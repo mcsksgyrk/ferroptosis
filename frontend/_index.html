@@ -19,13 +19,48 @@
             stroke: #999;
             stroke-opacity: 0.6;
         }
+        html, body {
+            height: 100%; /* Ensure the full viewport height */
+            margin: 0;    /* Remove default margins */
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
-    <svg width="800" height="600"></svg>
+    <svg width="100%" height="100%"></svg>
     <script>
-        const width = 800;
-        const height = 600;
+
+        // Select the SVG element
+        const svg = d3.select("#graph");
+
+        // Get viewport dimensions
+        const width = window.innerWidth;  // Full screen width
+        const height = window.innerHeight; // Full screen height
+
+        // Set the SVG's width and height
+        svg.attr("width", width)
+           .attr("height", height);
+
+        // Highlight function
+        function highlightNode(event, d) {
+            // Identify connected links
+            const connectedLinks = links.filter(link => link.source.id === d.id || link.target.id === d.id);
+            const connectedNodes = new Set(connectedLinks.map(link => link.source.id).concat(connectedLinks.map(link => link.target.id)));
+
+            // Highlight connected nodes and links
+            link.attr("stroke", link => (connectedLinks.includes(link) ? "red" : "#999"))
+                .attr("stroke-width", link => (connectedLinks.includes(link) ? 4 : 2));
+
+            node.attr("fill", node => (connectedNodes.has(node.id) ? "orange" : "steelblue"));
+
+            labels.attr("font-weight", node => (connectedNodes.has(node.id) ? "bold" : "normal"))
+                  .attr("fill", node => (connectedNodes.has(node.id) ? "red" : "black"));
+        }
 
         // Fetch data from the backend
         fetch('/graph-data')
@@ -34,7 +69,7 @@
                 const svg = d3.select("svg");
                 const simulation = d3.forceSimulation(data.nodes)
                     .force("link", d3.forceLink(data.edges).id(d => d.id))
-                    .force("charge", d3.forceManyBody().strength(-200))
+                    .force("charge", d3.forceManyBody().strength(-20))
                     .force("center", d3.forceCenter(width / 2, height / 2));
 
                 // Add links
@@ -42,7 +77,7 @@
                     .data(data.edges)
                     .enter().append("line")
                     .attr("class", "link")
-                    .style("stroke-width", d => Math.sqrt(d.weight));
+                    .style("stroke-width", d => 2);
 
                 // Add nodes
                 const node = svg.selectAll(".node")
@@ -58,7 +93,7 @@
                     .attr("r", 10);
 
                 node.append("text")
-                    .text(d => d.label)
+                    .text(d => d.name)
                     .attr("x", 12)
                     .attr("y", 3);
 
