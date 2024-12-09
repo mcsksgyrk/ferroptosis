@@ -10,6 +10,7 @@ CREATE TABLE `node` (
 	`gene_name`	TEXT,
 	`tax_id`	INTEGER NOT NULL,
 	`pathways`	TEXT,
+	`source`	TEXT,
 	`function`	TEXT
 );
 CREATE TABLE `edge` (

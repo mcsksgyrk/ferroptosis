@@ -161,7 +161,7 @@ class PsimiSQL:
             interactor_b_dict['id'],
             interactor_a_dict['name'],
             interactor_b_dict['name'],
-            interactor_b_dict['layer'],
+            edge_dict['layer'],
             edge_dict['source_db'],
             edge_dict['interaction_types']
         )

@@ -10,7 +10,7 @@ uniprot_client = api.UniProtClient()
 go_client = api.GOClient()
 
 SQL_SEED = "./database/network_db_seed.sql"
-DB_DESTINATION = "./output/omnipath"
+DB_DESTINATION = "./output/omnipath2"
 db_api = PsimiSQL(SQL_SEED)
 
 #layer 0, connection between core prs
