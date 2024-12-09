@@ -44,13 +44,15 @@ class PsimiSQL:
     def insert_node(self, node_dict):
 
         if ('id' not in node_dict) and (not self.get_node(node_dict['name'], node_dict['tax_id'])):
-            query = "INSERT INTO node (name, gene_name, tax_id, pathways) VALUES (?, ?, ?, ?)"
+            query = "INSERT INTO node (name, gene_name, tax_id, pathways, source, function) VALUES (?, ?, ?, ?, ?, ?)"
 
             self.cursor.execute(query, (
                 node_dict['name'],
                 node_dict['gene_name'],
                 node_dict['tax_id'],
-                node_dict['pathways']
+                node_dict['pathways'],
+                node_dict['source'],
+                node_dict['function']
             ))
             self.db.commit()
 
@@ -61,13 +63,15 @@ class PsimiSQL:
 
     def insert_unique_node(self, node_dict):
 
-        query = "INSERT INTO node (name, gene_name, tax_id, pathways) VALUES (?, ?, ?, ?)"
+        query = "INSERT INTO node (name, gene_name, tax_id, pathways, source, function) VALUES (?, ?, ?, ?, ?, ?)"
 
         self.cursor.execute(query, (
             node_dict['name'],
             node_dict['gene_name'],
             node_dict['tax_id'],
-            node_dict['pathways']))
+            node_dict['pathways'],
+            node_dict['source'],
+            node_dict['function']))
         self.db.commit()
 
         node_dict['id'] = self.cursor.lastrowid
@@ -84,29 +88,33 @@ class PsimiSQL:
         if answer:
             node_dict = {
                 'id': answer[0],
-                'name': answer[1], #primary id of the database
-                'gene_name': answer[2], #other ids in mi: format
+                'name': answer[1],
+                'gene_name': answer[2],
                 'tax_id': answer[3],
-                'pathways': answer[4], #only in 0-1st layers
+                'pathways': answer[4],
+                'source': answer[5],
+                'function': answer[6]
             }
             return node_dict
         else:
             return None
 
-    def get_node_by_id(self,id):
+    def get_node_by_id(self, id):
         self.cursor.execute("SELECT * FROM node WHERE id = ? ", (id, ))
         answer = self.cursor.fetchone()
         if not answer:
             return None
         else:
             if answer:
-                id, name, gene_name, tax_id, pathways = answer
+                id, name, gene_name, tax_id, pathways, source, function = answer
                 node_dict = {
                     "id": id,
                     "name": name,
                     "gene_name": gene_name,
                     "tax_id": tax_id,
-                    "pathways": pathways
+                    "pathways": pathways,
+                    "source": source,
+                    "function": function
                 }
             else:
                 return None
@@ -121,11 +129,13 @@ class PsimiSQL:
                node_dict['gene_name'],
                node_dict['tax_id'],
                node_dict['pathways'],
+               node_dict['source'],
+               node_dict['function'],
                node_dict['id'])
 
         query = """
             UPDATE node
-            SET name = ?, gene_name = ?, tax_id = ?, pathways = ?
+            SET name = ?, gene_name = ?, tax_id = ?, pathways = ?, source = ?, function = ?
             WHERE id = ?;
         """
 
@@ -139,10 +149,11 @@ class PsimiSQL:
                 `interactor_b_node_id`,
                 `interactor_a_node_name`,
                 `interactor_b_node_name`,
+                `layer`,
                 `source_db`,
                 `interaction_types`
                 )
-                VALUES ( ?, ?, ?, ?, ?, ?)
+                VALUES ( ?, ?, ?, ?, ?, ?, ?)
                 """
 
         tup = (
@@ -150,6 +161,7 @@ class PsimiSQL:
             interactor_b_dict['id'],
             interactor_a_dict['name'],
             interactor_b_dict['name'],
+            interactor_b_dict['layer'],
             edge_dict['source_db'],
             edge_dict['interaction_types']
         )

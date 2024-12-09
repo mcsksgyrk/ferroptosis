@@ -9,7 +9,8 @@ CREATE TABLE `node` (
 	`name`	TEXT NOT NULL,
 	`gene_name`	TEXT,
 	`tax_id`	INTEGER NOT NULL,
-	`pathways`	TEXT
+	`pathways`	TEXT,
+	`function`	TEXT
 );
 CREATE TABLE `edge` (
 	`id`	INTEGER PRIMARY KEY,
@@ -17,6 +18,7 @@ CREATE TABLE `edge` (
 	`interactor_b_node_id`	INTEGER NOT NULL,
 	`interactor_a_node_name`	TEXT NOT NULL,
 	`interactor_b_node_name`	TEXT NOT NULL,
+    `layer` TEXT NOT NULL,
 	`interaction_types`	TEXT,
 	`source_db`	TEXT NOT NULL,
 	FOREIGN KEY(`interactor_a_node_id`) REFERENCES node ( `id` ) ON UPDATE NO ACTION ON DELETE CASCADE,
