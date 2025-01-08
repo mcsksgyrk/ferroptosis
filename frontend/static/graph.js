@@ -35,6 +35,82 @@ function createSimulation(nodes, edges, width, height) {
         .force("collision", d3.forceCollide().radius(50));
 }
 
+
+// Filter nodes based on search input
+function filterNodes(searchText, filterType, node, link, data) {
+    if (!searchText) {
+        // If search is empty, show all nodes and links
+        node.style("display", "block");
+//        link.style("display", "block");
+        return;
+    }
+
+    // Convert search text to lowercase for case-insensitive comparison
+    const searchLower = searchText.toLowerCase();
+
+    // Create a Set to store matching node IDs
+    const matchingNodes = new Set();
+
+    // Find matching nodes
+    data.nodes.forEach(n => {
+        let valueToCheck;
+        switch(filterType) {
+            case 'name':
+                valueToCheck = n.name || '';
+                break;
+            case 'id':
+                valueToCheck = n.id || '';
+                break;
+            case 'pathways':
+                valueToCheck = n.pathways || '';
+                break;
+            case 'function':
+                valueToCheck = n.function || '';
+                break;
+            default:
+                valueToCheck = n.name || '';
+        }
+
+        // Add debug logging
+        console.log(`Checking node ${n.id}:`, {
+            filterType,
+            valueToCheck,
+            hasField: valueToCheck !== ''
+        });
+
+        if (valueToCheck.toString().toLowerCase().includes(searchLower)) {
+            matchingNodes.add(n.id);
+        }
+    });
+    // Show/hide nodes based on filter
+    node.style("display", d => matchingNodes.has(d.id) ? "block" : "none");
+
+    // Show only links connected to visible nodes
+    link.style("display", d =>
+        matchingNodes.has(d.source.id) && matchingNodes.has(d.target.id)
+            ? "block"
+            : "none"
+    );
+}
+
+// Initialize filter functionality
+function initializeFilter(node, link, data) {
+    const filterInput = document.getElementById('node-filter');
+    const filterType = document.getElementById('filter-type');
+
+    // Debug log when filter type changes
+    filterType.addEventListener('change', (e) => {
+        console.log("Filter type changed to:", e.target.value);
+    });
+
+    filterInput.addEventListener('input', (e) => {
+        filterNodes(e.target.value, filterType.value, node, link, data);
+    });
+
+    filterType.addEventListener('change', () => {
+        filterNodes(filterInput.value, filterType.value, node, link, data);
+    });
+}
 // Highlight connected nodes and links
 function highlightConnections(event, d, node, link, data) {
     // Fade all nodes and links first
@@ -125,16 +201,20 @@ function dragended(event, d, simulation) {
 
 // Main function to create the graph
 function createGraph(data) {
+    console.log("Sample node data:", data.nodes[0]);
+    console.log("Available fields:", Object.keys(data.nodes[0]));
     const { g, width, height } = initGraph();
     const simulation = createSimulation(data.nodes, data.edges, width, height);
 
-    // Create links
+    // Update the link creation
     const link = g.selectAll(".link")
         .data(data.edges)
         .join("line")
         .attr("class", "link")
-        .attr("id", d => `link-${d.source.id}-${d.target.id}`)
-        .attr("stroke-width", 3);
+        .attr("id", d => `link-${d.source}-${d.target}`)
+        .attr("stroke", "#999")
+        .attr("stroke-width", 3)
+        .attr("stroke-opacity", 0.6);
 
     // Create nodes
     const node = g.selectAll(".node")
@@ -157,6 +237,9 @@ function createGraph(data) {
         .attr("x", 25)
         .attr("y", 5)
         .attr("font-size", "14px");
+
+    // Initialize filters
+    initializeFilter(node, link, data);
 
     // Add event listeners
     node.on("mouseover", (event, d) => highlightConnections(event, d, node, link, data))

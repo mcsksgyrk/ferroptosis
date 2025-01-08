@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
+    <div id="filter-container">
+        <input type="text" id="node-filter" placeholder="Filter nodes...">
+        <select id="filter-type">
+            <option value="name">Name</option>
+            <option value="id">ID</option>
+            <option value="pathways">Pathways</option>
+            <option value="function">Function</option>
+        </select>
+    </div>
     <div id="container">
         <svg></svg>
     </div>
