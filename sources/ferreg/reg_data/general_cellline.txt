@@ -1,0 +1,803 @@
+Cellline_id	Cellline_name	Cellline_species	Cellline_disease	cell_describe
+CELL10047	Arabidopsis thalianasuspension cells	Arabidopsis thaliana	.	Arabidopsis thalianasuspension cells
+CELL00027	BLSC-KU-19 cells	Bos taurus	Leukemia	.
+CELL00028	MDCK cells	Canis lupus familiaris	Normal	.
+CELL00029	CAF cells	Carassius auratus	Normal	.
+CELL00030	CHO-S/H9C2 cells	Cricetulus griseus	Normal	.
+CELL00031	ZFL cells	Danio rerio	Normal	.
+CELL00032	LMH cells	Gallus gallus	Hepatoma	.
+CELL00033	HOK cells	Hexagrammos otakii	Normal	.
+CELL10001	hBMCs	Homo sapiens	.	Bone marrow cells
+CELL10002	hBMSCs	Homo sapiens	.	Bone marrow stromal cells
+CELL10003	hBMSCs	Homo sapiens	.	Bone marrow stromal cells
+CELL10004	hBCs	Homo sapiens	.	Brain cells
+CELL10005	hBCs	Homo sapiens	.	Brain cells
+CELL10006	hCFs	Homo sapiens	.	Cardiac Fibroblasts
+CELL10007	hCMs	Homo sapiens	.	Cardiomyocytes
+CELL10008	hCDs	Homo sapiens	.	Chondrocytes
+CELL10009	hCCs	Homo sapiens	.	Colon cells
+CELL10010	hESCs	Homo sapiens	.	Embryonic stem cells
+CELL10011	hEPCs	Homo sapiens	.	Endothelial progenitor cells
+CELL10012	hESCCs	Homo sapiens	.	Esophageal squamous cancer cells
+CELL10013	hEECs	Homo sapiens	.	Eutopic endometrial cells
+CELL10014	hGCCs	Homo sapiens	.	Gastric cancer cells
+CELL10015	hGCs	Homo sapiens	.	Gastric cells
+CELL10016	hHSCs	Homo sapiens	.	Hepatic stellate cells
+CELL10017	hHCs	Homo sapiens	.	Hippocampal cells
+CELL10018	hPMCs	Homo sapiens	.	Human Primary Meningeal Cells
+CELL10019	hAAFs	Homo sapiens	.	Human aortic adventitial fibroblasts
+CELL10020	hBMMSCs	Homo sapiens	.	Human bone marrow mesenchymal stem cells
+CELL10021	hBMECs	Homo sapiens	.	Human brain microvascular endothelial cells
+CELL10022	hCMs	Homo sapiens	.	Human cardiomyocytes
+CELL10023	hCECs	Homo sapiens	.	Human cervical epithelial cells
+CELL10024	hETCs	Homo sapiens	.	Human first-trimester extravillous trophoblast cells
+CELL10025	hHSCs	Homo sapiens	.	Human hepatic stellate cells
+CELL10026	hHSCs	Homo sapiens	.	Human hepatic stellate cells
+CELL10027	hIBECs	Homo sapiens	.	Human intrahepatic biliary epithelial cells
+CELL10028	hMCs	Homo sapiens	.	Human melanocyte cells
+CELL10029	hMCCs	Homo sapiens	.	Human meningeal cells
+CELL10030	hMCCs	Homo sapiens	.	Human meningeal cells
+CELL10031	hMGCs	Homo sapiens	.	Human normal brain astroglia cells
+CELL10032	hOFs	Homo sapiens	.	Human ocular fibroblasts
+CELL10033	hPMECs	Homo sapiens	.	Human pulmonary microvascular endothelial cells
+CELL10034	hRECs	Homo sapiens	.	Human retinal endothelial cells
+CELL10035	hTCs	Homo sapiens	.	Human tumour cells
+CELL10036	HUVECs	Homo sapiens	.	Human umbilical vein endothelial cells
+CELL10037	HUVECs	Homo sapiens	.	Human umbilical vein endothelial cells
+CELL10038	hUPSCs	Homo sapiens	.	Human uterine serous papillary carcinoma-1 cells
+CELL10039	hLCs	Homo sapiens	.	Liver cells
+CELL10040	hLCs	Homo sapiens	.	Liver cells
+CELL10041	hNCs	Homo sapiens	.	Neutrophils cells
+CELL10042	hACs	Homo sapiens	.	Normal human astrocyte cells
+CELL10043	hOECs	Homo sapiens	.	Normal oesophageal epithelial cells
+CELL10044	hPLSCs	Homo sapiens	.	Periodontal ligament stem cells
+CELL10045	hT2AECs	Homo sapiens	.	Type II alveolar epithelial cells
+CELL10048	hAECs	Homo sapiens	.	Human airway epithelial cells
+CELL10049	hBMDMs	Homo sapiens	.	Human bone marrow-derived macrophages
+CELL10050	hBEs	Homo sapiens	.	Human bronchial epithelial cells
+CELL10051	hCMs	Homo sapiens	.	Human cardiomyocytes
+CELL10052	hCEPs	Homo sapiens	.	Human cartilage endplate cells
+CELL10053	hCTCs	Homo sapiens	.	Human circulating tumor cells
+CELL10054	G12D	Homo sapiens	.	Human colorectal cancer cells
+CELL10055	G13D	Homo sapiens	.	Human colorectal cancer cells
+CELL10056	B4G12-CEnC	Homo sapiens	.	Human corneal endothelial cells
+CELL10057	hCAECs	Homo sapiens	.	Human coronary artery endothelial cells
+CELL10058	hDFs	Homo sapiens	.	Human dermal fibroblasts
+CELL10059	hESCs	Homo sapiens	.	Human embryonic stem cells
+CELL10060	hESCs	Homo sapiens	.	Human endometrial stromal cells
+CELL10061	hEECs	Homo sapiens	.	Human esophageal epithelial cells
+CELL10062	BJ-eLR	Homo sapiens	.	Human fibroblast cancer cells
+CELL10063	BJeH	Homo sapiens	.	Human foreskin fibroblasts
+CELL10064	BJeH	Homo sapiens	.	Human foreskin fibroblasts
+CELL10065	BJeHLT	Homo sapiens	.	Human foreskin fibroblasts
+CELL10066	BJeLR	Homo sapiens	.	Human foreskin fibroblasts
+CELL10067	GSE-1	Homo sapiens	.	Human gastric mucosal epithelial cells
+CELL10068	HEB	Homo sapiens	.	Human glial cells
+CELL10069	TG905	Homo sapiens	.	Human glioblastoma cells
+CELL10070	HN3R	Homo sapiens	.	Human head and neck squamous cell carcinoma cell
+CELL10071	HN4R	Homo sapiens	.	Human head and neck squamous cell carcinoma cell
+CELL10072	hHemECs	Homo sapiens	.	Human hemangioma endothelial cells
+CELL10073	hHSCs	Homo sapiens	.	Human hepatic stellate cells
+CELL10074	Hccm	Homo sapiens	.	Human hepatocellular carcinoma cells
+CELL10075	HCC-LY10	Homo sapiens	.	Human hepatoma cells
+CELL10076	NCCFH1	Homo sapiens	.	Human hereditary leiomyomatosis and renal cell cancer cells
+CELL10077	h-iPSCs	Homo sapiens	.	Human induced pluripotent stem cells
+CELL10078	CTCC-400-0154	Homo sapiens	.	Human malignant meningioma cells
+CELL10079	SK-Mel 505	Homo sapiens	.	Human melanoma cells
+CELL10080	SK-Mel 505	Homo sapiens	.	Human melanoma cells
+CELL10081	PM3	Homo sapiens	.	Human meningioma cells
+CELL10082	hMCs	Homo sapiens	.	Human mesangial cells
+CELL10083	H332m	Homo sapiens	.	Human non-small cell lung cancer cells
+CELL10084	HCoEpiC	Homo sapiens	.	Human normal colonic epithelial cells
+CELL10085	PCS-201-012	Homo sapiens	.	Human normal dermal fibroblasts
+CELL10086	HOB	Homo sapiens	.	Human normal osteoblastic cells
+CELL10087	HNP	Homo sapiens	.	Human nucleus pulposus cells
+CELL10088	hNPCs	Homo sapiens	.	Human nucleus pulposus cells
+CELL10089	hNPCs	Homo sapiens	.	Human nucleus pulposus cells
+CELL10090	hNPCs	Homo sapiens	.	Human nucleus pulposus cells
+CELL10091	hOGCs	Homo sapiens	.	Human ovarian granulosa cells
+CELL10092	hPDLFs	Homo sapiens	.	Human periodontal ligament fibroblasts
+CELL10093	hPBLs	Homo sapiens	.	Human peripheral blood lymphocytes
+CELL10094	hPBMCs	Homo sapiens	.	Human peripheral blood mononuclear cells
+CELL10095	hPTs	Homo sapiens	.	Human placental tissues
+CELL10096	hPCECs	Homo sapiens	.	Human primary corneal endothelial cells
+CELL10097	HK-2	Homo sapiens	.	Human renal glomerular endothelial cells
+CELL10098	HRCECs	Homo sapiens	.	Human retinal capillary endothelial cells
+CELL10099	HfRPE	Homo sapiens	.	Human retinal pigment epithelial cells
+CELL10100	hTECs	Homo sapiens	.	Human tongue epithelial cells
+CELL10101	BT574	Homo sapiens	.	Human triple negative breast cancer cells
+CELL10102	hUCB-MSCs	Homo sapiens	.	Human umbilical cord blood derived mesenchymal stem cells
+CELL10103	hUPECs	Homo sapiens	.	Human urine-derived podocyte-like epithelial cells
+CELL10104	mPHs	Homo sapiens	.	Mouse primary hepatocytes
+CELL10105	AA01	Homo sapiens	.	Pancreatic cancer cells
+CELL10106	AA02	Homo sapiens	.	Pancreatic cancer cells
+CELL10107	PHsPDAC	Homo sapiens	.	Primary human pancreatic ductal adenocarcinoma cells
+CELL10187	GSC51	Homo sapiens	.	WHO grade IV specimens
+CELL10188	GSC52	Homo sapiens	.	WHO grade IV specimens
+CELL10189	GSC53	Homo sapiens	.	WHO grade IV specimens
+CELL10190	GSC55	Homo sapiens	.	WHO grade IV specimens
+CELL10191	GSC56	Homo sapiens	.	WHO grade IV specimens
+CELL10192	GSC58	Homo sapiens	.	WHO grade IV specimens
+CELL00390	RPMI-8402 cells	Homo sapiens	Acute lymphoblastic leukemia	.
+CELL00406	SET-2 cells	Homo sapiens	Acute megakaryoblastic leukemia	.
+CELL00457	UT-7/Epo cells	Homo sapiens	Acute megakaryoblastic leukemia	.
+CELL00207	NOMO-1 cells	Homo sapiens	Acute monocytic leukemia	.
+CELL00372	Mono-Mac-6 cells	Homo sapiens	Acute monocytic leukemia	.
+CELL00020	Kasumi-1 cells	Homo sapiens	Acute myeloid leukemia	.
+CELL00064	SKM-1 cells	Homo sapiens	Acute myeloid leukemia	.
+CELL00386	OCI-AML-2 cells	Homo sapiens	Acute myeloid leukemia	.
+CELL00037	NB4 cells	Homo sapiens	Acute promyelocytic leukemia	.
+CELL00130	SW13 cells	Homo sapiens	Adrenal cortex carcinoma	.
+CELL00529	HAC15 cells	Homo sapiens	Adrenal cortex carcinoma	.
+CELL00039	U-937 cells	Homo sapiens	Adult acute monocytic leukemia	.
+CELL00035	HL-60 cells	Homo sapiens	Adult acute myeloid leukemia	.
+CELL00105	KG-1 cells	Homo sapiens	Adult acute myeloid leukemia	.
+CELL00239	MOLM-13 cells	Homo sapiens	Adult acute myeloid leukemia	.
+CELL00396	OCI-AML3 cells	Homo sapiens	Adult acute myeloid leukemia	.
+CELL00337	MLL/AF4+ RS4 cells	Homo sapiens	Adult B acute lymphoblastic leukemia	.
+CELL00061	SNU-398 cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00063	SNU-182 cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00116	SNU-449 cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00253	JHH-2 cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00255	JHH-7 cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00275	Li-7 cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00285	MHCC97-H cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00299	HCCLM3 cells	Homo sapiens	Adult hepatocellular carcinoma	.
+CELL00041	MOLT4 cells	Homo sapiens	Adult T acute lymphoblastic leukemia	.
+CELL00054	Rh30 cells	Homo sapiens	Alveolar rhabdomyosarcoma	.
+CELL00241	Rh41 cells	Homo sapiens	Alveolar rhabdomyosarcoma	.
+CELL00389	Rh18 cells	Homo sapiens	Alveolar rhabdomyosarcoma	.
+CELL00069	A-375 cells	Homo sapiens	Amelanotic melanoma	.
+CELL00154	A2058 cells	Homo sapiens	Amelanotic melanoma	.
+CELL00330	MV3 cells	Homo sapiens	Amelanotic melanoma	.
+CELL00508	LO #2 cells	Homo sapiens	Amelanotic melanoma	.
+CELL00346	SU-DHL-1 cells	Homo sapiens	Anaplastic large cell lymphoma	.
+CELL00358	BHT101 cells	Homo sapiens	Anaplastic thyroid carcinoma	.
+CELL00610	SHG-44 cells	Homo sapiens	Astrocytoma	.
+CELL00043	U-251MG cells	Homo sapiens	Astrocytoma	.
+CELL00235	U251-TR3 cells	Homo sapiens	Astrocytoma	.
+CELL00243	U-373MG cells	Homo sapiens	Astrocytoma	.
+CELL00351	U118 cells	Homo sapiens	Astrocytoma	.
+CELL00357	A4/Fukuda cells	Homo sapiens	B acute lymphoblastic leukemia	.
+CELL00119	OE33 cells	Homo sapiens	Barrett adenocarcinoma	.
+CELL00402	FLO-1 cells	Homo sapiens	Barrett adenocarcinoma	.
+CELL00398	SU-DHL-16 cells	Homo sapiens	B-cell non-Hodgkin lymphoma	.
+CELL00067	5637 cells	Homo sapiens	Bladder carcinoma	.
+CELL00102	J82 cells	Homo sapiens	Bladder carcinoma	.
+CELL00136	T24 cells	Homo sapiens	Bladder carcinoma	.
+CELL00215	RT-112 cells	Homo sapiens	Bladder carcinoma	.
+CELL00224	SW780 cells	Homo sapiens	Bladder carcinoma	.
+CELL00230	UM-UC-3 cells	Homo sapiens	Bladder carcinoma	.
+CELL00312	253J cells	Homo sapiens	Bladder carcinoma	.
+CELL00335	RT4 cells	Homo sapiens	Bladder carcinoma	.
+CELL00366	KU-19-19 cells	Homo sapiens	Bladder carcinoma	.
+CELL00401	ECV-304 cells	Homo sapiens	Bladder carcinoma	.
+CELL00131	SW1353 cells	Homo sapiens	Bone chondrosarcoma	.
+CELL00003	SK-BR-3 cells	Homo sapiens	Breast adenocarcinoma	.
+CELL00005	MDA-MB-231 cells	Homo sapiens	Breast adenocarcinoma	.
+CELL00111	MDA-MB-453 cells	Homo sapiens	Breast adenocarcinoma	.
+CELL00112	MDA-MB-468 cells	Homo sapiens	Breast adenocarcinoma	.
+CELL00298	MDA-kb2 cells	Homo sapiens	Breast adenocarcinoma	.
+CELL00469	MDA231-LM2-4175 cells	Homo sapiens	Breast adenocarcinoma	.
+CELL00002	MCF-7 cells	Homo sapiens	Breast carcinoma	.
+CELL00075	Bcap37 cells	Homo sapiens	Breast carcinoma	.
+CELL00145	MDA-MB-157 cells	Homo sapiens	Breast carcinoma	.
+CELL00214	ZR-75-30 cells	Homo sapiens	Breast carcinoma	.
+CELL00349	MDA-MB-436 cells	Homo sapiens	Breast carcinoma	.
+CELL00434	SUM52PE cells	Homo sapiens	Breast carcinoma	.
+CELL00086	HCC1937 cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00165	HCC1143 cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00166	HCC1187 cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00167	HCC1395 cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00168	HCC1419 cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00170	HCC1954 T-DM1R (T-DM1 resistance) cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00171	HCC38 cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00173	HCC70 cells	Homo sapiens	Breast ductal carcinoma	.
+CELL00460	SUM159 cells	Homo sapiens	Breast pleomorphic carcinoma	.
+CELL00463	SUM159PT cells	Homo sapiens	Breast pleomorphic carcinoma	.
+CELL00169	HCC1806 cells	Homo sapiens	Breast squamous cell carcinoma	.
+CELL00040	Daudi cells	Homo sapiens	Burkitt lymphoma	.
+CELL00158	CA46 cells	Homo sapiens	Burkitt lymphoma	.
+CELL00373	MUTZ-1 cells	Homo sapiens	Burkitt lymphoma	.
+CELL00370	LS513 cells	Homo sapiens	Cecum adenocarcinoma	.
+CELL00380	NCI-H508 cells	Homo sapiens	Cecum adenocarcinoma	.
+CELL00381	NCI-H716 cells	Homo sapiens	Cecum adenocarcinoma	.
+CELL00178	HSC-4 cells	Homo sapiens	Cervical lymph node	.
+CELL00050	SiHa cells	Homo sapiens	Cervical squamous cell carcinoma	.
+CELL00157	Ca Ski cells	Homo sapiens	Cervical squamous cell carcinoma	.
+CELL00359	C33A cells	Homo sapiens	Cervical squamous cell carcinoma	.
+CELL00038	THP-1 cells	Homo sapiens	Childhood acute monocytic leukemia	.
+CELL00058	MV4-11 cells	Homo sapiens	Childhood acute monocytic leukemia	.
+CELL00256	HuH-28 cells	Homo sapiens	Cholangiocarcinoma	.
+CELL00305	QBC939 cells	Homo sapiens	Cholangiocarcinoma	.
+CELL00036	K-562 cells	Homo sapiens	Chronic myelogenous leukemia	.
+CELL00450	K562/G01 cells	Homo sapiens	Chronic myeloid leukemia	.
+CELL00417	UM-RC-2 cells	Homo sapiens	Clear cell renal carcinoma	.
+CELL00505	UOK101 cells	Homo sapiens	Clear cell renal carcinoma	.
+CELL00081	Caki-1 cells	Homo sapiens	Clear cell renal cell carcinoma	.
+CELL00121	RCC4 cells	Homo sapiens	Clear cell renal cell carcinoma	.
+CELL00292	KTCTL-26 cells	Homo sapiens	Clear cell renal cell carcinoma	.
+CELL00387	OS-RC-2 cells	Homo sapiens	Clear cell renal cell carcinoma	.
+CELL00519	HN4 cells	Homo sapiens	Clear cell renal cell carcinoma	.
+CELL00018	SW480 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00046	Caco-2 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00083	DLD-1 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00088	HCT 15 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00096	HT-29 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00103	KAT-5 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00109	LoVo cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00132	SW1116 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00133	SW620 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00190	LS174T cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00223	SW48 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00318	MC-38 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00420	CCK-81 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00458	C75 cells	Homo sapiens	Colon adenocarcinoma	.
+CELL00087	HCT 116 cells	Homo sapiens	Colon carcinoma	.
+CELL00122	RKO cells	Homo sapiens	Colon carcinoma	.
+CELL00182	KM12 cells	Homo sapiens	Colon carcinoma	.
+CELL00301	DiFi cells	Homo sapiens	Colorectal carcinoma	.
+CELL00609	SK-MEL-28 cells	Homo sapiens	Cutaneous melanoma	.
+CELL00126	SK-MEL-5 cells	Homo sapiens	Cutaneous melanoma	.
+CELL00179	IGR-1 cells	Homo sapiens	Cutaneous melanoma	.
+CELL00347	SK-MEL-3 cells	Homo sapiens	Cutaneous melanoma	.
+CELL00517	CFBE41o- cells	Homo sapiens	Cystic fibrosis	.
+CELL00129	SU-DHL-4 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00180	Karpas-422 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00227	SU-DHL-5 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00231	WSU-NHL cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00234	U-2932 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00242	SU-DHL-6 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00314	SU-DHL-2 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00356	A3/Kawakami cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00363	DoHH2 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00397	SU-DHL-10 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00399	WILL-2 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00407	SU-DHL-8 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00442	SU-DHL-9 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00443	SU-DHL-7 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00539	OCI-LY8 cells	Homo sapiens	Diffuse large B-cell lymphoma	.
+CELL00334	NTERA-2 cells	Homo sapiens	Embryonal carcinoma	.
+CELL00424	KYM-1 cells	Homo sapiens	Embryonal rhabdomyosarcoma	.
+CELL00525	Rh36 cells	Homo sapiens	Embryonal rhabdomyosarcoma	.
+CELL00017	SMMC-7721 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00049	HeLa cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00140	WRL 68 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00262	GLC-82 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00291	BEL-7402 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00300	Tca8113 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00304	L-02 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00306	SPC-A1 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00316	Abcam HeLa ERGIC2 KO cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00341	HO8910PM cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00474	BEL-7404 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00479	HO8910 cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00537	TSCCA cells	Homo sapiens	Endocervical adenocarcinoma	.
+CELL00024	Ishikawa cells	Homo sapiens	Endometrial adenocarcinoma	.
+CELL00089	HEC-1-A cells	Homo sapiens	Endometrial adenocarcinoma	.
+CELL00090	HEC-1-B cells	Homo sapiens	Endometrial adenocarcinoma	.
+CELL00181	KLE cells	Homo sapiens	Endometrial adenocarcinoma	.
+CELL00333	AN3CA cells	Homo sapiens	Endometrial adenocarcinoma	.
+CELL00421	Hec50 cells	Homo sapiens	Endometrial adenocarcinoma	.
+CELL00123	RL95-2 cells	Homo sapiens	Endometrial adenosquamous carcinoma	.
+CELL00034	HEL cells	Homo sapiens	Erythroleukemia	.
+CELL00395	OACM5.1 C cells	Homo sapiens	Esophageal adenocarcinoma	.
+CELL00026	EC9706 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00184	KYSE30 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00185	KYSE-410 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00186	KYSE-510 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00187	KYSE-70 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00228	TE-1 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00259	T.Tn cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00282	TE-13 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00302	Eca-109 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00367	KYSE150 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00368	KYSE-450 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00369	KYSE-170 cells	Homo sapiens	Esophageal squamous cell carcinoma	.
+CELL00350	Sk-ES-1 cells	Homo sapiens	Ewing sarcoma	.
+CELL00095	HT-1080 cells	Homo sapiens	Fibrosarcoma	.
+CELL00426	NOZ cells	Homo sapiens	Gallbladder carcinoma	.
+CELL00427	OCUG-1 cells	Homo sapiens	Gallbladder carcinoma	.
+CELL00482	GBC-SD cells	Homo sapiens	Gallbladder carcinoma	.
+CELL00520	EH-GB1 cells	Homo sapiens	Gallbladder carcinoma	.
+CELL00006	SNU-1 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00011	Hs746T cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00071	AGS cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00114	MKN45 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00280	TMK-1 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00336	SNU-16 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00338	SNU-484 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00448	MZ-GC-1 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00449	MZ-GC-2 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00496	YCC-16 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00497	YCC-6 cells	Homo sapiens	Gastric adenocarcinoma	.
+CELL00124	SGC-7901 cells	Homo sapiens	Gastric carcinoma	.
+CELL00174	HGC-27 cells	Homo sapiens	Gastric carcinoma	.
+CELL00192	MKN-1 cells	Homo sapiens	Gastric carcinoma	.
+CELL00208	NUGC-3 cells	Homo sapiens	Gastric carcinoma	.
+CELL00261	BGC-823 cells	Homo sapiens	Gastric carcinoma	.
+CELL00327	STKM-2 cells	Homo sapiens	Gastric carcinoma	.
+CELL00193	MKN-28 cells	Homo sapiens	Gastric epithelial carcinoma	.
+CELL00290	MGC-803 cells	Homo sapiens	Gastric mucinous adenocarcinoma	.
+CELL00104	KATO III cells	Homo sapiens	Gastric signet ring cell adenocarcinoma	.
+CELL00257	NUGC-4 cells	Homo sapiens	Gastric signet ring cell adenocarcinoma	.
+CELL00288	SNU-668 cells	Homo sapiens	Gastric signet ring cell adenocarcinoma	.
+CELL00339	SNU-601 cells	Homo sapiens	Gastric signet ring cell adenocarcinoma	.
+CELL00023	NCI-N87 cells	Homo sapiens	Gastric tubular adenocarcinoma	.
+CELL00254	MKN74 cells	Homo sapiens	Gastric tubular adenocarcinoma	.
+CELL00454	SNU-719 cells	Homo sapiens	Gastric tubular adenocarcinoma	.
+CELL00044	U-87MG cells	Homo sapiens	Glioblastoma	.
+CELL00068	A-172 cells	Homo sapiens	Glioblastoma	.
+CELL00107	LN-229 cells	Homo sapiens	Glioblastoma	.
+CELL00137	T98G cells	Homo sapiens	Glioblastoma	.
+CELL00295	U87 MG-Red-Fluc cells	Homo sapiens	Glioblastoma	.
+CELL00323	U-87MG cells	Homo sapiens	Glioblastoma	.
+CELL00392	SF126 cells	Homo sapiens	Glioblastoma	.
+CELL00506	T98 cells	Homo sapiens	Glioblastoma	.
+CELL00048	Hep-G2 cells	Homo sapiens	Hepatoblastoma	.
+CELL00279	HuH-6 cells	Homo sapiens	Hepatoblastoma	.
+CELL00012	Huh-7 cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00016	PLC/PRF/5 cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00084	SNU-387 cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00098	Hep 3B2.1-7 cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00175	HLE cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00308	HA22T/VGH cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00315	HepaRG cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00332	HA59T/VGH cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00343	SNU475 cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00447	MHCC97-L cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00476	PLC/PRF/5 cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00488	Huh-7.5 cells	Homo sapiens	Hepatocellular carcinoma	.
+CELL00110	Mahlavu cells	Homo sapiens	Hepatoma	.
+CELL00400	UOK262 cells	Homo sapiens	Hereditary leiomyomatosis	.
+CELL00211	OVCAR-8 cells	Homo sapiens	High grade ovarian serous adenocarcinoma	.
+CELL00161	FaDu cells	Homo sapiens	Hypopharyngeal squamous cell carcinoma	.
+CELL00467	AMC-HN-2 cells	Homo sapiens	Hypopharyngeal squamous cell carcinoma	.
+CELL00521	SNU-1041 cells	Homo sapiens	Hypopharyngeal squamous cell carcinoma	.
+CELL00250	HCT-8 cells	Homo sapiens	Ileocecal adenocarcinoma	.
+CELL00465	IOMM-Lee cells	Homo sapiens	Intracranial meningioma	.
+CELL00097	HuCC-T1 cells	Homo sapiens	Intrahepatic cholangiocarcinoma	.
+CELL00284	RBE cells	Homo sapiens	Intrahepatic cholangiocarcinoma	.
+CELL00303	HCCC-9810 cells	Homo sapiens	Intrahepatic cholangiocarcinoma	.
+CELL00010	Hs-578T cells	Homo sapiens	Invasive breast carcinoma	.
+CELL00019	ZR-75-1 cells	Homo sapiens	Invasive breast carcinoma	.
+CELL00078	BT-474 cells	Homo sapiens	Invasive breast carcinoma	.
+CELL00135	T-47D cells	Homo sapiens	Invasive breast carcinoma	.
+CELL00156	BT-549 cells	Homo sapiens	Invasive breast carcinoma	.
+CELL00077	BT-20 cells	Homo sapiens	Invasive breast carcinoma of no special type	.
+CELL00293	AMC-HN-3 cells	Homo sapiens	Laryngeal squamous cell carcinoma	.
+CELL00451	SNU-1066 cells	Homo sapiens	Laryngeal squamous cell carcinoma	.
+CELL00452	SNU-1076 cells	Homo sapiens	Laryngeal squamous cell carcinoma	.
+CELL00490	HN-10 cells	Homo sapiens	Laryngeal squamous cell carcinoma	.
+CELL00522	LICR-HN2 R10.3 cells	Homo sapiens	Laryngeal squamous cell carcinoma	.
+CELL00311	MOLM-14 cells	Homo sapiens	Leukemia	.
+CELL00125	SK-HEP-1 cells	Homo sapiens	Liver and intrahepatic bile duct epithelial neoplasm	.
+CELL00045	A-549 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00144	Calu-3 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00147	SK-LU-1 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00172	HCC4006 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00195	NCI-H1975 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00196	NCI-H2009 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00199	NCI-H23 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00200	NCI-H322 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00236	HCC827 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00317	PC-9 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00325	A549-CR cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00376	NCI-H1819 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00379	H2122 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00384	NCI-H838 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00503	PC-7 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00518	XWLC-05 cells	Homo sapiens	Lung adenocarcinoma	.
+CELL00205	NCI-H647 cells	Homo sapiens	Lung adenosquamous carcinoma	.
+CELL00382	NCI-H727 cells	Homo sapiens	Lung carcinoid tumor	.
+CELL00355	A427 cells	Homo sapiens	Lung carcinoma	.
+CELL00281	PG-CL3 cells	Homo sapiens	Lung giant cell carcinoma	.
+CELL00309	95D cells	Homo sapiens	Lung giant cell carcinoma	.
+CELL00371	Lu-65 cells	Homo sapiens	Lung giant cell carcinoma	.
+CELL00425	Lu-99 cells	Homo sapiens	Lung giant cell carcinoma	.
+CELL00486	95C cells	Homo sapiens	Lung giant cell carcinoma	.
+CELL00015	NCI-H460 cells	Homo sapiens	Lung large cell carcinoma	.
+CELL00056	NCI-H1299 cells	Homo sapiens	Lung large cell carcinoma	.
+CELL00507	H460/CisR cells	Homo sapiens	Lung large cell carcinoma	.
+CELL00117	NCI-H292 cells	Homo sapiens	Lung mucoepidermoid carcinoma	.
+CELL00202	NCI-H441 cells	Homo sapiens	Lung papillary adenocarcinoma	.
+CELL00194	MS-1 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00203	NCI-H446 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00264	H69AR cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00361	DMS 273 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00362	DMS53 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00375	NCI-H1688 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00377	NCI-H196 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00383	NCI-H82 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00538	DMS114 cells	Homo sapiens	Lung small cell carcinoma	.
+CELL00022	NCI-H520 cells	Homo sapiens	Lung squamous cell carcinoma	.
+CELL00143	Calu-1 cells	Homo sapiens	Lung squamous cell carcinoma	.
+CELL00148	SK-MES-1 cells	Homo sapiens	Lung squamous cell carcinoma	.
+CELL00197	NCI-H2170 cells	Homo sapiens	Lung squamous cell carcinoma	.
+CELL00226	SW900 cells	Homo sapiens	Lung squamous cell carcinoma	.
+CELL00289	HCC95 cells	Homo sapiens	Lung squamous cell carcinoma	.
+CELL00060	SK-MEL-2 cells (MEK inhibitor-resistant) cells	Homo sapiens	Melanoma	.
+CELL00099	Hs 294T cells	Homo sapiens	Melanoma	.
+CELL00115	MeWo cells	Homo sapiens	Melanoma	.
+CELL00142	SK-MEL-24 cells	Homo sapiens	Melanoma	.
+CELL00163	G-361 cells	Homo sapiens	Melanoma	.
+CELL00189	LOX-IMVI cells	Homo sapiens	Melanoma	.
+CELL00191	M14 cells	Homo sapiens	Melanoma	.
+CELL00237	IGR-37 cells	Homo sapiens	Melanoma	.
+CELL00313	WM793 cells	Homo sapiens	Melanoma	.
+CELL00348	WM35 cells	Homo sapiens	Melanoma	.
+CELL00352	WM2032 cells	Homo sapiens	Melanoma	.
+CELL00354	FLFMM-34 cells	Homo sapiens	Melanoma	.
+CELL00444	A875 cells	Homo sapiens	Melanoma	.
+CELL00470	NIS-G cells	Homo sapiens	Melanoma	.
+CELL00477	WM88 cells	Homo sapiens	Melanoma	.
+CELL00502	Mel-2a cells	Homo sapiens	Melanoma	.
+CELL00527	M980513 cells	Homo sapiens	Melanoma	.
+CELL00528	M000921 cells	Homo sapiens	Melanoma	.
+CELL00533	CJM cells	Homo sapiens	Melanoma	.
+CELL00464	CH-157MN cells	Homo sapiens	Meningioma	.
+CELL00326	PeTa cells	Homo sapiens	Merkel cell carcinoma	.
+CELL00413	MKL-1 cells	Homo sapiens	Merkel cell carcinoma	.
+CELL00509	MKL-2 cells	Homo sapiens	Merkel cell carcinoma	.
+CELL00514	WaGa cells	Homo sapiens	Merkel cell carcinoma	.
+CELL00252	PEO1 cells	Homo sapiens	Metastasis of ovarian carcinoma	.
+CELL00201	NCI-H358 cells	Homo sapiens	Minimally invasive lung adenocarcinoma	.
+CELL00287	H1650-ER1 cells	Homo sapiens	Minimally invasive lung adenocarcinoma	.
+CELL00374	NCI-H1650 cells	Homo sapiens	Minimally invasive lung adenocarcinoma	.
+CELL00480	CNE1 cells	Homo sapiens	Nasopharyngeal carcinoma	.
+CELL00232	YT cells	Homo sapiens	Natural killer cell lymphoblastic leukemia	.
+CELL00404	NK-92 cells	Homo sapiens	Natural killer cell lymphoblastic leukemia	.
+CELL00042	SH-SY5Y cells	Homo sapiens	Neuroblastoma	.
+CELL00100	IMR-32 cells	Homo sapiens	Neuroblastoma	.
+CELL00127	SK-N-SH cells	Homo sapiens	Neuroblastoma	.
+CELL00221	SK-N-AS cells	Homo sapiens	Neuroblastoma	.
+CELL00344	SH-EP cells	Homo sapiens	Neuroblastoma	.
+CELL00345	SK-N-BE(2)-C cells	Homo sapiens	Neuroblastoma	.
+CELL00499	Ma-Mel-80a cells	Homo sapiens	Nodular melanoma	.
+CELL00524	HBL-1 cells	Homo sapiens	Non-Hodgkin lymphoma	.
+CELL00204	NCI-H522 cells	Homo sapiens	Non-small cell lung carcinoma	.
+CELL00004	HEK293 cells	Homo sapiens	Normal	.
+CELL00053	HaCaT cells	Homo sapiens	Normal	.
+CELL00057	HEK-293T cells	Homo sapiens	Normal	.
+CELL00066	16HBE14o- cells	Homo sapiens	Normal	.
+CELL00072	ARPE-19 cells	Homo sapiens	Normal	.
+CELL00076	BEAS-2B cells	Homo sapiens	Normal	.
+CELL00085	HBE1 cells	Homo sapiens	Normal	.
+CELL00092	HFL1 cells	Homo sapiens	Normal	.
+CELL00093	HK-2 cells	Homo sapiens	Normal	.
+CELL00101	IMR-90 cells	Homo sapiens	Normal	.
+CELL00118	NCM460 cells	Homo sapiens	Normal	.
+CELL00139	WI-38 cells	Homo sapiens	Normal	.
+CELL00141	MCF-10A cells	Homo sapiens	Normal	.
+CELL00149	HPDE6-C7 cells	Homo sapiens	Normal	.
+CELL00244	HLF-a cells	Homo sapiens	Normal	.
+CELL00246	CCD-19Lu cells	Homo sapiens	Normal	.
+CELL00251	Nthy-ori3-1 cells	Homo sapiens	Normal	.
+CELL00260	HFF-1 cells	Homo sapiens	Normal	.
+CELL00266	AHH-1 cells	Homo sapiens	Normal	.
+CELL00267	FHC cells	Homo sapiens	Normal	.
+CELL00268	HET-1A cells	Homo sapiens	Normal	.
+CELL00269	hFOB 1.19 cells	Homo sapiens	Normal	.
+CELL00270	MCF-12A cells	Homo sapiens	Normal	.
+CELL00271	RWPE-1 cells	Homo sapiens	Normal	.
+CELL00272	SVG p12 cells	Homo sapiens	Normal	.
+CELL00273	THLE-2 cells	Homo sapiens	Normal	.
+CELL00274	WPMY-1 cells	Homo sapiens	Normal	.
+CELL00277	HBL-100 cells	Homo sapiens	Normal	.
+CELL00278	HPDE cells	Homo sapiens	Normal	.
+CELL00286	AC16 [Human hybrid cardiomyocyte] cells	Homo sapiens	Normal	.
+CELL00307	HIEC-6 cells	Homo sapiens	Normal	.
+CELL00310	HTR-8/SVneo cells	Homo sapiens	Normal	.
+CELL00319	CAM191 cells	Homo sapiens	Normal	.
+CELL00321	AGE1.HN cells	Homo sapiens	Normal	.
+CELL00322	GES-1 cells	Homo sapiens	Normal	.
+CELL00324	SVOG-3e cells	Homo sapiens	Normal	.
+CELL00328	PIG1 cells	Homo sapiens	Normal	.
+CELL00329	HOSE 96-9-98 cells	Homo sapiens	Normal	.
+CELL00342	MRC-5 cells	Homo sapiens	Normal	.
+CELL00353	MOVAS-1 cells	Homo sapiens	Normal	.
+CELL00405	PNT2 cells	Homo sapiens	Normal	.
+CELL00409	CCD-18Co cells	Homo sapiens	Normal	.
+CELL00419	CCD-841CoN cells	Homo sapiens	Normal	.
+CELL00432	HCE-2 cells	Homo sapiens	Normal	.
+CELL00433	hTERT-HME1 cells	Homo sapiens	Normal	.
+CELL00436	MET-5A cells	Homo sapiens	Normal	.
+CELL00438	SV-HUC-1 cells	Homo sapiens	Normal	.
+CELL00439	EAhy926 cells	Homo sapiens	Normal	.
+CELL00446	PNT1 cells	Homo sapiens	Normal	.
+CELL00459	IAR 20 cells	Homo sapiens	Normal	.
+CELL00462	MCF10DCIS cells	Homo sapiens	Normal	.
+CELL00466	LX-2 cells	Homo sapiens	Normal	.
+CELL00473	B-3 cells	Homo sapiens	Normal	.
+CELL00475	BJ1-hTERT cells	Homo sapiens	Normal	.
+CELL00481	CNE2 cells	Homo sapiens	Normal	.
+CELL00483	HEK293A cells	Homo sapiens	Normal	.
+CELL00484	HEK293 FT cells	Homo sapiens	Normal	.
+CELL00489	H69 cells	Homo sapiens	Normal	.
+CELL00498	NHEK/SV3 cells	Homo sapiens	Normal	.
+CELL00504	LUHMES cells	Homo sapiens	Normal	.
+CELL00512	HMLER cells	Homo sapiens	Normal	.
+CELL00513	LP-9 cells	Homo sapiens	Normal	.
+CELL00515	Phoenix-Eco cells	Homo sapiens	Normal	.
+CELL00516	HEK293-EBNA1-6E cells	Homo sapiens	Normal	.
+CELL00531	CCD-966Sk cells	Homo sapiens	Normal	.
+CELL00535	FT190 cells	Homo sapiens	Normal	.
+CELL00536	PH5CH8 cells	Homo sapiens	Normal	.
+CELL00176	HSC-2 cells	Homo sapiens	Oral cavity squamous cell carcinoma	.
+CELL00249	H157 cells	Homo sapiens	Oral cavity Squamous cell carcinoma	.
+CELL00177	HSC-3 cells	Homo sapiens	Oral squamous cell carcinoma	.
+CELL00014	MNNG/HOS Cl #5 cells	Homo sapiens	Osteosarcoma	.
+CELL00055	U2OS cells	Homo sapiens	Osteosarcoma	.
+CELL00094	HOS cells	Homo sapiens	Osteosarcoma	.
+CELL00113	MG-63 cells	Homo sapiens	Osteosarcoma	.
+CELL00134	SAOS-2 cells	Homo sapiens	Osteosarcoma	.
+CELL00220	SJSA-1 cells	Homo sapiens	Osteosarcoma	.
+CELL00245	143B cells	Homo sapiens	Osteosarcoma	.
+CELL00412	KHOS cells	Homo sapiens	Osteosarcoma	.
+CELL00210	OVCAR-4 cells	Homo sapiens	Ovarian adenocarcinoma	.
+CELL00437	OV-90 cells	Homo sapiens	Ovarian adenocarcinoma	.
+CELL00091	HEY cells	Homo sapiens	Ovarian carcinoma	.
+CELL00248	COV504 cells	Homo sapiens	Ovarian carcinoma	.
+CELL00415	OV7 cells	Homo sapiens	Ovarian carcinoma	.
+CELL00478	Caov-2 cells	Homo sapiens	Ovarian carcinoma	.
+CELL00532	Anglne cells	Homo sapiens	Ovarian carcinoma	.
+CELL00263	ES-2 cells	Homo sapiens	Ovarian clear cell adenocarcinoma	.
+CELL00265	TOV-21G cells	Homo sapiens	Ovarian clear cell adenocarcinoma	.
+CELL00430	OVISE cells	Homo sapiens	Ovarian clear cell adenocarcinoma	.
+CELL00416	PEO4 cells	Homo sapiens	Ovarian cystadenocarcinoma	.
+CELL00070	A2780 cells	Homo sapiens	Ovarian endometrioid adenocarcinoma	.
+CELL00511	A2780/DDP cells	Homo sapiens	Ovarian endometrioid adenocarcinoma	.
+CELL00106	KGN cells	Homo sapiens	Ovarian granulosa cell tumor	.
+CELL00431	RKN cells	Homo sapiens	Ovarian leiomyosarcoma	.
+CELL00608	OVCAR-3 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00079	Caov-3 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00183	KURAMOCHI cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00247	COV362 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00385	OC 314 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00388	OVCAR5 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00403	FU-OV-1 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00410	COV318 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00414	OV56 cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00429	OVSAHO cells	Homo sapiens	Ovarian serous adenocarcinoma	.
+CELL00128	SK-OV-3 cells	Homo sapiens	Ovarian serous cystadenocarcinoma	.
+CELL00212	Panc 02.03 cells	Homo sapiens	Pancreatic adenocarcinoma	.
+CELL00222	SW1990 cells	Homo sapiens	Pancreatic adenocarcinoma	.
+CELL00233	PaTu 8988t cells	Homo sapiens	Pancreatic adenocarcinoma	.
+CELL00440	PANC-28 cells	Homo sapiens	Pancreatic adenocarcinoma	.
+CELL00365	KP-4 cells	Homo sapiens	Pancreatic carcinoma	.
+CELL00008	BxPC-3 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00013	MIA PaCa-2 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00047	Capan-2 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00073	AsPC-1 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00082	Capan-1 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00120	PANC-1 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00160	CFPAC-1 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00530	PC-2 cells	Homo sapiens	Pancreatic ductal adenocarcinoma	.
+CELL00276	BON-1 cells	Homo sapiens	Pancreatic serotonin-producing neuroendocrine tumor	.
+CELL00258	QGP-1 cells	Homo sapiens	Pancreatic somatostatinoma	.
+CELL00155	ACHN cells	Homo sapiens	Papillary renal cell carcinoma	.
+CELL00340	Caki-2 cells	Homo sapiens	Papillary renal cell carcinoma	.
+CELL00461	HN30 cells	Homo sapiens	Pharyngeal squamous cell carcinoma	.
+CELL00001	RPMI-8226 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00138	U266B1 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00188	L-363 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00206	NCI-H929 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00209	OPM-2 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00238	JJN-3 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00240	MOLP-8 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00364	KMS-12-BM cells	Homo sapiens	Plasma cell myeloma	.
+CELL00394	AMO1 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00423	KMS11 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00495	KAS-6/1 cells	Homo sapiens	Plasma cell myeloma	.
+CELL00198	NCI-H226 cells	Homo sapiens	Pleural epithelioid mesothelioma	.
+CELL00378	NCI-H2052 cells	Homo sapiens	Pleural mesothelioma	.
+CELL00455	ACC-MESO1 cells	Homo sapiens	Pleural mesothelioma	.
+CELL00456	Y-MESO-8A cells	Homo sapiens	Pleural mesothelioma	.
+CELL00500	NCI-H2373 cells	Homo sapiens	Pleural mesothelioma	.
+CELL00501	NCI-H290 cells	Homo sapiens	Pleural mesothelioma	.
+CELL00487	TC-32 cells	Homo sapiens	Primitive neuroectodermal tumor	.
+CELL00051	PC-3 cells	Homo sapiens	Prostate carcinoma	.
+CELL00065	DU145 cells	Homo sapiens	Prostate carcinoma	.
+CELL00108	LNCaP cells	Homo sapiens	Prostate carcinoma	.
+CELL00150	22Rv1 cells	Homo sapiens	Prostate carcinoma	.
+CELL00283	LNCaP C4-2 cells	Homo sapiens	Prostate carcinoma	.
+CELL00408	VCaP cells	Homo sapiens	Prostate carcinoma	.
+CELL00441	CWR22 cells	Homo sapiens	Prostate carcinoma	.
+CELL00445	LAPC-4 cells	Homo sapiens	Prostate carcinoma	.
+CELL00526	MR49F cells	Homo sapiens	Prostate carcinoma	.
+CELL00225	SW837 cells	Homo sapiens	Rectal adenocarcinoma	.
+CELL00331	HR-8348 cells	Homo sapiens	Rectal adenocarcinoma	.
+CELL00229	TK-10 cells	Homo sapiens	Renal carcinoma	.
+CELL00151	769-P cells	Homo sapiens	Renal cell carcinom	.
+CELL00021	786-O cells	Homo sapiens	Renal cell carcinoma	.
+CELL00153	A-498 cells	Homo sapiens	Renal cell carcinoma	.
+CELL00418	UM-RC-6 cells	Homo sapiens	Renal cell carcinoma	.
+CELL00471	SK-RC-42 cells	Homo sapiens	Renal cell carcinoma	.
+CELL00062	A673 cells	Homo sapiens	Rhabdomyosarcoma	.
+CELL00213	RD cells	Homo sapiens	Rhabdomyosarcoma	.
+CELL00393	TE 381.T cells	Homo sapiens	Rhabdomyosarcoma	.
+CELL00534	T 174 cells	Homo sapiens	Rhabdomyosarcoma	.
+CELL00294	HS1-CLS cells	Homo sapiens	Skin sarcoma	.
+CELL00472	WS1-CLS cells	Homo sapiens	Skin sarcoma	.
+CELL00052	A-431 cells	Homo sapiens	Skin squamous cell carcinoma	.
+CELL00510	COLO 16 cells	Homo sapiens	Skin squamous cell carcinoma	.
+CELL00523	MET-1 cells	Homo sapiens	Skin squamous cell carcinoma	.
+CELL00391	SBC3 cells	Homo sapiens	Small cell lung cancer	.
+CELL00218	SCC-25 cells	Homo sapiens	Squamous carcinoma	.
+CELL00492	HN5 cells	Homo sapiens	Squamous cell carcinoma	.
+CELL00059	Jurkat cells	Homo sapiens	T acute lymphoblastic leukemia	.
+CELL00080	CCRF-CEM cells	Homo sapiens	T acute lymphoblastic leukemia	.
+CELL00320	CCRF/ADR5000 cells	Homo sapiens	T acute lymphoblastic leukemia	.
+CELL00435	CEM/C1 cells	Homo sapiens	T acute lymphoblastic leukemia	.
+CELL00074	BCPAP cells	Homo sapiens	Thyroid carcinoma	.
+CELL00297	KTC-1 cells	Homo sapiens	Thyroid carcinoma	.
+CELL00152	8505C cells	Homo sapiens	Thyroid gland anaplastic carcinoma	.
+CELL00360	CAL62 cells	Homo sapiens	Thyroid gland anaplastic carcinoma	.
+CELL00468	C643 cells	Homo sapiens	Thyroid gland anaplastic carcinoma	.
+CELL00162	FTC-133 cells	Homo sapiens	Thyroid gland follicular carcinoma	.
+CELL00411	FTC 238 cells	Homo sapiens	Thyroid gland follicular carcinoma	.
+CELL00296	TPC-1 cells	Homo sapiens	Thyroid gland papillary carcinoma	.
+CELL00422	IHH-4 cells	Homo sapiens	Thyroid gland papillary carcinoma	.
+CELL00146	MOLT-3 cells	Homo sapiens	T-lymphoblastic leukemia	.
+CELL00159	CAL-27 cells	Homo sapiens	Tongue adenosquamous carcinom	.
+CELL00216	SAS cells	Homo sapiens	Tongue squamous cell carcinoma	.
+CELL00217	SCC-15 cells	Homo sapiens	Tongue squamous cell carcinoma	.
+CELL00219	SCC-9 cells	Homo sapiens	Tongue squamous cell carcinoma	.
+CELL00428	OSC-19 cells	Homo sapiens	Tongue squamous cell carcinoma	.
+CELL00491	NH-3 cells	Homo sapiens	Tongue squamous cell carcinoma	.
+CELL00493	HN6 cells	Homo sapiens	Tongue squamous cell carcinoma	.
+CELL00494	NH-9 cells	Homo sapiens	Tongue squamous cell carcinoma	.
+CELL00453	SNU-685 cells	Homo sapiens	Uterine carcinosarcoma	.
+CELL00485	Omm1 cells	Homo sapiens	Uveal melanoma	.
+CELL00164	GAK cells	Homo sapiens	Vulvar melanoma	.
+CELL10108	hMPs	Mus musculus	.	Human macrophages
+CELL10109	hMPs	Mus musculus	.	Human macrophages
+CELL10110	mBMCs	Mus musculus	.	Mouse blood mononuclear cells
+CELL10111	mBMSCs	Mus musculus	.	Mouse bone marrow stromal cells
+CELL10112	mBMVECs	Mus musculus	.	Mouse brain microvascular endothelial cells
+CELL10113	NF639	Mus musculus	.	Mouse breast epithelial cells
+CELL10114	mCMs	Mus musculus	.	Mouse cardiomyocytes
+CELL10115	CD8T cells	Mus musculus	.	Mouse CD8+ T cells
+CELL10116	Colon tissues	Mus musculus	.	Mouse colon tissues
+CELL10117	mEESCs	Mus musculus	.	Mouse ectopic endometrial stromal cells
+CELL10118	mEFs	Mus musculus	.	Mouse embryonic fibroblasts
+CELL10119	mEFs	Mus musculus	.	Mouse embryonic fibroblasts
+CELL10120	mESCs	Mus musculus	.	Mouse endometrial stromal cells
+CELL10121	mGICs	Mus musculus	.	Mouse glioma initiating cells
+CELL10122	mGSCs	Mus musculus	.	Mouse glioma stem cells
+CELL10123	mHSPCs	Mus musculus	.	Mouse hematopoietic stem and progenitor cells
+CELL10124	mHNs	Mus musculus	.	Mouse hippocampal neurons
+CELL10125	mHNs	Mus musculus	.	Mouse hippocampal neurons
+CELL10126	mHTs	Mus musculus	.	Mouse hippocampal tissues
+CELL10127	mHTs	Mus musculus	.	Mouse hippocampus tissues
+CELL10128	mKTs	Mus musculus	.	Mouse kidney tissues
+CELL10129	mKTs	Mus musculus	.	Mouse knee tissues
+CELL10130	mLTs	Mus musculus	.	Mouse liver tissues
+CELL10131	MLE-2	Mus musculus	.	Mouse lung epithelial cells
+CELL10132	mLVECs	Mus musculus	.	Mouse lung microvascular endothelial cells
+CELL10133	mLT	Mus musculus	.	Mouse lung tissue
+CELL10134	mLT	Mus musculus	.	Mouse lung tissue
+CELL10135	BPD6	Mus musculus	.	Mouse melanoma cells
+CELL10136	mMTs	Mus musculus	.	Mouse myocardial tissues
+CELL10137	mOHSCs	Mus musculus	.	Mouse organotypic hippocampal slice cultures
+CELL10138	i-MCF	Mus musculus	.	Mouse primary cardiac fibroblasts
+CELL10139	mPCNs	Mus musculus	.	Mouse primary cortical neurons
+CELL10140	mPCNs	Mus musculus	.	Mouse primary cortical neurons
+CELL10141	mPHs	Mus musculus	.	Mouse primary hepatocytes
+CELL10142	mPHs	Mus musculus	.	Mouse primary hepatocytes
+CELL10143	mPKCs	Mus musculus	.	Mouse primary kidney cells
+CELL10144	mPRs	Mus musculus	.	Mouse primary neurons
+CELL10145	mPRTECs	Mus musculus	.	Mouse primary renal tubular epithelial cells
+CELL10146	mPSCNs	Mus musculus	.	Mouse primary spinal cord neurons
+CELL10147	mRPTECs	Mus musculus	.	Mouse renal proximal tubular epithelial cells
+CELL10148	mRTs	Mus musculus	.	Mouse renal tissues
+CELL10149	M4100-57	Mus musculus	.	Mouse renal tubular epithelial cells
+CELL10150	mRTECs	Mus musculus	.	Mouse renal tubular epithelial cells
+CELL10151	mRTECs	Mus musculus	.	Mouse renal tubular epithelial cells
+CELL10152	MRTEpiC	Mus musculus	.	Mouse renal tubular epithelial cells
+CELL10153	mSIOs	Mus musculus	.	Mouse small intestinal organoids
+CELL10154	mSCs	Mus musculus	.	Mouse spinal cords
+CELL10155	mSCs	Mus musculus	.	Mouse spleen cells
+CELL10156	mSCs	Mus musculus	.	Mouse splenocytes
+CELL10157	mTCs	Mus musculus	.	Mouse T cells
+CELL10158	mTTs	Mus musculus	.	Mouse testicular tissues
+CELL10159	mTECs	Mus musculus	.	Mouse tubular epithelial cells
+CELL10160	mUTs	Mus musculus	.	Mouse uterine tissues
+CELL10161	mVTs	Mus musculus	.	Mouse ventricular tissues
+CELL10162	MCT	Mus musculus	.	Murine proximal tubular epithelial cells
+CELL00563	Py8119 cells	Mus musculus	Breast carcinoma	.
+CELL00580	67NR cells	Mus musculus	Breast carcinoma	.
+CELL00581	Py230 cells	Mus musculus	Breast carcinoma	.
+CELL00582	EO771 cells	Mus musculus	Breast carcinoma	.
+CELL00583	4T1.2 cells	Mus musculus	Breast carcinoma	.
+CELL00573	Colon 26-L5 cells	Mus musculus	Colon adenocarcinoma	.
+CELL00562	HT29 cells	Mus musculus	Colon cancer	.
+CELL00009	Hepa 1-6 cells	Mus musculus	Hepatocellular carcinoma	.
+CELL00567	H22 cells	Mus musculus	Hepatoma	.
+CELL00560	LL/2 (LLC1) cells	Mus musculus	Lung cancer	.
+CELL00568	A9 cells	Mus musculus	Lung carcinoma	.
+CELL00565	LM3 cells	Mus musculus	Malignant neoplasms	.
+CELL00540	4T1 cells	Mus musculus	Mammary carcinoma	.
+CELL00542	B16-F1 cells	Mus musculus	Melanoma	.
+CELL00566	B16 cells	Mus musculus	Melanoma	.
+CELL00561	CT26 cells	Mus musculus	Colon adenocarcinoma	.
+CELL00551	MIN6 cells	Mus musculus	Insulinoma	.
+CELL00553	RAW 264.7 cells	Mus musculus	Leukemia	.
+CELL00007	B16-F10 cells	Mus musculus	Melanoma	.
+CELL00555	B16-F0 cells	Mus musculus	Melanoma	.
+CELL00552	Neuro-2a cells	Mus musculus	Neuroblastoma	.
+CELL00025	Panc02 cells	Mus musculus	Pancreatic ductal adenocarcinoma	.
+CELL00541	AML12 cells	Mus musculus	Normal	.
+CELL00543	bEnd.3 cells	Mus musculus	Normal	.
+CELL00544	BV-2 cells	Mus musculus	Normal	.
+CELL00545	BALB/3T3 cells	Mus musculus	Normal	.
+CELL00546	C2C12 cells	Mus musculus	Normal	.
+CELL00548	HL-1 cells	Mus musculus	Normal	.
+CELL00549	HT22 cells	Mus musculus	Normal	.
+CELL00550	MC3T3-E1 cells	Mus musculus	Normal	.
+CELL00554	NIH3T3 cells	Mus musculus	Normal	.
+CELL00556	TCMK-1 cells	Mus musculus	Normal	.
+CELL00557	MLE-12 cells	Mus musculus	Normal	.
+CELL00558	TM3 cells	Mus musculus	Normal	.
+CELL00559	TM4 cells	Mus musculus	Normal	.
+CELL00564	MPC-5 cells	Mus musculus	Normal	.
+CELL00569	C3H/10T1/2 cells	Mus musculus	Normal	.
+CELL00571	266-6 cells	Mus musculus	Normal	.
+CELL00574	RGC-5 cells	Mus musculus	Normal	.
+CELL00575	SV40 MES 13 cells	Mus musculus	Normal	.
+CELL00576	661W cells	Mus musculus	Normal	.
+CELL00577	GC-2spd(ts) cells	Mus musculus	Normal	.
+CELL00578	Royan N33 cells	Mus musculus	Normal	.
+CELL00579	Royan N9 cells	Mus musculus	Normal	.
+CELL00585	MES23.5 cells	Mus musculus	Normal	.
+CELL00586	AT-1 cells	Mus musculus	Normal	.
+CELL00588	KG1 cells	Mus musculus	Normal	.
+CELL00590	3T3-J2 cells	Mus musculus	Normal	.
+CELL00591	KMM-L1 cells	Mus musculus	Normal	.
+CELL00589	K7M2-WT cells	Mus musculus	Osteosarcoma	.
+CELL00584	ID8 cells	Mus musculus	Ovarian cancer	.
+CELL00570	Sp2/0-Ag14 cells	Mus musculus	Plasma cell myeloma	.
+CELL00587	RMS13 cells	Mus musculus	Rhabdomyosarcoma	.
+CELL00572	ATDC-5 cells	Mus musculus	Teratocarcinoma	.
+CELL00547	EL4 cells (BCMA expression) cells	Mus musculus	Thymoma	.
+CELL10046	rRBMECs	Rattus norvegicus	.	Rat brain microvascular endothelial cells
+CELL10163	rAFs	Rattus norvegicus	.	Rat adventitial fibroblasts
+CELL10164	rBMMSCs	Rattus norvegicus	.	Rat bone marrow mesenchymal stem cells
+CELL10165	r-bmMSCs	Rattus norvegicus	.	Rat bone marrowderived mesenchymal stem cells
+CELL10166	rCFs	Rattus norvegicus	.	Rat cardiac fibroblasts
+CELL10167	rCMECs	Rattus norvegicus	.	Rat cardiac microvascular endothelial cells
+CELL10168	rCGNs	Rattus norvegicus	.	Rat cerebellar granule neurons
+CELL10169	rHTs	Rattus norvegicus	.	Rat heart tissues
+CELL10170	rHNs	Rattus norvegicus	.	Rat hippocampal neuronal cells
+CELL10171	rHTs	Rattus norvegicus	.	Rat hippocampal tissues
+CELL10172	rMTs	Rattus norvegicus	.	Rat myocardial tissues
+CELL10173	rNCs	Rattus norvegicus	.	Rat neuronal cells
+CELL10174	rPTs	Rattus norvegicus	.	Rat pancreas tissues
+CELL10175	rPHNs	Rattus norvegicus	.	Rat primary hippocampal neurons
+CELL10176	rPAs	Rattus norvegicus	.	Rat primary astrocytes
+CELL10177	rPCNs	Rattus norvegicus	.	Rat primary cortical neuron
+CELL10178	rPCNs	Rattus norvegicus	.	Rat primary cortical neurons
+CELL10179	rPHs	Rattus norvegicus	.	Rat primary hepatocytes
+CELL10180	rPNCs	Rattus norvegicus	.	Rat primary nerve cells
+CELL10181	rPNs	Rattus norvegicus	.	Rat primary neurons
+CELL10182	rRHs	Rattus norvegicus	.	Rat right hemispheres
+CELL10183	rSCTs	Rattus norvegicus	.	Rat spinal cord tissues
+CELL10184	rSCs	Rattus norvegicus	.	Rat spinal cords
+CELL10185	rTCs	Rattus norvegicus	.	Rat tenocytes
+CELL10186	rVSMCs	Rattus norvegicus	.	Rat vascular smooth muscle cells
+CELL00601	CC531 cells	Rattus norvegicus	Colon adenocarcinoma	.
+CELL00600	AR42J cells	Rattus norvegicus	Digestive system neoplasms	.
+CELL00602	INS-1 cells	Rattus norvegicus	Insulinoma	.
+CELL00593	C6 cells	Rattus norvegicus	Malignant glioma	.
+CELL00592	A7r5 cells	Rattus norvegicus	Normal	.
+CELL00594	HSC-T6 cells	Rattus norvegicus	Normal	.
+CELL00595	IEC-6 cells	Rattus norvegicus	Normal	.
+CELL00596	NRK-52E cells	Rattus norvegicus	Normal	.
+CELL00598	BRL-3A cells	Rattus norvegicus	Normal	.
+CELL00603	NRK-49F cells	Rattus norvegicus	Normal	.
+CELL00604	RSC96 cells	Rattus norvegicus	Normal	.
+CELL00605	R-3327-AT-2 cells	Rattus norvegicus	Prostate adenocarcinoma	.
+CELL00597	PC12 cells	Rattus norvegicus	Adrenal gland pheochromocytoma	.
+CELL00599	MMQ cells	Rattus norvegicus	Pituitary gland neoplasm	.
+CELL00606	LLC-PK1 cells	Sus scrofa	Normal	.
+CELL00607	pTr2 cells	Sus scrofa	Normal	.

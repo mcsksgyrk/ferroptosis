@@ -1,0 +1,160 @@
+disease_id	Disease_name	Disease ICD
+DIS00001	HIV Infection	ICD-11: 1C60
+DIS00002	Human herpesvirus 7 infection	ICD-11: 1C80
+DIS00003	Chronic hepatitis C	ICD-11: 1E51
+DIS00004	Endotheliitis	ICD-11: 1F00
+DIS00005	Sepsis	ICD-11: 1G40
+DIS00006	Glioblastoma	ICD-11: 2A00
+DIS00007	Meningiomas	ICD-11: 2A01
+DIS00008	Central nervous system cancer	ICD-11: 2A02
+DIS00009	Chronic myeloid leukemia	ICD-11: 2A20
+DIS00010	Myelodysplastic syndrome	ICD-11: 2A3Z
+DIS00011	Acute myeloid leukaemia	ICD-11: 2A60
+DIS00012	Diffuse large B-cell lymphoma	ICD-11: 2A81
+DIS00013	Multiple myeloma	ICD-11: 2A83
+DIS00014	Burkitt lymphoma	ICD-11: 2A85
+DIS00015	Mature T-cell lymphoma	ICD-11: 2A90
+DIS00016	T-cell lymphoma	ICD-11: 2B01
+DIS00017	Myeloid leukaemia	ICD-11: 2B33
+DIS00018	Osteosarcoma	ICD-11: 2B51
+DIS00019	Fibrosarcoma	ICD-11: 2B53
+DIS00020	Rhabdomyosarcoma	ICD-11: 2B55
+DIS00021	Gastrointestinal cancer	ICD-11: 2B5B
+DIS00022	Nasopharyngeal cancer	ICD-11: 2B6B
+DIS00023	Hypopharyngeal cancer	ICD-11: 2B6D
+DIS00024	Oral squamous cell carcinoma	ICD-11: 2B6E
+DIS00025	Oesophageal cancer	ICD-11: 2B70
+DIS00026	Gastric cancer	ICD-11: 2B72
+DIS00027	Colon  cancer	ICD-11: 2B90
+DIS00028	Colorectal cancer	ICD-11: 2B91
+DIS00029	Rectal Cancer	ICD-11: 2B92
+DIS00030	Pancreatic cancer	ICD-11: 2C10
+DIS00031	Hepatocellular carcinoma	ICD-11: 2C12
+DIS00032	Gallbladder cancer	ICD-11: 2C13
+DIS00033	Lung cancer	ICD-11: 2C25
+DIS00034	Pleural mesothelioma	ICD-11: 2C26
+DIS00035	Melanoma	ICD-11: 2C30
+DIS00036	Squamous cell carcinoma of skin	ICD-11: 2C31
+DIS00037	Merkel cell carcinoma	ICD-11: 2C34
+DIS00038	Breast cancer	ICD-11: 2C60
+DIS00039	Uterine serous carcinoma	ICD-11: 2C72
+DIS00040	Ovarian cancer	ICD-11: 2C73
+DIS00041	Corpus uteri cancer	ICD-11: 2C76
+DIS00042	Cervical cancer	ICD-11: 2C77
+DIS00043	Testicular cancer	ICD-11: 2C80
+DIS00044	Prostate cancer	ICD-11: 2C82
+DIS00045	Hereditary Leiomyomatosis	ICD-11: 2C90
+DIS00046	Bladder cancer	ICD-11: 2C94
+DIS00047	Thyroid cancer	ICD-11: 2D10
+DIS00048	Adrenocortical carcinoma	ICD-11: 2D11
+DIS00049	Neuroblastoma	ICD-11: 2D50
+DIS00050	Head neck squamous cell carcinoma	ICD-11: 2D60
+DIS00051	Hemangioma	ICD-11: 2E81
+DIS00052	Prolactinoma	ICD-11: 2F37
+DIS00053	Hematotoxicity	ICD-11: 3A70
+DIS00054	Anemia	ICD-11: 3A9Z
+DIS00055	Hemochromatosis	ICD-11: 3B10-3B11
+DIS00056	Systemic lupus erythematosus	ICD-11: 4A40
+DIS00057	Thyrotoxicosis with diffuse goitre	ICD-11: 5A02
+DIS00058	Diabetes mellitus	ICD-11: 5A10
+DIS00059	Primary hyperaldosteronism	ICD-11: 5A72
+DIS00060	Ovarian dysfunction	ICD-11: 5A80
+DIS00061	Testicular dysfunction	ICD-11: 5A81
+DIS00062	Obesity	ICD-11: 5B81
+DIS00063	Danon disease	ICD-11: 5C51
+DIS00064	Hereditary haemochromatosis	ICD-11: 5C64
+DIS00065	Hypercholesterolemia	ICD-11: 5C80
+DIS00066	Depressive disorder	ICD-11: 6A70
+DIS00067	Cognitive disorder	ICD-11: 6D71
+DIS00068	Vascular dementia	ICD-11: 6D81
+DIS00069	Parkinson disease	ICD-11: 8A00
+DIS00070	Alzheimer disease	ICD-11: 8A20
+DIS00071	Multiple sclerosis	ICD-11: 8A40
+DIS00072	Temporal lobe epilepsy	ICD-11: 8A61
+DIS00073	Status epilepticus	ICD-11: 8A66
+DIS00074	Intracerebral hemorrhage	ICD-11: 8B00
+DIS00075	Subarachnoid Hemorrhage	ICD-11: 8B01
+DIS00076	Cerebral ischemia	ICD-11: 8B10
+DIS00077	Cerebral ischaemic stroke	ICD-11: 8B11
+DIS00078	Cerebral ischemia	ICD-11: 8B1Z
+DIS00079	Thromboembolic stroke	ICD-11: 8B20
+DIS00080	Hypoxic ischemic brain injury	ICD-11: 8B24
+DIS00081	Neuroinflammation	ICD-11: 8C1Z
+DIS00082	Neuropathic pain	ICD-11: 8E43
+DIS00083	Nervous system disease	ICD-11: 8E7Z
+DIS00084	Fuchs endothelial corneal dystrophy	ICD-11: 9A70
+DIS00085	Dry eye disease	ICD-11: 9A79
+DIS00086	Cataract	ICD-11: 9B10
+DIS00087	Retinopathy	ICD-11: 9B71
+DIS00088	Age-related macular degeneration	ICD-11: 9B75
+DIS00089	Peripheral retinal degeneration	ICD-11: 9B78
+DIS00090	Extraocular muscles disorder	ICD-11: 9C82
+DIS00091	Presbycusis	ICD-11: AB54
+DIS00092	Essential hypertension	ICD-11: BA00
+DIS00093	Acute myocardial infarction	ICD-11: BA41
+DIS00094	Cardiomyopathy	ICD-11: BC43
+DIS00095	Cardiac hypertrophy	ICD-11: BC45
+DIS00096	Supraventricular tachycardia	ICD-11: BC81
+DIS00097	Congestive heart failure	ICD-11: BD10
+DIS00098	Left ventricular failure	ICD-11: BD11
+DIS00099	Chronic heart failure	ICD-11: BD1Z
+DIS00100	Atherosclerosis	ICD-11: BD40
+DIS00101	Aortic aneurysm	ICD-11: BD50
+DIS00102	Cardiovascular diseases	ICD-11: BE2Z
+DIS00103	Chronic obstructive pulmonary disease	ICD-11: CA22
+DIS00104	Asthma	ICD-11: CA23
+DIS00105	Cystic fibrosis	ICD-11: CA25
+DIS00106	Pulmonary fibrosis	ICD-11: CB03
+DIS00107	Periodontitis	ICD-11: DA0C
+DIS00108	Hepatoblastoma	ICD-11: DB91
+DIS00109	Nonalcoholic fatty liver disease	ICD-11: DB92
+DIS00110	Liver fibrosis	ICD-11: DB93
+DIS00111	Alcoholic liver disease	ICD-11: DB94
+DIS00112	Drug-induced or toxic liver disease	ICD-11: DB95
+DIS00113	Autoimmune hepatitis	ICD-11: DB96
+DIS00114	Ischemia/reperfusion injury	ICD-11: DB98
+DIS00115	Acute pancreatitis	ICD-11: DC31
+DIS00116	Pancreatic dysfunction	ICD-11: DC35
+DIS00117	Ulcerative colitis	ICD-11: DD71
+DIS00118	Inflammatory bowel disease	ICD-11: DD7Z
+DIS00119	Vitiligo	ICD-11: ED63
+DIS00120	Knee osteoarthritis	ICD-11: FA01
+DIS00121	Degenerative arthritis	ICD-11: FA05
+DIS00122	Intervertebral disc degeneration	ICD-11: FA80
+DIS00123	Sarcopenia	ICD-11: FB32
+DIS00124	Osteonecrosis	ICD-11: FB81
+DIS00125	Osteoporosis	ICD-11: FB83
+DIS00126	Endometriosis	ICD-11: GA10
+DIS00127	Endometrial hyperplasia	ICD-11: GA16
+DIS00128	Primary ovarian insufficiency	ICD-11: GA30
+DIS00129	Male infertility	ICD-11: GB04
+DIS00130	Aristolochic acid nephropathy	ICD-11: GB55
+DIS00131	Acute kidney failure	ICD-11: GB60
+DIS00132	Chronic kidney disease	ICD-11: GB61
+DIS00133	Renal dysfunction	ICD-11: GB6Z
+DIS00134	Kidney calculus	ICD-11: GB70
+DIS00135	Urinary system disease	ICD-11: GC2Z
+DIS00136	Spontaneous abortion	ICD-11: JA00
+DIS00137	Preeclampsia	ICD-11: JA24
+DIS00138	Gestational diabetes	ICD-11: JA63
+DIS00139	Cognition disorder	ICD-11: MB21
+DIS00140	Renal fibrosis	ICD-11: MF54
+DIS00141	Immunoglobulin A nephropathy	ICD-11: MF8Y
+DIS00142	Unilateral ureteral obstruction	ICD-11: MG30
+DIS00143	Nerve injury	ICD-11: NA04
+DIS00144	Traumatic brain injury	ICD-11: NA07
+DIS00145	Myocardial injury	ICD-11: NB31
+DIS00146	Lung injury	ICD-11: NB32
+DIS00147	Injury of intra-abdominal organs	ICD-11: NB91
+DIS00148	Kidney injury	ICD-11: NB92
+DIS00149	Testicular injury	ICD-11: NB9Z
+DIS00150	Muscle injury	ICD-11: ND36
+DIS00151	Spinal cord injury	ICD-11: ND51
+DIS00152	Skin injury	ICD-11: ND56
+DIS00153	Neurotoxicity	ICD-11: NE61
+DIS00154	Bone marrow injury	ICD-11: PK81
+DIS00155	Male reproductive disorders	ICD-11: VV5Z
+DIS00156	Nanotoxicity	ICD-11: N.A.
+DIS00159	Lymphoblastic lymphoma	ICD-11: 2A70
+DIS00157	Thymoma	ICD-11: 2C27
+DIS00158	Health	ICD-11: N.A.
