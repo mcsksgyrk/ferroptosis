@@ -1,6 +1,5 @@
 import pandas as pd
 import pickle
-import os
 import apicalls.api_calls as api
 
 kegg = pickle.load(open('kegg_id.p', 'rb'))
@@ -25,4 +24,4 @@ res, err = api.convert_from_uniprot_id(db_dict["gene"], ids, human=False)
 unip = res.keys()
 gene = res.values()
 to_csv = pd.DataFrame({'uniprotID': unip, 'gene': gene})
-to_csv.to_csv('prs_from_kegg_go_wp.csv',index=False)
+to_csv.to_csv('prs_from_kegg_go_wp.csv', index=False)
