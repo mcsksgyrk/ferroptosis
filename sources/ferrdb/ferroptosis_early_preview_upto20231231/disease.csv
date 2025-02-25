@@ -1,0 +1,584 @@
+RCD,Effect,Exp_organism,Confidence,PMID,Remark,Latest_update,Data_source
+Ferroptosis,Ferroptosis :-: Fibrosarcoma,Human,,22632970,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Osteosarcoma,Human,,22632970,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Non small cell lung cancer,Human,,22632970,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Neurodegenerative diseases,Mice,,22632970,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Diffuse large b cell lymphomas,Human,,24439385,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Renal cell carcinomas,Human,,24439385,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Huntington’s disease,Rat,,24592866,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Periventricular leukomalacia,_NA_,,24592866,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Rhabdomyolysis-induced acute kidney injury,Mice,,24592866,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,,24844246,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,23505071,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,25174755,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Kidney cancer,Human,,25368241,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Melanoma,Human,,25368241,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung carcinoma,Human,,25368241,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic adenocarcinoma,Human,,25368241,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Colon carcinoma,Human,,25368241,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Kidney ischemia-reperfusion injury,Mice,,25385600,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Oxalate crystal-induced acute kidney injury,Mice,,25385600,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute renal failure,Mice,,25402683,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Liver cancer,Human,,25444922,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Cervical carcinoma,Human,,25728673,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Colon tumour,Human,,25799988,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Liver tumour,Human,,25799988,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Kidney tumour,Human,,25799988,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Lymphocytic choriomeningitis virus infection,Mice,,25824823,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Leishmania major infection,Mice,,25824823,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,Rat,,25896595,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Chronic myeloid leukemia,Human,,25965523,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic ductal adenocarcinoma,Human,,26097885,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Rhabdomyosarcoma,_NA_,,26157704,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemia/reperfusion-induced heart injury,Mice,,26166707,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Rapid motor neuron degeneration,Mice,,26400084,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Paralysis,Mice,,26400084,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",,26403645,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,Human,,26930718,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Pro-b-cell lymphomas,Mice,,26943586,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,27015352,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic ductal adenocarcinoma ,Human,,27037021,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,27184800,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Parkinson's disease,Human,,27189756,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Acute myeloid leukemia,Human,,27308510,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,,27352622,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic cancer,Human,,27375275,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Human,,27441659,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Head and neck cancer,Human,,27477897,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Head and neck carcinoma,Human,,27477901,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,Rat,,27612422,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Bone marrow injury,Mice,,27773819,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Human,,27842070,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Head and neck cancer,_NA_,,28012440,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Hemochromatosis,Mice,,28195347,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small-cell lung cancer,Human,,28297659,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Ovarian cancer,Human,,28319068,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Melanoma,Human,,28358377,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney failure,"Human, mice",,28551825,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Gliomas,Human,,28553953,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Acute lymphoblastic leukemia,_NA_,,28595877,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,28756230,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioblastomas,Human,,28805788,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,,28813679,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Human,,28827805,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemic stroke,"Mice, rat",,28886009,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, rat",,28893626,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung cancer,Human,,28900510,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Asthma,Human,,29053969,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Human,,29053969,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Traumatic brain injury,Rat,,29053969,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung adenocarcinomas,Human,,29168506,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Squamous cell lung cancer,Human,,29212036,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Melanoma,Human,,29348676,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Human,,29383104,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Heart failure,Rat,,29427658,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Large b-cell lymphoma,Human,,29463878,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Human,,29588351,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung cancer,Human,,29588351,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Melanoma,Human,,29657129,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,Human,,29702192,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Clear cell renal cell carcinoma,Human,,29872221,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Head and neck cancer,Human,,29928961,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Neuroblastoma,Human,,29939160,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Melanoma,Human,,30035324,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Secondary brain injury,Rat,,30205109,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,30258181,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Brain injury,Mice,,30264934,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Multiple sclerosis,Human,,30289974,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Hemorrhagic stroke,Mice,,30294906,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Liver fibrosis,Mice,,30321484,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Rat,,30352209,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Mice,,30460115,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Traumatic brain injury,Human,,30531185,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Rat,,30539824,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,,30524291,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Liver fibrosis,Mice,,30551460,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Acute myeloid leukemia,Human,,30557609,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Friedreich's ataxia,Human,,30635474,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Alzheimer's disease,Human,,30684867,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiomyopathy,Mice,,30692261,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Intestinal ischemia/reperfusion injury,Mice,,30737476,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung cancer,Human,,30787392,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Temporal lobe epilepsy,Rat,,30899387,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Stroke,Mice,,31056284,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Alcoholic steatohepatitis,Mice,,31061954,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Liver cancer,Human,,31108460,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Radiation-induced lung fibrosis,Mice,,31160885,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Heart failure,Rat,,31196626,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Alcoholic liver,Mice,,31224575,"10.1093/cdn/nzz031.P06-056-19, pmid not accessible",12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Acute myeloid leukemia,Human,,31301767,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Chronic obstructive pulmonary disease,"Human, mice",,31316058,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Liver injury,Mice,,31323261,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Mesothelioma,Mice,,31341276,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Epilepsy,Mice,,31379480,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Mice,,31409375,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,,31437128,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Intracerebral hemorrhage,"Human, mice",,31442590,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Malignant mesothelioma,"Human, rat",,31442913,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Parkinson's disease,Rat,,31467572,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Radiation-induced lung injury,Mice,,31493867,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small-cell lung cancer,"Human, mice",,31541463,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic steatohepatitis,Mice,,31610178,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Adrenocortical carcinoma,Human,,31611400,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Oleic acid-induced acute lung injury,Mice,,31646322,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Morphine tolerance,Mice,,31682397,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial infarction,Mice,,31685805,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Renal ischemia/reperfusion injury,Mice,,31694915,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Esophageal squamous cell carcinoma,"Human, mice",,31701262,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Pancreatic dysfunction,Mice,,31735470,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial infarction,Mice,,31740582,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,,31767624,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Liver injury,Mice,,31767624,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,Human,,31789401,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetes myocardial ischemia/reperfusion injury,Rat,,31809190,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Con a-induced hepatitis,"Human, mice",,31877357,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic cancer,Mice,,31894321,,12/31/2020,FerrDb team
+Ferroptosis,Ferroptosis :+: Preeclampsia,Rat,,31926626,,04/28/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoarthritis,"Human, mice",,33376672,,05/10/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Photoreceptor degeneration,Mice,,33334878,,06/19/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Mice,,33333051,,07/14/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Early brain injury,Rat,,33314758,,07/16/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Epileptic seizures,Mice,,33362556,,07/16/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Small cell lung cancer,Human,,33365082,,07/28/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,"Human, mice",,33229547,,08/02/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,,33068011,,08/04/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Human,,33294119,,08/06/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Esophageal squamous cell carcinoma,"Human, mice",,33210267,,08/06/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,,33203867,,08/06/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Amyotrophic lateral sclerosis,Human,,33312375,,08/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,,33197601,,08/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Intervertebral disc degeneration,"Human, mice",,33166496,,08/11/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Friedreich's ataxia,Mice,,33197769,,08/18/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemia/reperfusion injury,Rat,,33157209,,08/21/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic nephropathy,"Human, mice",,33152439,,08/21/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Cerebral ischemia-reperfusion injury,Gerbils,,33127512,,08/21/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Sunitinib-resistant renal cell carcinoma,Human,,33121039,,08/23/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Clear cell renal cell carcinoma,Human,,33643820,,09/03/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Kidney injury,Mice,,32979361,,09/06/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic nephropathy,Mice,,32976829,,09/06/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Liver injury,Mice,,32951003,,09/10/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Intestinal ischemia/reperfusion-induced acute lung injury,Mice,,33014271,,09/10/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Liver fibrosis,Human,,32947011,,09/13/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Intervertebral disc degeneration,"Human, rat",,32892384,,09/17/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney failure,Mice,,32861798,,10/08/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney failure,Mice,,32846217,,10/11/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,,32776663,,10/11/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Allergic airway inflammation,Mice,,32759385,,10/29/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Atherosclerosis,Mice,,32768568,,10/26/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,Human,,32937365,,10/26/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,"Human, mice",,32726752,,11/04/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Obesity-induced liver and renal injury,Mice,,32922599,,11/04/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,,33364059,,11/05/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",,32699265,,11/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,Human,,32696316,,11/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Hypoxic-ischemic brain damage,Rat,,32679060,,11/11/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,,32686647,,11/12/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Uterine serous carcinoma,Human,,32782585,,11/16/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial injury,Rat,,32621060,,11/16/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,,32621966,,11/17/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,Mice,,32601262,,11/17/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,,32583428,,11/18/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic steatohepatitis,Rat,,32593899,,11/18/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Hypertensive brain damage,Rat,,32564622,,11/19/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,,32577235,,11/21/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,32541921,,11/21/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial injury,Human,,32535745,,11/21/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Ulcerative colitis,Mice,,32540488,,11/21/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Acute myeloid leukemia,Human,,32534056,,11/25/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,32531676,,11/25/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Rat,,33335755,,11/30/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Mice,,32474063,,11/30/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Pulmonary fibrosis,"Human, rat",,32453709,,12/01/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Parkinson's disease,Human,,32424108,,12/01/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Alcoholic liver disease,Human,,32419644,,12/01/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,,32416440,,12/01/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Oligospermia,Mice,,32416107,,12/01/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,"Human, mice",,32404875,,12/02/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Doxorubicin-induced cardiomyopathy,Mice,,32376803,,12/02/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial cellular injury,Mice,,32377745,_NA_,12/07/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiomyopathy,Mice,,32349646,_NA_,12/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Extrahepatic cholangiocarcinoma,Human,,32891325,_NA_,12/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Early brain injury,Rat,,32314126,Early brain injury (EBI) plays a key role in the poor prognoses of SAH (Subarachnoid hemorrhage).,12/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Parkinson’s disease,Human,,32276028,_NA_,12/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,,32308771,_NA_,12/09/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Rat,,32219613,_NA_,12/16/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic steatohepatitis,Mice,,32145145,_NA_,12/19/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,Mice,,32203170,_NA_,12/19/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,Mice,,32161620,_NA_,12/22/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute pancreatitis,Mice,,32115146,_NA_,12/22/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute liver failure,Mice,,32094346,_NA_,12/30/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Ulcerative colitis,Human,,32015337,_NA_,12/30/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemia reperfusion injury,Mice,,32029897,_NA_,12/30/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,,31996668,_NA_,12/30/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Kidney injury,Mice,,32051732,_NA_,12/30/2021,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetes mellitus myocardial ischemia/reperfusion injury,Rat,,31809190,_NA_,01/07/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute myocardial infarction,Mice,,31740582,_NA_,01/07/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic steatohepatitis,Mice,,31610178,_NA_,01/10/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Sarcopenia,Mice,,33390840,_NA_,01/19/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Cisplatin-induced hearing loss,Mice,,34302894,_NA_,01/26/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Age-related cataracts,"Human, mice",,33722625,_NA_,01/26/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Pulmonary fibrosis,Mice,,34175430,_NA_,02/10/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic renal tubular injury,Mice,,33679620,_NA_,02/12/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Amyotrophic lateral sclerosis,"Human, mice",,34145375,_NA_,02/21/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Intestinal barrier injury,Rat,,34257815,_NA_,02/23/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Endometrial hyperplasia,Mice,,33771639,_NA_,03/15/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Fatty liver,gibel carp,,33952209,Bioinformatics methods are used.,03/22/2022,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,,33483372,_NA_,03/30/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic atherosclerosis,Mice,,34508760,_NA_,03/30/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Autosomal dominant polycystic kidney disease,Mice,,34716241,_NA_,03/31/2022,FerrDb team
+Ferroptosis,Ferroptosis :-: Obesity,Mice,,34441564,_NA_,04/25/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Psoriatic inflammation,"Human, mice",,34707088,_NA_,04/25/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Hyperoxic lung injury,Rat,,34703276,_NA_,04/25/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Experimental autoimmune hepatitis,Mice,,34966478,_NA_,05/05/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Alzheimer's disease,Mice,,33398092,_NA_,05/12/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Multiorgan dysfunction syndrome,Mice,,35210435,_NA_,09/03/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute liver injury,Mice,,35347117,_NA_,09/21/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Aortic dissection,"Human, mice",,35844806,_NA_,09/29/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis-associated encephalopathy,Mice,,35066511,_NA_,09/29/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Multiple sclerosis,Mice,,35676325,_NA_,09/29/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Deep vein thrombosis,Rat,,35717798,_NA_,09/29/2022,FerrDb team
+Ferroptosis,Ferroptosis :-: Ocular defects,Zebrafish,,35563172,_NA_,09/29/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Intestinal injuries,Mice,,35091109,_NA_,09/29/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Hypoxic-ischemic brain damage,Rat,,35182697,_NA_,10/04/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Alzheimer's disease,Mice,,34998934,_NA_,10/04/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Brain injury,Carp,,34905050,_NA_,10/12/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Neurological sequelae in patients with cerebral malaria,Mice,,35725567,_NA_,10/18/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Traumatic brain injury,Mice,,35728282,_NA_,10/18/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Triptolide-induced cardiotoxicity,Human,,35757509,_NA_,10/21/2022,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,,35993016,_NA_,10/21/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute respiratory distress syndrome,Mice,,35222419,_NA_,11/20/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute-on-chronic liver failure,Mice,,35480867,_NA_,11/21/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Rhabdomyolysis,Mice,,35243801,_NA_,11/25/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: White matter injury,Mice,,35318305,_NA_,11/25/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Experimental autoimmune prostatitis,Rat,,35755168,_NA_,11/30/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Renal interstitial inflammatio,Mice,,35224007,_NA_,12/11/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Kidney fibrosis,Mice,,35224007,_NA_,12/11/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic cardiomyopathy,Mice,,35256941,_NA_,12/14/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoporosis,Mice,,35638167,_NA_,12/14/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetes-associated cognitive dysfunction,Mice,,35350885,_NA_,12/14/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Cognitive deficits,Mice,,35935755,_NA_,12/18/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Systematic lupus erythematosus,Mice,,35619279,_NA_,12/18/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Pulmonary fibrosis,Mice,,35237410,_NA_,12/18/2022,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute liver injury,Mice,,35496274,_NA_,01/05/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Otitis media,Mice,,35449198,_NA_,01/05/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Pancreatic β cells dysfunction,"Mice, rat",,35761309,_NA_,01/06/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Cervical squamous cell carcinoma,Human,,35422066,_NA_,01/11/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic osteoporosis,Mice,,35260560,_NA_,01/11/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Radiation-induced lung injury,Mice,,35220409,_NA_,02/21/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Pulmonary Fibrosis,"Human, mice",,35058772,_NA_,03/08/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Cerebral ischemia-reperfusion injury,Rat,,36456793,_NA_,04/12/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Tubular injury,"Human, mice",,36566913,_NA_,04/12/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Viral Encephalitis,"Human, mice",,36507835,_NA_,04/19/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Ulcerative colitis,"Rat, mice",,36509196,_NA_,07/12/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Ulcerative colitis,"Rat, mice",,36509196,_NA_,07/21/2023,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Mice,,36442849,_NA_,07/21/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis-associated encephalopathy,Mice,,36401983,_NA_,07/25/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute pancreatitis,Mice,,36670963,_NA_,08/08/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Chronic intermittent hypoxia-induced lung injury,Rat,,36572881,_NA_,08/08/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Pancreatic injury after acute liver failure,Mice,,36543135,_NA_,08/08/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Pulmonary fibrosis,Mice,,36566325,_NA_,08/04/2023,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,Mice,,36484954,_NA_,08/18/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Endometriosis,Human,,36547083,_NA_,07/21/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic tubulopathy,Rat,,36440653,_NA_,10/17/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Hyperoxia-induced acute lung injury,Mice,,36411467,_NA_,10/20/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Liver fibrogenesis,"Human, mice",,36370962,_NA_,10/20/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Hypoxic-ischemic brain injury,Rat,,36184790,_NA_,10/07/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Oligospermia,Mice,,36309297,_NA_,10/24/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Multiple sclerosis,Mice,,36385152,_NA_,10/24/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial infarction,Rat,,36174419,_NA_,11/03/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis-induced acute kidney injury,Mice,,36067654,_NA_,11/03/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Primary ovarian insufficiency,"Human, mice",,36198708,_NA_,11/17/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic steatohepatitis,Mice,,36285301,_NA_,11/15/2023,FerrDb team
+Ferroptosis,Ferroptosis :+: Repetitive mild traumatic brain injury,Mice,,35836233,_NA_,01/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic cancer,Mice,,37910602,_NA_,02/23/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic fatty liver diseases,Mice,,37863053,_NA_,02/23/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Alcoholic fatty liver diseases,Mice,,37863053,_NA_,02/23/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Septic liver injury,Mice,,36933519,_NA_,02/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoarthritis,Rat,,37879209,_NA_,03/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiomyocyte injury,Mice,,37705752,_NA_,03/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",,38056309,_NA_,03/15/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Tendinopathy,Mice,,37503658,_NA_,03/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal neurotoxicity,Rat,,37244447,_NA_,03/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiac dysfunction,Mice,,37801989,_NA_,03/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Bladder cancer,"Human, mice",,38062004,_NA_,03/29/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cerebral ischemic injury,"Mice, rat",Validated,38123006,_NA_,04/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Thyroid cancer malignancy,"Human, mice",Validated,37860888,_NA_,04/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small cell lung carcinoma,Human,Deduced,37633973,_NA_,04/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemic stroke,Mice,Validated,37300304,_NA_,04/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37671945,_NA_,04/09/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Intrahepatic cholangiocarcinoma,"Human, mice",Validated,38124152,_NA_,04/09/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: JEV-induced neuronal damage and neuroinflammation,"Human, mice, hamster",Validated,38104890,_NA_,04/11/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colon cancer,"Human, mice",Validated,37517591,_NA_,04/11/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,38049865,_NA_,04/11/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis-associated encephalopathy,Mice,Deduced,37341832,_NA_,04/11/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,Mice,Validated,38049396,_NA_,04/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,38134213,_NA_,04/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Heatstroke-induced acute lung injury,"Human, mice",Validated,37695738,_NA_,04/18/2024,FerrDb team
+Ferroptosis,Ferroptosis :-:  Triple-negative breast cancer,"Human, mice",Validated,37481196,_NA_,04/18/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37661645,_NA_,04/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,"Human, mice",Validated,37503932,_NA_,04/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,Deduced,37229918,_NA_,04/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small cell lung cancer,"Human, mice",Validated,37957645,_NA_,04/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Papillary thyroid carcinoma,Human,Deduced,37070544,_NA_,04/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Ovarian carcinoma,Human,Deduced,37691145,_NA_,04/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Renal carcinoma,Human,Deduced,37691145,_NA_,04/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,Deduced,37698736,_NA_,04/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiomyocyte death,Mice,Validated,37738327,_NA_,04/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Endometrial cancer,Human,Validated,38042059,_NA_,04/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Traumatic brain injury,Mice,Validated,37105419,_NA_,04/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis-induced myocardial injury,Rat,Deduced,36645573,_NA_,04/26/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemia/reperfusion (I/R) injury,"Mice, rat",Deduced,37343689,_NA_,04/26/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung cancer,"Human, mice",Validated,37236507,_NA_,05/08/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Clear cell renal cell carcinoma,"Human, mice",Validated,37604811,_NA_,05/08/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Osteosarcoma,"Human, mice",Validated,37711054,_NA_,05/08/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic steatohepatitis,"Human, mice",Validated,37422643,_NA_,05/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Neuronal injury,Rat,Validated,36647717,_NA_,05/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Testicular dysfunction,Mice,Validated,38123054,_NA_,05/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Ovarian cancer,"Human, mice",Validated,37940066,_NA_,05/15/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Anaplastic thyroid cancer,"Human, mice",Validated,37283515,_NA_,05/15/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Chronic obstructive pulmonary disease,"Human, mice",Validated,37710216,_NA_,05/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Frucose-induced renal injury,"Human, mice",Validated,36828294,_NA_,05/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,"Human, mice",Validated,37301139,_NA_,05/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Periodontal Injury,Mice,Validated,37372983,_NA_,05/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioblastoma,"Human, mice",Validated,36878845,_NA_,05/30/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Esophageal squamous cell carcinoma,"Human, mice",Validated,38092323,_NA_,05/30/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colon cancer,"Human, mice",Validated,37717793,_NA_,05/30/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,"Human, mice",Validated,37528314,_NA_,05/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic cognitive dysfunction,"Mice, rat",Validated,37036428,_NA_,05/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cerebral Ischemia/Reperfusion Injury,Mice,Validated,37110816,_NA_,05/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Apical periodontitis,Human,Deduced,37619958,_NA_,06/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Uremia,Mice,Validated,37364609,_NA_,06/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37217090,_NA_,06/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic cardiomyopathy,Human,Deduced,37430319,_NA_,06/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Brain injury,Mice,Validated,37651502,_NA_,06/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,36893885,_NA_,06/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37666806,_NA_,06/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Brain inflammation,Chickens,Deduced,37209896,_NA_,06/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Osteosarcoma,"Human, mice",Validated,37461104,_NA_,06/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cognitive impairment,Mice,Validated,37479016,_NA_,06/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Colitis,"Human, mice",Validated,37501933,_NA_,06/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Castration-resistant prostate cancer,"Human, mice",Validated,37355053,_NA_,06/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Intervertebral disc degeneration,"Human, mice",Validated,37099926,_NA_,06/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Diffuse gastric cancer,"Human, mice",Validated,36717701,_NA_,07/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis-induced acute lung injury,"Human, mice",Validated,37715457,_NA_,07/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Melanoma,"Human, mice",Validated,36889082,_NA_,07/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Benign prostatic hyperplasia,"Human, rat",Validated,37633909,_NA_,07/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Laryngeal squamous cell carcinoma,Human,Deduced,37536262,_NA_,08/03/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Non-alcoholic fatty liver disease,Zebrafish,Validated,37714372,_NA_,08/03/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia/reperfusion injury,"Human, mice",Validated,37370086,_NA_,08/03/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Inflammatory bowel disease,"Human, mice",Validated,37303049,_NA_,08/03/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Liver injury and cirrhosis,Mice,Validated,36934969,_NA_,08/03/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Severe acute pancreatitis,"Mice, rat",Validated,37865653,_NA_,08/03/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gallbladder cancer,"Human, mice",Validated,37156453,_NA_,08/30/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37891677,_NA_,09/09/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Esophageal squamous cell carcinoma,"Human, mice",Validated,36764215,_NA_,09/13/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioblastoma,"Human, mice",Validated,37979586,_NA_,09/13/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoarthritis,"Human, rat",Validated,37932746,_NA_,09/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic Fatty Liver Disease,Human,Deduced,37553313,_NA_,09/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Pulmonary fibrosis,Mice,Validated,37451346,_NA_,09/13/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Head and neck squamous cell carcinoma,Human,Deduced,36899869,_NA_,09/13/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Chronic kidney disease,"Human, mice",Validated,37288660,_NA_,09/13/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37147883,_NA_,09/13/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia-reperfusion injury ,Rat,Validated,38012584,_NA_,09/20/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,"Human, mice",Validated,38147776,_NA_,09/20/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord ischemia–reperfusion injury,"Human, rat",Validated,37591122,_NA_,09/20/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,Human,Deduced,36724820,_NA_,09/20/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Renal cell carcinoma,"Human, mice",Validated,36906674,_NA_,09/20/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Rheumatoid arthritis,Human,Deduced,36882816,_NA_,09/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,"Human, mice",Validated,36806086,_NA_,09/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia/reperfusion injury,"Mice, rat",Validated,37155368,_NA_,09/25/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,Human,Deduced,37128782,_NA_,09/25/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic ductal adenocarcinoma,"Human, mice",Validated,37479744,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,"Human, mice",Validated,37872147,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ulcerative colitis,Mice,Validated,38039694,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Liver cancer,Mice,Validated,37253718,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiac Fibrosis,Mice,Validated,37408261,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37013514,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Rat,Validated,37257587,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Diffuse large B-cell lymphoma,"Human, mice",Validated,37690092,_NA_,09/27/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ultraviolet light-induced skin injury,Mice,Validated,38100056,_NA_,09/29/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Heart failure,"Human, mice",Validated,38070140,_NA_,09/29/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Renal cell carcinoma,"Human, mice",Validated,36923928,_NA_,10/09/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Bladder cancer,Human,Deduced,37157950,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Tissue wasting,Mice,Validated,36973755,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Intrauterine adhesions,Rat,Validated,37814907,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial infarction,Rat,Validated,37087800,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37682704,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung cancer,"Human, mice",Validated,36715115,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Autoimmune hepatitis,Mice,Validated,36702076,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,37658132,_NA_,10/10/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Liver ischemia-reperfusion injury,"Human, mice",Validated,38065978,_NA_,10/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37311739,_NA_,10/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal Cancer,"Human, mice",Validated,37875418,_NA_,10/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,Validated,37833977,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,"Human,mice",Validated,37209327,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small cell lung cancer,"Human,mice",Validated,37923740,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial damage,Rat,Validated,37822721,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Rat,Validated,36914965,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Head and neck paraganglioma,"Human,mice",Validated,37602474,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis,Rat,Validated,37946128,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung squamous cell carcinoma,Human,Deduced,38040224,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Mice,Validated,36994647,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Kidney stones,Human,Deduced,37806389,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Osteosarcoma,"Human, mice",Validated,36814203,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiac hypertrophy,Mice,Validated,37277029,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic cancer,Human,Deduced,37986084,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small cell lung cancer,Human,Deduced,37370246,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,"Human, mice",Deduced,37463506,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,"Human, mice",Validated,37211949,_NA_,10/17/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Amyotrophic lateral sclerosis,Mice,Validated,37352984,_NA_,10/18/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,Mice,Validated,37880599,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Bladder cancer,Human,Deduced,36905252,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Stroke,Mice,Validated,38070317,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Mice,Validated,36680650,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37406020,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Cervical cancer,"Human, mice",Validated,37406020,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Diffuse large B-cell lymphoma,"Human, mice",Validated,37294920,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic nephropathy/acute kidney injury,Rat,Deduced,37659699,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemia/reperfusion injury,"Human, mice",Validated,36695612,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Gastric ulcer,Rat,Validated,37209766,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioblastoma,Human,Deduced,37879937,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Cervical cancer,"Human, mice",Validated,37550282,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic cancer,"Human, mice",Validated,37887353,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Cholangiocarcinoma,"Human, mice",Validated,37718459,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37559097,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiomyocyte hypertrophy,"Mice, rat",Validated,37972803,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37705495,_NA_,10/24/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Oral squamous cell carcinoma,Human,Deduced,37776596,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoporosis,Mice,Validated,37804406,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Renal fibrosis,"Human, mice",Validated,37236026,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Retinal ischemia reperfusion,Mice,Validated,37903234,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Rheumatoid arthritis,"Human, mice",Validated,37501360,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,"Human, mice",Validated,36648507,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioma,"Human, mice",Validated,36648507,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Renal fibrosis,"Human, mice",Validated,37236026,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,36786348,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung cancer,Mice,Validated,37948404,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Epithelial ovarian cancer,"Human, mice",Validated,36354374,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,"Human, mice",Validated,36621150,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,38092274,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Neuronal damages,Rat,Validated,37494465,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,Human,Validated,37340227,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoarthritis,"Human, mice",Validated,37425490,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Allergic asthma,"Human, mice",Validated,38035662,_NA_,10/31/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,"Human, mice",Validated,38037454,_NA_,11/06/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Nasopharyngeal carcinoma,Human,Deduced,36737723,_NA_,11/06/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Ovarian cancer,Human,Deduced,37144519,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,36645171,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic cancer,Human,Deduced,37929351,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute lung injury,"Human, rat",Validated,37290680,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,"Human, mice",Validated,37527336,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Intervertebral disc degeneration,Human,Deduced,37480032,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,Deduced,37184781,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,"Human, mice",Validated,37875838,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Depression,Mice,Validated,38109473,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,Validated,37907523,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cerebral ischemia-reperfusion Injury,Mice,Validated,37473431,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cerebral ischemia-reperfusion Injury,Rat,Validated,37059928,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Sepsis lung injury,Mice,Validated,36913799,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Bronchopulmonary Dysplasia,"Human, mice",Validated,37490064,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,Mice,Validated,35986536,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Multiple myeloma,"Human, mice",Validated,37044150,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37230466,_NA_,11/07/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,38036507,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Premature delivery,Human,Deduced,38158666,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiac hypertrophy,Mice,Validated,37119283,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Melanoma,"Human, mice",Validated,37080437,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic cancer,Human,Deduced,36735705,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial Ischemia-Reperfusion Injury,"Human, mice",Validated,36987924,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,36635256,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Nasopharyngeal carcinoma,"Human, mice",Validated,37951442,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ulcerative colitis,"Human, mice",Validated,37210607,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Mice,Validated,36996941,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Esophageal squamous cell carcinoma,"Human, mice",Validated,37268653,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Prolactinomas,"Human, mice",Validated,36853491,_NA_,11/14/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37554285,_NA_,11/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Clear cell renal cell carcinoma,"Human, mice",Validated,37713596,_NA_,11/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Intervertebral disc cartilage degeneration,"Human, mice",Validated,37453477,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,38084209,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemic stroke,Rat,Validated,36743288,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Ischemic stroke,Rat,Deduced,37529339,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,Deduced,37552314,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Osteosarcoma,"Human, mice",Validated,37457846,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung cancer,"Human, mice",Validated,38058844,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small cell lung cancer,Mice,Validated,37231753,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,Human,Deduced,37477758,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small cell lung cancer,"Human, mice",Validated,37056388,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,Deduced,37577230,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Renal fibrosis,"Human, mice",Validated,37893066,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Renal tubular epithelial cell injury,"Human, mice",Validated,37589000,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cardiomyopathy,Mice,Validated,38045054,_NA_,11/21/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Cervical cancer,Human,Deduced,37716418,_NA_,11/25/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Oral squamous cell carcinoma,"Human, mice",Validated,37286868,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Parkinson disease,Mice,Validated,36818224,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,"Human, mice",Validated,37566605,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,36968217,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic adenocarcinoma,"Human, mice",Validated,37970359,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Intracerebral hemorrhage,Mice,Validated,36802066,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Glaucoma,Mice,Deduced,38020723,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic nephropathy,"Human, mice",Validated,38055118,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Polycystic ovary syndrome,"Human, mice",Validated,36662677,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord ischemia injury,Rat,Validated,37056141,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord reperfusion injury,Rat,Validated,37056141,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Lung infections,Mice,Validated,37777065,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Synovial Sarcoma,Mice,Validated,37444594,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia injury,Mice,Validated,37597361,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioblastoma,"Human, mice",Validated,36639654,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoarthritis,"Human, rat",Validated,37422468,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,Human,Deduced,37399587,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Diabetic atherosclerosis,"Human, mice",Validated,37206550,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia-reperfusion injury,"Human, mice",Validated,37501954,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non-small cell lung cancer,"Human, mice",Validated,38058803,_NA_,11/28/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia injury,Mice,Validated,37530646,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial reperfusion injury,Mice,Validated,37530646,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Pancreatic ductal adenocarcinoma,"Human, mice",Validated,38057506,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Clear cell renal cell carcinoma,Human,Deduced,38082448,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Bladder cancer,Human,Deduced,37480224,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,"Human, mice",Validated,36947996,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute myocardial infarction,"Human, mice",Validated,36914604,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,"Human, mice",Validated,37380368,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,Human,Deduced,36820068,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Parkinson’s disease,Human,Deduced,37881068,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Intrahepatic cholangiocarcinoma,Human,Deduced,38028176,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Non‑small cell lung cancer,Human,Deduced,36817050,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Nonalcoholic steatohepatitis with type 2 diabetes mellitus,"Human, mice",Validated,37280194,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Oral squamous cell carcinoma,Human,Deduced,37517144,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,Human,Deduced,37700851,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Liver fibrosis,"Human, mice",Validated,38034086,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Microvascular ischemia-reperfusion injury,"Human, mice",Validated,37705747,_NA_,12/05/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,"Human, mice",Validated,36980766,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Osteoarthritis,"Human, mice",Validated,36923091,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37666810,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37980521,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,Deduced,37113783,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Prostate cancer,Human,Deduced,37113783,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Acute myeloid leukemia,"Human, mice",Validated,36672408,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia–reperfusion injury,Mice,Validated,37548549,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,Human,Deduced,37060074,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Triple-negative breast cancer,"Human, mice",Validated,37955780,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Kidney intestinal fibrosis,Mice,Validated,37670055,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Vascular calcification,Mice,Validated,36831172,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Mesenchymal glioblastoma,"Human, mice",Validated,37175412,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Gastric cancer,"Human, mice",Validated,37720433,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,"Human, mice",Validated,37839786,_NA_,12/12/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung adenocarcinoma,Human,Deduced,38153663,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37830241,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,38053637,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Myocardial ischemia-reperfusion injury,Mice,Validated,37552043,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,37492786,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,"Human, mice",Validated,38102129,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,"Human, mice",Validated,38196698,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Colorectal cancer,Human,Deduced,37686618,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Neuroblastoma,Human,Deduced,38275623,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Acute kidney injury,"Human, mice",Validated,37759588,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Inflammation,Mice,Validated,37154013,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,"Human, mice",Validated,38017014,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Cerebral Ischemia-Reperfusion Injury,Mice,Validated,37861894,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Lung carcinoma,Human,Deduced,37259333,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Esophageal squamous cell carcinoma,"Human, mice",Validated,38040698,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Hepatocellular carcinoma,Human,Deduced,37208604,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Llung cancer,"Human, mice",Validated,37311754,_NA_,12/19/2024,FerrDb team
+Ferroptosis,Ferroptosis :+: Spinal cord injury,Rat,Validated,36946310,_NA_,12/26/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Breast cancer,"Human, mice",Validated,37454220,_NA_,12/26/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Esophageal squamous cell carcinoma,Human,Deduced,37244629,_NA_,12/26/2024,FerrDb team
+Ferroptosis,Ferroptosis :-: Glioblastoma,"Human, mice",Validated,37520713,_NA_,12/26/2024,FerrDb team
