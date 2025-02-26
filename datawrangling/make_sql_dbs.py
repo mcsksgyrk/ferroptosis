@@ -8,12 +8,15 @@ def make_sql_db(name: str):
     source_tables = list(source_dir.glob('**/*.*'))
     output_name = name+".db"
     cols = []
+
     with sqlite3.connect(OUTPUTS_DIR / output_name) as conn:
         for table in source_tables:
             if ".DS_Store" in str(table):
                 continue
             try:
                 k = str(table).split("/")[-1]
+                if "." in k:
+                    k = k.split(".")[0]
                 df = pd.read_csv(table, sep=None, engine="python")
                 v = df.columns.tolist
                 cols.append({k: v})
