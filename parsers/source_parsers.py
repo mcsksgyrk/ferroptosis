@@ -63,7 +63,6 @@ class WikiPathwayParser(PathwayParser):
         super().__init__(data_dir=data_dir)
 
     def read_pathway(self, filename: str) -> pd.DataFrame:
-        """Read WikiPathway data nodes file."""
         try:
             filepath = self.data_dir / filename
             df = pd.read_csv(filepath, delimiter='\t')
@@ -87,7 +86,6 @@ class WikiPathwayParser(PathwayParser):
         try:
             uniprot_ids = {}
             geneProducts = df[df.Type == "GeneProduct"]
-            print(geneProducts)
             for idx, row in geneProducts.iterrows():
                 k = int(idx)
                 if canonical:

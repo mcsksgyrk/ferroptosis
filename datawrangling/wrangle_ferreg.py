@@ -1,42 +1,7 @@
 import pandas as pd
 from config import SOURCES_DIR, OUTPUTS_DIR
-import sqlite3
-
-
-def make_sql_query(what, table, where=None, values=None, db="ferreg.db"):
-    with sqlite3.connect(OUTPUTS_DIR / db) as conn:
-        if values is not None and where is not None:
-            placeholders = ",".join("?"*len(values))
-            query = f'SELECT {what} FROM {table} WHERE {where} IN ({placeholders})'
-            cursor = conn.cursor()
-            res = cursor.execute(query, values.tolist()).fetchall()
-            res = [pr[0] for pr in res]
-        else:
-            query = f'SELECT {what} FROM {table}'
-            cursor = conn.cursor()
-            res = cursor.execute(query).fetchall()
-            res = [pr[0] for pr in res]
-    return res
-
-
-def custom_query(query, db):
-    with sqlite3.connect(db) as conn:
-        cursor = conn.cursor()
-        res = cursor.execute(query)
-        res = [s[0] for s in res]
-    return res
-
-
-def compile_query_string(columns, table, filters=None) -> str:
-    query = f"SELECT {columns} FROM {table}"
-    if filters is not None:
-        query += " WHERE "
-        for filter in filters:
-            if filter == filters[-1]:
-                query += filter
-            else:
-                query += filter + " AND "
-    return query
+from database.external_db import DBconnector
+from typing import List, Union, Optional, Any
 
 
 def lists_difference(list1, list2):
@@ -45,29 +10,59 @@ def lists_difference(list1, list2):
     return [list1_only, list2_only]
 
 
+def lists_intersection(list1, list2):
+    return list(set(list1) & set(list2))
+
+
 def get_caonincal_prs(pr_list):
     return [x for x in pr_list if x[0] in ['P', 'Q', 'O']]
 
 
+def extend_source_column(val, source):
+    ext_val = val+";"+source
+    return ext_val
+
+
+def extractor(db: DBconnector,
+              columns: str,
+              table: str,
+              filters: Optional[List[str]] = None) -> List[str]:
+    query = db.compile_query_string(columns, table, filters)
+    res = db.custom_query(query)
+    return res
+
+
 core_prs = pd.read_csv(OUTPUTS_DIR / "core_geneProducts.csv")
 
-ferreg_target_in_cores = make_sql_query("uniprot_id",
-                                        "general_target",
-                                        "uniprot_id",
-                                        core_prs['uniprot_id'])
-ferreg_targets = make_sql_query("uniprot_id",
-                                "general_target")
+ferreg = DBconnector(OUTPUTS_DIR / "ferreg.db")
+ferreg_target_in_core = ferreg.query("uniprot_id",
+                                     "general_target",
+                                     "uniprot_id",
+                                     core_prs.uniprot_id.tolist())
+ferreg_target = ferreg.query("uniprot_id",
+                             "general_target")
+ferrdb = DBconnector(OUTPUTS_DIR / "ferrdb.db")
+ferrdb_driver_in_core = ferrdb.query("UniProtAC",
+                                     "marker",
+                                     "UniProtAC",
+                                     core_prs.uniprot_id.tolist())
+ferrdb_suppressor_in_core = ferrdb.query("UniProtAC",
+                                         "suppressor",
+                                         "UniProtAC",
+                                         core_prs.uniprot_id.tolist())
+in_ferrdb = list(set(ferrdb_suppressor_in_core).union(ferrdb_driver_in_core))
+ext_df = core_prs.copy()
+ext_df.loc[ext_df['uniprot_id'].isin(ferreg_target_in_core), 'source'] += ";ferreg"
+ext_df.loc[ext_df['uniprot_id'].isin(in_ferrdb), 'source'] += ";ferrdb"
 
-filters = [
-           "Exp_Organism='Human'",
-           "Gene_type_hgnc_locus_type_or_other='gene with protein product'",
-           "Confidence='Validated'"
-           ]
+"""
+ferreg regulator:
+    Type = Protein coding
+    External_id az uniprot_id...
+"""
+params = [
+          "Type='Protein coding'",
+]
 
-
-query = compile_query_string("DISTINCT UniProtAC", "driver", filters)
-res = custom_query(query, OUTPUTS_DIR / "ferrdb.db")
-len(res)
-a, b = lists_difference(core_prs.uniprot_id.tolist(), res)
-hc = core_prs.uniprot_id.tolist()
-len(set(hc)&set(res))
+query = ferreg.compile_query_string("External_id", "general_regulator", params)
+ferreg_regulator = ferreg.custom_query(query)
