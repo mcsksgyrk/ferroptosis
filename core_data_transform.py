@@ -3,7 +3,9 @@ from parsers.source_parsers import KEGGPathwayParser, WikiPathwayParser
 from apicalls.api_oop import UniProtClient
 from typing import Dict, List
 from pathlib import Path
-from config import OUTPUTS_DIR
+from config import OUTPUTS_DIR, SOURCES_DIR, PROJECT_ROOT
+from database.sqlite_db_api import PsimiSQL
+import apicalls.api_oop as api
 
 
 def make_tables(data: Dict[int, List[str]], source: str, core: int) -> pd.DataFrame:
@@ -47,3 +49,53 @@ wp_df = make_tables(wp_id_list, "wikipathways", 1)
 go_df = make_go_table("sources/go/hsa_gene.csv", 1)
 result_df = combine_sources([wp_df, kegg_df, go_df])
 result_df.to_csv(OUTPUTS_DIR / "core_geneProducts.csv", index=False)
+
+
+SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed.sql"
+DB_DESTINATION = OUTPUTS_DIR / "test.db"
+db_api = PsimiSQL(SQL_SEED)
+reactome_client = api.ReactomeClient()
+go_client = api.GOClient()
+
+pathways = []
+fncs = []
+for idx, row in result_df.iterrows():
+    print(row.uniprot_id)
+    pathways.append(reactome_client.map_protein_to_pathways(row.uniprot_id))
+    fncs.append(uniprot_client.get_pr_fnc(row.uniprot_id))
+
+result_df['pathways'] = pathways
+result_df['pathways'] = result_df['pathways'].apply(lambda x: ';'.join(x))
+result_df['functions'] = fncs
+result_df['tax_id'] = 9606
+
+molecular_function = go_client.get_relative_terms('GO:0003674')
+mf_childs = {}
+for mf in molecular_function['childrens']:
+    print(str(mf))
+    resp = go_client.get_relative_terms(str(mf))
+    mf_childs[resp['name']] = resp['childrens']
+
+fncs = df_core['pr_funcs'].tolist()
+mol_functions = []
+fncs[0]
+for pr in fncs:
+    for k, v in mf_childs.items():
+        intersection = list(set(pr) & set(v))
+        print(intersection)
+
+mf_childs.values()
+df_core.head()
+df_core['molecular_function'] = mol_functions
+df_core.to_csv("./prlists/all_col_core_df.csv", index=False)
+
+for idx, row in result_df.iterrows():
+    aux_dict = dict()
+    aux_dict['name'] = row.uniprot_id
+    aux_dict['gene_name'] = ""
+    aux_dict['tax_id'] = row.tax_id
+    aux_dict['pathways'] = row.pathways
+    aux_dict['source'] = row.source
+    aux_dict['function'] = "kekking"
+    db_api.insert_node(aux_dict)
+db_api.save_db_to_file(str(DB_DESTINATION))
