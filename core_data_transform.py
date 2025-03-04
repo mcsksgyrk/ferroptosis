@@ -69,26 +69,6 @@ result_df['pathways'] = result_df['pathways'].apply(lambda x: ';'.join(x))
 result_df['functions'] = fncs
 result_df['tax_id'] = 9606
 
-molecular_function = go_client.get_relative_terms('GO:0003674')
-mf_childs = {}
-for mf in molecular_function['childrens']:
-    print(str(mf))
-    resp = go_client.get_relative_terms(str(mf))
-    mf_childs[resp['name']] = resp['childrens']
-
-fncs = df_core['pr_funcs'].tolist()
-mol_functions = []
-fncs[0]
-for pr in fncs:
-    for k, v in mf_childs.items():
-        intersection = list(set(pr) & set(v))
-        print(intersection)
-
-mf_childs.values()
-df_core.head()
-df_core['molecular_function'] = mol_functions
-df_core.to_csv("./prlists/all_col_core_df.csv", index=False)
-
 for idx, row in result_df.iterrows():
     aux_dict = dict()
     aux_dict['name'] = row.uniprot_id
