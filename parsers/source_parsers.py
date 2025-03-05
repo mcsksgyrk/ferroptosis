@@ -16,6 +16,12 @@ class KEGGPathwayParser(PathwayParser):
     def __init__(self, data_dir: Path = SOURCES_DIR / "kegg"):
         super().__init__(data_dir=data_dir)
 
+    class Edge:
+        def __init__(self, source_id: int, target_id: int, type: str = "unknown"):
+            self.source_id = source_id
+            self.target_id = target_id
+            self.type = type
+
     def _find_names(self, line: str) -> List[str]:
         name_start = line.find('name="') + 6
         name_end = line.find('"', name_start)
@@ -26,6 +32,43 @@ class KEGGPathwayParser(PathwayParser):
         id_start = line.find('id="') + 4
         id_end = line.find('"', id_start)
         return int(line[id_start:id_end])
+
+    def _find_edge_nodes(self, line: str) -> int:
+        node1_start = line.find('entry1="') + 8
+        node1_end = line.find('"', node1_start)
+        node2_start = line.find('entry2="') + 8
+        node2_end = line.find('"', node2_start)
+        return [int(line[node1_start:node1_end]), int(line[node2_start:node2_end])]
+
+    def _find_edge_type(self, line: str) -> int:
+        start = line.find('name="') + 6
+        end = line.find('"', start)
+        return line[start:end]
+
+    def read_edges(self, filename: str) -> List:
+        try:
+            edges = []
+            with open(self.data_dir / filename) as f:
+                lines = f.readlines()
+                for i, line in enumerate(lines):
+                    if "<relation" in line:
+                        nodes = self._find_edge_nodes(line)
+                        edge_type = "uknown"
+                        if i+1 < len(lines) and "<subtype" in lines[i+1]:
+                            edge_type = self._find_edge_type(lines[i+1])
+                        edge = self.Edge(
+                            source_id=nodes[0],
+                            target_id=nodes[1],
+                            type=edge_type
+                        )
+                        edges.append(edge)
+            return edges
+        except FileNotFoundError:
+            self.logger.error(f"Pathway file not found: {filename}")
+            raise
+        except Exception as e:
+            self.logger.error(f"Error reading pathway file: {str(e)}")
+            raise
 
     def read_pathway(self, filename: str) -> Dict[int, List[str]]:
         try:
@@ -45,6 +88,19 @@ class KEGGPathwayParser(PathwayParser):
             raise
 
     def extract_gene_ids(self, pathway_dict: Dict[int, List[str]]) -> List[str]:
+        try:
+            human_genes = []
+            for _, values in pathway_dict.items():
+                for item in values:
+                    if item.startswith("hsa") and "path" not in item:
+                        human_genes.append(item)
+            self.logger.info(f"Extracted {len(human_genes)} gene IDs")
+            return human_genes
+        except Exception as e:
+            self.logger.error(f"Error extracting gene IDs: {str(e)}")
+            raise
+
+    def extract_edges(self, pathway_dict: Dict[int, List[str]]) -> List[str]:
         try:
             human_genes = []
             for _, values in pathway_dict.items():

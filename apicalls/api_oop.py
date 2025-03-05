@@ -35,6 +35,12 @@ class KEGGClient(APIClient):
         response = self._make_request("GET", f"get/{mol_name}")
         return response.text
 
+    def get_pubchem_id(self, mol_name: str) -> int:
+        """Retrieve molecule information from KEGG."""
+        response = self._make_request("GET", f"/conv/pubchem/{mol_name}")
+        res = response.text.split('pubchem:')[1].strip()
+        return int(res)
+
     def get_symbol(self, blob: str) -> List[str]:
         """Extract symbol information from KEGG response."""
         text = blob.splitlines()
