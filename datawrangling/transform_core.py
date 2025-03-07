@@ -4,7 +4,7 @@ from typing import Dict, List
 from pathlib import Path
 from config import OUTPUTS_DIR, SOURCES_DIR, PROJECT_ROOT
 from apicalls.api_oop import KEGGClient, UniProtClient
-from database.sqlite_db_api import PsimiSQL
+from database.sqlite_db_api2 import PsimiSQL
 
 
 def make_tables(data: Dict[int, List[str]], source: str, core: int) -> pd.DataFrame:
@@ -15,32 +15,23 @@ def make_tables(data: Dict[int, List[str]], source: str, core: int) -> pd.DataFr
 
 
 def convert_kegg(name: str):
-    try:
-        if "cpd" in name or "dr" in name:
+    if "cpd" in name or "dr" in name:
+        try:
             client = KEGGClient()
-            try:
-                res = client.get_pubchem_id(name)
-                return [name, "", res]
-            except Exception as e:
-                print(f"Failed to convert compound {name}: {str(e)}")
-                return [name, "", ""]
-
-        elif "hsa" in name:
-            client = UniProtClient()
-            try:
-                res = client.convert_to_uniprot_id("KEGG", [name], False)
-                if res and len(res) > 0 and name in res[0]:
-                    return [name, res[0][name], ""]
-                else:
-                    print(f"No UniProt mapping found for {name}")
-                    return [name, "", ""]
-            except Exception as e:
-                print(f"Failed to convert gene {name}: {str(e)}")
-                return [name, "", ""]
+            res = client.get_pubchem_id(name)
+            return [name, "", res]
+        except Exception as e:
+            print(f"Failed to convert compound {name}: {str(e)}")
+            return [name, "", name]
+    elif "hsa" in name:
+        client = UniProtClient()
+        res = client.convert_to_uniprot_id("KEGG", [name], False)
+        if res and len(res) > 0 and name in res[0]:
+            return [name, res[0][name], ""]
         else:
-            return [name, "", ""]
-    except Exception as e:
-        print(f"Unexpected error converting {name}: {str(e)}")
+            print(f"No UniProt mapping found for {name}")
+            return [name, name, ""]
+    else:
         return [name, "", ""]
 
 
@@ -67,7 +58,6 @@ for k, v in kegg_src.items():
             rows.append([k, kegg_id, uniprot_id, pubchem_id])
 
 kegg_node_df = pd.DataFrame(data=rows, columns=['id', 'kegg_id', 'uniprot_id', 'pubchem_id'])
-
 edge_rows = []
 for edge in kegg_edges:
     source_rows = kegg_node_df[kegg_node_df.id == edge.source_id]
@@ -103,21 +93,37 @@ for edge in kegg_edges:
 
             print(f"Interaction: {source_id} ({source_type}) -> {target_id} ({target_type}), Type: {edge.type}")
 edge_df = pd.DataFrame(edge_rows)
+edge_df['is_directed'] = 1
+edge_df
+kegg_node_df[kegg_node_df.kegg_id.str.contains('dr')]
 
-kegg_node_df
-SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed.sql"
+SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed2.sql"
 DB_DESTINATION = OUTPUTS_DIR / "kegg.db"
 db_api = PsimiSQL(SQL_SEED)
 
 for idx, row in kegg_node_df.iterrows():
-    aux_dict = dict()
-    aux_dict['name'] = row.uniprot_id
-    aux_dict['gene_name'] = ""
-    aux_dict['tax_id'] = 9606
-    aux_dict['pathways'] = ""
-    aux_dict['source'] = "KEGG"
-    aux_dict['function'] = ""
-    db_api.insert_node(aux_dict)
+    node_dict = dict()
+    node_id_dict = dict()
+    if row.uniprot_id != "":
+        node_dict['name'] = row.uniprot_id
+        node_dict['type'] = 'protein'
+    else:
+        node_dict['name'] = row.pubchem_id
+        node_dict['type'] = 'small_molecule'
+    node_dict['display_name'] = ""
+    node_dict['tax_id'] = 9606 if node_dict['type'] == 'protein' else None
+    node_dict['pathways'] = ""
+    node_dict['source'] = "KEGG"
+    node_dict['function'] = ""
+    db_api.insert_node(node_dict)
+
+    node_id = node_dict['id']
+    if row.kegg_id != "":
+        db_api.insert_node_identifier(node_id, 'kegg_id', row.kegg_id)
+    if row.uniprot_id != "" and node_dict['name'] != row.uniprot_id:
+        db_api.insert_node_identifier(node_id, 'uniprot_id', row.uniprot_id)
+    if row.pubchem_id != "" and node_dict['name'] != row.pubchem_id:
+        db_api.insert_node_identifier(node_id, 'pubchem_id', row.pubchem_id)
 
 for idx, row in edge_df.iterrows():
     directed = 'false'
@@ -132,11 +138,11 @@ for idx, row in edge_df.iterrows():
         print("WARNING: unknown direction flag in line: " + idx)
     interaction_types = "is_directed:%s|is_direct:%s" % (directed, direct)
     edge_dict = {
-        'source_db': 'OmniPath',
+        'source_db': 'KEGG',
         'interaction_types': interaction_types,
-        'layer': 1,
+        'layer': 0,
     }
-    source_dict = db_api.get_node(row.source, 9606)
-    target_dict = db_api.get_node(row.target, 9606)
+    source_dict = db_api.get_node(row.source_id)
+    target_dict = db_api.get_node(row.target_id)
     db_api.insert_edge(source_dict, target_dict, edge_dict)
 db_api.save_db_to_file(str(DB_DESTINATION))
