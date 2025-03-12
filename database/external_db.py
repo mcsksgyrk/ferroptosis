@@ -11,6 +11,13 @@ class DBconnector:
     def _get_connection(self):
         return sqlite3.connect(self.db_path)
 
+    def get_table_names(self):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            res = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+            tables = res.fetchall()
+        return [row[0] for row in tables]
+
     def query(self, what: str, table: str, where: Optional[str] = None,
               values: Optional[List] = None) -> List:
         with self._get_connection() as conn:
@@ -29,8 +36,11 @@ class DBconnector:
     def custom_query(self, query: str) -> List:
         with self._get_connection() as conn:
             cursor = conn.cursor()
-            res = cursor.execute(query)
-            return [row[0] for row in res]
+            res = cursor.execute(query).fetchall()
+            if len(res[0]) == 1:
+                return [row[0] for row in res]
+            else:
+                return res
 
     def query_to_dataframe(self, query: str) -> pd.DataFrame:
         with self._get_connection() as conn:
