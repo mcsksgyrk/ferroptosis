@@ -6,6 +6,7 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE `node` (
     `id` INTEGER PRIMARY KEY,
     `name` TEXT NOT NULL,         -- Primary identifier (UniProt/PubChem/KEGG ID)
+    `primary_id_type` TEXT,       -- Type of the primary identifier in name field
     `display_name` TEXT,          -- Human-readable name
     `tax_id` INTEGER,             -- Only for biological entities, now nullable
     `type` TEXT NOT NULL DEFAULT 'protein', -- 'protein', 'small_molecule', 'rna', etc.
@@ -17,6 +18,7 @@ CREATE TABLE `node` (
 CREATE TABLE `node_identifier` (
     `node_id` INTEGER NOT NULL,
     `id_type` TEXT NOT NULL,      -- 'kegg_id', 'uniprot_id', 'pubchem_id', etc.
+    `is_primary` BOOLEAN DEFAULT 0, -- Indicates if this is the primary ID used in node.name
     `id_value` TEXT NOT NULL,
     PRIMARY KEY (`node_id`, `id_type`),
     FOREIGN KEY (`node_id`) REFERENCES `node`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE

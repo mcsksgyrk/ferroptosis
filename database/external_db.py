@@ -18,6 +18,13 @@ class DBconnector:
             tables = res.fetchall()
         return [row[0] for row in tables]
 
+    def get_columns(self, table_name):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            res = cursor.execute(f"PRAGMA table_info({table_name})")
+            columns = res.fetchall()
+        return columns
+
     def query(self, what: str, table: str, where: Optional[str] = None,
               values: Optional[List] = None) -> List:
         with self._get_connection() as conn:
