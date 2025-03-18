@@ -83,7 +83,7 @@ class PsimiSQL:
             # Insert any identifiers if provided
             for id_type in ['kegg_id', 'uniprot_id', 'pubchem_id']:
                 if id_type in node_dict and node_dict[id_type]:
-                    self.insert_node_identifier(node_dict['id'], id_type, node_dict[id_type])
+                    self.insert_node_identifier(node_dict['id'], id_type, is_primary, node_dict[id_type])
 
         elif ('id' not in node_dict) and existing_node:
             node_dict['id'] = existing_node['id']
@@ -119,7 +119,7 @@ class PsimiSQL:
         # Insert any identifiers if provided
         for id_type in ['kegg_id', 'uniprot_id', 'pubchem_id', "pubmed_id", "hgnc_id", "ensg_id"]:
             if id_type in node_dict and node_dict[id_type]:
-                self.insert_node_identifier(node_dict['id'], id_type, node_dict[id_type])
+                self.insert_node_identifier(node_dict['id'], id_type, is_primary, node_dict[id_type])
 
     def get_node(self, node_name, node_tax_id=None):
         if node_tax_id is None:
@@ -267,31 +267,26 @@ class PsimiSQL:
         self.db.execute(query, tup)
         self.db.commit()
 
-    # New methods for node_identifier table
-    def insert_node_identifier(self, node_id, id_type, is_primary, id_value):
-        """Insert an identifier for a node"""
-        query = "INSERT INTO node_identifier (node_id, id_type, is_primary, id_value) VALUES (?, ?, ?)"
+    def insert_node_identifier(self, node_id, id_type, id_value, is_primary=False):
+        query = "INSERT INTO node_identifier (node_id, id_type, id_value, is_primary) VALUES (?, ?, ?, ?)"
         try:
-            self.cursor.execute(query, (node_id, id_type, is_primary, id_value))
+            self.cursor.execute(query, (node_id, id_type, id_value, is_primary))
             self.db.commit()
         except sqlite3.IntegrityError:
-            # If already exists, update instead
-            self.update_node_identifier(node_id, id_type, is_primary, id_value)
+            self.update_node_identifier(node_id, id_type, id_value, is_primary)
 
-    def update_node_identifier(self, node_id, id_type, is_primary, id_value):
-        """Update an identifier for a node"""
-        # Delete existing entry if any
+    def update_node_identifier(self, node_id, id_type, id_value, is_primary=False):
         self.cursor.execute("DELETE FROM node_identifier WHERE node_id = ? AND id_type = ?",
                             (node_id, id_type))
         # Insert new value if not empty
         if id_value and id_value != '-':
-            self.cursor.execute("INSERT INTO node_identifier (node_id, id_type, is_primary, id_value) VALUES (?, ?, ?, ?)",
-                               (node_id, id_type, is_primary, id_value))
+            self.cursor.execute("INSERT INTO node_identifier (node_id, id_type, id_value, is_primary) VALUES (?, ?, ?, ?)",
+                               (node_id, id_type, id_value, is_primary))
         self.db.commit()
 
     def get_node_identifiers(self, node_id):
         """Get all identifiers for a node"""
-        self.cursor.execute("SELECT id_type, is_primary, id_value FROM node_identifier WHERE node_id = ?", (node_id,))
+        self.cursor.execute("SELECT id_type, id_value FROM node_identifier WHERE node_id = ?", (node_id,))
         identifiers = {}
         for id_type, id_value in self.cursor.fetchall():
             identifiers[id_type] = id_value
