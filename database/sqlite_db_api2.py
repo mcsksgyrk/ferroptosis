@@ -46,6 +46,20 @@ class PsimiSQL:
 
         return db
 
+    def check_if_node_exists(self, node_dict):
+        query = """
+            SELECT n.id FROM node n
+            JOIN node_identifier ni ON n.id = ni.node_id
+            WHERE ni.id_value = ?
+            AND (? IS NULL OR n.tax_id = ?)
+            LIMIT 1
+            """
+        res = self.cursor.execute(query, (node_dict['name'],
+                                          node_dict['tax_id'],
+                                          node_dict['tax_id'])
+                                  ).fetchone()
+        return res[0] if res else None
+
     def insert_node(self, node_dict):
         existing_node = None
         if 'tax_id' in node_dict and node_dict['tax_id'] is not None:
