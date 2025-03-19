@@ -168,7 +168,7 @@ for ligand in ["inducer", "inhibitor"]:
     results[f"{ligand}"] = df_ligand
 
 SQL_SEED = PROJECT_ROOT/"database"/"network_db_seed2.sql"
-DB_DESTINATION = OUTPUTS_DIR/"ferrdb_network.db"
+DB_DESTINATION = OUTPUTS_DIR/"ferrdb_test.db"
 db_api = PsimiSQL(SQL_SEED)
 
 for table, df in results.items():

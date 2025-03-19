@@ -22,12 +22,10 @@ class PsimiSQL:
         self.db.execute("INSERT INTO edge SELECT * FROM %s.edge" % temporary_db_name)
         self.db.commit()
 
-        # Add support for the new node_identifier table
         try:
             self.db.execute("INSERT INTO node_identifier SELECT * FROM %s.node_identifier" % temporary_db_name)
             self.db.commit()
         except sqlite3.OperationalError:
-            # Table might not exist in older database versions
             pass
 
         temporary_db.close()
@@ -60,19 +58,32 @@ class PsimiSQL:
                                   ).fetchone()
         return res[0] if res else None
 
+    def check_node_dict_identifiers(self, node_dict):
+        for id_type in ['kegg_id', 'uniprot_id', 'pubchem_id', "pubmed_id", "hgnc_id", "ensg_id"]:
+            if id_type in node_dict and node_dict[id_type]:
+                is_primary = False
+                if node_dict['primary_id_type'] == id_type:
+                    is_primary = True
+                self.insert_node_identifier(
+                        node_dict['id'],
+                        id_type,
+                        node_dict[id_type],
+                        is_primary
+                )
+
     def insert_node(self, node_dict):
+        node_id = self.check_if_node_exists(node_dict)
         existing_node = None
-        if 'tax_id' in node_dict and node_dict['tax_id'] is not None:
-            existing_node = self.get_node(node_dict['name'], node_dict['tax_id'])
-        else:
-            existing_node = self.get_node_by_name(node_dict['name'])
+
+        if node_id:
+            existing_node = self.get_node_by_id(node_id)
 
         if ('id' not in node_dict) and not existing_node:
             if 'display_name' not in node_dict:
                 node_dict['display_name'] = node_dict.get('name', '')
 
             if 'type' not in node_dict:
-                node_dict['type'] = 'protein'  # Default type
+                node_dict['type'] = 'protein'
 
             query = """
                 INSERT INTO node
@@ -93,11 +104,7 @@ class PsimiSQL:
             self.db.commit()
 
             node_dict['id'] = self.cursor.lastrowid
-
-            # Insert any identifiers if provided
-            for id_type in ['kegg_id', 'uniprot_id', 'pubchem_id']:
-                if id_type in node_dict and node_dict[id_type]:
-                    self.insert_node_identifier(node_dict['id'], id_type, is_primary, node_dict[id_type])
+            self.check_node_dict_identifiers(node_dict)
 
         elif ('id' not in node_dict) and existing_node:
             node_dict['id'] = existing_node['id']
@@ -120,7 +127,7 @@ class PsimiSQL:
             node_dict['name'],
             node_dict.get('display_name', ''),
             node_dict.get('primary_id_type'),
-            node_dict.get('tax_id'),  # Can be None
+            node_dict.get('tax_id'),
             node_dict.get('type', 'protein'),
             node_dict.get('pathways', ''),
             node_dict.get('source', ''),
@@ -129,11 +136,7 @@ class PsimiSQL:
         self.db.commit()
 
         node_dict['id'] = self.cursor.lastrowid
-
-        # Insert any identifiers if provided
-        for id_type in ['kegg_id', 'uniprot_id', 'pubchem_id', "pubmed_id", "hgnc_id", "ensg_id"]:
-            if id_type in node_dict and node_dict[id_type]:
-                self.insert_node_identifier(node_dict['id'], id_type, is_primary, node_dict[id_type])
+        self.check_node_dict_identifiers(node_dict)
 
     def get_node(self, node_name, node_tax_id=None):
         if node_tax_id is None:
