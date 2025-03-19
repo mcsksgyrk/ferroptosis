@@ -96,35 +96,58 @@ def process_df(df, source_type, ligand=False):
                 'pathways': '',
             }
         db_api.insert_node(node_dict)
-        if node_dict.get('id'):
-            if row.uniprot_id and pd.notna(row.uniprot_id):
-                db_api.insert_node_identifier(
-                    node_dict['id'], 'uniprot_id',
-                    row.uniprot_id,
-                    (primary_id_type == 'uniprot_id')
-                )
-            if row.gene_name and pd.notna(row.gene_name):
-                db_api.insert_node_identifier(
-                    node_dict['id'], 'gene_name',
-                    row.gene_name,
-                    (primary_id_type == 'gene_name')
-                )
+        if not ligand:
+            if node_dict.get('id'):
+                if row.uniprot_id and pd.notna(row.uniprot_id):
+                    db_api.insert_node_identifier(
+                        node_dict['id'], 'uniprot_id',
+                        row.uniprot_id,
+                        (primary_id_type == 'uniprot_id')
+                    )
+                if row.gene_name and pd.notna(row.gene_name):
+                    db_api.insert_node_identifier(
+                        node_dict['id'], 'gene_name',
+                        row.gene_name,
+                        (primary_id_type == 'gene_name')
+                    )
 
-            if row.hgnc_id and pd.notna(row.hgnc_id):
-                db_api.insert_node_identifier(
-                    node_dict['id'],
-                    'hgnc_id',
-                    row.hgnc_id,
-                    (primary_id_type == 'hgnc_id')
-                )
+                if row.hgnc_id and pd.notna(row.hgnc_id):
+                    db_api.insert_node_identifier(
+                        node_dict['id'],
+                        'hgnc_id',
+                        row.hgnc_id,
+                        (primary_id_type == 'hgnc_id')
+                    )
 
-            if row.ensg_id and pd.notna(row.ensg_id):
-                db_api.insert_node_identifier(
-                    node_dict['id'],
-                    'ensembl_id',
-                    row.ensg_id,
-                    (primary_id_type == 'ensg_id')
-                )
+                if row.ensg_id and pd.notna(row.ensg_id):
+                    db_api.insert_node_identifier(
+                        node_dict['id'],
+                        'ensembl_id',
+                        row.ensg_id,
+                        (primary_id_type == 'ensg_id')
+                    )
+            else:
+                if row.pubchem_id and pd.notna(row.pubchem_id):
+                    db_api.insert_node_identifier(
+                        node_dict['id'],
+                        'pubchem_id',
+                        row.pubchem_id,
+                        (primary_id_type == 'pubchem_id')
+                    )
+                if row.molecule and pd.notna(row.molecule):
+                    db_api.insert_node_identifier(
+                        node_dict['id'],
+                        'molecule',
+                        row.molecule,
+                        (primary_id_type == 'molecule')
+                    )
+                if row.name and pd.notna(row.name):
+                    db_api.insert_node_identifier(
+                        node_dict['id'],
+                        'name',
+                        row.name,
+                        (primary_id_type == 'name')
+                    )
 
 
 ferrdb = DBconnector(OUTPUTS_DIR / "ferrdb.db")
@@ -156,4 +179,3 @@ for table, df in results.items():
     process_df(df, table, is_ligand)
 
 db_api.save_db_to_file(str(DB_DESTINATION))
-results['inducer'].columns
