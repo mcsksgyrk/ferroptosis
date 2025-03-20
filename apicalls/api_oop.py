@@ -24,6 +24,41 @@ class APIClient:
         return response
 
 
+class PubChemClient(APIClient):
+    def __init__(self):
+        super().__init__("https://pubchem.ncbi.nlm.nih.gov/rest/pug")
+
+    def name_to_cid(self, name: str) -> int:
+        """Retrieve CID from a compound name. Return None if not found."""
+        try:
+            response = self._make_request("GET", f"compound/name/{name}/cids/TXT")
+            if response.text.strip():
+                return int(response.text.strip().split('\n')[0])
+            return None
+        except requests.exceptions.HTTPError as e:
+            print(f"Error retrieving CID for {name}: {e}")
+            return None
+
+    def name_to_sid(self, name: str) -> int:
+        """Retrieve SID from a substance name. Return None if not found."""
+        try:
+            response = self._make_request("GET", f"substance/name/{name}/sids/TXT")
+            if response.text.strip():
+                return int(response.text.strip().split('\n')[0])
+            return None
+        except requests.exceptions.HTTPError as e:
+            print(f"Error retrieving SID for {name}: {e}")
+            return None
+
+    def get_primary_cid_or_sid(self, name: str) -> int:
+        """Get the primary CID if available, otherwise return the SID."""
+        cid = self.name_to_cid(name)
+        if cid:
+            return cid
+        sid = self.name_to_sid(name)
+        return sid
+
+
 class KEGGClient(APIClient):
     """Client for interacting with KEGG API."""
 
