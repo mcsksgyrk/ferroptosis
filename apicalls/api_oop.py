@@ -48,14 +48,14 @@ class PubChemClient(APIClient):
             print(f"Error retrieving SID for {name}: {e}")
             return None, getattr(e.response, "status_code", None)
 
-    def get_primary_cid_or_sid(self, name: str) -> int:
+    def get_primary_cid_or_sid(self, name: str) -> Dict[str, int]:
         cid, cid_status = self.name_to_cid(name)
         if cid_status == 200 and cid:
-            return cid
+            return {"cid": cid}
 
         sid, sid_status = self.name_to_sid(name)
         if sid_status == 200 and sid:
-            return sid
+            return {"sid": sid}
 
         raise ValueError(f"Neither CID nor SID found for {name}")
 
