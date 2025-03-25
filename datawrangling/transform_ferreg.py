@@ -250,6 +250,65 @@ reg_df = pd.DataFrame(data=res_reg, columns=reg_cols_name).replace([".", "NA", "
 # regulation_information itt can minden info az interactionokról, unique_id köti össze táblákat
 # target_regulator_drug_disease_pair ehhez kellenek más id-k is gecco
 
+query_edge = [
+    {"db": ferreg,
+     "table": "regulation_information",
+     "id_column": "*",
+     "source": "ferreg",
+     "is_core": 0
+     },
+
+    {"db": ferreg,
+     "table": "target_regulator_drug_disease_pair",
+     "id_column": "*",
+     "source": "ferreg",
+     "is_core": 0
+     },
+
+    {"db": ferreg,
+     "table": "general_cellline",
+     "id_column": "*",
+     "source": "ferreg",
+     "is_core": 0
+     },
+
+    {"db": ferreg,
+     "table": "general_regulator",
+     "id_column": "regulator_id, External_id",
+     "source": "ferreg",
+     "is_core": 0
+     },
+
+    {"db": ferreg,
+     "table": "general_target",
+     "id_column": "target_id, uniprot_id",
+     "source": "ferreg",
+     "is_core": 0
+     },
+
+    {"db": ferreg,
+     "table": "general_drug",
+     "id_column": "drug_id, drug_name",
+     "source": "ferreg",
+     "is_core": 0
+     }
+]
+
+edge_dfs = dict()
+for query in query_edge:
+    key = query['table']
+    res = extractor(query['db'], query['id_column'], query['table'])
+    if query['id_column'] == "*":
+        cols = [x[1] for x in ferreg.get_columns(query['table'])]
+    else:
+        cols = ['ferreg_id', 'ext_id']
+    val = pd.DataFrame(data=res, columns=cols)
+    edge_dfs[key] = val
+
+drug_dict = edge_dfs['general_drug'].set_index('ferreg_id')['ext_id'].to_dict()
+target_dict = edge_dfs['general_target'].set_index('ferreg_id')['ext_id'].to_dict()
+regulator_dict = edge_dfs['general_regulator'].set_index('ferreg_id')['ext_id'].to_dict()
+
 SQL_SEED = PROJECT_ROOT/"database"/"network_db_seed2.sql"
 DB_DESTINATION = OUTPUTS_DIR/"ferreg_network.db"
 db_api = PsimiSQL(SQL_SEED)
