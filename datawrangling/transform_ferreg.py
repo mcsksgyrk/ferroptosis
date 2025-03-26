@@ -246,6 +246,15 @@ res_reg = extractor(ferreg, query_uniques[2]["id_column"],
                     query_uniques[2]['table'])
 reg_df = pd.DataFrame(data=res_reg, columns=reg_cols_name).replace([".", "NA", ""], pd.NA)
 
+SQL_SEED = PROJECT_ROOT/"database"/"network_db_seed2.sql"
+DB_DESTINATION = OUTPUTS_DIR/"ferreg_network.db"
+db_api = PsimiSQL(SQL_SEED)
+
+process_target_df(target_df, db_api)
+process_reg_df(reg_df, db_api)
+process_ligand_df(ligand_df, db_api)
+db_api.save_db_to_file(str(DB_DESTINATION))
+
 # interaction parsing:
 # regulation_information itt can minden info az interactionokról, unique_id köti össze táblákat
 # target_regulator_drug_disease_pair ehhez kellenek más id-k is gecco
@@ -265,12 +274,12 @@ query_edge = [
      "is_core": 0
      },
 
-#    {"db": ferreg,
-#     "table": "general_cellline",
-#     "id_column": "*",
-#     "source": "ferreg",
-#     "is_core": 0
-#     },
+    {"db": ferreg,
+     "table": "general_cellline",
+     "id_column": "*",
+     "source": "ferreg",
+     "is_core": 0
+     },
 
     {"db": ferreg,
      "table": "general_drug",
@@ -302,6 +311,45 @@ def find_ferreg_id(cols, table):
         return table.split('_')[1]+"_id"
 
 
+def handle_ferreg_uniqueid(info_rows):
+    if isinstance(info_rows, pd.DataFrame):
+        return info_rows.iloc[0]
+    if isinstance(info_rows, pd.Series):
+        return info_rows
+
+
+def get_interaction_sign(interaction):
+    if interaction.split(' ')[0].lower() == "up":
+        return ">"
+    elif interaction.split(' ')[0].lower() == "down":
+        return "|"
+    else:
+        return "."
+
+
+def process_edges(db_api, id_a, id_b, interaction):
+    """
+    tup = (
+        interactor_a_dict['id'],
+        interactor_b_dict['id'],
+        interactor_a_dict['name'],
+        interactor_b_dict['name'],
+        edge_dict['layer'],
+        edge_dict['source_db'],
+        edge_dict['interaction_types']
+    )
+    """
+    a_dict = db_api.get_node_by_name(id_a)
+    b_dict = db_api.get_node_by_name(id_b)
+    edge_dict = {
+        "layer": "ferreg",
+        "source_db": "ferreg",
+        "interaction_types": interaction
+    }
+
+    db_api.insert_edge(a_dict, b_dict, edge_dict)
+
+
 edge_dfs = dict()
 for query in query_edge:
     key = query['table']
@@ -315,11 +363,46 @@ for query in query_edge:
         val = pd.DataFrame(data=res, columns=cols).set_index('ferreg_id')
     edge_dfs[key] = val
 
-
-SQL_SEED = PROJECT_ROOT/"database"/"network_db_seed2.sql"
-DB_DESTINATION = OUTPUTS_DIR/"ferreg_network.db"
+# TODO: cell lines and disease connections?
+# drug regulator interaction?
+# regulator disease interaction?
+DB_DESTINATION2 = OUTPUTS_DIR/"test.db"
 db_api = PsimiSQL(SQL_SEED)
-process_target_df(target_df, db_api)
-process_reg_df(reg_df, db_api)
-process_ligand_df(ligand_df, db_api)
-db_api.save_db_to_file(str(DB_DESTINATION))
+db_api.import_from_db_file(str(DB_DESTINATION))
+db_api.get_node_by_name("B8A405")
+"""
+Cases:
+    Target != Unspecific Targetinserted:
+        If regulator != .:
+            1. regulator - target
+        If drug != .:
+            2. drug - target
+        If drug == regulator:
+            3. target - disease
+    Target == Unspecific Targetinserted:
+        if regulator != . and drug != .:
+            4. regulator - drug
+queries for cases:
+    1.:
+SELECT B.*
+FROM target_regulator_drug_disease_pair A
+INNER JOIN regulation_information B ON A.unique_id = B.unique_id
+WHERE A.target_id!="TAR99999" AND A.regulator_id!="."
+"""
+for interaction, row in edge_dfs['target_regulator_drug_disease_pair'].iterrows():
+    reg_info = handle_ferreg_uniqueid(edge_dfs['regulation_information'].loc[interaction])
+    target = edge_dfs['general_target'].loc[row.target_id, 'ext_id']
+    if row.regulator_id != ".":
+        interaction_type = get_interaction_sign(reg_info['regulator to target gene'])
+        regulator = edge_dfs['general_regulator'].loc[row.regulator_id, 'ext_id']
+        try:
+            process_edges(db_api, regulator, target, interaction_type)
+            print(f"{regulator}{interaction_type}{target}inserted")
+        except Exception as e:
+            continue
+            print(f"fugg {e}, ez kaga {regulator}, {target}")
+  #  if row.drug_id != ".":
+  #      interaction_type = get_interaction_sign(reg_info['drug2target'])
+  #      drug = edge_dfs['general_drug'].loc[row.drug_id, 'ext_id']
+  #      print(drug, '-----'+interaction_type, target)
+db_api.save_db_to_file(str(DB_DESTINATION2))
