@@ -27,7 +27,8 @@ def process_target_df(df, db_api):
             'pathways': str(row.get('pathway', ''))
         }
 
-        node_id = db_api.insert_node(node_dict)
+        db_api.insert_node(node_dict)
+        node_id = node_dict.get('id')
         if node_id:
             if pd.notna(row.get('uniprot_id')):
                 db_api.insert_node_identifier(
@@ -88,7 +89,8 @@ def process_reg_df(df, db_api):
             'function': str(row.get('function', '')),
             'pathways': str(row.get('pathway', ''))
         }
-        node_id = db_api.insert_node(node_dict)
+        db_api.insert_node(node_dict)
+        node_id = node_dict.get('id')
         if node_id:
             if pd.notna(row.get('regulator_name')):
                 db_api.insert_node_identifier(
@@ -135,14 +137,15 @@ def process_ligand_df(df, db_api):
         node_dict = {
             'name': primary_id,
             'primary_id_type': primary_id_type,
-            'display_name': row.get('name') if pd.notna(row.get('name')) else primary_id,
+            'display_name': row.get('drug_name') if pd.notna(row.get('drug_name')) else primary_id,
             'tax_id': None,
             'type': 'small_molecule',
             'source': 'ferreg_ligand',
             'function': '',
             'pathways': ''
         }
-        node_id = db_api.insert_node(node_dict)
+        db_api.insert_node(node_dict)
+        node_id = node_dict.get('id')
         if node_id:
             if pd.notna(row.get('sid')):
                 db_api.insert_node_identifier(
@@ -150,10 +153,10 @@ def process_ligand_df(df, db_api):
                     row.get('sid'),
                     (primary_id_type == 'sid')
                 )
-            if pd.notna(row.get('name')):
+            if pd.notna(row.get('drug_name')):
                 db_api.insert_node_identifier(
                     node_id, 'name',
-                    row.get('name'),
+                    row.get('drug_name'),
                     (primary_id_type == 'name')
                 )
             if pd.notna(row.get('inchikey')):
@@ -290,7 +293,7 @@ query_edge = [
 
     {"db": ferreg,
      "table": "general_regulator",
-     "id_column": "regulator_id, External_id",
+     "id_column": "regulator_id, External_id, `HGNC ID`, `KEGG ID`, regulator_name",
      "source": "ferreg",
      "is_core": 0
      },
@@ -327,7 +330,8 @@ def get_interaction_sign(interaction):
         return "."
 
 
-def process_edges(db_api, id_a, id_b, interaction):
+def process_edges(db_api, id_a, id_b, interaction, relation_type):
+    """Process and insert an edge between two nodes"""
     """
     tup = (
         interactor_a_dict['id'],
@@ -339,14 +343,19 @@ def process_edges(db_api, id_a, id_b, interaction):
         edge_dict['interaction_types']
     )
     """
-    a_dict = db_api.get_node_by_name(id_a)
-    b_dict = db_api.get_node_by_name(id_b)
+    a_dict = db_api.get_node_by_any_identifier(id_a)
+    if not a_dict:
+        raise ValueError(f"Node not found with name: {id_a}")
+
+    b_dict = db_api.get_node_by_any_identifier(id_b)
+    if not b_dict:
+        raise ValueError(f"Node not found with name: {id_b}")
+
     edge_dict = {
         "layer": "ferreg",
         "source_db": "ferreg",
-        "interaction_types": interaction
+        "interaction_types": f"{interaction}|relation:{relation_type}"
     }
-
     db_api.insert_edge(a_dict, b_dict, edge_dict)
 
 
@@ -359,17 +368,20 @@ for query in query_edge:
         primary_key = find_ferreg_id(cols, key)
         val = pd.DataFrame(data=res, columns=cols).set_index(primary_key)
     else:
-        cols = ['ferreg_id', 'ext_id']
+        num_columns = len(res[0]) if res else 0
+        cols = ['ferreg_id'] +[f'ext_id{i+1}' if i > 0 else 'ext_id' for i in range(num_columns - 1)]
         val = pd.DataFrame(data=res, columns=cols).set_index('ferreg_id')
     edge_dfs[key] = val
 
+
+def find_ex_id(row):
+    for name, val in row.items():
+        if val != '.':
+            return val
+    return None
 # TODO: cell lines and disease connections?
 # drug regulator interaction?
 # regulator disease interaction?
-DB_DESTINATION2 = OUTPUTS_DIR/"test.db"
-db_api = PsimiSQL(SQL_SEED)
-db_api.import_from_db_file(str(DB_DESTINATION))
-db_api.get_node_by_name("B8A405")
 """
 Cases:
     Target != Unspecific Targetinserted:
@@ -389,20 +401,66 @@ FROM target_regulator_drug_disease_pair A
 INNER JOIN regulation_information B ON A.unique_id = B.unique_id
 WHERE A.target_id!="TAR99999" AND A.regulator_id!="."
 """
-for interaction, row in edge_dfs['target_regulator_drug_disease_pair'].iterrows():
-    reg_info = handle_ferreg_uniqueid(edge_dfs['regulation_information'].loc[interaction])
-    target = edge_dfs['general_target'].loc[row.target_id, 'ext_id']
-    if row.regulator_id != ".":
+case1_data = edge_dfs['target_regulator_drug_disease_pair'][
+    (edge_dfs['target_regulator_drug_disease_pair'].target_id != "TAR99999") &
+    (edge_dfs['target_regulator_drug_disease_pair'].regulator_id != ".")
+]
+case2_data = edge_dfs['target_regulator_drug_disease_pair'][
+    (edge_dfs['target_regulator_drug_disease_pair'].target_id != "TAR99999") &
+    (edge_dfs['target_regulator_drug_disease_pair'].drug_id != ".")
+]
+case4_data = edge_dfs['target_regulator_drug_disease_pair'][
+    (edge_dfs['target_regulator_drug_disease_pair'].target_id == "TAR99999") &
+    (edge_dfs['target_regulator_drug_disease_pair'].regulator_id != ".") &
+    (edge_dfs['target_regulator_drug_disease_pair'].drug_id != ".")
+]
+DB_DESTINATION2 = OUTPUTS_DIR/"test.db"
+db_api = PsimiSQL(SQL_SEED)
+db_api.import_from_db_file(str(DB_DESTINATION))
+db_api.get_node_by_any_identifier("HCXVJBMSMIARIN-PHZDYDNGSA-N")
+rejects = []
+edge_dfs['general_regulator'][edge_dfs['general_regulator'].ext_id=='.']
+for interaction, row in case1_data.iterrows():
+    try:
+        reg_info = handle_ferreg_uniqueid(edge_dfs['regulation_information'].loc[interaction])
+        target = find_ex_id(edge_dfs['general_target'].loc[row.target_id])
+        regulator = find_ex_id(edge_dfs['general_regulator'].loc[row.regulator_id])
         interaction_type = get_interaction_sign(reg_info['regulator to target gene'])
-        regulator = edge_dfs['general_regulator'].loc[row.regulator_id, 'ext_id']
-        try:
-            process_edges(db_api, regulator, target, interaction_type)
-            print(f"{regulator}{interaction_type}{target}inserted")
-        except Exception as e:
+
+        process_edges(db_api, regulator, target, interaction_type, "regulator_target")
+        print(f"{regulator} {interaction_type} {target} inserted")
+    except Exception as e:
+        rejects.append([row.regulator_id, target])
+        print(f"Error processing regulator->target: {regulator}->{target}: {str(e)}")
+
+for interaction, row in case2_data.iterrows():
+    try:
+        reg_info = handle_ferreg_uniqueid(edge_dfs['regulation_information'].loc[interaction])
+        if reg_info['drug2target'] == '.':
             continue
-            print(f"fugg {e}, ez kaga {regulator}, {target}")
-  #  if row.drug_id != ".":
-  #      interaction_type = get_interaction_sign(reg_info['drug2target'])
-  #      drug = edge_dfs['general_drug'].loc[row.drug_id, 'ext_id']
-  #      print(drug, '-----'+interaction_type, target)
+
+        target = find_ex_id(edge_dfs['general_target'].loc[row.target_id])
+        drug = find_ex_id(edge_dfs['general_drug'].loc[row.drug_id])
+        interaction_type = get_interaction_sign(reg_info['drug2target'])
+
+        process_edges(db_api, drug, target, interaction_type, "drug_target")
+        print(f"{drug} {interaction_type} {target} inserted")
+    except Exception as e:
+        rejects.append([drug, target])
+        print(f"Error processing drug->target: {drug}->{target}: {str(e)}")
+
+for interaction, row in case4_data.iterrows():
+    try:
+        reg_info = handle_ferreg_uniqueid(edge_dfs['regulation_information'].loc[interaction])
+        if 'drug2regulator' in reg_info and reg_info['drug2regulator'] != '.':
+            regulator = find_ex_id(edge_dfs['general_regulator'].loc[row.regulator_id])
+            drug = find_ex_id(edge_dfs['general_drug'].loc[row.drug_id])
+            interaction_type = get_interaction_sign(reg_info['drug2regulator'])
+
+            process_edges(db_api, drug, regulator, interaction_type, "drug_regulator")
+            print(f"{drug} {interaction_type} {regulator} inserted")
+    except Exception as e:
+        rejects.append([drug, regulator])
+        print(f"Error processing drug->regulator: {drug}->{regulator}: {str(e)}")
+rejects
 db_api.save_db_to_file(str(DB_DESTINATION2))

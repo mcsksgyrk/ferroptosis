@@ -309,6 +309,40 @@ class PsimiSQL:
             identifiers[id_type] = id_value
         return identifiers
 
+    def get_node_by_any_identifier(self, id_value):
+        """Find a node by any of its identifiers without specifying the type"""
+        query = """
+            SELECT n.* FROM node n
+            JOIN node_identifier ni ON n.id = ni.node_id
+            WHERE ni.id_value = ?
+            LIMIT 1
+        """
+        self.cursor.execute(query, (id_value,))
+        answer = self.cursor.fetchone()
+
+        if not answer:
+            self.cursor.execute("SELECT * FROM node WHERE name = ? LIMIT 1", (id_value,))
+            answer = self.cursor.fetchone()
+
+        if not answer:
+            return None
+
+        id, name, primary_id_type, display_name, tax_id, mol_type, pathways, source, function = answer
+        node_dict = {
+            "id": id,
+            "name": name,
+            "primary_id_type": primary_id_type,
+            "display_name": display_name,
+            "tax_id": tax_id,
+            "type": mol_type,
+            "pathways": pathways,
+            "source": source,
+            "function": function
+        }
+        # Also fetch all identifiers
+        node_dict.update(self.get_node_identifiers(id))
+        return node_dict
+
     def get_node_by_identifier(self, id_type, id_value):
         """Find a node by one of its identifiers"""
         query = """
