@@ -323,25 +323,68 @@ def handle_ferreg_uniqueid(info_rows):
 
 def get_interaction_sign(interaction):
     if interaction.split(' ')[0].lower() == "up":
-        return ">"
+        return "up"
     elif interaction.split(' ')[0].lower() == "down":
-        return "|"
+        return "down"
     else:
         return "."
 
 
-def process_edges(db_api, id_a, id_b, interaction, relation_type):
-    """Process and insert an edge between two nodes"""
+def og_process_edges(db_api, id_a, id_b, interaction, relation_type):
+    """Process and insert an edge between two nodes, or update if it exists"""
+    # Get node objects
+    a_dict = db_api.get_node_by_any_identifier(id_a)
+    if not a_dict:
+        raise ValueError(f"Node not found with name: {id_a}")
+
+    b_dict = db_api.get_node_by_any_identifier(id_b)
+    if not b_dict:
+        raise ValueError(f"Node not found with name: {id_b}")
+
+    query = """
+        SELECT id, interaction_types FROM edge
+        WHERE interactor_a_node_id = ? AND interactor_b_node_id = ?
     """
-    tup = (
-        interactor_a_dict['id'],
-        interactor_b_dict['id'],
-        interactor_a_dict['name'],
-        interactor_b_dict['name'],
-        edge_dict['layer'],
-        edge_dict['source_db'],
-        edge_dict['interaction_types']
-    )
+    db_api.cursor.execute(query, (a_dict['id'], b_dict['id']))
+    existing_edge = db_api.cursor.fetchone()
+
+    # Create the interaction type string
+    interaction_type = f"{interaction}|relation:{relation_type}"
+
+    if existing_edge:
+        # Edge exists, update interaction types
+        edge_id, current_interactions = existing_edge
+
+        # Only update if this is a new interaction type
+        if interaction_type not in current_interactions:
+            updated_interactions = current_interactions + "|" + interaction_type if current_interactions else interaction_type
+            update_query = "UPDATE edge SET interaction_types = ? WHERE id = ?"
+            db_api.cursor.execute(update_query, (updated_interactions, edge_id))
+            db_api.db.commit()
+            print(f"Updated edge: {a_dict['name']} -> {b_dict['name']}")
+        else:
+            print(f"Edge exists with same interaction: {a_dict['name']} -> {b_dict['name']}, skipping")
+    else:
+        # Create new edge
+        edge_dict = {
+            "layer": "ferreg",
+            "source_db": "ferreg",
+            "interaction_types": interaction_type
+        }
+        db_api.insert_edge(a_dict, b_dict, edge_dict)
+        print(f"New edge created: {a_dict['name']} -> {b_dict['name']}")
+
+
+def process_edges(db_api, id_a, id_b, interaction, relation_type, drug_id=None):
+    """
+    Process and insert an edge between two nodes
+
+    Parameters:
+    - db_api: Database API object
+    - id_a, id_b: Identifiers for interactor nodes
+    - interaction: Interaction type (>, |, etc.)
+    - relation_type: Relationship type (regulator_target, etc.)
+    - drug_id: Optional drug ID that modulates this interaction
     """
     a_dict = db_api.get_node_by_any_identifier(id_a)
     if not a_dict:
@@ -351,12 +394,59 @@ def process_edges(db_api, id_a, id_b, interaction, relation_type):
     if not b_dict:
         raise ValueError(f"Node not found with name: {id_b}")
 
-    edge_dict = {
-        "layer": "ferreg",
-        "source_db": "ferreg",
-        "interaction_types": f"{interaction}|relation:{relation_type}"
-    }
-    db_api.insert_edge(a_dict, b_dict, edge_dict)
+    # Check if edge already exists
+    query = """
+        SELECT id, interaction_types FROM edge
+        WHERE interactor_a_node_id = ? AND interactor_b_node_id = ?
+        AND source_db = 'ferreg' AND layer = 'ferreg'
+    """
+    db_api.cursor.execute(query, (a_dict['id'], b_dict['id']))
+    existing_edge = db_api.cursor.fetchone()
+
+    # Create interaction type string
+    if drug_id:
+        # Include drug-dependent context
+        drug_dict = db_api.get_node_by_any_identifier(drug_id)
+        if drug_dict:
+            interaction_type = f"drug:{drug_dict['name']}:{interaction}|relation:{relation_type}"
+        else:
+            interaction_type = f"drug:{drug_id}:{interaction}|relation:{relation_type}"
+    else:
+        # No drug context
+        interaction_type = f"{interaction}|relation:{relation_type}"
+
+    if existing_edge:
+        # Edge exists, need to update it
+        edge_id, current_interactions = existing_edge
+
+        # Check if this specific drug-interaction is already recorded
+        if drug_id and interaction_type not in current_interactions:
+            # Add this new drug-specific interaction
+            updated_interactions = f"{current_interactions}|{interaction_type}"
+
+            update_query = "UPDATE edge SET interaction_types = ? WHERE id = ?"
+            db_api.cursor.execute(update_query, (updated_interactions, edge_id))
+            db_api.db.commit()
+            print(f"Updated edge with drug-specific interaction: {a_dict['name']} -> {b_dict['name']}")
+        elif not drug_id and interaction_type not in current_interactions:
+            # Add base interaction without drug context
+            updated_interactions = f"{current_interactions}|{interaction_type}"
+
+            update_query = "UPDATE edge SET interaction_types = ? WHERE id = ?"
+            db_api.cursor.execute(update_query, (updated_interactions, edge_id))
+            db_api.db.commit()
+            print(f"Updated edge with new interaction: {a_dict['name']} -> {b_dict['name']}")
+        else:
+            print(f"Edge already contains this interaction: {a_dict['name']} -> {b_dict['name']}")
+    else:
+        # Create new edge
+        edge_dict = {
+            "layer": "ferreg",
+            "source_db": "ferreg",
+            "interaction_types": interaction_type
+        }
+        db_api.insert_edge(a_dict, b_dict, edge_dict)
+        print(f"New edge created: {a_dict['name']} -> {b_dict['name']}")
 
 
 edge_dfs = dict()
@@ -379,36 +469,30 @@ def find_ex_id(row):
         if val != '.':
             return val
     return None
-# TODO: cell lines and disease connections?
-# drug regulator interaction?
-# regulator disease interaction?
-"""
-Cases:
-    Target != Unspecific Targetinserted:
-        If regulator != .:
-            1. regulator - target
-        If drug != .:
-            2. drug - target
-        If drug == regulator:
-            3. target - disease
-    Target == Unspecific Targetinserted:
-        if regulator != . and drug != .:
-            4. regulator - drug
-queries for cases:
-    1.:
-SELECT B.*
-FROM target_regulator_drug_disease_pair A
-INNER JOIN regulation_information B ON A.unique_id = B.unique_id
-WHERE A.target_id!="TAR99999" AND A.regulator_id!="."
-"""
+
+
+# Case 1: Regulator -> Target (excluding where drug also exists)
 case1_data = edge_dfs['target_regulator_drug_disease_pair'][
     (edge_dfs['target_regulator_drug_disease_pair'].target_id != "TAR99999") &
-    (edge_dfs['target_regulator_drug_disease_pair'].regulator_id != ".")
+    (edge_dfs['target_regulator_drug_disease_pair'].regulator_id != ".") &
+    (edge_dfs['target_regulator_drug_disease_pair'].drug_id == ".")
 ]
+
+# Case 2: Drug -> Target (excluding where regulator also exists)
 case2_data = edge_dfs['target_regulator_drug_disease_pair'][
     (edge_dfs['target_regulator_drug_disease_pair'].target_id != "TAR99999") &
+    (edge_dfs['target_regulator_drug_disease_pair'].drug_id != ".") &
+    (edge_dfs['target_regulator_drug_disease_pair'].regulator_id == ".")
+]
+#in the function of drug the sign of the interaction changes i think
+# Case 3: Both Drug and Regulator exist with valid Target
+case3_data = edge_dfs['target_regulator_drug_disease_pair'][
+    (edge_dfs['target_regulator_drug_disease_pair'].target_id != "TAR99999") &
+    (edge_dfs['target_regulator_drug_disease_pair'].regulator_id != ".") &
     (edge_dfs['target_regulator_drug_disease_pair'].drug_id != ".")
 ]
+
+# Case 4: Drug -> Regulator (with unspecified target)
 case4_data = edge_dfs['target_regulator_drug_disease_pair'][
     (edge_dfs['target_regulator_drug_disease_pair'].target_id == "TAR99999") &
     (edge_dfs['target_regulator_drug_disease_pair'].regulator_id != ".") &
@@ -419,7 +503,6 @@ db_api = PsimiSQL(SQL_SEED)
 db_api.import_from_db_file(str(DB_DESTINATION))
 db_api.get_node_by_any_identifier("HCXVJBMSMIARIN-PHZDYDNGSA-N")
 rejects = []
-edge_dfs['general_regulator'][edge_dfs['general_regulator'].ext_id=='.']
 for interaction, row in case1_data.iterrows():
     try:
         reg_info = handle_ferreg_uniqueid(edge_dfs['regulation_information'].loc[interaction])
@@ -428,7 +511,6 @@ for interaction, row in case1_data.iterrows():
         interaction_type = get_interaction_sign(reg_info['regulator to target gene'])
 
         process_edges(db_api, regulator, target, interaction_type, "regulator_target")
-        print(f"{regulator} {interaction_type} {target} inserted")
     except Exception as e:
         rejects.append([row.regulator_id, target])
         print(f"Error processing regulator->target: {regulator}->{target}: {str(e)}")
@@ -444,10 +526,30 @@ for interaction, row in case2_data.iterrows():
         interaction_type = get_interaction_sign(reg_info['drug2target'])
 
         process_edges(db_api, drug, target, interaction_type, "drug_target")
-        print(f"{drug} {interaction_type} {target} inserted")
     except Exception as e:
         rejects.append([drug, target])
         print(f"Error processing drug->target: {drug}->{target}: {str(e)}")
+
+for interaction, row in case3_data.iterrows():
+    try:
+        reg_info = handle_ferreg_uniqueid(edge_dfs['regulation_information'].loc[interaction])
+        target = find_ex_id(edge_dfs['general_target'].loc[row.target_id])
+        regulator = find_ex_id(edge_dfs['general_regulator'].loc[row.regulator_id])
+        drug = find_ex_id(edge_dfs['general_drug'].loc[row.drug_id])
+        # Get regulator->target interaction in the presence of this drug
+        if 'regulator to target gene' in reg_info and reg_info['regulator to target gene'] != '.':
+            interaction_type = get_interaction_sign(reg_info['regulator to target gene'])
+            # Pass the drug context
+            process_edges(db_api, regulator, target, interaction_type, "regulator_target", drug)
+        # Also process other interactions (drug->target, drug->regulator) as needed
+        if 'drug2target' in reg_info and reg_info['drug2target'] != '.':
+            interaction_type = get_interaction_sign(reg_info['drug2target'])
+            process_edges(db_api, drug, target, interaction_type, "drug_target")
+        if 'drug2regulator' in reg_info and reg_info['drug2regulator'] != '.':
+            interaction_type = get_interaction_sign(reg_info['drug2regulator'])
+            process_edges(db_api, drug, regulator, interaction_type, "drug_regulator")
+    except Exception as e:
+        print(f"Error processing complex interaction for {interaction}: {str(e)}")
 
 for interaction, row in case4_data.iterrows():
     try:
@@ -458,9 +560,7 @@ for interaction, row in case4_data.iterrows():
             interaction_type = get_interaction_sign(reg_info['drug2regulator'])
 
             process_edges(db_api, drug, regulator, interaction_type, "drug_regulator")
-            print(f"{drug} {interaction_type} {regulator} inserted")
     except Exception as e:
         rejects.append([drug, regulator])
         print(f"Error processing drug->regulator: {drug}->{regulator}: {str(e)}")
-rejects
 db_api.save_db_to_file(str(DB_DESTINATION2))
