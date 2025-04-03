@@ -39,7 +39,6 @@ kegg_parser = KEGGPathwayParser()
 kegg_src = kegg_parser.read_pathway("hsa04216.xml")
 kegg_edges = kegg_parser.read_edges("hsa04216.xml")
 kegg_id_list = kegg_parser.extract_gene_ids(kegg_src)
-
 rows = []
 for k, v in kegg_src.items():
     if len(v) > 1:
@@ -49,15 +48,27 @@ for k, v in kegg_src.items():
                 continue
             else:
                 kegg_id, uniprot_id, pubchem_id = convert_kegg(i)
-            rows.append([k, kegg_id, uniprot_id, pubchem_id])
+                if uniprot_id:
+                    primary_id = "uniprot_id"
+                elif pubchem_id:
+                    primary_id = "cid"
+                elif kegg_id:
+                    primary_id = "kegg_id"
+            rows.append([k, primary_id, kegg_id, uniprot_id, pubchem_id])
     else:
         if 'path' in v[0] or v[0] == "undefined":
             continue
         else:
             kegg_id, uniprot_id, pubchem_id = convert_kegg(v[0])
-            rows.append([k, kegg_id, uniprot_id, pubchem_id])
+            if uniprot_id:
+                primary_id = "uniprot_id"
+            elif pubchem_id:
+                primary_id = "cid"
+            elif kegg_id:
+                primary_id = "kegg_id"
+            rows.append([k, primary_id, kegg_id, uniprot_id, pubchem_id])
 
-kegg_node_df = pd.DataFrame(data=rows, columns=['id', 'kegg_id', 'uniprot_id', 'pubchem_id'])
+kegg_node_df = pd.DataFrame(data=rows, columns=['id', 'primary_id', 'kegg_id', 'uniprot_id', 'pubchem_id'])
 edge_rows = []
 for edge in kegg_edges:
     source_rows = kegg_node_df[kegg_node_df.id == edge.source_id]
@@ -111,6 +122,7 @@ for idx, row in kegg_node_df.iterrows():
         node_dict['name'] = row.pubchem_id
         node_dict['type'] = 'small_molecule'
     node_dict['display_name'] = ""
+    node_dict['primary_id_type'] = row.primary_id
     node_dict['tax_id'] = 9606 if node_dict['type'] == 'protein' else None
     node_dict['pathways'] = ""
     node_dict['source'] = "KEGG"
@@ -119,11 +131,20 @@ for idx, row in kegg_node_df.iterrows():
 
     node_id = node_dict['id']
     if row.kegg_id != "":
-        db_api.insert_node_identifier(node_id, 'kegg_id', row.kegg_id)
-    if row.uniprot_id != "" and node_dict['name'] != row.uniprot_id:
-        db_api.insert_node_identifier(node_id, 'uniprot_id', row.uniprot_id)
-    if row.pubchem_id != "" and node_dict['name'] != row.pubchem_id:
-        db_api.insert_node_identifier(node_id, 'pubchem_id', row.pubchem_id)
+        if primary_id == "kegg_id":
+            db_api.insert_node_identifier(node_id, 'kegg_id', row.kegg_id, True)
+        else:
+            db_api.insert_node_identifier(node_id, 'kegg_id', row.kegg_id)
+    if row.uniprot_id != "":
+        if primary_id == "uniprot_id":
+            db_api.insert_node_identifier(node_id, 'uniprot_id', row.uniprot_id, True)
+        else:
+            db_api.insert_node_identifier(node_id, 'uniprot_id', row.uniprot_id)
+    if row.pubchem_id != "":
+        if primary_id == "cid":
+            db_api.insert_node_identifier(node_id, 'cid', row.pubchem_id, True)
+        else:
+            db_api.insert_node_identifier(node_id, 'cid', row.pubchem_id, True)
 
 for idx, row in edge_df.iterrows():
     directed = 'false'
