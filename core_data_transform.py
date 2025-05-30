@@ -1,4 +1,5 @@
-import pandas as pd from parsers.source_parsers import KEGGPathwayParser, WikiPathwayParser
+import pandas as pd
+from parsers.source_parsers import KEGGPathwayParser, WikiPathwayParser
 from apicalls.api_oop import UniProtClient
 from typing import Dict, List
 from pathlib import Path
