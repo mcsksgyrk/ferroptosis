@@ -1,5 +1,4 @@
 from .base import APIClient
-import requests
 from typing import List, Dict
 
 
