@@ -4,7 +4,7 @@ from typing import Dict, List
 from pathlib import Path
 from config import OUTPUTS_DIR, SOURCES_DIR, PROJECT_ROOT
 from apicalls.api_oop import KEGGClient, UniProtClient
-from database.sqlite_db_api2 import PsimiSQL
+from database.sqlite_db_api3 import PsimiSQL
 
 
 def make_tables(data: Dict[int, List[str]], source: str, core: int) -> pd.DataFrame:
@@ -37,38 +37,31 @@ def convert_kegg(name: str):
 
 kegg_parser = KEGGPathwayParser()
 kegg_src = kegg_parser.read_pathway("hsa04216.xml")
+kegg_src
 kegg_edges = kegg_parser.read_edges("hsa04216.xml")
 kegg_id_list = kegg_parser.extract_gene_ids(kegg_src)
 rows = []
 for k, v in kegg_src.items():
-    if len(v) > 1:
-        print(f"{k}:{len(v)}")
-        for i in v:
-            if 'path' in i or i == "undefined":
-                continue
-            else:
-                kegg_id, uniprot_id, pubchem_id = convert_kegg(i)
-                if uniprot_id:
-                    primary_id = "uniprot_id"
-                elif pubchem_id:
-                    primary_id = "cid"
-                elif kegg_id:
-                    primary_id = "kegg_id"
-            rows.append([k, primary_id, kegg_id, uniprot_id, pubchem_id])
-    else:
-        if 'path' in v[0] or v[0] == "undefined":
-            continue
-        else:
-            kegg_id, uniprot_id, pubchem_id = convert_kegg(v[0])
-            if uniprot_id:
-                primary_id = "uniprot_id"
-            elif pubchem_id:
-                primary_id = "cid"
-            elif kegg_id:
-                primary_id = "kegg_id"
-            rows.append([k, primary_id, kegg_id, uniprot_id, pubchem_id])
+    display_name = v['display_name']
 
-kegg_node_df = pd.DataFrame(data=rows, columns=['id', 'primary_id', 'kegg_id', 'uniprot_id', 'pubchem_id'])
+    for kegg_item in v['kegg_id']:
+        if 'path' in kegg_item or kegg_item == "undefined":
+            continue
+
+        kegg_id, uniprot_id, pubchem_id = convert_kegg(kegg_item)
+
+        if uniprot_id:
+            primary_id = "uniprot_id"
+        elif pubchem_id:
+            primary_id = "cid"
+        elif kegg_id:
+            primary_id = "kegg_id"
+        else:
+            primary_id = "unknown"
+
+        rows.append([k, primary_id, kegg_id, uniprot_id, pubchem_id, display_name])
+
+kegg_node_df = pd.DataFrame(data=rows, columns=['id', 'primary_id', 'kegg_id', 'uniprot_id', 'pubchem_id', 'display_name'])
 edge_rows = []
 for edge in kegg_edges:
     source_rows = kegg_node_df[kegg_node_df.id == edge.source_id]
@@ -108,8 +101,8 @@ edge_df['is_directed'] = 1
 edge_df
 kegg_node_df[kegg_node_df.kegg_id.str.contains('dr')]
 
-SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed2.sql"
-DB_DESTINATION = OUTPUTS_DIR / "kegg.db"
+SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
+DB_DESTINATION = OUTPUTS_DIR / "kegg_ext2.db"
 db_api = PsimiSQL(SQL_SEED)
 
 for idx, row in kegg_node_df.iterrows():
@@ -126,6 +119,7 @@ for idx, row in kegg_node_df.iterrows():
     node_dict['tax_id'] = 9606 if node_dict['type'] == 'protein' else None
     node_dict['pathways'] = ""
     node_dict['source'] = "KEGG"
+    node_dict['display_name'] = '|'.join(row.display_name)
     node_dict['function'] = ""
     db_api.insert_node(node_dict)
 
@@ -157,7 +151,7 @@ for idx, row in edge_df.iterrows():
         directed = 'false'
     else:
         print("WARNING: unknown direction flag in line: " + idx)
-    interaction_types = "is_directed:%s|is_direct:%s" % (directed, direct)
+    interaction_types = "is_directed:%s|is_direct:%s|%s" % (directed, direct, row.edge_type)
     edge_dict = {
         'source_db': 'KEGG',
         'interaction_types': interaction_types,

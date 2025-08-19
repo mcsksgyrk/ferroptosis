@@ -12,7 +12,7 @@ class GOTerm(TypedDict):
 
 
 class APIClient:
-    def __init__(self, base_url: str, polling_interval: int = 1):
+    def __init__(self, base_url: str, polling_interval: int = 0.25):
         self.base_url = base_url
         self.polling_interval = polling_interval
 

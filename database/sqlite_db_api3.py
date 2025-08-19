@@ -4,7 +4,6 @@ import sqlite3
 class PsimiSQL:
     def __init__(self, sql_seed_file_location):
         self.sql_seed = open(sql_seed_file_location).read()
-
         self.db = self.create_db(":memory:")
         self.cursor = self.db.cursor()
 
@@ -28,20 +27,35 @@ class PsimiSQL:
         except sqlite3.OperationalError:
             pass
 
-        temporary_db.close()
+        # MODIFICATION: Import new tables
+        try:
+            self.db.execute("INSERT INTO disease SELECT * FROM %s.disease" % temporary_db_name)
+            self.db.commit()
+        except sqlite3.OperationalError:
+            pass
 
+        try:
+            self.db.execute("INSERT INTO disease_edge SELECT * FROM %s.disease_edge" % temporary_db_name)
+            self.db.commit()
+        except sqlite3.OperationalError:
+            pass
+
+        try:
+            self.db.execute("INSERT INTO experiment_model SELECT * FROM %s.experiment_model" % temporary_db_name)
+            self.db.commit()
+        except sqlite3.OperationalError:
+            pass
+
+        temporary_db.close()
         self.db.execute("DETACH DATABASE %s" % temporary_db_name)
         self.db.commit()
 
     def create_db(self, location):
         db = sqlite3.connect(location)
         db.text_factory = str
-
         create_tables_query = self.sql_seed
-
         db.executescript(create_tables_query)
         db.commit()
-
         return db
 
     def check_if_node_exists(self, node_dict):
@@ -85,21 +99,23 @@ class PsimiSQL:
             if 'type' not in node_dict:
                 node_dict['type'] = 'protein'
 
+            # MODIFICATION: Updated INSERT query for new schema
             query = """
                 INSERT INTO node
-                (name, display_name, primary_id_type, tax_id, type, pathways, source, function)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                (name, primary_id_type, display_name, tax_id, type, pathways, role_in_ferroptosis, function, source_db)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
 
             self.cursor.execute(query, (
                 node_dict['name'],
-                node_dict.get('display_name', ''),
                 node_dict.get('primary_id_type'),
-                node_dict.get('tax_id'),  # Can be None
+                node_dict.get('display_name', ''),
+                node_dict.get('tax_id'),
                 node_dict.get('type', 'protein'),
                 node_dict.get('pathways', ''),
-                node_dict.get('source', ''),
-                node_dict.get('function', '')
+                node_dict.get('role_in_ferroptosis', ''),  # MODIFICATION: New field
+                node_dict.get('function', ''),
+                node_dict.get('source_db', '')  # MODIFICATION: New field
             ))
             self.db.commit()
 
@@ -110,28 +126,29 @@ class PsimiSQL:
             node_dict['id'] = existing_node['id']
 
     def insert_unique_node(self, node_dict):
-        # Add defaults for new fields
         if 'display_name' not in node_dict:
             node_dict['display_name'] = node_dict.get('name', '')
 
         if 'type' not in node_dict:
-            node_dict['type'] = 'protein'  # Default type
+            node_dict['type'] = 'protein'
 
+        # MODIFICATION: Updated INSERT query for new schema
         query = """
             INSERT INTO node
-            (name, display_name, primary_id_type, tax_id, type, pathways, source, function)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            (name, primary_id_type, display_name, tax_id, type, pathways, role_in_ferroptosis, function, source_db)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
 
         self.cursor.execute(query, (
             node_dict['name'],
-            node_dict.get('display_name', ''),
             node_dict.get('primary_id_type'),
+            node_dict.get('display_name', ''),
             node_dict.get('tax_id'),
             node_dict.get('type', 'protein'),
             node_dict.get('pathways', ''),
-            node_dict.get('source', ''),
-            node_dict.get('function', '')
+            node_dict.get('role_in_ferroptosis', ''),  # MODIFICATION: New field
+            node_dict.get('function', ''),
+            node_dict.get('source_db', '')  # MODIFICATION: New field
         ))
         self.db.commit()
 
@@ -152,7 +169,7 @@ class PsimiSQL:
         answer = self.cursor.fetchone()
 
         if answer:
-            # Adjust to the new schema with display_name and type fields
+            # MODIFICATION: Updated field mapping for new schema
             node_dict = {
                 'id': answer[0],
                 'name': answer[1],
@@ -161,13 +178,12 @@ class PsimiSQL:
                 'tax_id': answer[4],
                 'type': answer[5],
                 'pathways': answer[6],
-                'source': answer[7],
-                'function': answer[8]
+                'role_in_ferroptosis': answer[7],  # MODIFICATION: New field
+                'function': answer[8],
+                'source_db': answer[9]  # MODIFICATION: New field
             }
 
-            # Also fetch identifiers
             node_dict.update(self.get_node_identifiers(node_dict['id']))
-
             return node_dict
         else:
             return None
@@ -180,6 +196,7 @@ class PsimiSQL:
         answer = self.cursor.fetchone()
 
         if answer:
+            # MODIFICATION: Updated field mapping for new schema
             node_dict = {
                 'id': answer[0],
                 'name': answer[1],
@@ -188,13 +205,12 @@ class PsimiSQL:
                 'tax_id': answer[4],
                 'type': answer[5],
                 'pathways': answer[6],
-                'source': answer[7],
-                'function': answer[8]
+                'role_in_ferroptosis': answer[7],  # MODIFICATION: New field
+                'function': answer[8],
+                'source_db': answer[9]  # MODIFICATION: New field
             }
 
-            # Also fetch identifiers
             node_dict.update(self.get_node_identifiers(node_dict['id']))
-
             return node_dict
         else:
             return None
@@ -205,7 +221,8 @@ class PsimiSQL:
         if not answer:
             return None
         else:
-            id, name, primary_id_type, display_name, tax_id, mol_type, pathways, source, function = answer
+            # MODIFICATION: Updated field unpacking for new schema
+            id, name, primary_id_type, display_name, tax_id, mol_type, pathways, role_in_ferroptosis, function, source_db = answer
             node_dict = {
                 'id': answer[0],
                 'name': answer[1],
@@ -214,11 +231,11 @@ class PsimiSQL:
                 'tax_id': answer[4],
                 'type': answer[5],
                 'pathways': answer[6],
-                'source': answer[7],
-                'function': answer[8]
+                'role_in_ferroptosis': answer[7],  # MODIFICATION: New field
+                'function': answer[8],
+                'source_db': answer[9]  # MODIFICATION: New field
             }
             node_dict.update(self.get_node_identifiers(id))
-
             return node_dict
 
     def update_node(self, node_dict):
@@ -231,6 +248,7 @@ class PsimiSQL:
                 self.update_node_identifier(node_dict['id'], id_type, node_dict[id_type])
                 del node_dict[id_type]
 
+        # MODIFICATION: Updated tuple for new schema
         tup = (
             node_dict['name'],
             node_dict.get('primary_id_type'),
@@ -238,15 +256,17 @@ class PsimiSQL:
             node_dict.get('tax_id'),
             node_dict.get('type', 'protein'),
             node_dict.get('pathways', '-'),
-            node_dict.get('source', '-'),
+            node_dict.get('role_in_ferroptosis', '-'),  # MODIFICATION: New field
             node_dict.get('function', '-'),
+            node_dict.get('source_db', '-'),  # MODIFICATION: New field
             node_dict['id']
         )
 
+        # MODIFICATION: Updated UPDATE query for new schema
         query = """
             UPDATE node
             SET name = ?, primary_id_type = ?, display_name = ?, tax_id = ?, type = ?,
-                pathways = ?, source = ?, function = ?
+                pathways = ?, role_in_ferroptosis = ?, function = ?, source_db = ?
             WHERE id = ?;
         """
 
@@ -280,6 +300,48 @@ class PsimiSQL:
         self.db.execute(query, tup)
         self.db.commit()
 
+    # MODIFICATION: New method for inserting diseases
+    def insert_disease(self, disease_dict):
+        query = """
+            INSERT INTO disease (disease_id, disease_name, description)
+            VALUES (?, ?, ?)
+        """
+        self.cursor.execute(query, (
+            disease_dict['disease_id'],
+            disease_dict.get('disease_name', ''),
+            disease_dict.get('description', '')
+        ))
+        self.db.commit()
+        disease_dict['id'] = self.cursor.lastrowid
+
+    # MODIFICATION: New method for inserting disease-edge associations
+    def insert_disease_edge(self, disease_edge_dict):
+        query = """
+            INSERT INTO disease_edge (disease_id, edge_id, reference, source_db)
+            VALUES (?, ?, ?, ?)
+        """
+        self.cursor.execute(query, (
+            disease_edge_dict['disease_id'],
+            disease_edge_dict['edge_id'],
+            disease_edge_dict.get('reference', ''),
+            disease_edge_dict['source_db']
+        ))
+        self.db.commit()
+
+    # MODIFICATION: New method for inserting experiment models
+    def insert_experiment_model(self, experiment_dict):
+        query = """
+            INSERT INTO experiment_model (edge_id, cellline, in_vivo, reference)
+            VALUES (?, ?, ?, ?)
+        """
+        self.cursor.execute(query, (
+            experiment_dict['edge_id'],
+            experiment_dict.get('cellline', ''),
+            experiment_dict.get('in_vivo', ''),
+            experiment_dict.get('reference', '')
+        ))
+        self.db.commit()
+
     def insert_node_identifier(self, node_id, id_type, id_value, is_primary=False):
         query = "INSERT INTO node_identifier (node_id, id_type, id_value, is_primary) VALUES (?, ?, ?, ?)"
         try:
@@ -291,14 +353,12 @@ class PsimiSQL:
     def update_node_identifier(self, node_id, id_type, id_value, is_primary=False):
         self.cursor.execute("DELETE FROM node_identifier WHERE node_id = ? AND id_type = ?",
                             (node_id, id_type))
-        # Insert new value if not empty
         if id_value and id_value != '-':
             self.cursor.execute("INSERT INTO node_identifier (node_id, id_type, id_value, is_primary) VALUES (?, ?, ?, ?)",
                                (node_id, id_type, id_value, is_primary))
         self.db.commit()
 
     def get_node_identifiers(self, node_id):
-        """Get all identifiers for a node"""
         self.cursor.execute("SELECT id_type, id_value FROM node_identifier WHERE node_id = ?", (node_id,))
         identifiers = {}
         for id_type, id_value in self.cursor.fetchall():
@@ -306,7 +366,6 @@ class PsimiSQL:
         return identifiers
 
     def get_node_by_any_identifier(self, id_value):
-        """Find a node by any of its identifiers without specifying the type"""
         query = """
             SELECT n.* FROM node n
             JOIN node_identifier ni ON n.id = ni.node_id
@@ -323,7 +382,8 @@ class PsimiSQL:
         if not answer:
             return None
 
-        id, name, primary_id_type, display_name, tax_id, mol_type, pathways, source, function = answer
+        # MODIFICATION: Updated field unpacking for new schema
+        id, name, primary_id_type, display_name, tax_id, mol_type, pathways, role_in_ferroptosis, function, source_db = answer
         node_dict = {
             "id": id,
             "name": name,
@@ -332,15 +392,14 @@ class PsimiSQL:
             "tax_id": tax_id,
             "type": mol_type,
             "pathways": pathways,
-            "source": source,
-            "function": function
+            "role_in_ferroptosis": role_in_ferroptosis,  # MODIFICATION: New field
+            "function": function,
+            "source_db": source_db  # MODIFICATION: New field
         }
-        # Also fetch all identifiers
         node_dict.update(self.get_node_identifiers(id))
         return node_dict
 
     def get_node_by_identifier(self, id_type, id_value):
-        """Find a node by one of its identifiers"""
         query = """
             SELECT n.* FROM node n
             JOIN node_identifier ni ON n.id = ni.node_id
@@ -352,7 +411,8 @@ class PsimiSQL:
         if not answer:
             return None
 
-        id, name, primary_id_type, display_name, tax_id, mol_type, pathways, source, function = answer
+        # MODIFICATION: Updated field unpacking for new schema
+        id, name, primary_id_type, display_name, tax_id, mol_type, pathways, role_in_ferroptosis, function, source_db = answer
         node_dict = {
             "id": id,
             "name": name,
@@ -361,12 +421,12 @@ class PsimiSQL:
             "tax_id": tax_id,
             "type": mol_type,
             "pathways": pathways,
-            "source": source,
-            "function": function
+            "role_in_ferroptosis": role_in_ferroptosis,  # MODIFICATION: New field
+            "function": function,
+            "source_db": source_db  # MODIFICATION: New field
         }
 
         node_dict.update(self.get_node_identifiers(id))
-
         return node_dict
 
     def save_db_to_file(self, db_file_name):
@@ -395,6 +455,28 @@ class PsimiSQL:
         try:
             attached_table = (db_name + '.node_identifier')
             self.db.execute("INSERT INTO %s SELECT * FROM node_identifier" % attached_table)
+            self.db.commit()
+        except sqlite3.OperationalError:
+            pass
+
+        # MODIFICATION: Export new tables
+        try:
+            attached_table = (db_name + '.disease')
+            self.db.execute("INSERT INTO %s SELECT * FROM disease" % attached_table)
+            self.db.commit()
+        except sqlite3.OperationalError:
+            pass
+
+        try:
+            attached_table = (db_name + '.disease_edge')
+            self.db.execute("INSERT INTO %s SELECT * FROM disease_edge" % attached_table)
+            self.db.commit()
+        except sqlite3.OperationalError:
+            pass
+
+        try:
+            attached_table = (db_name + '.experiment_model')
+            self.db.execute("INSERT INTO %s SELECT * FROM experiment_model" % attached_table)
             self.db.commit()
         except sqlite3.OperationalError:
             pass

@@ -45,6 +45,12 @@ class KEGGPathwayParser(PathwayParser):
         end = line.find('"', start)
         return line[start:end]
 
+    def _find_graphics_name(self, line: str) -> str:
+        name_start = line.find('name="') + 6
+        name_end = line.find('"', name_start)
+        result = line[name_start:name_end]
+        return result.split(',')
+
     def read_edges(self, filename: str) -> List:
         try:
             edges = []
@@ -74,11 +80,18 @@ class KEGGPathwayParser(PathwayParser):
         try:
             entries = {}
             with open(self.data_dir / filename) as f:
-                for line in f:
+                lines = f.readlines()
+                for i, line in enumerate(lines):
                     if "<entry" in line:
-                        k = self._find_id(line)
-                        v = self._find_names(line)
-                        entries[k] = v
+                        id = self._find_id(line)
+                        hsa = self._find_names(line)
+                        graphics_name = ""
+                        if i+2 < len(lines) and "<graphics" in lines[i+2]:
+                            graphics_name = self._find_graphics_name(lines[i+2])
+                        entries[id] = {
+                            'kegg_id': hsa,
+                            'display_name': graphics_name
+                        }
             return entries
         except FileNotFoundError:
             self.logger.error(f"Pathway file not found: {filename}")
@@ -138,7 +151,7 @@ class WikiPathwayParser(PathwayParser):
             self.logger.info(f"Error {e}")
             raise
 
-    def extract_gene_ids(self, df: pd.DataFrame, canonical = True) -> Dict[int, list[str]]:
+    def extract_gene_ids(self, df: pd.DataFrame, canonical=True) -> Dict[int, list[str]]:
         try:
             uniprot_ids = {}
             geneProducts = df[df.Type == "GeneProduct"]
