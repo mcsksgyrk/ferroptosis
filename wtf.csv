@@ -1,0 +1,96 @@
+,id,primary_id_type,kegg_id,uniprot_id,ensemble_id,pubchem_id,type,display_name,function,pathways,role_in_ferroptosis,name,tax_id
+0,10,uniprot_id,Homo sapiens (human) [GN:hsa]:hsa04216,,,,protein,Ferroptosis - Homo sapiens (human),,,core,Ferroptosis - Homo sapiens (human),9606
+1,11,uniprot_id,hsa:23657,Q9UPY5,ENSG00000151012,,protein,(RefSeq) solute carrier family 7 member 11,,,core,(RefSeq) solute carrier family 7 member 11,9606
+2,12,pubchem_id,cpd:C00025,,,3327,compound,L-Glutamate,,,core,L-Glutamate,9606
+3,13,pubchem_id,cpd:C00491,,,3774,compound,L-Cystine,,,core,L-Cystine,9606
+4,15,uniprot_id,hsa:7157,P04637,ENSG00000141510,,protein,(RefSeq) tumor protein p53,,,core,(RefSeq) tumor protein p53,9606
+5,17,uniprot_id,hsa:2879,P36969,ENSG00000167468,,protein,(RefSeq) glutathione peroxidase 4,,,core,(RefSeq) glutathione peroxidase 4,9606
+6,18,pubchem_id,cpd:C00051,,,3353,compound,Glutathione,,,core,Glutathione,9606
+7,22,uniprot_id,hsa:7417,P45880,ENSG00000165637,,protein,(RefSeq) voltage dependent anion channel 2,,,core,(RefSeq) voltage dependent anion channel 2,9606
+8,22,uniprot_id,hsa:7419,Q9Y277,ENSG00000078668,,protein,(RefSeq) voltage dependent anion channel 3,,,core,(RefSeq) voltage dependent anion channel 3,9606
+9,23,pubchem_id,cpd:C21478,,,329970430,compound,Erastin,,,core,Erastin,9606
+10,28,pubchem_id,cpd:C00097,,,3397,compound,L-Cysteine,,,core,L-Cysteine,9606
+11,29,uniprot_id,hsa:2729,P48506,ENSG00000001084,,protein,(RefSeq) glutamate-cysteine ligase catalytic subunit,,,core,(RefSeq) glutamate-cysteine ligase catalytic subunit,9606
+12,29,uniprot_id,hsa:2730,P48507,ENSG00000023909,,protein,(RefSeq) glutamate-cysteine ligase modifier subunit,,,core,(RefSeq) glutamate-cysteine ligase modifier subunit,9606
+13,30,pubchem_id,cpd:C00669,,,3938,compound,gamma-L-Glutamyl-L-cysteine,,,core,gamma-L-Glutamyl-L-cysteine,9606
+14,31,uniprot_id,hsa:6520,P08195,ENSG00000168003,,protein,(RefSeq) solute carrier family 3 member 2,,,core,(RefSeq) solute carrier family 3 member 2,9606
+15,34,pubchem_id,cpd:C00418,,,3708,compound,(R)-Mevalonate,,,core,(R)-Mevalonate,9606
+16,35,pubchem_id,cpd:C11378,,,13552,compound,Ubiquinone-10,,,core,Ubiquinone-10,9606
+17,37,uniprot_id,hsa:7037,P02786,ENSG00000072274,,protein,(RefSeq) transferrin receptor,,,core,(RefSeq) transferrin receptor,9606
+18,38,pubchem_id,cpd:C14819,,,17395817,compound,Fe3+,,,core,Fe3+,9606
+19,39,uniprot_id,hsa:7018,P02787,ENSG00000091513,,protein,(RefSeq) transferrin,,,core,(RefSeq) transferrin,9606
+20,40,pubchem_id,cpd:C14818,,,17395816,compound,Fe2+,,,core,Fe2+,9606
+21,42,uniprot_id,hsa:1356,P00450,ENSG00000047457,,protein,(RefSeq) ceruloplasmin,,,core,(RefSeq) ceruloplasmin,9606
+22,48,pubchem_id,cpd:C21478,,,329970430,compound,Erastin,,,core,Erastin,9606
+23,51,uniprot_id,hsa:7037,P02786,ENSG00000072274,,protein,(RefSeq) transferrin receptor,,,core,(RefSeq) transferrin receptor,9606
+24,52,uniprot_id,hsa:7018,P02787,ENSG00000091513,,protein,(RefSeq) transferrin,,,core,(RefSeq) transferrin,9606
+25,53,pubchem_id,cpd:C14819,,,17395817,compound,Fe3+,,,core,Fe3+,9606
+26,55,pubchem_id,cpd:C14818,,,17395816,compound,Fe2+,,,core,Fe2+,9606
+27,57,uniprot_id,hsa:55240,Q658P3,ENSG00000115107,,protein,(RefSeq) STEAP3 metalloreductase,,,core,(RefSeq) STEAP3 metalloreductase,9606
+28,58,uniprot_id,hsa:7037,P02786,ENSG00000072274,,protein,(RefSeq) transferrin receptor,,,core,(RefSeq) transferrin receptor,9606
+29,59,uniprot_id,hsa:7018,P02787,ENSG00000091513,,protein,(RefSeq) transferrin,,,core,(RefSeq) transferrin,9606
+30,60,pubchem_id,cpd:C14819,,,17395817,compound,Fe3+,,,core,Fe3+,9606
+31,63,pubchem_id,cpd:C00127,,,3427,compound,Glutathione disulfide,,,core,Glutathione disulfide,9606
+32,64,uniprot_id,hsa:2937,P48637,ENSG00000100983,,protein,(RefSeq) glutathione synthetase,,,core,(RefSeq) glutathione synthetase,9606
+33,65,pubchem_id,cpd:C14818,,,17395816,compound,Fe2+,,,core,Fe2+,9606
+34,66,uniprot_id,hsa:5093,Q15365,ENSG00000169564,,protein,(RefSeq) poly(rC) binding protein 1,,,core,(RefSeq) poly(rC) binding protein 1,9606
+35,66,uniprot_id,hsa:5094,Q15366,ENSG00000197111,,protein,(RefSeq) poly(rC) binding protein 2,,,core,(RefSeq) poly(rC) binding protein 2,9606
+36,68,uniprot_id,hsa:30061,Q9NP59,ENSG00000138449,,protein,(RefSeq) solute carrier family 40 member 1,,,core,(RefSeq) solute carrier family 40 member 1,9606
+37,70,pubchem_id,cpd:C14818,,,17395816,compound,Fe2+,,,core,Fe2+,9606
+38,71,uniprot_id,hsa:5094,Q15366,ENSG00000197111,,protein,(RefSeq) poly(rC) binding protein 2,,,core,(RefSeq) poly(rC) binding protein 2,9606
+39,73,uniprot_id,hsa:2495,P02794,ENSG00000167996,,protein,(RefSeq) ferritin heavy chain 1,,,core,(RefSeq) ferritin heavy chain 1,9606
+40,73,uniprot_id,hsa:2512,P02792,ENSG00000087086,,protein,(RefSeq) ferritin light chain,,,core,(RefSeq) ferritin light chain,9606
+41,74,pubchem_id,cpd:C14819,,,17395817,compound,Fe3+,,,core,Fe3+,9606
+42,78,uniprot_id,hsa:10533,O95352,ENSG00000197548,,protein,(RefSeq) autophagy related 7,,,core,(RefSeq) autophagy related 7,9606
+43,78,uniprot_id,hsa:9474,Q9H1Y0,ENSG00000057663,,protein,(RefSeq) autophagy related 5,,,core,(RefSeq) autophagy related 5,9606
+44,80,uniprot_id,hsa:2495,P02794,ENSG00000167996,,protein,(RefSeq) ferritin heavy chain 1,,,core,(RefSeq) ferritin heavy chain 1,9606
+45,80,uniprot_id,hsa:2512,P02792,ENSG00000087086,,protein,(RefSeq) ferritin light chain,,,core,(RefSeq) ferritin light chain,9606
+46,81,pubchem_id,cpd:C14819,,,17395817,compound,Fe3+,,,core,Fe3+,9606
+47,85,uniprot_id,hsa:23516,Q15043,ENSG00000104635,,protein,(RefSeq) solute carrier family 39 member 14,,,core,(RefSeq) solute carrier family 39 member 14,9606
+48,85,uniprot_id,hsa:64116,Q9C0K1,ENSG00000138821,,protein,(RefSeq) solute carrier family 39 member 8,,,core,(RefSeq) solute carrier family 39 member 8,9606
+49,87,uniprot_id,hsa:4891,P49281,ENSG00000110911,,protein,(RefSeq) solute carrier family 11 member 2,,,core,(RefSeq) solute carrier family 11 member 2,9606
+50,89,uniprot_id,hsa:392288,,ENSG00000231909,,protein,(RefSeq) microtubule associated protein 1 light chain 3 beta pseudogene 1,,,core,(RefSeq) microtubule associated protein 1 light chain 3 beta pseudogene 1,9606
+51,89,uniprot_id,hsa:440738,Q9BXW4,ENSG00000197769,,protein,(RefSeq) microtubule associated protein 1 light chain 3 gamma,,,core,(RefSeq) microtubule associated protein 1 light chain 3 gamma,9606
+52,89,uniprot_id,hsa:643246,A6NCE7,ENSG00000258102,,protein,(RefSeq) microtubule associated protein 1 light chain 3 beta 2,,,core,(RefSeq) microtubule associated protein 1 light chain 3 beta 2,9606
+53,89,uniprot_id,hsa:81631,Q9GZQ8,ENSG00000140941,,protein,(RefSeq) microtubule associated protein 1 light chain 3 beta,,,core,(RefSeq) microtubule associated protein 1 light chain 3 beta,9606
+54,89,uniprot_id,hsa:84557,Q9H492,ENSG00000101460,,protein,(RefSeq) microtubule associated protein 1 light chain 3 alpha,,,core,(RefSeq) microtubule associated protein 1 light chain 3 alpha,9606
+55,90,uniprot_id,hsa:8031,Q13772,ENSG00000266412,,protein,(RefSeq) nuclear receptor coactivator 4,,,core,(RefSeq) nuclear receptor coactivator 4,9606
+56,92,uniprot_id,hsa:23516,Q15043,ENSG00000104635,,protein,(RefSeq) solute carrier family 39 member 14,,,core,(RefSeq) solute carrier family 39 member 14,9606
+57,92,uniprot_id,hsa:64116,Q9C0K1,ENSG00000138821,,protein,(RefSeq) solute carrier family 39 member 8,,,core,(RefSeq) solute carrier family 39 member 8,9606
+58,93,pubchem_id,cpd:C14818,,,17395816,compound,Fe2+,,,core,Fe2+,9606
+59,94,pubchem_id,cpd:C14819,,,17395817,compound,Fe3+,,,core,Fe3+,9606
+60,95,uniprot_id,hsa:5621,P04156,ENSG00000171867,,protein,(RefSeq) prion protein (Kanno blood group),,,core,(RefSeq) prion protein (Kanno blood group),9606
+61,103,uniprot_id,hsa:3162,P09601,ENSG00000100292,,protein,(RefSeq) heme oxygenase 1,,,core,(RefSeq) heme oxygenase 1,9606
+62,104,pubchem_id,cpd:C00032,,,3334,compound,Heme,,,core,Heme,9606
+63,105,uniprot_id,hsa:1536,P04839,ENSG00000165168,,protein,(RefSeq) cytochrome b-245 beta chain,,,core,(RefSeq) cytochrome b-245 beta chain,9606
+64,118,pubchem_id,cpd:C16844,,,96023368,compound,Hydroxyl radical,,,core,Hydroxyl radical,9606
+65,118,pubchem_id,cpd:C00027,,,3329,compound,Hydrogen peroxide,,,core,Hydrogen peroxide,9606
+66,134,pubchem_id,cpd:C21479,,,329970431,compound,RSL3,,,core,RSL3,9606
+67,135,pubchem_id,cpd:C00025,,,3327,compound,L-Glutamate,,,core,L-Glutamate,9606
+68,141,pubchem_id,cpd:C00129,,,3429,compound,Isopentenyl diphosphate,,,core,Isopentenyl diphosphate,9606
+69,143,uniprot_id,Homo sapiens (human) [GN:hsa]:hsa00480,,,,protein,Glutathione metabolism - Homo sapiens (human),,,core,Glutathione metabolism - Homo sapiens (human),9606
+70,144,uniprot_id,Homo sapiens (human) [GN:hsa]:hsa00900,,,,protein,Terpenoid backbone biosynthesis - Homo sapiens (human),,,core,Terpenoid backbone biosynthesis - Homo sapiens (human),9606
+71,145,uniprot_id,hsa:94033,Q8N4E7,ENSG00000181867,,protein,(RefSeq) ferritin mitochondrial,,,core,(RefSeq) ferritin mitochondrial,9606
+72,146,pubchem_id,cpd:C14818,,,17395816,compound,Fe2+,,,core,Fe2+,9606
+73,149,pubchem_id,cpd:C21483,,,329970435,compound,"1-Octadecanoyl-2-(15S-hydroperoxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,,core,"1-Octadecanoyl-2-(15S-hydroperoxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",9606
+74,150,pubchem_id,cpd:C21482,,,329970434,compound,"1-Octadecanoyl-2-(15S-hydroxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,,core,"1-Octadecanoyl-2-(15S-hydroxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",9606
+75,157,uniprot_id,hsa:112483,Q96F10,ENSG00000141504,,protein,(RefSeq) spermidine/spermine N1-acetyltransferase family member 2,,,core,(RefSeq) spermidine/spermine N1-acetyltransferase family member 2,9606
+76,157,uniprot_id,hsa:6303,P21673,ENSG00000130066,,protein,(RefSeq) spermidine/spermine N1-acetyltransferase 1,,,core,(RefSeq) spermidine/spermine N1-acetyltransferase 1,9606
+77,158,pubchem_id,cpd:C21480,,,329970432,compound,"1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,,core,"1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",9606
+78,158,pubchem_id,cpd:C21481,,,329970433,compound,"1-Octadecanoyl-2-(7Z,10Z,13Z,16Z-docosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,,core,"1-Octadecanoyl-2-(7Z,10Z,13Z,16Z-docosatetraenoyl)-sn-glycero-3-phosphoethanolamine",9606
+79,160,pubchem_id,cpd:C02249,,,5312,compound,Arachidonyl-CoA,,,core,Arachidonyl-CoA,9606
+80,160,pubchem_id,cpd:C16170,,,47205480,compound,"(7Z,10Z,13Z,16Z)-Docosatetraenoyl-CoA",,,core,"(7Z,10Z,13Z,16Z)-Docosatetraenoyl-CoA",9606
+81,162,uniprot_id,hsa:2180,P33121,ENSG00000151726,,protein,(RefSeq) acyl-CoA synthetase long chain family member 1,,,core,(RefSeq) acyl-CoA synthetase long chain family member 1,9606
+82,162,uniprot_id,hsa:2181,O95573,ENSG00000123983,,protein,(RefSeq) acyl-CoA synthetase long chain family member 3,,,core,(RefSeq) acyl-CoA synthetase long chain family member 3,9606
+83,162,uniprot_id,hsa:2182,O60488,ENSG00000068366,,protein,(RefSeq) acyl-CoA synthetase long chain family member 4,,,core,(RefSeq) acyl-CoA synthetase long chain family member 4,9606
+84,162,uniprot_id,hsa:23305,Q9UKU0,ENSG00000164398,,protein,(RefSeq) acyl-CoA synthetase long chain family member 6,,,core,(RefSeq) acyl-CoA synthetase long chain family member 6,9606
+85,162,uniprot_id,hsa:51703,Q9ULC5,ENSG00000197142,,protein,(RefSeq) acyl-CoA synthetase long chain family member 5,,,core,(RefSeq) acyl-CoA synthetase long chain family member 5,9606
+86,163,uniprot_id,hsa:10162,Q6P1A2,ENSG00000111684,,protein,(RefSeq) lysophosphatidylcholine acyltransferase 3,,,core,(RefSeq) lysophosphatidylcholine acyltransferase 3,9606
+87,164,uniprot_id,hsa:246,P16050,ENSG00000161905,,protein,(RefSeq) arachidonate 15-lipoxygenase,,,core,(RefSeq) arachidonate 15-lipoxygenase,9606
+88,165,pubchem_id,cpd:C00219,,,3519,compound,Arachidonate,,,core,Arachidonate,9606
+89,165,pubchem_id,cpd:C16527,,,51090856,compound,Adrenic acid,,,core,Adrenic acid,9606
+90,166,pubchem_id,cpd:C00010,,,3312,compound,CoA,,,core,CoA,9606
+91,168,pubchem_id,cpd:C02477,,,5492,compound,alpha-Tocopherol,,,core,alpha-Tocopherol,9606
+92,171,pubchem_id,cpd:C21484,,,329970436,compound,1-Octadecanoyl-sn-glycero-3-phosphoethanolamine,,,core,1-Octadecanoyl-sn-glycero-3-phosphoethanolamine,9606
+93,174,pubchem_id,cpd:C00024,,,3326,compound,Acetyl-CoA,,,core,Acetyl-CoA,9606
+94,175,pubchem_id,cpd:C00356,,,3649,compound,(S)-3-Hydroxy-3-methylglutaryl-CoA,,,core,(S)-3-Hydroxy-3-methylglutaryl-CoA,9606

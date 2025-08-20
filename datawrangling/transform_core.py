@@ -1,9 +1,8 @@
 import pandas as pd
 from parsers.source_parsers import KEGGPathwayParser
 from typing import Dict, List
-from pathlib import Path
 from config import OUTPUTS_DIR, SOURCES_DIR, PROJECT_ROOT
-from apicalls.api_oop import KEGGClient, UniProtClient
+from apicalls.kegg import KEGGClient
 from database.sqlite_db_api3 import PsimiSQL
 
 
@@ -14,91 +13,121 @@ def make_tables(data: Dict[int, List[str]], source: str, core: int) -> pd.DataFr
     return df
 
 
-def convert_kegg(name: str):
-    if "cpd" in name or "dr" in name:
-        try:
-            client = KEGGClient()
-            res = client.get_pubchem_id(name)
-            return [name, "", res]
-        except Exception as e:
-            print(f"Failed to convert compound {name}: {str(e)}")
-            return [name, "", name]
-    elif "hsa" in name:
-        client = UniProtClient()
-        res = client.convert_to_uniprot_id("KEGG", [name], False)
-        if res and len(res) > 0 and name in res[0]:
-            return [name, res[0][name], ""]
+def extract_db_id(dblinks_list, prefix):
+    for link in dblinks_list:
+        if link.startswith(f'{prefix}: '):
+            ids = link.replace(f'{prefix}: ', '').split()
+            return ids[0] if ids else ''
+    return ''
+
+
+def convert_kegg(res: Dict, id: int, kegg_id: str) -> Dict:
+    try:
+        if 'Compound' in res['ENTRY']:
+            pubchem_id = extract_db_id(res.get('DBLINKS', []), 'PubChem')
+            primary_id_type = 'pubchem_id' if pubchem_id else 'kegg_id'
+            cpd_dict = {
+                'id': id,
+                'primary_id_type': primary_id_type,
+                'kegg_id': 'cpd:'+res['ENTRY'][0],
+                'uniprot_id': '',
+                'ensemble_id': '',
+                'pubchem_id': pubchem_id,
+                'type': 'compound',
+                'display_name': res['NAME'][0].rstrip(';'),
+                'function': '',
+                'pathways': '',
+                'role_in_ferroptosis': 'core',
+                'name': res['NAME'][0].rstrip(';'),
+                'primary_id_type': primary_id_type,
+                'tax_id': ''
+            }
         else:
-            print(f"No UniProt mapping found for {name}")
-            return [name, name, ""]
-    else:
-        return [name, "", ""]
+            uniprot_id = extract_db_id(res.get('DBLINKS', []), 'UniProt')
+            ensembl_id = extract_db_id(res.get('DBLINKS', []), 'Ensembl')
+            cpd_dict = {
+                'id': id,
+                'primary_id_type': 'uniprot_id',
+                'kegg_id': res['ORGANISM'][0]+':'+res['ENTRY'][0],
+                'uniprot_id': uniprot_id,
+                'ensemble_id': ensembl_id,
+                'pubchem_id': '',
+                'type': 'protein',
+                'display_name': res['NAME'][0] if res.get('NAME') else '',
+                'function': '',
+                'pathways': '',
+                'role_in_ferroptosis': 'core',
+                'name': res['NAME'][0] if res.get('NAME') else '',
+                'tax_id': 9606
+            }
+        return cpd_dict
+    except Exception as e:
+        print(f"Failed to convert entry {kegg_id}: {str(e)}")
+        return {}
 
 
 kegg_parser = KEGGPathwayParser()
+kegg = KEGGClient()
 kegg_src = kegg_parser.read_pathway("hsa04216.xml")
-kegg_src
 kegg_edges = kegg_parser.read_edges("hsa04216.xml")
 kegg_id_list = kegg_parser.extract_gene_ids(kegg_src)
+
 rows = []
 for k, v in kegg_src.items():
-    display_name = v['display_name']
+    display_name = v['display_name'][0] if isinstance(v['display_name'], list) else v['display_name']
+    display_name = display_name.rstrip('.')
+    kegg_item = v['kegg_id']
 
-    for kegg_item in v['kegg_id']:
-        if 'path' in kegg_item or kegg_item == "undefined":
-            continue
+    if 'path' in kegg_item or 'undefined' in kegg_item:
+        continue
 
-        kegg_id, uniprot_id, pubchem_id = convert_kegg(kegg_item)
+    kegg_res = kegg.get_molecule_info(kegg_item)
 
-        if uniprot_id:
-            primary_id = "uniprot_id"
-        elif pubchem_id:
-            primary_id = "cid"
-        elif kegg_id:
-            primary_id = "kegg_id"
-        else:
-            primary_id = "unknown"
+    for node_info in kegg_res:
+        df_dict = convert_kegg(node_info, k, kegg_item)
+        if df_dict:
+            rows.append(df_dict)
 
-        rows.append([k, primary_id, kegg_id, uniprot_id, pubchem_id, display_name])
-
-kegg_node_df = pd.DataFrame(data=rows, columns=['id', 'primary_id', 'kegg_id', 'uniprot_id', 'pubchem_id', 'display_name'])
+kegg_node_df = pd.DataFrame(rows)
+kegg_node_df.to_csv('wtf.csv')
+# want to map to molecules, not to kegg nodes:
 edge_rows = []
 for edge in kegg_edges:
+    # Get unique molecular identifiers, not all rows
     source_rows = kegg_node_df[kegg_node_df.id == edge.source_id]
     target_rows = kegg_node_df[kegg_node_df.id == edge.target_id]
-
     if source_rows.empty or target_rows.empty:
         print(f"Warning: No nodes found for edge {edge.source_id} -> {edge.target_id}")
         continue
+    # Take first row (since duplicates should represent same molecule)
+    source_row = source_rows.iloc[0]
+    target_row = target_rows.iloc[0]
+    # Determine molecular identifiers
+    if "hsa" in source_row['kegg_id']:
+        source_id = source_row['uniprot_id']
+        source_type = "gene"
+    else:
+        source_id = source_row['pubchem_id']
+        source_type = "compound"
+    if "hsa" in target_row['kegg_id']:
+        target_id = target_row['uniprot_id']
+        target_type = "gene"
+    else:
+        target_id = target_row['pubchem_id']
+        target_type = "compound"
+    # Only add edge if both IDs exist
+    if source_id and target_id:
+        edge_rows.append({
+            'source_id': source_id,
+            'source_type': source_type,
+            'target_id': target_id,
+            'target_type': target_type,
+            'edge_type': edge.type
+        })
 
-    for _, source_row in source_rows.iterrows():
-        for _, target_row in target_rows.iterrows():
-            if "hsa" in source_row['kegg_id']:
-                source_id = source_row['uniprot_id']
-                source_type = "gene"
-            else:
-                source_id = source_row['pubchem_id']
-                source_type = "compound"
+edge_df = pd.DataFrame(edge_rows).drop_duplicates()
 
-            if "hsa" in target_row['kegg_id']:
-                target_id = target_row['uniprot_id']
-                target_type = "gene"
-            else:
-                target_id = target_row['pubchem_id']
-                target_type = "compound"
-
-            edge_rows.append({
-                'source_id': source_id,
-                'source_type': source_type,
-                'target_id': target_id,
-                'target_type': target_type,
-                'edge_type': edge.type
-            })
-
-            print(f"Interaction: {source_id} ({source_type}) -> {target_id} ({target_type}), Type: {edge.type}")
-edge_df = pd.DataFrame(edge_rows)
 edge_df['is_directed'] = 1
-edge_df
 kegg_node_df[kegg_node_df.kegg_id.str.contains('dr')]
 
 SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
