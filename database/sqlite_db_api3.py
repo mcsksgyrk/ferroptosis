@@ -300,7 +300,6 @@ class PsimiSQL:
         self.db.execute(query, tup)
         self.db.commit()
 
-    # MODIFICATION: New method for inserting diseases
     def insert_disease(self, disease_dict):
         query = """
             INSERT INTO disease (disease_id, disease_name, description)

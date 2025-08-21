@@ -26,6 +26,7 @@ def convert_kegg(res: Dict, id: int, kegg_id: str) -> Dict:
         if 'Compound' in res['ENTRY']:
             pubchem_id = extract_db_id(res.get('DBLINKS', []), 'PubChem')
             primary_id_type = 'pubchem_id' if pubchem_id else 'kegg_id'
+            primary_id_value = pubchem_id if pubchem_id else 'cpd:'+res['ENTRY'][0]
             cpd_dict = {
                 'id': id,
                 'primary_id_type': primary_id_type,
@@ -38,13 +39,34 @@ def convert_kegg(res: Dict, id: int, kegg_id: str) -> Dict:
                 'function': '',
                 'pathways': '',
                 'role_in_ferroptosis': 'core',
-                'name': res['NAME'][0].rstrip(';'),
+                'name': primary_id_value,
+                'tax_id': ''
+            }
+        elif 'Pathway' in res['ENTRY']:
+            return {}
+        elif 'Drug' in res['ENTRY']:
+            pubchem_id = extract_db_id(res.get('DBLINKS', []), 'PubChem')
+            primary_id_type = 'pubchem_id' if pubchem_id else 'kegg_id'
+            primary_id_value = pubchem_id if pubchem_id else 'dr:'+res['ENTRY'][0]
+            cpd_dict = {
+                'id': id,
                 'primary_id_type': primary_id_type,
+                'kegg_id': 'dr:'+res['ENTRY'][0],
+                'uniprot_id': '',
+                'ensemble_id': '',
+                'pubchem_id': pubchem_id,
+                'type': 'compound',
+                'display_name': res['NAME'][0].rstrip(';'),
+                'function': '',
+                'pathways': '',
+                'role_in_ferroptosis': 'core',
+                'name': primary_id_value,
                 'tax_id': ''
             }
         else:
             uniprot_id = extract_db_id(res.get('DBLINKS', []), 'UniProt')
             ensembl_id = extract_db_id(res.get('DBLINKS', []), 'Ensembl')
+            primary_id_value = uniprot_id if uniprot_id else res['ORGANISM'][0]+':'+res['ENTRY'][0]
             cpd_dict = {
                 'id': id,
                 'primary_id_type': 'uniprot_id',
@@ -57,7 +79,7 @@ def convert_kegg(res: Dict, id: int, kegg_id: str) -> Dict:
                 'function': '',
                 'pathways': '',
                 'role_in_ferroptosis': 'core',
-                'name': res['NAME'][0] if res.get('NAME') else '',
+                'name': primary_id_value,
                 'tax_id': 9606
             }
         return cpd_dict
@@ -93,100 +115,62 @@ kegg_node_df.to_csv('wtf.csv')
 # want to map to molecules, not to kegg nodes:
 edge_rows = []
 for edge in kegg_edges:
-    # Get unique molecular identifiers, not all rows
     source_rows = kegg_node_df[kegg_node_df.id == edge.source_id]
     target_rows = kegg_node_df[kegg_node_df.id == edge.target_id]
     if source_rows.empty or target_rows.empty:
         print(f"Warning: No nodes found for edge {edge.source_id} -> {edge.target_id}")
         continue
-    # Take first row (since duplicates should represent same molecule)
     source_row = source_rows.iloc[0]
     target_row = target_rows.iloc[0]
-    # Determine molecular identifiers
-    if "hsa" in source_row['kegg_id']:
-        source_id = source_row['uniprot_id']
-        source_type = "gene"
-    else:
-        source_id = source_row['pubchem_id']
-        source_type = "compound"
-    if "hsa" in target_row['kegg_id']:
-        target_id = target_row['uniprot_id']
-        target_type = "gene"
-    else:
-        target_id = target_row['pubchem_id']
-        target_type = "compound"
-    # Only add edge if both IDs exist
+
+    source_primary_id_type = source_row['primary_id_type']
+    source_id = source_row[source_primary_id_type]
+    source_type = source_row['type']
+
+    target_primary_id_type = target_row['primary_id_type']
+    target_id = target_row[target_primary_id_type]
+    target_type = target_row['type']
+
+    is_directed_bool = 1 if edge.type != 'binding/association' else 0
+    is_direct_bool = 0 if edge.type == 'repression' else 1
+    directed_str = 'true' if is_directed_bool == 1 else 'false'
+    direct_str = 'true' if is_direct_bool == 1 else 'false'
+
     if source_id and target_id:
         edge_rows.append({
-            'source_id': source_id,
+            'interactor_a_node_name': source_id,
+            'interactor_b_node_name': target_id,
             'source_type': source_type,
-            'target_id': target_id,
             'target_type': target_type,
-            'edge_type': edge.type
+            'is_directed': is_directed_bool,
+            'is_direct': is_direct_bool,
+            'edge_types': edge.type,
+            'interaction_types': f"is_directed:{directed_str}|is_direct:{direct_str}|{edge.type}",
+            'layer': 0,
+            'source_db': 'KEGG'
         })
-
 edge_df = pd.DataFrame(edge_rows).drop_duplicates()
 
-edge_df['is_directed'] = 1
-kegg_node_df[kegg_node_df.kegg_id.str.contains('dr')]
-
 SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
-DB_DESTINATION = OUTPUTS_DIR / "kegg_ext2.db"
+DB_DESTINATION = OUTPUTS_DIR / "kegg.db"
 db_api = PsimiSQL(SQL_SEED)
 
-for idx, row in kegg_node_df.iterrows():
-    node_dict = dict()
-    node_id_dict = dict()
-    if row.uniprot_id != "":
-        node_dict['name'] = row.uniprot_id
-        node_dict['type'] = 'protein'
-    else:
-        node_dict['name'] = row.pubchem_id
-        node_dict['type'] = 'small_molecule'
-    node_dict['display_name'] = ""
-    node_dict['primary_id_type'] = row.primary_id
-    node_dict['tax_id'] = 9606 if node_dict['type'] == 'protein' else None
-    node_dict['pathways'] = ""
-    node_dict['source'] = "KEGG"
-    node_dict['display_name'] = '|'.join(row.display_name)
-    node_dict['function'] = ""
+deduplicated_kegg_df = kegg_node_df.drop_duplicates()
+deduplicated_kegg_df.drop('id', axis=1, inplace=True)
+for idx, row in deduplicated_kegg_df.iterrows():
+    node_dict = row.to_dict()
+    node_dict['source_db'] = 'KEGG'
     db_api.insert_node(node_dict)
 
     node_id = node_dict['id']
-    if row.kegg_id != "":
-        if primary_id == "kegg_id":
-            db_api.insert_node_identifier(node_id, 'kegg_id', row.kegg_id, True)
-        else:
-            db_api.insert_node_identifier(node_id, 'kegg_id', row.kegg_id)
-    if row.uniprot_id != "":
-        if primary_id == "uniprot_id":
-            db_api.insert_node_identifier(node_id, 'uniprot_id', row.uniprot_id, True)
-        else:
-            db_api.insert_node_identifier(node_id, 'uniprot_id', row.uniprot_id)
-    if row.pubchem_id != "":
-        if primary_id == "cid":
-            db_api.insert_node_identifier(node_id, 'cid', row.pubchem_id, True)
-        else:
-            db_api.insert_node_identifier(node_id, 'cid', row.pubchem_id, True)
+    for key, value in row.items():
+        if key.endswith('_id') and pd.notna(value) and value != '':
+            is_primary = 1 if row['primary_id_type'] == key else 0
+            db_api.insert_node_identifier(node_id, key, value, is_primary)
 
 for idx, row in edge_df.iterrows():
-    directed = 'false'
-    direct = 'flase'
-    print(row.to_dict())
-    if row.is_directed == 1:
-        directed = 'true'
-        direct = 'true'
-    elif row.is_directed == 0:
-        directed = 'false'
-    else:
-        print("WARNING: unknown direction flag in line: " + idx)
-    interaction_types = "is_directed:%s|is_direct:%s|%s" % (directed, direct, row.edge_type)
-    edge_dict = {
-        'source_db': 'KEGG',
-        'interaction_types': interaction_types,
-        'layer': 0,
-    }
-    source_dict = db_api.get_node(row.source_id)
-    target_dict = db_api.get_node(row.target_id)
+    edge_dict = row.to_dict()
+    source_dict = db_api.get_node(row.interactor_a_node_name)
+    target_dict = db_api.get_node(row.interactor_b_node_name)
     db_api.insert_edge(source_dict, target_dict, edge_dict)
 db_api.save_db_to_file(str(DB_DESTINATION))
