@@ -24,6 +24,7 @@ class MyGeneClient(APIClient):
                           fields: str = "symbol,name,ensembl.gene,uniprot,alias") -> List[Dict]:
         data = {
             'q': gene_symbols,
+            'scopes': 'symbol,name,alias',
             'species': species,
             'fields': fields
         }
