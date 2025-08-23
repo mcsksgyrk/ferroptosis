@@ -283,4 +283,5 @@ for idx, row in further_processing.iterrows():
 edges_df = pd.DataFrame(new_edges)
 clean_edges = edges_df.drop_duplicates(['source', 'target', 'interaction_type']).to_dict('records')
 final_nodes = all_nodes.drop_duplicates()
-final_nodes
+final_nodes.drop_duplicates().to_csv('ferrdb.csv')
+pd.DataFrame(clean_edges).to_csv('ferrdb_edges.csv')
