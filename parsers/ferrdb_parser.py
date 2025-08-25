@@ -1,4 +1,3 @@
-
 from apicalls.mygene import MyGeneClient
 import pandas as pd
 from database.external_db import DBconnector
@@ -7,7 +6,7 @@ import re
 
 
 class FerrdbParser():
-    def __init__(self, df, compound_path):
+    def __init__(self, df, compound_path, table_name):
         self.unicode_entities = {
             'GSK-3β': 'gsk3b',
             'GSK3β': 'gsk3b',
@@ -21,6 +20,7 @@ class FerrdbParser():
             'β-catenin': 'ctnnb1'
         }
         self.df = df
+        self.table_name = table_name
         self.compounds = self._make_compound_set(compound_path)
         self.all_entities = self._extract_entities_from_pathway()
 
@@ -110,6 +110,7 @@ class FerrdbParser():
                 source_, target_ = [x.replace(' ', '') for x in re.split(r':\+:|:-:', reaction)]
                 source = self.unicode_entities.get(source_, source_)
                 target = self.unicode_entities.get(target_, target_)
+
                 if source.lower() not in valid_nodes or target.lower() not in valid_nodes:
                     continue
                 if '+' in reaction:
@@ -160,7 +161,7 @@ class FerrdbParser():
             gene_info['uniprot_id'] = None
         return gene_info
 
-    def create_node_row(self, row, table_name):
+    def create_node_row(self, row):
         return {
             'name': row.get('UniProtAC') or row.get('uniprot_id') or row.get('gene_name') or row.get('symbol'),
             'primary_id_type': 'uniprot_id' if (row.get('UniProtAC') or row.get('uniprot_id')) else 'Symbol',
@@ -169,67 +170,55 @@ class FerrdbParser():
             'hgnc_id': row.get('HGNC_ID', ''),
             'ensg_id': row.get('ENSG_stable') or row.get('ensembl_id'),
             'effect_on_ferroptosis': '',
-            'source_table': 'ferrdb_'+table_name,
+            'source_table': 'ferrdb_'+self.table_name,
             'type': row.get('node_type')
         }
 
-    def _process_rest_of_mygene(self, processed_nodes, table_name):
-        nodes = []
-        to_process = set(self.mygene.keys()) - processed_nodes
-        for key in to_process:
-            nodes.append(self.create_node_row(self.mygene[key], table_name))
-        return nodes
+    def _get_proepr_col_name(self):
+        if 'Symbol_or_reported_abbr' in self.df.columns:
+            return 'Symbol_or_reported_abbr'
+        elif 'Symbol' in self.df.columns:
+            return 'Symbol'
+
+    def _make_entry(self, row):
+        symbol_col = self._get_proepr_col_name()
+        if row[symbol_col].lower() in self.compounds:
+            node_dict = self.create_node_row(row)
+            node_dict['type'] = 'compound'
+        elif self.mygene.get(row[symbol_col].lower()):
+            node_dict = self.create_node_row(row)
+            node_dict['type'] = 'protein'
+        else:
+            node_dict = self.create_node_row(row)
+            node_dict['type'] = 'not sure'
+        return node_dict
 
     def make_nodes_df(self):
-        if 'Symbol_or_reported_abbr' in self.df.columns:
-            symbol_col = 'Symbol_or_reported_abbr'
-        elif 'Symbol' in self.df.columns:
-            symbol_col = 'Symbol'
-
         nodes = []
-        processed_nodes = set()
         for idx, row in self.df.iterrows():
-            if row[symbol_col].lower() in self.compounds:
-                print(f"skipping {row[symbol_col]}")
-                # kegg puchem id-khoz
-                continue
-            elif self.mygene.get(row[symbol_col].lower()):
-                node_dict = self.create_node_row(row, "suppressor")
-                node_dict['type'] = 'protein'
-                nodes.append(node_dict)
-                processed_nodes.add(row[symbol_col].lower())
+            node_dict = self._make_entry(row)
+            nodes.append(node_dict)
+
+        self.nodes = pd.DataFrame(nodes).drop_duplicates().reset_index(drop=True)
+
+    def parse_edge_nodes(self):
+        unique_sources = self.edges.source.unique()
+        unique_target = self.edges.target.unique()
+        unique_edge_nodes = set(unique_sources) | set(unique_target)
+        only_edge = unique_edge_nodes-set(self.nodes.display_name)
+        nodes = []
+        for oe in only_edge:
+            if not self.mygene.get(oe.lower()):
+                if oe.lower() in self.compounds:
+                    node_dict = self.create_node_row({'symbol': oe})
+                    node_dict['type'] = "compound"
+                    nodes.append(node_dict)
             else:
-                node_dict = self.create_node_row(row, "suppressor")
-                node_dict['type'] = 'protein'
+                node_dict = self.create_node_row(self.mygene.get(oe.lower()))
+                node_dict['type'] = "protein"
                 nodes.append(node_dict)
-
-        pw_nodes = self._process_rest_of_mygene(processed_nodes, "suppressor")
-        print(pw_nodes)
-        self.nodes = pd.DataFrame(nodes+pw_nodes).drop_duplicates().reset_index(drop=True)
-
-
-ferrdb_path = OUTPUTS_DIR / "ferrdb.db"
-db = DBconnector(ferrdb_path)
-query_suppressor = """
-SELECT * FROM suppressor
-WHERE LOWER(Exp_organism) LIKE '%human%'
-AND Confidence = 'Validated'
-AND Gene_type_hgnc_locus_type_or_other = 'gene with protein product'
-"""
-suppressor = db.query_to_dataframe(query_suppressor)
-f_path = SOURCES_DIR / "kegg/kegg_compounds.txt"
-parser = FerrdbParser(df=suppressor, compound_path=f_path)
-mygene = MyGeneClient()
-parser.extract_gene_products(mygene)
-parser.pathway_to_edge()
-parser.make_nodes_df()
-
-to_process = set(parser.mygene.keys()) - set(parser.nodes.display_name.str.lower())
-parser.df[parser.df['Pathway'].str.contains('p-p38', case=False)].Pathway
-'p-P38' in parser.all_entities
-parser.all_entities
-parser.mygene.get('p-p38')
-parser.edges[
-    (parser.edges.source.str.contains('p-38', case=False))|
-    (parser.edges.source.str.contains('p-38', case=False))
-]
+        reject_nodes = pd.DataFrame(nodes)
+        if getattr(self, "nodes", None) is not None and not self.nodes.empty:
+            self.nodes = pd.concat([reject_nodes, self.nodes]).drop_duplicates().reset_index(drop=True)
+        else:
+            self.nodes = reject_nodes
