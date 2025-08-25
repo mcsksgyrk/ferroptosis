@@ -9,16 +9,16 @@ import re
 class FerrdbParser():
     def __init__(self, df, compound_path):
         self.unicode_entities = {
-            'GSK-3β': 'GSK3B',
-            'GSK3β': 'GSK3B',
-            'HIF-1α': 'HIF1A',
-            'HIF1α': 'HIF1A',
-            'Ikβ-α': 'NFKBIA',
-            'NF-κB': 'NFKB1',
-            'NFκB': 'NFKB1',
-            'PPARα': 'PPARA',
-            'TGF-β2': 'TGFB2',
-            'β-catenin': 'CTNNB1'
+            'GSK-3β': 'gsk3b',
+            'GSK3β': 'gsk3b',
+            'HIF-1α': 'hif1a',
+            'HIF1α': 'hif1a',
+            'Ikβ-α': 'nfkbia',
+            'NF-κB': 'nfkb1',
+            'NFκB': 'nfkb1',
+            'PPARα': 'ppara',
+            'TGF-β2': 'tgfb2',
+            'β-catenin': 'ctnnb1'
         }
         self.df = df
         self.compounds = self._make_compound_set(compound_path)
@@ -176,7 +176,6 @@ class FerrdbParser():
     def _process_rest_of_mygene(self, processed_nodes, table_name):
         nodes = []
         to_process = set(self.mygene.keys()) - processed_nodes
-        print(len(to_process))
         for key in to_process:
             nodes.append(self.create_node_row(self.mygene[key], table_name))
         return nodes
@@ -205,6 +204,7 @@ class FerrdbParser():
                 nodes.append(node_dict)
 
         pw_nodes = self._process_rest_of_mygene(processed_nodes, "suppressor")
+        print(pw_nodes)
         self.nodes = pd.DataFrame(nodes+pw_nodes).drop_duplicates().reset_index(drop=True)
 
 
@@ -225,7 +225,11 @@ parser.pathway_to_edge()
 parser.make_nodes_df()
 
 to_process = set(parser.mygene.keys()) - set(parser.nodes.display_name.str.lower())
-print(to_process)
-parser.df[parser.df.Pathway.str.contains('YY1')]
-parser.nodes.to_csv('cleaner.csv')
-parser.mygene.get('fas')
+parser.df[parser.df['Pathway'].str.contains('p-p38', case=False)].Pathway
+'p-P38' in parser.all_entities
+parser.all_entities
+parser.mygene.get('p-p38')
+parser.edges[
+    (parser.edges.source.str.contains('p-38', case=False))|
+    (parser.edges.source.str.contains('p-38', case=False))
+]
