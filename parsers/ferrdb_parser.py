@@ -201,6 +201,28 @@ class FerrdbParser():
 
         self.nodes = pd.DataFrame(nodes).drop_duplicates().reset_index(drop=True)
 
+#    def parse_edge_nodes(self):
+#        unique_sources = self.edges.source.unique()
+#        unique_target = self.edges.target.unique()
+#        unique_edge_nodes = set(unique_sources) | set(unique_target)
+#        only_edge = unique_edge_nodes-set(self.nodes.display_name)
+#        nodes = []
+#        for oe in only_edge:
+#            if not self.mygene.get(oe.lower()):
+#                if oe.lower() in self.compounds:
+#                    node_dict = self.create_node_row({'symbol': oe})
+#                    node_dict['type'] = "compound"
+#                    nodes.append(node_dict)
+#            else:
+#                node_dict = self.create_node_row(self.mygene.get(oe.lower()))
+#                node_dict['type'] = "protein"
+#                nodes.append(node_dict)
+#        reject_nodes = pd.DataFrame(nodes)
+#        if getattr(self, "nodes", None) is not None and not self.nodes.empty:
+#            self.nodes = pd.concat([reject_nodes, self.nodes]).drop_duplicates().reset_index(drop=True)
+#        else:
+#            self.nodes = reject_nodes
+
     def parse_edge_nodes(self):
         unique_sources = self.edges.source.unique()
         unique_target = self.edges.target.unique()
@@ -208,14 +230,15 @@ class FerrdbParser():
         only_edge = unique_edge_nodes-set(self.nodes.display_name)
         nodes = []
         for oe in only_edge:
-            if not self.mygene.get(oe.lower()):
-                if oe.lower() in self.compounds:
-                    node_dict = self.create_node_row({'symbol': oe})
-                    node_dict['type'] = "compound"
-                    nodes.append(node_dict)
-            else:
-                node_dict = self.create_node_row(self.mygene.get(oe.lower()))
-                node_dict['type'] = "protein"
+            if oe.lower() in self.compounds:
+                node_dict = self.create_node_row({'symbol': oe})
+                node_dict['type'] = "compound"
+                nodes.append(node_dict)
+            elif self.mygene.get(oe.lower()) or self.mygene.get(oe) or self.mygene.get(oe.upper()):
+                gene_data = (self.mygene.get(oe.lower()) or
+                             self.mygene.get(oe) or
+                             self.mygene.get(oe.upper()))
+                node_dict = self.create_node_row(gene_data)
                 nodes.append(node_dict)
         reject_nodes = pd.DataFrame(nodes)
         if getattr(self, "nodes", None) is not None and not self.nodes.empty:
