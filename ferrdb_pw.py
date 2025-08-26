@@ -33,6 +33,7 @@ query_dict = {
 }
 nodes_df_list = []
 edges_df_list = []
+edge_node_dict = dict()
 for k, v in query_dict.items():
     print(f"parsing {k}")
     df = db.query_to_dataframe(v)
@@ -45,6 +46,13 @@ for k, v in query_dict.items():
     if getattr(parser, "nodes", None) is not None and not parser.nodes.empty:
         nodes_df_list.append(parser.nodes)
     if getattr(parser, "edges", None) is not None and not parser.edges.empty:
+        for idx, row in parser.edges.iterrows():
+            source = parser.get_display_name(row.source)
+            source_key = row.source
+            target = parser.get_display_name(row.target)
+            target_key = row.target
+            edge_node_dict[source_key.lower()] = source
+            edge_node_dict[target_key.lower()] = target
         edges_df_list.append(parser.edges)
 
 final_edges = pd.concat(edges_df_list).drop_duplicates().reset_index(drop=True)
@@ -64,10 +72,14 @@ symbol_nodes = final_nodes[
 converted, failed = uniprot.convert_to_uniprot_id('Gene_Name', symbol_nodes.name.to_list(), human=True)
 final_nodes['uniprot_id'] = final_nodes.apply(lambda row: converted.get(row['display_name'])
                                   if pd.isna(row['uniprot_id']) else row['uniprot_id'], axis=1)
-SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
-DB_DESTINATION = OUTPUTS_DIR / "ferrdb_network.db"
-db_api = PsimiSQL(SQL_SEED)
+final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'primary_id_type'] = 'uniprot_id'
+final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'type'] = 'protein'
+final_nodes['type'] = final_nodes['type'].fillna("nd")
+final_nodes.to_csv('checking.csv')
 
+SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
+DB_DESTINATION = OUTPUTS_DIR / "ferrdb_network3.db"
+db_api = PsimiSQL(SQL_SEED)
 for idx, row in final_nodes.iterrows():
     node_dict = row.to_dict()
     node_dict['tax_id'] = 9606
@@ -80,9 +92,21 @@ for idx, row in final_nodes.iterrows():
             db_api.insert_node_identifier(node_id, key, value, is_primary)
 
 for idx, row in final_edges.iterrows():
-    print(row)
-    source_dict = db_api.get_node(row.source)
-    target_dict = db_api.get_node(row.target)
+    source_dict = db_api.get_node_by_any_identifier(row.source)
+    if not source_dict:
+        try:
+            source_dict = db_api.get_node_by_any_identifier(edge_node_dict[row.source.lower()])
+        except:
+            pass
+    target_dict = db_api.get_node_by_any_identifier(row.target)
+    if not target_dict:
+        try:
+            target_dict = db_api.get_node_by_any_identifier(edge_node_dict[row.target.lower()])
+        except:
+            pass
+    if not source_dict or not target_dict:
+        print(f'Skipping {row.source} -> {row.target}: missing nodes')
+        continue
     edge_type = 'activation' if row.interaction_type > 0 else 'inhibition'
     edge_dict = {
         'interactor_a_node_name': source_dict.get('id'),
@@ -95,9 +119,3 @@ for idx, row in final_edges.iterrows():
     }
     db_api.insert_edge(source_dict, target_dict, edge_dict)
 db_api.save_db_to_file(str(DB_DESTINATION))
-
-test = pd.concat(nodes_df_list).reset_index(drop=True)
-edge_nodes = set(final_edges['target'].to_list()).union(set(final_edges['source'].to_list()))
-node_nodes = set(test.display_name.to_list())
-len(edge_nodes - node_nodes)
-uniprot.convert_to_uniprot_id('Gene_Name', ['mTOR'])

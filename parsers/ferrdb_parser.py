@@ -201,28 +201,6 @@ class FerrdbParser():
 
         self.nodes = pd.DataFrame(nodes).drop_duplicates().reset_index(drop=True)
 
-#    def parse_edge_nodes(self):
-#        unique_sources = self.edges.source.unique()
-#        unique_target = self.edges.target.unique()
-#        unique_edge_nodes = set(unique_sources) | set(unique_target)
-#        only_edge = unique_edge_nodes-set(self.nodes.display_name)
-#        nodes = []
-#        for oe in only_edge:
-#            if not self.mygene.get(oe.lower()):
-#                if oe.lower() in self.compounds:
-#                    node_dict = self.create_node_row({'symbol': oe})
-#                    node_dict['type'] = "compound"
-#                    nodes.append(node_dict)
-#            else:
-#                node_dict = self.create_node_row(self.mygene.get(oe.lower()))
-#                node_dict['type'] = "protein"
-#                nodes.append(node_dict)
-#        reject_nodes = pd.DataFrame(nodes)
-#        if getattr(self, "nodes", None) is not None and not self.nodes.empty:
-#            self.nodes = pd.concat([reject_nodes, self.nodes]).drop_duplicates().reset_index(drop=True)
-#        else:
-#            self.nodes = reject_nodes
-
     def parse_edge_nodes(self):
         unique_sources = self.edges.source.unique()
         unique_target = self.edges.target.unique()
@@ -245,3 +223,37 @@ class FerrdbParser():
             self.nodes = pd.concat([reject_nodes, self.nodes]).drop_duplicates().reset_index(drop=True)
         else:
             self.nodes = reject_nodes
+
+    def get_display_name(self, oe):
+        if self.mygene.get(oe.lower()) or self.mygene.get(oe) or self.mygene.get(oe.upper()):
+            gene_data = (self.mygene.get(oe.lower()) or
+                         self.mygene.get(oe) or
+                         self.mygene.get(oe.upper()))
+            node_dict = self.create_node_row(gene_data)
+            return node_dict['display_name']
+
+
+#ferrdb_path = OUTPUTS_DIR / "ferrdb.db"
+#f_path = SOURCES_DIR / "kegg/kegg_compounds.txt"
+#db = DBconnector(ferrdb_path)
+#mygene = MyGeneClient()
+#query = """
+#    SELECT * FROM suppressor
+#    WHERE LOWER(Exp_organism) LIKE '%human%'
+#    AND Confidence = 'Validated'
+#    AND Gene_type_hgnc_locus_type_or_other = 'gene with protein product'
+#    """
+#df = db.query_to_dataframe(query)
+#parser = FerrdbParser(df=df, compound_path=f_path, table_name="supressor")
+#parser.extract_gene_products(mygene)
+#parser.make_nodes_df()
+#parser.pathway_to_edge()
+#parser.parse_edge_nodes()
+#parser.get_display_name()
+#
+#tp_eo = set(parser.edges['target'].str.lower().to_list()).union(set(parser.edges['source'].str.lower().to_list()))
+#tp_nodes = set(parser.nodes.display_name.str.lower().to_list())
+#tp_yikes = tp_eo - tp_nodes
+#tp_yikes
+#for i in tp_yikes:
+#    print(parser.get_display_name(i))

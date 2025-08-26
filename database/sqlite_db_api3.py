@@ -369,9 +369,10 @@ class PsimiSQL:
             SELECT n.* FROM node n
             JOIN node_identifier ni ON n.id = ni.node_id
             WHERE ni.id_value = ?
+            OR n.display_name = ?
             LIMIT 1
         """
-        self.cursor.execute(query, (id_value,))
+        self.cursor.execute(query, (id_value, id_value))
         answer = self.cursor.fetchone()
 
         if not answer:
