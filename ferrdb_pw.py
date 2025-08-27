@@ -6,6 +6,27 @@ from config import OUTPUTS_DIR, SOURCES_DIR, PROJECT_ROOT
 import pandas as pd
 from database.sqlite_db_api3 import PsimiSQL
 
+
+def get_node_dict(identifier):
+    node_dict = db_api.get_node_by_any_identifier(identifier)
+    if node_dict:
+        return node_dict
+    try:
+        node_dict = db_api.get_node_by_any_identifier(edge_node_dict[identifier.lower()])
+        if node_dict:
+            return node_dict
+    except:
+        pass
+    try:
+        uniprot_id = mygene.query_gene(identifier)['hits'][0]['uniprot']['Swiss-Prot']
+        node_dict = db_api.get_node_by_any_identifier(uniprot_id)
+        if node_dict:
+            return node_dict
+    except:
+        pass
+    return None
+
+
 ferrdb_path = OUTPUTS_DIR / "ferrdb.db"
 f_path = SOURCES_DIR / "kegg/kegg_compounds.txt"
 db = DBconnector(ferrdb_path)
@@ -92,18 +113,8 @@ for idx, row in final_nodes.iterrows():
             db_api.insert_node_identifier(node_id, key, value, is_primary)
 
 for idx, row in final_edges.iterrows():
-    source_dict = db_api.get_node_by_any_identifier(row.source)
-    if not source_dict:
-        try:
-            source_dict = db_api.get_node_by_any_identifier(edge_node_dict[row.source.lower()])
-        except:
-            pass
-    target_dict = db_api.get_node_by_any_identifier(row.target)
-    if not target_dict:
-        try:
-            target_dict = db_api.get_node_by_any_identifier(edge_node_dict[row.target.lower()])
-        except:
-            pass
+    source_dict = get_node_dict(row.source)
+    target_dict = get_node_dict(row.target)
     if not source_dict or not target_dict:
         print(f'Skipping {row.source} -> {row.target}: missing nodes')
         continue
