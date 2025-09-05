@@ -10,7 +10,7 @@ class FerregParser:
         self.interaction_df = self.get_complete_interactions()
         self.nodes = {}
         self.edges = []
-        self.experiments = []
+        self.experiments = {}
         self.diseases = {}
         self.node_config = {
             'target': {
@@ -199,10 +199,16 @@ class FerregParser:
         unique_id = row['disease_id']
         if unique_id in self.diseases:
             return
+        disease_icd = self.clean_value(row['disease_icd'])
+        if disease_icd not in ['ICD-11: N.A.', 'N.A.', 'NA', '']:
+            disease_id = disease_icd
+        else:
+            disease_id = row['Disease_name']
         disease_dict = {
-            'disease_id': self.clean_value(row['disease_icd']),
+            'disease_id': self.clean_value(disease_id),
             'disease_name': self.clean_value(row['Disease_name']),
-            'description': self.clean_value(row['Regulation'])
+            'description': self.clean_value(row['Regulation']),
+            'unique_id': self.clean_value(row['unique_id'])
         }
         self.diseases[unique_id] = disease_dict
 
@@ -223,8 +229,8 @@ class FerregParser:
             if not edge_value:
                 continue
             a_node, b_node = self.parse_edge_col_name(edge)
-            a_node_id = row[a_node+"_id"],
-            b_node_id = row[b_node+"_id"],
+            a_node_id = row[a_node+"_id"]
+            b_node_id = row[b_node+"_id"]
             if not self.clean_value(a_node_id) or not self.clean_value(b_node_id):
                 continue
             edge_dict = {
@@ -239,13 +245,14 @@ class FerregParser:
             self.edges.append(edge_dict)
 
     def parse_experiment(self, row: pd.Series):
-        exp_dict = {
-            'edge_id': row['unique_id'],
-            'cellline': row['Cell Line'],
-            'in_vivo': self.clean_value(row['Vivo model']),
-            'reference': 'FerReg'
-        }
-        self.experiments.append(exp_dict)
+        unique_id = row['unique_id']
+        if unique_id not in self.experiments:
+            exp_dict = {
+                'cellline': row['Cell Line'],
+                'in_vivo': self.clean_value(row['Vivo model']),
+                'reference': 'FerReg'
+            }
+            self.experiments[unique_id] = exp_dict
 
     def parse_interactions(self):
         for idx, row in self.interaction_df.iterrows():
