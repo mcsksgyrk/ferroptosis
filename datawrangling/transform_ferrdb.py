@@ -1,181 +1,133 @@
-import pandas as pd
-from typing import Dict, List
-from pathlib import Path
-from config import OUTPUTS_DIR, SOURCES_DIR, PROJECT_ROOT
-from apicalls.api_oop import KEGGClient, UniProtClient
-from database.sqlite_db_api2 import PsimiSQL
+from parsers.ferrdb_parser import FerrdbParser
+from apicalls.mygene import MyGeneClient
 from database.external_db import DBconnector
+from apicalls.uniprot import UniProtClient
+from config import OUTPUTS_DIR, SOURCES_DIR, PROJECT_ROOT
+import pandas as pd
+from database.sqlite_db_api3 import PsimiSQL
 
 
-def get_molecules_from_ferrdb_table(table_name: str,
-                                    db: DBconnector,
-                                    pr=True) -> pd.DataFrame:
-    columns = [tup[1] for tup in db.get_columns(table_name)]
-    sym_col = ""
-    for col in columns:
-        if "symbol" in col.lower():
-            sym_col = col
-            break
-    cols = ["UniProtAC", "HGNC_ID", "ENSG_stable", "PMID", sym_col, "Exp_organism"]
-    if pr:
-        query = (f"SELECT {', '.join(cols)} "
-                 f"FROM {table_name} "
-                 f"WHERE Gene_type_hgnc_locus_type_or_other='gene with protein product'")
-    else:
-        query = (f"SELECT {', '.join(cols)} "
-                 f"FROM {table_name} "
-                 f"WHERE Gene_type_hgnc_locus_type_or_other!='gene with protein product'")
-    res = db.custom_query(query)
-    df_cols = ['uniprot_id', "hgnc_id", "ensg_id", "pubmed_id", 'gene_name', 'topology']
-    res_df = pd.DataFrame(data=res, columns=df_cols)
-    return res_df
+def get_node_dict(identifier):
+    node_dict = db_api.get_node_by_any_identifier(identifier)
+    if node_dict:
+        return node_dict
+    try:
+        node_dict = db_api.get_node_by_any_identifier(edge_node_dict[identifier.lower()])
+        if node_dict:
+            return node_dict
+    except:
+        pass
+    try:
+        uniprot_id = mygene.query_gene(identifier)['hits'][0]['uniprot']['Swiss-Prot']
+        node_dict = db_api.get_node_by_any_identifier(uniprot_id)
+        if node_dict:
+            return node_dict
+    except:
+        pass
+    return None
 
 
-def get_ligands_from_ferrdb(table_name, db) -> pd.DataFrame:
-    cols = ["Molecule", "Name", "PubChem_CID", "PMID"]
-    query = (f"SELECT {', '.join(cols)} "
-             f"FROM {table_name}")
-    res = db.custom_query(query)
-    df_cols = ["molecule", "name", "pubchem_id", "pmid"]
-    res_df = pd.DataFrame(data=res, columns=df_cols)
-    return res_df
+ferrdb_path = OUTPUTS_DIR / "ferrdb.db"
+f_path = SOURCES_DIR / "kegg/kegg_compounds.txt"
+db = DBconnector(ferrdb_path)
+mygene = MyGeneClient()
 
+query_dict = {
+    'suppressor':  """
+    SELECT * FROM suppressor
+    WHERE LOWER(Exp_organism) LIKE '%human%'
+    AND Confidence = 'Validated'
+    AND Gene_type_hgnc_locus_type_or_other = 'gene with protein product'
+    """,
+    'driver': """
+    SELECT * FROM suppressor
+    WHERE LOWER(Exp_organism) LIKE '%human%'
+    AND Confidence = 'Validated'
 
-def get_primary_id(row: pd.Series, cols: List[str], ligand: bool):
-    if not ligand:
-        if "uniprot_id" in cols and pd.notna(row.uniprot_id) and row.uniprot_id != '_NA_':
-            return (row.uniprot_id, "uniprot_id")
-        elif "ensg_id" in cols and pd.notna(row.ensg_id) and row.ensg_id != '_NA_':
-            return (row.ensg_id, "ensg_id")
-        elif "hgnc_id" in cols and pd.notna(row.hgnc_id) and row.hgnc_id != '_NA_':
-            return (row.hgnc_id, "hgnc_id")
-        elif "gene_name" in cols and pd.notna(row.gene_name) and row.gene_name != '_NA_':
-            return (row.gene_name, "gene_name")
-    else:
-        if "pubchem_id" in cols and pd.notna(row.pubchem_id) and row.pubchem_id != '_NA_':
-            return (row.pubchem_id, "pubchem_id")
-        elif "molecule" in cols and pd.notna(row.molecule) and row.molecule != '_NA_':
-            return (row.molecule, "molecule")
-        elif "name" in cols and pd.notna(row.name) and row.name != '_NA_':
-            return (row.name, "name")
-    return (None, None)
+    AND Gene_type_hgnc_locus_type_or_other = 'gene with protein product'
+    """,
+    'marker': """
+    SELECT * FROM marker
+    WHERE LOWER(Exp_organism) LIKE '%human%'
+    AND Confidence = 'Validated'
+    AND Gene_type_hgnc_locus_type_or_other = 'gene with protein product'
+    """
+}
+nodes_df_list = []
+edges_df_list = []
+edge_node_dict = dict()
+for k, v in query_dict.items():
+    print(f"parsing {k}")
+    df = db.query_to_dataframe(v)
+    parser = FerrdbParser(df=df, compound_path=f_path, table_name=k)
+    parser.extract_gene_products(mygene)
+    parser.make_nodes_df()
+    if k != 'marker':
+        parser.pathway_to_edge()
+        parser.parse_edge_nodes()
+    if getattr(parser, "nodes", None) is not None and not parser.nodes.empty:
+        nodes_df_list.append(parser.nodes)
+    if getattr(parser, "edges", None) is not None and not parser.edges.empty:
+        for idx, row in parser.edges.iterrows():
+            source = parser.get_display_name(row.source)
+            source_key = row.source
+            target = parser.get_display_name(row.target)
+            target_key = row.target
+            edge_node_dict[source_key.lower()] = source
+            edge_node_dict[target_key.lower()] = target
+        edges_df_list.append(parser.edges)
 
+final_edges = pd.concat(edges_df_list).drop_duplicates().reset_index(drop=True)
+final_nodes = pd.concat(nodes_df_list).reset_index(drop=True)
 
-def process_df(df, source_type, ligand=False):
-    print(f"Processing {len(df)} {source_type}")
-    df_cols = df.columns
+source_agg = final_nodes.groupby('display_name')['source_table'].apply(lambda x: '|'.join(sorted(x.unique()))).reset_index()
+deduplicated_df = final_nodes.groupby('display_name').apply(lambda x: x.loc[x['uniprot_id'].notna().idxmax()]).reset_index(drop=True)
+result = deduplicated_df.merge(source_agg, on='display_name')
+result['source_db'] = result['source_table_y']
+final_nodes = result.drop(['source_table_x', 'source_table_y'], axis=1)
 
-    mol_type = 'protein'
-    if 'non' in source_type.split('_'):
-        mol_type = 'polynucleotide'
+uniprot = UniProtClient()
+symbol_nodes = final_nodes[
+    (final_nodes.primary_id_type == 'Symbol') &
+    (final_nodes.type != 'compound')
+]
+converted, failed = uniprot.convert_to_uniprot_id('Gene_Name', symbol_nodes.name.to_list(), human=True)
+final_nodes['uniprot_id'] = final_nodes.apply(lambda row: converted.get(row['display_name'])
+                                  if pd.isna(row['uniprot_id']) else row['uniprot_id'], axis=1)
+final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'primary_id_type'] = 'uniprot_id'
+final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'type'] = 'protein'
+final_nodes['type'] = final_nodes['type'].fillna("nd")
+final_nodes.to_csv('checking.csv')
 
-    for idx, row in df.iterrows():
-        name_id, primary_id_type = get_primary_id(row, df_cols, ligand)
-        if name_id is None:
-            print(row)
-        if not ligand:
-            node_dict = {
-                'name': name_id,
-                'primary_id_type': primary_id_type,
-                'display_name': row.gene_name if row.gene_name != '_NA_' else name_id,
-                'tax_id': 9606 if 'Human' in str(row.topology) else None,
-                'type': mol_type,
-                'source': f'FerrDB_{source_type}',
-                'function': '',
-                'pathways': '',
-            }
-        else:
-            node_dict = {
-                'name': name_id,
-                'primary_id_type': primary_id_type,
-                'display_name': row.name if row.name != '_NA_' else name_id,
-                'tax_id': '',
-                'type': 'ligand',
-                'source': f'FerrDB_{source_type}',
-                'function': '',
-                'pathways': '',
-            }
-        db_api.insert_node(node_dict)
-        if not ligand:
-            if node_dict.get('id'):
-                if row.uniprot_id and pd.notna(row.uniprot_id):
-                    db_api.insert_node_identifier(
-                        node_dict['id'], 'uniprot_id',
-                        row.uniprot_id,
-                        (primary_id_type == 'uniprot_id')
-                    )
-                if row.gene_name and pd.notna(row.gene_name):
-                    db_api.insert_node_identifier(
-                        node_dict['id'], 'gene_name',
-                        row.gene_name,
-                        (primary_id_type == 'gene_name')
-                    )
-
-                if row.hgnc_id and pd.notna(row.hgnc_id):
-                    db_api.insert_node_identifier(
-                        node_dict['id'],
-                        'hgnc_id',
-                        row.hgnc_id,
-                        (primary_id_type == 'hgnc_id')
-                    )
-
-                if row.ensg_id and pd.notna(row.ensg_id):
-                    db_api.insert_node_identifier(
-                        node_dict['id'],
-                        'ensembl_id',
-                        row.ensg_id,
-                        (primary_id_type == 'ensg_id')
-                    )
-            else:
-                if row.pubchem_id and pd.notna(row.pubchem_id):
-                    db_api.insert_node_identifier(
-                        node_dict['id'],
-                        'pubchem_id',
-                        row.pubchem_id,
-                        (primary_id_type == 'pubchem_id')
-                    )
-                if row.molecule and pd.notna(row.molecule):
-                    db_api.insert_node_identifier(
-                        node_dict['id'],
-                        'molecule',
-                        row.molecule,
-                        (primary_id_type == 'molecule')
-                    )
-                if row.name and pd.notna(row.name):
-                    db_api.insert_node_identifier(
-                        node_dict['id'],
-                        'name',
-                        row.name,
-                        (primary_id_type == 'name')
-                    )
-
-
-ferrdb = DBconnector(OUTPUTS_DIR / "ferrdb.db")
-tables = ['driver', 'suppressor', 'unclassified']
-results = {}
-for table in tables:
-    df_prs = get_molecules_from_ferrdb_table(table, ferrdb)
-    df_prs.replace('_NA_', None, inplace=True)
-    results[f"{table}_prs"] = df_prs
-
-    df_non_prs = get_molecules_from_ferrdb_table(table, ferrdb, False)
-    df_non_prs.replace('_NA_', None, inplace=True)
-    results[f"{table}_non_prs"] = df_non_prs
-
-for ligand in ["inducer", "inhibitor"]:
-    df_ligand = get_ligands_from_ferrdb(ligand, ferrdb)
-    df_ligand.replace('_NA_', None, inplace=True)
-    results[f"{ligand}"] = df_ligand
-
-SQL_SEED = PROJECT_ROOT/"database"/"network_db_seed2.sql"
-DB_DESTINATION = OUTPUTS_DIR/"ferrdb_test.db"
+SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
+DB_DESTINATION = OUTPUTS_DIR / "ferrdb_network.db"
 db_api = PsimiSQL(SQL_SEED)
+for idx, row in final_nodes.iterrows():
+    node_dict = row.to_dict()
+    node_dict['tax_id'] = 9606
+    db_api.insert_node(node_dict)
 
-for table, df in results.items():
-    table_name = table.split("_")
-    is_ligand = False
-    if len(table_name) == 1:
-        is_ligand = True
-    process_df(df, table, is_ligand)
+    node_id = node_dict['id']
+    for key, value in row.items():
+        if key.endswith('_id') and pd.notna(value) and value != '':
+            is_primary = 1 if row['primary_id_type'] == key else 0
+            db_api.insert_node_identifier(node_id, key, value, is_primary)
 
+for idx, row in final_edges.iterrows():
+    source_dict = get_node_dict(row.source)
+    target_dict = get_node_dict(row.target)
+    if not source_dict or not target_dict:
+        print(f'Skipping {row.source} -> {row.target}: missing nodes')
+        continue
+    edge_type = 'activation' if row.interaction_type > 0 else 'inhibition'
+    edge_dict = {
+        'interactor_a_node_name': source_dict.get('id'),
+        'interactor_b_node_name': target_dict.get('id'),
+        'source_type': source_dict.get('type'),
+        'target_type': target_dict.get('type'),
+        'interaction_types': f"is_directed:1|is_direct:0|{edge_type}",
+        'layer': "ferrdb_pw",
+        'source_db': 'ferrdb'
+    }
+    db_api.insert_edge(source_dict, target_dict, edge_dict)
 db_api.save_db_to_file(str(DB_DESTINATION))

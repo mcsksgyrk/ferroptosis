@@ -1,42 +1,48 @@
-from config import OUTPUTS_DIR
-from database.external_db import DBconnector
-import matplotlib.pyplot as plt
+import pandas as pd
+from database.sqlite_db_api3 import PsimiSQL
+from config import PROJECT_ROOT, OUTPUTS_DIR
+from parsers.ferreg_parser import FerregParser
 
-ferreg = DBconnector(OUTPUTS_DIR / "ferreg.db")
-giga_query = """
-SELECT
-    hub.unique_id,
-    COALESCE(t.uniprot_id, hub.target_id) AS target_id,
-    COALESCE(r.External_id, hub.regulator_id) AS regulator_id,
-    COALESCE(d."Disease ICD", hub.disease_id) AS disease_id,
-    COALESCE(l.drug_name, hub.drug_id) AS drug_id,
-    reg.*
-FROM target_regulator_drug_disease_pair AS hub
-LEFT JOIN regulation_information AS reg
-    ON hub.unique_id = reg.unique_id
-LEFT JOIN general_regulator AS r
-    ON hub.regulator_id = r.regulator_id
-LEFT JOIN general_target AS t
-    ON hub.target_id = t.target_id
-LEFT JOIN general_disease AS d
-    ON hub.disease_id = d.disease_id
-LEFT JOIN general_drug AS l
-    ON hub.drug_id = l.drug_id
-"""
-res = ferreg.query_to_dataframe(giga_query)
-res.to_csv("./giga_query_res.csv")
 
-smart_query = """
-SELECT
-    disease_id,
-    GROUP_CONCAT(regulator_id, ',') as regulators,
-    COUNT(regulator_id) as reg_count
-FROM target_regulator_drug_disease_pair
-WHERE regulator_id != "."
-GROUP BY disease_id
-"""
-grouped = ferreg.query_to_dataframe(smart_query)
-grouped.sort_values("reg_count", ascending=False)
-grouped.reg_count.unique()
-grouped.plot.bar("disease_id", "reg_count")
-plt.show()
+def save_to_database(output_path, parser):
+    SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
+    db_api = PsimiSQL(SQL_SEED)
+    print("Inserting nodes...")
+    for internal_id, node_dict in parser.nodes.items():
+        db_api.insert_node(node_dict)
+    print("Inserting diseases...")
+    for disease_id, disease_dict in parser.diseases.items():
+        db_api.insert_disease(disease_dict)
+    print("Inserting edges...")
+    for edge_dict in parser.edges:
+        source_node = db_api.get_node_by_any_identifier(edge_dict['interactor_a_node_name'])
+        target_node = db_api.get_node_by_any_identifier(edge_dict['interactor_b_node_name'])
+        if source_node and target_node:
+            db_edge_dict = {
+                'layer': edge_dict['layer'],
+                'interaction_types': edge_dict['interaction_types'],
+                'effect_on_ferroptosis': edge_dict['effect_on_ferroptosis'],
+                'source_db': edge_dict['source_db']
+            }
+            db_api.insert_edge(source_node, target_node, db_edge_dict)
+        else:
+            print(f"Warning: Could not find nodes for edge {edge_dict['interactor_a_node_name']} -> {edge_dict['interactor_b_node_name']}")
+
+    db_api.save_db_to_file(output_path)
+
+
+db_path = OUTPUTS_DIR / "ferreg.db"
+parser = FerregParser(db_path)
+parser.parse_interactions()
+
+db_final = OUTPUTS_DIR / "tttttt.db"
+save_to_database(db_final, parser)
+
+len(parser.diseases.keys())
+len(set(parser.diseases.keys()))
+icds = set()
+for k, v in parser.diseases.items():
+    if v['disease_id'] in icds:
+        print(v['disease_id'])
+    icds.add(v['disease_id'])
+len(set(icds))
