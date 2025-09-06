@@ -196,21 +196,39 @@ class FerregParser:
             return 'protein'
 
     def add_disease(self, row: pd.Series):
-        unique_id = row['disease_id']
-        if unique_id in self.diseases:
-            return
+        unique_id = row['unique_id']
         disease_icd = self.clean_value(row['disease_icd'])
         if disease_icd not in ['ICD-11: N.A.', 'N.A.', 'NA', '']:
-            disease_id = disease_icd
+            db_disease_id = disease_icd
         else:
-            disease_id = row['Disease_name']
+            db_disease_id = self.clean_value(row['Disease_name'])
+        if db_disease_id in self.diseases:
+            if unique_id not in self.diseases[db_disease_id]['unique_ids']:
+                self.diseases[db_disease_id]['unique_ids'].append(unique_id)
+            return
         disease_dict = {
-            'disease_id': self.clean_value(disease_id),
+            'disease_id': db_disease_id,
             'disease_name': self.clean_value(row['Disease_name']),
             'description': self.clean_value(row['Regulation']),
-            'unique_id': self.clean_value(row['unique_id'])
+            'unique_ids': [unique_id]
         }
-        self.diseases[unique_id] = disease_dict
+        self.diseases[db_disease_id] = disease_dict
+    #def add_disease(self, row: pd.Series):
+    #    unique_id = row['disease_id']
+    #    if unique_id in self.diseases:
+    #        return
+    #    disease_icd = self.clean_value(row['disease_icd'])
+    #    if disease_icd not in ['ICD-11: N.A.', 'N.A.', 'NA', '']:
+    #        disease_id = disease_icd
+    #    else:
+    #        disease_id = row['Disease_name']
+    #    disease_dict = {
+    #        'disease_id': self.clean_value(disease_id),
+    #        'disease_name': self.clean_value(row['Disease_name']),
+    #        'description': self.clean_value(row['Regulation']),
+    #        'unique_id': self.clean_value(row['unique_id'])
+    #    }
+    #    self.diseases[unique_id] = disease_dict
 
     def parse_edge_col_name(self, col_name: str) -> List:
         if "2" in col_name:

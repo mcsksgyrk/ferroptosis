@@ -1,6 +1,7 @@
 from database.sqlite_db_api3 import PsimiSQL
 from config import PROJECT_ROOT, OUTPUTS_DIR
 from parsers.ferreg_parser import FerregParser
+from collections import defaultdict
 
 
 def get_nodes_field(keys, parser, field='name'):
@@ -38,9 +39,14 @@ def save_to_database(output_path, parser):
         node_id = db_api.get_node_by_any_identifier(id_value)['id']
         db_api.insert_node_identifier(node_id, id_type, id_value, is_primary)
     print("Inserting diseases")
-    for disease_id, disease_dict in parser.diseases.items():
+    disease_mapping = {}
+    for disease_key, disease_dict in parser.diseases.items():
         db_api.insert_disease(disease_dict)
+        db_api.cursor.execute("SELECT last_insert_rowid()")
+        db_disease_id = db_api.cursor.fetchone()[0]
+        disease_mapping[disease_key] = db_disease_id
     print("Inserting eddges and experiments")
+    edge_id_unique_id_pairs = defaultdict(list)
     for edge_dict in parser.edges:
         a_ferreg_id = edge_dict['interactor_a_node_name']
         b_ferreg_id = edge_dict['interactor_b_node_name']
@@ -58,13 +64,29 @@ def save_to_database(output_path, parser):
             db_api.insert_edge(source_node, target_node, db_edge_dict)
             db_api.cursor.execute("SELECT last_insert_rowid()")
             edge_id = db_api.cursor.fetchone()[0]
-            print(edge_id)
             unique_id = edge_dict['_unique_id_']
+
             experiment_dict = parser.experiments[unique_id].copy()
             experiment_dict['edge_id'] = edge_id
+
+            edge_id_unique_id_pairs[unique_id].append(edge_id)
             db_api.insert_experiment_model(experiment_dict)
         else:
             print(f"Warning: Could not find nodes for edge {edge_dict['interactor_a_node_name']} -> {edge_dict['interactor_b_node_name']}")
+    print("Inserting diseases and disease-edge pairs")
+    for unique_id, edge_ids in edge_id_unique_id_pairs.items():
+        for disease_key, disease_dict in parser.diseases.items():
+            if unique_id in disease_dict['unique_ids']:
+                db_disease_id = disease_mapping[disease_key]
+                for edge_id in edge_ids:
+                    disease_edge_dict = {
+                        'disease_id': db_disease_id,
+                        'edge_id': edge_id,
+                        'reference': '',
+                        'source_db': "FerReg"
+                    }
+                    db_api.insert_disease_edge(disease_edge_dict)
+                break
 
     db_api.save_db_to_file(str(output_path))
 

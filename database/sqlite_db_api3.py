@@ -313,7 +313,25 @@ class PsimiSQL:
         self.db.commit()
         disease_dict['id'] = self.cursor.lastrowid
 
-    # MODIFICATION: New method for inserting disease-edge associations
+    def get_disease(self, disease_id):
+        query = """
+            SELECT * FROM disease WHERE disease_id = ?
+        """
+        self.db.execute(query, (disease_id,))
+        answer = self.cursor.fetchone()
+        if answer:
+            disease_dict = {
+                'id': answer[0],
+                'disease_id': answer[1],
+                'disease_name': answer[2],
+                'description': answer[3],
+            }
+
+            disease_dict.update(self.get_diseas_identifiers(disease_dict['id']))
+            return disease_dict
+        else:
+            return None
+
     def insert_disease_edge(self, disease_edge_dict):
         query = """
             INSERT INTO disease_edge (disease_id, edge_id, reference, source_db)
@@ -327,7 +345,6 @@ class PsimiSQL:
         ))
         self.db.commit()
 
-    # MODIFICATION: New method for inserting experiment models
     def insert_experiment_model(self, experiment_dict):
         query = """
             INSERT INTO experiment_model (edge_id, cellline, in_vivo, reference)
