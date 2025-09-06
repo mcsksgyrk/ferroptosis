@@ -95,5 +95,5 @@ db_path = OUTPUTS_DIR / "ferreg.db"
 parser = FerregParser(db_path)
 parser.parse_interactions()
 
-db_final = OUTPUTS_DIR / "tttttt.db"
+db_final = OUTPUTS_DIR / "ferreg_network.db"
 save_to_database(db_final, parser)
