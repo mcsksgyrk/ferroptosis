@@ -9,9 +9,6 @@ logger = logging.getLogger(__name__)
 
 
 def extend_merged_db_with_omnipath():
-    """Add OmniPath interactions to the existing merged database with layered expansion."""
-
-    # Paths
     merged_db_path = OUTPUTS_DIR / "merged_network.db"
     test_db_path = OUTPUTS_DIR / "test_omnipath.db"
     omnipath_file = SOURCES_DIR / "omnipath" / "omnipath_interactions.txt"
@@ -20,19 +17,14 @@ def extend_merged_db_with_omnipath():
         raise FileNotFoundError(f"Merged database not found: {merged_db_path}")
     if not omnipath_file.exists():
         raise FileNotFoundError(f"OmniPath file not found: {omnipath_file}")
-
-    # Load existing database
     logger.info(f"Loading existing database: {merged_db_path}")
     sql_seed = PROJECT_ROOT / "database" / "network_db_seed2.sql"
     db_api = PsimiSQL(sql_seed)
     db_api.import_from_db_file(str(merged_db_path))
 
-    # Load OmniPath data
     logger.info(f"Loading OmniPath interactions: {omnipath_file}")
     omnipath_df = pd.read_csv(omnipath_file, delimiter='\t')
     logger.info(f"Found {len(omnipath_df)} OmniPath interactions")
-
-    # Build existing protein sets (UniProt IDs only, since OmniPath uses UniProt)
     logger.info("Building protein sets from existing database...")
     kegg_proteins = set()
     all_existing_proteins = set()
@@ -41,7 +33,6 @@ def extend_merged_db_with_omnipath():
     for node_id, name, source in db_api.cursor.fetchall():
         is_kegg = (source == 'KEGG')
 
-        # Get UniProt IDs for this node
         db_api.cursor.execute("SELECT id_value FROM node_identifier WHERE node_id = ? AND id_type = 'uniprot_id'", (node_id,))
         uniprot_ids = [row[0] for row in db_api.cursor.fetchall()]
 
@@ -58,13 +49,11 @@ def extend_merged_db_with_omnipath():
 
     logger.info(f"Found {len(kegg_proteins)} KEGG proteins, {len(all_existing_proteins)} total existing proteins")
 
-    # Layered network expansion
     logger.info("Building network layers...")
     layer1_proteins = set()
     layer2_proteins = set()
     new_nodes_added = set()
 
-    # Find Layer 1: proteins that influence KEGG
     for _, row in omnipath_df.iterrows():
         source_id, target_id = row['source'], row['target']
         if target_id in kegg_proteins and source_id not in kegg_proteins:
@@ -72,7 +61,6 @@ def extend_merged_db_with_omnipath():
             if source_id not in all_existing_proteins:
                 new_nodes_added.add(source_id)
 
-    # Find Layer 2: proteins that influence Layer 1
     for _, row in omnipath_df.iterrows():
         source_id, target_id = row['source'], row['target']
         if target_id in layer1_proteins and source_id not in kegg_proteins:
@@ -83,7 +71,6 @@ def extend_merged_db_with_omnipath():
     logger.info(f"Layer 1: {len(layer1_proteins)} proteins, Layer 2: {len(layer2_proteins)} proteins")
     logger.info(f"New nodes to add: {len(new_nodes_added)}")
 
-    # Add new nodes to database
     if new_nodes_added:
         logger.info("Adding new nodes...")
         for protein_id in new_nodes_added:
@@ -103,7 +90,6 @@ def extend_merged_db_with_omnipath():
                 logger.warning(f"Failed to add node {protein_id}: {e}")
         logger.info(f"Added {len(new_nodes_added)} new nodes")
 
-    # Process edges with layer assignment
     logger.info("Processing edges...")
     edges_added = 0
     edges_skipped = 0
@@ -120,24 +106,22 @@ def extend_merged_db_with_omnipath():
 
             source_id, target_id = interaction['source'], interaction['target']
 
-            # Determine layer
             if source_id in kegg_proteins and target_id in kegg_proteins:
-                layer = 0  # KEGG ↔ KEGG
+                layer = 0
             elif (source_id in kegg_proteins and target_id in layer1_proteins) or \
                  (target_id in kegg_proteins and source_id in layer1_proteins):
-                layer = 1  # KEGG ↔ Layer 1
+                layer = 1
             elif source_id in layer1_proteins and target_id in layer1_proteins:
-                layer = 2  # Layer 1 ↔ Layer 1
+                layer = 2
             elif (source_id in layer1_proteins and target_id in layer2_proteins) or \
                  (target_id in layer1_proteins and source_id in layer2_proteins):
-                layer = 2  # Layer 1 ↔ Layer 2
+                layer = 2
             else:
                 edges_skipped += 1
                 continue
 
             layer_counts[layer] += 1
 
-            # Build interaction types
             interaction_types = []
             if 'is_directed' in interaction and pd.notna(interaction['is_directed']):
                 is_directed = 'true' if interaction['is_directed'] == 1 else 'false'
@@ -148,7 +132,6 @@ def extend_merged_db_with_omnipath():
             if 'sources' in interaction and pd.notna(interaction['sources']):
                 interaction_types.append(f"sources:{interaction['sources']}")
 
-            # Check if edge already exists
             existing_query = """
                 SELECT id FROM edge
                 WHERE interactor_a_node_id = ? AND interactor_b_node_id = ?
@@ -158,7 +141,6 @@ def extend_merged_db_with_omnipath():
                 edges_skipped += 1
                 continue
 
-            # Create edge
             edge_dict = {
                 'source_db': 'OmniPath',
                 'interaction_types': '|'.join(interaction_types),
@@ -175,7 +157,6 @@ def extend_merged_db_with_omnipath():
     logger.info(f"Added {edges_added} edges, skipped {edges_skipped}")
     logger.info(f"Layer distribution: Layer 0: {layer_counts[0]}, Layer 1: {layer_counts[1]}, Layer 2: {layer_counts[2]}")
 
-    # Save database
     backup_path = OUTPUTS_DIR / "merged_network_backup.db"
     logger.info(f"Creating backup: {backup_path}")
     merged_db_path.rename(backup_path)
