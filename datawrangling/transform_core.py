@@ -163,7 +163,7 @@ for idx, row in deduplicated_kegg_df.iterrows():
 
     node_id = node_dict['id']
     for key, value in row.items():
-        if key.endswith('_id') and pd.notna(value) and value != '':
+        if key.endswith('_id') and key != 'tax_id' and pd.notna(value) and value != '':
             is_primary = 1 if row['primary_id_type'] == key else 0
             db_api.insert_node_identifier(node_id, key, value, is_primary)
 
