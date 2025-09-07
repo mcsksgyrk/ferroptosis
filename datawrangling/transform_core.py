@@ -111,7 +111,6 @@ for k, v in kegg_src.items():
             rows.append(df_dict)
 
 kegg_node_df = pd.DataFrame(rows)
-kegg_node_df.to_csv('wtf.csv')
 # want to map to molecules, not to kegg nodes:
 edge_rows = []
 for edge in kegg_edges:

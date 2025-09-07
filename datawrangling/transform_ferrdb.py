@@ -97,7 +97,6 @@ final_nodes['uniprot_id'] = final_nodes.apply(lambda row: converted.get(row['dis
 final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'primary_id_type'] = 'uniprot_id'
 final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'type'] = 'protein'
 final_nodes['type'] = final_nodes['type'].fillna("nd")
-final_nodes.to_csv('checking.csv')
 
 SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
 DB_DESTINATION = OUTPUTS_DIR / "ferrdb_network.db"
