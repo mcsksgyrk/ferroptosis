@@ -21,9 +21,9 @@ def merge_strings(string_1, string_2, separator="|"):
 
 def main():
     SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
-    FERROPTOSIS_DB = OUTPUTS_DIR / "merged_ferroptosis_network.db"
+    FERROPTOSIS_DB = OUTPUTS_DIR / "merged_ferroptosis_w_omnipat.db"
     ARN_DB = SOURCES_DIR / "arn" / "arn.db"
-    OUTPUT_DB = OUTPUTS_DIR / "ferroptosis_autophagy_network.db"
+    OUTPUT_DB = OUTPUTS_DIR / "ferroptosis_autophagy.db"
 
     parser = PsimiSQL(SQL_SEED)
     parser.import_from_db_file(str(FERROPTOSIS_DB))
@@ -84,8 +84,8 @@ def main():
     parser.cursor.execute("SELECT id, name FROM node")
     all_nodes = {name: node_id for node_id, name in parser.cursor.fetchall()}
 
-    # Process ARN edges in batches
-    arn_cursor.execute("SELECT interactor_a_node_name, interactor_b_node_name, layer, interaction_types FROM edge")
+    # Process ARN edges in batches, only directed edges
+    arn_cursor.execute("SELECT interactor_a_node_name, interactor_b_node_name, layer, interaction_types FROM edge WHERE interaction_types LIKE 'True|true%'")
 
     edges_to_insert = []
     edges_processed = 0

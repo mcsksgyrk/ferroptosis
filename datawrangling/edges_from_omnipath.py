@@ -25,7 +25,7 @@ def merge_strings(string_1, string_2, separator="|"):
 
 def extend_merged_db_with_omnipath():
     merged_db_path = OUTPUTS_DIR / "merged_ferroptosis_network.db"
-    output_db_path = OUTPUTS_DIR / "extended_omnipath_network.db"
+    output_db_path = OUTPUTS_DIR / "merged_ferroptosis_w_omnipat.db"
     omnipath_file = SOURCES_DIR / "omnipath" / "omnipath_interactions.txt"
 
     if not merged_db_path.exists():

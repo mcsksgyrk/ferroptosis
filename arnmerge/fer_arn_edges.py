@@ -24,8 +24,8 @@ def merge_strings(string_1, string_2, separator="|"):
 
 
 def extend_arn_ferr_db_with_omnipath():
-    arn_ferr_db_path = OUTPUTS_DIR / "ferroptosis_autophagy_network.db"
-    output_db_path = OUTPUTS_DIR / "final_network_with_omnipath.db"
+    arn_ferr_db_path = OUTPUTS_DIR / "ferroptosis_autophagy.db"
+    output_db_path = OUTPUTS_DIR / "final.db"
     omnipath_file = SOURCES_DIR / "omnipath" / "omnipath_interactions.txt"
 
     if not arn_ferr_db_path.exists():
@@ -107,7 +107,6 @@ def extend_arn_ferr_db_with_omnipath():
     db_api.cursor.execute("SELECT interactor_a_node_name, interactor_b_node_name FROM edge")
     for a, b in db_api.cursor.fetchall():
         existing_edges.add((a, b))
-        existing_edges.add((b, a))
 
     logger.info("Step 9: Process cross-network edges")
     edges_added = 0
