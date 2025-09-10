@@ -11,7 +11,7 @@ KEGG_DB = OUTPUTS_DIR / 'kegg.db'
 FERRDB_DB = OUTPUTS_DIR / 'ferrdb_network.db'
 FERREG_DB = OUTPUTS_DIR / 'ferreg_network.db'
 MERGED_DB = OUTPUTS_DIR / 'merged_ferroptosis_network.db'
-EXTENDED_OMNIPATH_DB = OUTPUTS_DIR / 'extended_omnipath_network.db'
+EXTENDED_OMNIPATH_DB = OUTPUTS_DIR / 'merged_ferroptosis_w_omnipat.db'
 
 plt.style.use('seaborn-v0_8-whitegrid')
 colors = cm.YlGnBu(np.linspace(0.3, 0.8, 5))
@@ -52,8 +52,8 @@ def get_protein_names(db_path):
     conn.close()
     return node_set
 
-def create_figure_1():
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+def create_combined_figure():
+    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
 
     # A. Source Database Overlap (Venn Diagram)
     kegg_proteins = get_protein_names(KEGG_DB)
@@ -106,16 +106,9 @@ def create_figure_1():
                 ax2.text(bar.get_x() + bar.get_width()/2., height,
                         f'{int(height)}', ha='center', va='bottom', fontsize=8, rotation=45)
 
-    plt.tight_layout()
-    return fig
-
-
-def create_figure_4():
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
-
     conn = sqlite3.connect(EXTENDED_OMNIPATH_DB)
 
-    # A. Network Layer Distribution
+    # C. Network Layer Distribution
     query = """
     SELECT e.layer, COUNT(*) as count
     FROM edge e
@@ -129,18 +122,18 @@ def create_figure_4():
     df_layers = pd.read_sql_query(query, conn)
 
     if not df_layers.empty:
-        bars = ax1.bar(range(len(df_layers)), df_layers['count'], color=colors[2])
-        ax1.set_xticks(range(len(df_layers)))
-        ax1.set_xticklabels(df_layers['layer'], rotation=45, ha='right')
-        ax1.set_ylabel('Number of PPI Edges', fontsize=11)
-        ax1.set_title('A. Network Layer Distribution', fontsize=12, fontweight='bold')
-        ax1.set_yscale('log')
+        bars = ax3.bar(range(len(df_layers)), df_layers['count'], color=colors[2])
+        ax3.set_xticks(range(len(df_layers)))
+        ax3.set_xticklabels(df_layers['layer'], rotation=45, ha='right')
+        ax3.set_ylabel('Number of PPI Edges', fontsize=11)
+        ax3.set_title('C. Network Layer Distribution', fontsize=12, fontweight='bold')
+        ax3.set_yscale('log')
 
         for bar in bars:
             height = bar.get_height()
-            ax1.text(bar.get_x() + bar.get_width()/2., height, f'{int(height)}', ha='center', va='bottom', fontsize=8)
+            ax3.text(bar.get_x() + bar.get_width()/2., height, f'{int(height)}', ha='center', va='bottom', fontsize=8)
 
-    # B. Source Database Contribution
+    # D. Source Database Contribution
     query = """
     SELECT e.source_db, COUNT(*) as count
     FROM edge e
@@ -165,9 +158,9 @@ def create_figure_4():
         if source_counts:
             total_edges = sum(source_counts.values())
             filtered_counts = {k: v for k, v in source_counts.items() if (v/total_edges) >= 0.01}
-            ax2.pie(filtered_counts.values(), labels=filtered_counts.keys(), autopct='%1.1f%%',
+            ax4.pie(filtered_counts.values(), labels=filtered_counts.keys(), autopct='%1.1f%%',
                    startangle=90, colors=colors, textprops={'rotation': 45})
-            ax2.set_title('B. PPI Edge Sources', fontsize=12, fontweight='bold')
+            ax4.set_title('D. PPI Edge Sources', fontsize=12, fontweight='bold')
 
     conn.close()
     plt.tight_layout()
@@ -175,12 +168,8 @@ def create_figure_4():
 
 
 if __name__ == "__main__":
-    fig1 = create_figure_1()
-    plt.savefig(OUTPUTS_DIR / 'figures/figure_1_venn_stats.png', dpi=300, bbox_inches='tight')
+    fig = create_combined_figure()
+    plt.savefig(OUTPUTS_DIR / 'figures/combined_network_analysis.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    fig4 = create_figure_4()
-    plt.savefig(OUTPUTS_DIR / 'figures/figure_4_layers_sources.png', dpi=300, bbox_inches='tight')
-    plt.show()
-
-    print("Figures saved with YlGnBu colors")
+    print("Combined figure saved with YlGnBu colors")

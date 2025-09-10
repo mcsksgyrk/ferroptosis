@@ -30,16 +30,20 @@ def main():
 
     print("Imported ferroptosis network database")
 
+    # MODIFICATION: Mark all existing edges as ferroptosis network
+    parser.cursor.execute("UPDATE edge SET source_db = 'ferroptosis_network'")
+    parser.db.commit()
+
     # Build existing node lookup
     parser.cursor.execute("SELECT id, name FROM node")
     existing_nodes = {name: node_id for node_id, name in parser.cursor.fetchall()}
     print(f"Existing nodes: {len(existing_nodes)}")
 
     # Build existing edge lookup
-    parser.cursor.execute("SELECT interactor_a_node_name, interactor_b_node_name, layer FROM edge")
+    parser.cursor.execute("SELECT interactor_a_node_name, interactor_b_node_name FROM edge")
     existing_edges = set()
-    for a, b, layer in parser.cursor.fetchall():
-        existing_edges.add((a, b, layer))
+    for a, b in parser.cursor.fetchall():
+        existing_edges.add((a, b))
     print(f"Existing edges: {len(existing_edges)}")
 
     arn_db = sqlite3.connect(ARN_DB)
@@ -55,8 +59,6 @@ def main():
     for name, display_name, tax_id, node_type in arn_nodes:
         if name in existing_nodes:
             name_mapping[name] = name
-            # Update existing node to add ARN source
-            parser.cursor.execute("UPDATE node SET source_db = source_db || '|ARN' WHERE name = ?", (name,))
         else:
             name_mapping[name] = name
             nodes_to_insert.append((
@@ -89,7 +91,7 @@ def main():
 
     edges_to_insert = []
     edges_processed = 0
-    edges_updated = 0
+    edges_skipped = 0
     batch_size = 10000
 
     for source_name, target_name, layer, interaction_types in arn_cursor:
@@ -101,14 +103,8 @@ def main():
         if source_name not in all_nodes or target_name not in all_nodes:
             continue
 
-        if (source_name, target_name, layer) in existing_edges:
-            # Update existing edge to add ARN source
-            parser.cursor.execute("""
-                UPDATE edge
-                SET source_db = source_db || '|ARN'
-                WHERE interactor_a_node_name = ? AND interactor_b_node_name = ? AND layer = ?
-            """, (source_name, target_name, layer))
-            edges_updated += 1
+        if (source_name, target_name) in existing_edges:
+            edges_skipped += 1
             continue
 
         edges_to_insert.append((
@@ -141,8 +137,8 @@ def main():
     arn_db.close()
 
     print(f"Total ARN edges processed: {edges_processed}")
-    print(f"Edges updated with ARN source: {edges_updated}")
-    print(f"New edges added: {len(edges_to_insert) + (edges_processed // batch_size) * batch_size}")
+    print(f"Edges skipped (already in ferroptosis network): {edges_skipped}")
+    print(f"New ARN edges added: {len(edges_to_insert) + (edges_processed // batch_size) * batch_size - edges_skipped}")
 
     parser.save_db_to_file(str(OUTPUT_DB))
     print(f"Final merge complete: {OUTPUT_DB}")
