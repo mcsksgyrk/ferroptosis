@@ -1,0 +1,380 @@
+,id,name,primary_id_type,display_name,tax_id,type,pathways,role_in_ferroptosis,function,source_db,node_id,id_type,is_primary,id_value
+0,2,3327,pubchem_id,L-Glutamate,,compound,,core,,KEGG,2,kegg_id,0,cpd:C00025
+1,2,3327,pubchem_id,L-Glutamate,,compound,,core,,KEGG,2,pubchem_id,1,3327
+2,3,3774,pubchem_id,L-Cystine,,compound,,core,,KEGG,3,kegg_id,0,cpd:C00491
+3,3,3774,pubchem_id,L-Cystine,,compound,,core,,KEGG,3,pubchem_id,1,3774
+4,6,3353,pubchem_id,Glutathione,,compound,,core,,KEGG,6,kegg_id,0,cpd:C00051
+5,6,3353,pubchem_id,Glutathione,,compound,,core,,KEGG,6,pubchem_id,1,3353
+6,9,329970430,pubchem_id,Erastin,,compound,,core,,KEGG,9,kegg_id,0,cpd:C21478
+7,9,329970430,pubchem_id,Erastin,,compound,,core,,KEGG,9,pubchem_id,1,329970430
+8,10,3397,pubchem_id,L-Cysteine,,compound,,core,,KEGG,10,kegg_id,0,cpd:C00097
+9,10,3397,pubchem_id,L-Cysteine,,compound,,core,,KEGG,10,pubchem_id,1,3397
+10,13,3938,pubchem_id,gamma-L-Glutamyl-L-cysteine,,compound,,core,,KEGG,13,kegg_id,0,cpd:C00669
+11,13,3938,pubchem_id,gamma-L-Glutamyl-L-cysteine,,compound,,core,,KEGG,13,pubchem_id,1,3938
+12,15,3708,pubchem_id,(R)-Mevalonate,,compound,,core,,KEGG,15,kegg_id,0,cpd:C00418
+13,15,3708,pubchem_id,(R)-Mevalonate,,compound,,core,,KEGG,15,pubchem_id,1,3708
+14,16,13552,pubchem_id,Ubiquinone-10,,compound,,core,,KEGG,16,kegg_id,0,cpd:C11378
+15,16,13552,pubchem_id,Ubiquinone-10,,compound,,core,,KEGG,16,pubchem_id,1,13552
+16,18,17395817,pubchem_id,Fe3+,,compound,,core,,KEGG,18,kegg_id,0,cpd:C14819
+17,18,17395817,pubchem_id,Fe3+,,compound,,core,,KEGG,18,pubchem_id,1,17395817
+18,20,17395816,pubchem_id,Fe2+,,compound,,core,,KEGG,20,kegg_id,0,cpd:C14818
+19,20,17395816,pubchem_id,Fe2+,,compound,,core,,KEGG,20,pubchem_id,1,17395816
+20,23,3427,pubchem_id,Glutathione disulfide,,compound,,core,,KEGG,23,kegg_id,0,cpd:C00127
+21,23,3427,pubchem_id,Glutathione disulfide,,compound,,core,,KEGG,23,pubchem_id,1,3427
+22,43,3334,pubchem_id,Heme,,compound,,core,,KEGG,43,kegg_id,0,cpd:C00032
+23,43,3334,pubchem_id,Heme,,compound,,core,,KEGG,43,pubchem_id,1,3334
+24,45,96025209,pubchem_id,Sorafenib (USAN/INN),,compound,,core,,KEGG,45,kegg_id,0,dr:D08524
+25,45,96025209,pubchem_id,Sorafenib (USAN/INN),,compound,,core,,KEGG,45,pubchem_id,1,96025209
+26,46,7847514,pubchem_id,Sulfasalazine (USP/INN),,compound,,core,,KEGG,46,kegg_id,0,dr:D00448
+27,46,7847514,pubchem_id,Sulfasalazine (USP/INN),,compound,,core,,KEGG,46,pubchem_id,1,7847514
+28,47,96023368,pubchem_id,Hydroxyl radical,,compound,,core,,KEGG,47,kegg_id,0,cpd:C16844
+29,47,96023368,pubchem_id,Hydroxyl radical,,compound,,core,,KEGG,47,pubchem_id,1,96023368
+30,48,3329,pubchem_id,Hydrogen peroxide,,compound,,core,,KEGG,48,kegg_id,0,cpd:C00027
+31,48,3329,pubchem_id,Hydrogen peroxide,,compound,,core,,KEGG,48,pubchem_id,1,3329
+32,49,329970431,pubchem_id,RSL3,,compound,,core,,KEGG,49,kegg_id,0,cpd:C21479
+33,49,329970431,pubchem_id,RSL3,,compound,,core,,KEGG,49,pubchem_id,1,329970431
+34,50,3429,pubchem_id,Isopentenyl diphosphate,,compound,,core,,KEGG,50,kegg_id,0,cpd:C00129
+35,50,3429,pubchem_id,Isopentenyl diphosphate,,compound,,core,,KEGG,50,pubchem_id,1,3429
+36,52,329970435,pubchem_id,"1-Octadecanoyl-2-(15S-hydroperoxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,52,kegg_id,0,cpd:C21483
+37,52,329970435,pubchem_id,"1-Octadecanoyl-2-(15S-hydroperoxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,52,pubchem_id,1,329970435
+38,53,329970434,pubchem_id,"1-Octadecanoyl-2-(15S-hydroxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,53,kegg_id,0,cpd:C21482
+39,53,329970434,pubchem_id,"1-Octadecanoyl-2-(15S-hydroxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,53,pubchem_id,1,329970434
+40,56,329970432,pubchem_id,"1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,56,kegg_id,0,cpd:C21480
+41,56,329970432,pubchem_id,"1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,56,pubchem_id,1,329970432
+42,57,329970433,pubchem_id,"1-Octadecanoyl-2-(7Z,10Z,13Z,16Z-docosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,57,kegg_id,0,cpd:C21481
+43,57,329970433,pubchem_id,"1-Octadecanoyl-2-(7Z,10Z,13Z,16Z-docosatetraenoyl)-sn-glycero-3-phosphoethanolamine",,compound,,core,,KEGG,57,pubchem_id,1,329970433
+44,58,5312,pubchem_id,Arachidonyl-CoA,,compound,,core,,KEGG,58,kegg_id,0,cpd:C02249
+45,58,5312,pubchem_id,Arachidonyl-CoA,,compound,,core,,KEGG,58,pubchem_id,1,5312
+46,59,47205480,pubchem_id,"(7Z,10Z,13Z,16Z)-Docosatetraenoyl-CoA",,compound,,core,,KEGG,59,kegg_id,0,cpd:C16170
+47,59,47205480,pubchem_id,"(7Z,10Z,13Z,16Z)-Docosatetraenoyl-CoA",,compound,,core,,KEGG,59,pubchem_id,1,47205480
+48,67,3519,pubchem_id,Arachidonate,,compound,,core,,KEGG,67,kegg_id,0,cpd:C00219
+49,67,3519,pubchem_id,Arachidonate,,compound,,core,,KEGG,67,pubchem_id,1,3519
+50,68,51090856,pubchem_id,Adrenic acid,,compound,,core,,KEGG,68,kegg_id,0,cpd:C16527
+51,68,51090856,pubchem_id,Adrenic acid,,compound,,core,,KEGG,68,pubchem_id,1,51090856
+52,69,3312,pubchem_id,CoA,,compound,,core,,KEGG,69,kegg_id,0,cpd:C00010
+53,69,3312,pubchem_id,CoA,,compound,,core,,KEGG,69,pubchem_id,1,3312
+54,70,5492,pubchem_id,alpha-Tocopherol,,compound,,core,,KEGG,70,kegg_id,0,cpd:C02477
+55,70,5492,pubchem_id,alpha-Tocopherol,,compound,,core,,KEGG,70,pubchem_id,1,5492
+56,71,329970436,pubchem_id,1-Octadecanoyl-sn-glycero-3-phosphoethanolamine,,compound,,core,,KEGG,71,kegg_id,0,cpd:C21484
+57,71,329970436,pubchem_id,1-Octadecanoyl-sn-glycero-3-phosphoethanolamine,,compound,,core,,KEGG,71,pubchem_id,1,329970436
+58,72,3326,pubchem_id,Acetyl-CoA,,compound,,core,,KEGG,72,kegg_id,0,cpd:C00024
+59,72,3326,pubchem_id,Acetyl-CoA,,compound,,core,,KEGG,72,pubchem_id,1,3326
+60,73,3649,pubchem_id,(S)-3-Hydroxy-3-methylglutaryl-CoA,,compound,,core,,KEGG,73,kegg_id,0,cpd:C00356
+61,73,3649,pubchem_id,(S)-3-Hydroxy-3-methylglutaryl-CoA,,compound,,core,,KEGG,73,pubchem_id,1,3649
+62,603,LNQCUTNLHUQZLR-OZJWLQQPSA-N,inchikey,Iridin,,small_molecule,,Suppressor,,ferreg,603,inchikey,1,LNQCUTNLHUQZLR-OZJWLQQPSA-N
+63,604,YUSWMAULDXZHPY-UHFFFAOYSA-N,inchikey,Amentoflavone,,small_molecule,,Inducer,,ferreg,604,inchikey,1,YUSWMAULDXZHPY-UHFFFAOYSA-N
+64,605,BJDCWCLMFKKGEE-ISOSDAIHSA-N,inchikey,Dihydroartemisinin,,small_molecule,,Inducer,,ferreg,605,inchikey,1,BJDCWCLMFKKGEE-ISOSDAIHSA-N
+65,606,ALZ003,name,ALZ003,,small_molecule,,Inducer,,ferreg,606,uniprot_id,1,ALZ003
+66,608,FIHJKUPKCHIPAT-AHIGJZGOSA-N,inchikey,Artesunate,,small_molecule,,Inducer,,ferreg,608,inchikey,1,FIHJKUPKCHIPAT-AHIGJZGOSA-N
+67,609,ZROSUBKIGBSZCG-UHFFFAOYSA-N,inchikey,Fatostatin,,small_molecule,,Inducer,,ferreg,609,inchikey,1,ZROSUBKIGBSZCG-UHFFFAOYSA-N
+68,611,YKRGDOXKVOZESV-WRJNSLSBSA-N,inchikey,Peoniflorin,,small_molecule,,Inducer,,ferreg,611,inchikey,1,YKRGDOXKVOZESV-WRJNSLSBSA-N
+69,612,RRKTZKIUPZVBMF-IBTVXLQLSA-N,inchikey,Brucine,,small_molecule,,Inducer,,ferreg,612,inchikey,1,RRKTZKIUPZVBMF-IBTVXLQLSA-N
+70,614,WPEWQEMJFLWMLV-UHFFFAOYSA-N,inchikey,Apatinib,,small_molecule,,Inducer,,ferreg,614,inchikey,1,WPEWQEMJFLWMLV-UHFFFAOYSA-N
+71,615,TXJZRSRTYPUYRW-NQIIRXRSSA-N,inchikey,RSL3,,small_molecule,,Inducer,,ferreg,615,inchikey,1,TXJZRSRTYPUYRW-NQIIRXRSSA-N
+72,616,VDGOFNMYZYBUDT-YCONPBHISA-N,inchikey,Pseudolaric acid B,,small_molecule,,Inducer,,ferreg,616,inchikey,1,VDGOFNMYZYBUDT-YCONPBHISA-N
+73,617,SPEGERVLTUWZPA-UHFFFAOYSA-N,inchikey,GSK3368715,,small_molecule,,Inducer,,ferreg,617,inchikey,1,SPEGERVLTUWZPA-UHFFFAOYSA-N
+74,618,BOJKULTULYSRAS-OTESTREVSA-N,inchikey,Andrographis,,small_molecule,,Inducer,,ferreg,618,inchikey,1,BOJKULTULYSRAS-OTESTREVSA-N
+75,620,KKGQTZUTZRNORY-UHFFFAOYSA-N,inchikey,Fingolimod,,small_molecule,,Inducer,,ferreg,620,inchikey,1,KKGQTZUTZRNORY-UHFFFAOYSA-N
+76,621,MJHWZTRFACWHTA-COPBVACWSA-N,inchikey,Kayadiol,,small_molecule,,Inducer,,ferreg,621,inchikey,1,MJHWZTRFACWHTA-COPBVACWSA-N
+77,623,OGWKCGZFUXNPDA-XQKSVPLYSA-N,inchikey,Vincristine,,small_molecule,,Inducer,,ferreg,623,inchikey,1,OGWKCGZFUXNPDA-XQKSVPLYSA-N
+78,624,OAUREGNZECGNQS-IBGZPJMESA-N,inchikey,Bavachin,,small_molecule,,Inducer,,ferreg,624,inchikey,1,OAUREGNZECGNQS-IBGZPJMESA-N
+79,626,BKQFRNYHFIQEKN-UHFFFAOYSA-N,inchikey,Erastin,,small_molecule,,Inducer,,ferreg,626,inchikey,1,BKQFRNYHFIQEKN-UHFFFAOYSA-N
+80,627,PAWIYAYFNXQGAP-UHFFFAOYSA-N,inchikey,Quisinostat,,small_molecule,,Inducer,,ferreg,627,inchikey,1,PAWIYAYFNXQGAP-UHFFFAOYSA-N
+81,628,SDHTXBWLVGWJFT-XKCURVIJSA-N,inchikey,Oridonin,,small_molecule,,Inducer,,ferreg,628,inchikey,1,SDHTXBWLVGWJFT-XKCURVIJSA-N
+82,630,LXZZYRPGZAFOLE-UHFFFAOYSA-L,inchikey,Cisplatin,,small_molecule,,Suppressor,,ferreg,630,inchikey,1,LXZZYRPGZAFOLE-UHFFFAOYSA-L
+83,631,RCINICONZNJXQF-MZXODVADSA-N,inchikey,Paclitaxel,,small_molecule,,Suppressor,,ferreg,631,inchikey,1,RCINICONZNJXQF-MZXODVADSA-N
+84,633,LEBVLXFERQHONN-INIZCTEOSA-N,inchikey,Levobupivacaine,,small_molecule,,Inducer,,ferreg,633,inchikey,1,LEBVLXFERQHONN-INIZCTEOSA-N
+85,634,HYXITZLLTYIPOF-UHFFFAOYSA-N,inchikey,Tanshinone IIA,,small_molecule,,Inducer,,ferreg,634,inchikey,1,HYXITZLLTYIPOF-UHFFFAOYSA-N
+86,636,NCEXYHBECQHGNR-UHFFFAOYSA-N,inchikey,Sulfasalazine,,small_molecule,,Inducer,,ferreg,636,inchikey,1,NCEXYHBECQHGNR-UHFFFAOYSA-N
+87,637,BDUHCSBCVGXTJM-UHFFFAOYSA-N,inchikey,Nutlin-3,,small_molecule,,Suppressor,,ferreg,637,inchikey,1,BDUHCSBCVGXTJM-UHFFFAOYSA-N
+88,639,NCS207895,name,NCS207895,,small_molecule,,Suppressor,,ferreg,639,external_id,1,NCS207895
+89,642,UNMLVGNWZDHBRA-UFAVQCRNSA-N,inchikey,Bromelain,,small_molecule,,Inducer,,ferreg,642,inchikey,1,UNMLVGNWZDHBRA-UFAVQCRNSA-N
+90,650,VFLDPWHFBUODDF-FCXRPNKRSA-N,inchikey,Curcumin,,small_molecule,,Inducer,,ferreg,650,inchikey,1,VFLDPWHFBUODDF-FCXRPNKRSA-N
+91,651,Cetuximab,name,Cetuximab,,small_molecule,,Inducer,,ferreg,651,external_id,1,Cetuximab
+92,652,XYFPWWZEPKGCCK-GOSISDBHSA-N,inchikey,Ibrutinib,,small_molecule,,Inducer,,ferreg,652,inchikey,1,XYFPWWZEPKGCCK-GOSISDBHSA-N
+93,653,PCHKPVIQAHNQLW-CQSZACIVSA-N,inchikey,Niraparib,,small_molecule,,Inducer,,ferreg,653,inchikey,1,PCHKPVIQAHNQLW-CQSZACIVSA-N
+94,654,MFBOGIVSZKQAPD-UHFFFAOYSA-M,inchikey,Sodium butyrate,,small_molecule,,Inducer,,ferreg,654,inchikey,1,MFBOGIVSZKQAPD-UHFFFAOYSA-M
+95,655,XZWYZXLIPXDOLR-UHFFFAOYSA-N,inchikey,Metformin,,small_molecule,,Inducer,,ferreg,655,inchikey,1,XZWYZXLIPXDOLR-UHFFFAOYSA-N
+96,657,RTIXKCRFFJGDFG-UHFFFAOYSA-N,inchikey,Chrysin,,small_molecule,,Inducer,,ferreg,657,inchikey,1,RTIXKCRFFJGDFG-UHFFFAOYSA-N
+97,659,CIWBSHSKHKDKBQ-JLAZNSOCSA-N,inchikey,Ascorbic Acid,,small_molecule,,Inducer,,ferreg,659,inchikey,1,CIWBSHSKHKDKBQ-JLAZNSOCSA-N
+98,660,QCTMYNGDIBTNSK-XEAAVONHSA-N,inchikey,Solasonine,,small_molecule,,Inducer,,ferreg,660,inchikey,1,QCTMYNGDIBTNSK-XEAAVONHSA-N
+99,661,HKVAMNSJSFKALM-GKUWKFKPSA-N,inchikey,Everolimus,,small_molecule,,Inducer,,ferreg,661,inchikey,1,HKVAMNSJSFKALM-GKUWKFKPSA-N
+100,662,JVTAAEKCZFNVCJ-UHFFFAOYSA-M,inchikey,Lactate,,small_molecule,,Suppressor,,ferreg,662,inchikey,1,JVTAAEKCZFNVCJ-UHFFFAOYSA-M
+101,663,MLDQJTXFUGDVEO-UHFFFAOYSA-N,inchikey,Sorafenib,,small_molecule,,Suppressor,,ferreg,663,inchikey,1,MLDQJTXFUGDVEO-UHFFFAOYSA-N
+102,666,YQEZLKZALYSWHR-UHFFFAOYSA-N,inchikey,Ketamine,,small_molecule,,Inducer,,ferreg,666,inchikey,1,YQEZLKZALYSWHR-UHFFFAOYSA-N
+103,668,IQHIEHIKNWLKFB-OBOTWMKHSA-N,inchikey,Punicalin,,small_molecule,,Inducer,,ferreg,668,inchikey,1,IQHIEHIKNWLKFB-OBOTWMKHSA-N
+104,670,DRMCATBEKSVAPL-BNTLRKBRSA-N,inchikey,Oxaliplatin,,small_molecule,,,,ferreg,670,inchikey,1,DRMCATBEKSVAPL-BNTLRKBRSA-N
+105,672,DBRXOUCRJQVYJQ-CKNDUULBSA-N,inchikey,Withaferin A,,small_molecule,,Inducer,,ferreg,672,inchikey,1,DBRXOUCRJQVYJQ-CKNDUULBSA-N
+106,674,DVGGLGXQSFURLP-VWMSDXGPSA-N,inchikey,Tiliroside,,small_molecule,,Inducer,,ferreg,674,inchikey,1,DVGGLGXQSFURLP-VWMSDXGPSA-N
+107,677,XPDICGYEJXYUDW-UHFFFAOYSA-N,inchikey,Tetraarsenic tetrasulfide,,small_molecule,,Inducer,,ferreg,677,inchikey,1,XPDICGYEJXYUDW-UHFFFAOYSA-N
+108,679,ISFMXVMWEWLJGJ-NZBPQXDJSA-N,inchikey,Curcumenol,,small_molecule,,Inducer,,ferreg,679,inchikey,1,ISFMXVMWEWLJGJ-NZBPQXDJSA-N
+109,681,OLBCVFGFOZPWHH-UHFFFAOYSA-N,inchikey,Propofol,,small_molecule,,Inducer,,ferreg,681,inchikey,1,OLBCVFGFOZPWHH-UHFFFAOYSA-N
+110,683,zero-valent-iron nanoparticle,name,zero-valent-iron nanoparticle,,small_molecule,,Inducer,,ferreg,683,external_id,1,zero-valent-iron nanoparticle
+111,684,ODBRNZZJSYPIDI-VJXVFPJBSA-N,inchikey,Isoorientin,,small_molecule,,Inducer,,ferreg,684,inchikey,1,ODBRNZZJSYPIDI-VJXVFPJBSA-N
+112,685,SHAYBENGXDALFF-UHFFFAOYSA-N,inchikey,Nortriptyline hydrochloride,,small_molecule,,Inducer,,ferreg,685,inchikey,1,SHAYBENGXDALFF-UHFFFAOYSA-N
+113,686,MRIAQLRQZPPODS-UHFFFAOYSA-N,inchikey,Nobiletin,,small_molecule,,Inducer,,ferreg,686,inchikey,1,MRIAQLRQZPPODS-UHFFFAOYSA-N
+114,688,Antagomir,name,Antagomir,,small_molecule,,Inducer,,ferreg,688,external_id,1,Antagomir
+115,689,RCWNBHCZYXWDOV-VSFMGBBVSA-N,inchikey,Gambogenic Acid,,small_molecule,,Inducer,,ferreg,689,inchikey,1,RCWNBHCZYXWDOV-VSFMGBBVSA-N
+116,690,VHVPQPYKVGDNFY-ZPGVKDDISA-N,inchikey,Itraconazole,,small_molecule,,Inducer,,ferreg,690,inchikey,1,VHVPQPYKVGDNFY-ZPGVKDDISA-N
+117,691,DNVXATUJJDPFDM-KRWDZBQOSA-N,inchikey,JQ1,,small_molecule,,Inducer,,ferreg,691,inchikey,1,DNVXATUJJDPFDM-KRWDZBQOSA-N
+118,692,RYMZZMVNJRMUDD-HGQWONQESA-N,inchikey,Simvastatin,,small_molecule,,Inducer,,ferreg,692,inchikey,1,RYMZZMVNJRMUDD-HGQWONQESA-N
+119,696,Polyphyllin III,name,Polyphyllin III,,small_molecule,,Suppressor,,ferreg,696,external_id,1,Polyphyllin III
+120,698,NNJVILVZKWQKPM-UHFFFAOYSA-N,inchikey,Lidocaine,,small_molecule,,Inducer,,ferreg,698,inchikey,1,NNJVILVZKWQKPM-UHFFFAOYSA-N
+121,700,BORWSEZUWHQTOK-UHFFFAOYSA-N,inchikey,Robustaflavone,,small_molecule,,Inducer,,ferreg,700,inchikey,1,BORWSEZUWHQTOK-UHFFFAOYSA-N
+122,701,NL01,name,NL01,,small_molecule,,Inducer,,ferreg,701,external_id,1,NL01
+123,702,VSRXQHXAPYXROS-UHFFFAOYSA-N,inchikey,Carboplatin,,small_molecule,,Suppressor,,ferreg,702,inchikey,1,VSRXQHXAPYXROS-UHFFFAOYSA-N
+124,705,MHAJPDPJQMAIIY-UHFFFAOYSA-N,inchikey,Hydrogen Peroxide,,small_molecule,,Inducer,,ferreg,705,inchikey,1,MHAJPDPJQMAIIY-UHFFFAOYSA-N
+125,709,NGMYNFJANBHLKA-LVKFHIPRSA-N,inchikey,Icariside II,,small_molecule,,Inducer,,ferreg,709,inchikey,1,NGMYNFJANBHLKA-LVKFHIPRSA-N
+126,711,KORNTPPJEAJQIU-KJXAQDMKSA-N,inchikey,Cabergoline,,small_molecule,,,,ferreg,711,inchikey,1,KORNTPPJEAJQIU-KJXAQDMKSA-N
+127,713,HYHCSLBZRBJJCH-UHFFFAOYSA-M,inchikey,Sodium hydrosulfide,,small_molecule,,Suppressor,,ferreg,713,inchikey,1,HYHCSLBZRBJJCH-UHFFFAOYSA-M
+128,715,Xiaoyaosan,name,Xiaoyaosan,,small_molecule,,Inducer,,ferreg,715,external_id,1,Xiaoyaosan
+129,716,QELUYTUMUWHWMC-UHFFFAOYSA-N,inchikey,Edaravone,,small_molecule,,Suppressor,,ferreg,716,inchikey,1,QELUYTUMUWHWMC-UHFFFAOYSA-N
+130,717,PUQSUZTXKPLAPR-UJPOAAIJSA-N,inchikey,Gastrodin,,small_molecule,,Suppressor,,ferreg,717,inchikey,1,PUQSUZTXKPLAPR-UJPOAAIJSA-N
+131,719,FMGYKKMPNATWHP-UHFFFAOYSA-N,inchikey,Cyperquat,,small_molecule,,Inducer,,ferreg,719,inchikey,1,FMGYKKMPNATWHP-UHFFFAOYSA-N
+132,720,AGBQKNBQESQNJD-UHFFFAOYSA-N,inchikey,Thioctic acid,,small_molecule,,Suppressor,,ferreg,720,inchikey,1,AGBQKNBQESQNJD-UHFFFAOYSA-N
+133,721,L. lactis MG1363-pMG36e-GLP-1,name,L. lactis MG1363-pMG36e-GLP-1,,small_molecule,,Suppressor,,ferreg,721,external_id,1,L. lactis MG1363-pMG36e-GLP-1
+134,723,VVNCNSJFMMFHPL-VKHMYHEASA-N,inchikey,Penicillamine,,small_molecule,,Suppressor,,ferreg,723,inchikey,1,VVNCNSJFMMFHPL-VKHMYHEASA-N
+135,724,ZBVKEHDGYSLCCC-UHFFFAOYSA-N,inchikey,Seratrodast,,small_molecule,,Suppressor,,ferreg,724,inchikey,1,ZBVKEHDGYSLCCC-UHFFFAOYSA-N
+136,725,REFJWTPEDVJJIY-UHFFFAOYSA-N,inchikey,Quercetin,,small_molecule,,Suppressor,,ferreg,725,inchikey,1,REFJWTPEDVJJIY-UHFFFAOYSA-N
+137,726,KZNIFHPLKGYRTM-UHFFFAOYSA-N,inchikey,Apigenin,,small_molecule,,Suppressor,,ferreg,726,inchikey,1,KZNIFHPLKGYRTM-UHFFFAOYSA-N
+138,728,UILPJVPSNHJFIK-UHFFFAOYSA-N,inchikey,Paeonol,,small_molecule,,Suppressor,,ferreg,728,inchikey,1,UILPJVPSNHJFIK-UHFFFAOYSA-N
+139,730,HYAFETHFCAUJAY-UHFFFAOYSA-N,inchikey,Pioglitazone,,small_molecule,,Suppressor,,ferreg,730,inchikey,1,HYAFETHFCAUJAY-UHFFFAOYSA-N
+140,731,KJXSIXMJHKAJOD-LSDHHAIUSA-N,inchikey,Dihydromyricetin,,small_molecule,,Suppressor,,ferreg,731,inchikey,1,KJXSIXMJHKAJOD-LSDHHAIUSA-N
+141,732,DAXYUDFNWXHGBE-VKCGGMIFSA-N,inchikey,Isorhynchophylline,,small_molecule,,Suppressor,,ferreg,732,inchikey,1,DAXYUDFNWXHGBE-VKCGGMIFSA-N
+142,734,QMNWISYXSJWHRY-YLNUDOOFSA-N,inchikey,Astragaloside IV,,small_molecule,,Suppressor,,ferreg,734,inchikey,1,QMNWISYXSJWHRY-YLNUDOOFSA-N
+143,736,DFEYYRMXOJXZRJ-UHFFFAOYSA-N,inchikey,Sevoflurane,,small_molecule,,Suppressor,,ferreg,736,inchikey,1,DFEYYRMXOJXZRJ-UHFFFAOYSA-N
+144,738,L-F001,name,L-F001,,small_molecule,,Suppressor,,ferreg,738,external_id,1,L-F001
+145,739,LPLVUJXQOOQHMX-QWBHMCJMSA-N,inchikey,Glycyrrhizin,,small_molecule,,Suppressor,,ferreg,739,inchikey,1,LPLVUJXQOOQHMX-QWBHMCJMSA-N
+146,740,DRLFMBDRBRZALE-UHFFFAOYSA-N,inchikey,Melatonin,,small_molecule,,Suppressor,,ferreg,740,inchikey,1,DRLFMBDRBRZALE-UHFFFAOYSA-N
+147,742,HAVWRBANWNTOJX-UHFFFAOYSA-N,inchikey,Fraxetin,,small_molecule,,Suppressor,,ferreg,742,inchikey,1,HAVWRBANWNTOJX-UHFFFAOYSA-N
+148,743,XUKUURHRXDUEBC-KAYWLYCHSA-N,inchikey,Atorvastatin,,small_molecule,,Suppressor,,ferreg,743,inchikey,1,XUKUURHRXDUEBC-KAYWLYCHSA-N
+149,744,AOJJSUZBOXZQNB-TZSSRYMLSA-N,inchikey,Doxorubicin,,small_molecule,,Inducer,,ferreg,744,inchikey,1,AOJJSUZBOXZQNB-TZSSRYMLSA-N
+150,745,XXKPNJFJXZBRMX-HDKAIKTRSA-N,inchikey,Elabela,,small_molecule,,Suppressor,,ferreg,745,inchikey,1,XXKPNJFJXZBRMX-HDKAIKTRSA-N
+151,746,BCFGMOOMADDAQU-UHFFFAOYSA-N,inchikey,Lapatinib,,small_molecule,,Inducer,,ferreg,746,inchikey,1,BCFGMOOMADDAQU-UHFFFAOYSA-N
+152,749,TZJALUIVHRYQQB-XLRXWWTNSA-N,inchikey,Icariin,,small_molecule,,Suppressor,,ferreg,749,inchikey,1,TZJALUIVHRYQQB-XLRXWWTNSA-N
+153,751,NSFKAZDTKIKLKT-CLEIDKRQSA-N,inchikey,GW4869,,small_molecule,,Suppressor,,ferreg,751,inchikey,1,NSFKAZDTKIKLKT-CLEIDKRQSA-N
+154,752,FRHBOQMZUOWXQL-UHFFFAOYSA-K,inchikey,Ferric ammonium citrate,,small_molecule,,Inducer,,ferreg,752,inchikey,1,FRHBOQMZUOWXQL-UHFFFAOYSA-K
+155,753,CXQWRCVTCMQVQX-LSDHHAIUSA-N,inchikey,Dihydroquercetin,,small_molecule,,Suppressor,,ferreg,753,inchikey,1,CXQWRCVTCMQVQX-LSDHHAIUSA-N
+156,755,RQNWIZPPADIBDY-UHFFFAOYSA-N,inchikey,Arsenic,,small_molecule,,Inducer,,ferreg,755,inchikey,1,RQNWIZPPADIBDY-UHFFFAOYSA-N
+157,756,PTLRDCMBXHILCL-UHFFFAOYSA-M,inchikey,Sodium arsenite,,small_molecule,,Inducer,,ferreg,756,inchikey,1,PTLRDCMBXHILCL-UHFFFAOYSA-M
+158,757,NFWKVWVWBFBAOV-MISYRCLQSA-N,inchikey,Dehydroabietic acid,,small_molecule,,Suppressor,,ferreg,757,inchikey,1,NFWKVWVWBFBAOV-MISYRCLQSA-N
+159,758,BJHIKXHVCXFQLS-UYFOZJQFSA-N,inchikey,D-(-)-Fructose,,small_molecule,,Inducer,,ferreg,758,inchikey,1,BJHIKXHVCXFQLS-UYFOZJQFSA-N
+160,762,OBWASQILIWPZMG-QZMOQZSNSA-N,inchikey,Empagliflozin,,small_molecule,,Suppressor,,ferreg,762,inchikey,1,OBWASQILIWPZMG-QZMOQZSNSA-N
+161,763,ZICNYIDDNJYKCP-SOFGYWHQSA-N,inchikey,Capsiate,,small_molecule,,Suppressor,,ferreg,763,inchikey,1,ZICNYIDDNJYKCP-SOFGYWHQSA-N
+162,764,PIEUQSKUWLMALL-YABMTYFHSA-N,inchikey,Micafungin,,small_molecule,,Suppressor,,ferreg,764,inchikey,1,PIEUQSKUWLMALL-YABMTYFHSA-N
+163,765,FXNFHKRTJBSTCS-UHFFFAOYSA-N,inchikey,Baicalein,,small_molecule,,Suppressor,,ferreg,765,inchikey,1,FXNFHKRTJBSTCS-UHFFFAOYSA-N
+164,767,WQZGKKKJIJFFOK-QTVWNMPRSA-N,inchikey,D-Mannose,,small_molecule,,Suppressor,,ferreg,767,inchikey,1,WQZGKKKJIJFFOK-QTVWNMPRSA-N
+165,768,NPFOYSMITVOQOS-UHFFFAOYSA-K,inchikey,Ferric citrate,,small_molecule,,Inducer,,ferreg,768,inchikey,1,NPFOYSMITVOQOS-UHFFFAOYSA-K
+166,769,Carbonyl cyanide-m-chlorophenyl-hydrazine,name,Carbonyl cyanide-m-chlorophenyl-hydrazine,,small_molecule,,Inducer,,ferreg,769,external_id,1,Carbonyl cyanide-m-chlorophenyl-hydrazine
+167,770,Guizhi Fuling Capsule,name,Guizhi Fuling Capsule,,small_molecule,,Inducer,,ferreg,770,external_id,1,Guizhi Fuling Capsule
+168,772,MXOKGWUJNGEKBH-UHFFFAOYSA-N,inchikey,Aristololactam,,small_molecule,,Inducer,,ferreg,772,inchikey,1,MXOKGWUJNGEKBH-UHFFFAOYSA-N
+169,773,UIEBLUZPSFAFOC-UHFFFAOYSA-N,inchikey,SR8278,,small_molecule,,Suppressor,,ferreg,773,inchikey,1,UIEBLUZPSFAFOC-UHFFFAOYSA-N
+170,775,OBTLSXIZYGMZRE-BWLFODOESA-N,inchikey,RR-11a,,small_molecule,,Suppressor,,ferreg,775,inchikey,1,OBTLSXIZYGMZRE-BWLFODOESA-N
+171,776,DXDRHHKMWQZJHT-FPYGCLRLSA-N,inchikey,Isoliquiritigenin,,small_molecule,,Suppressor,,ferreg,776,inchikey,1,DXDRHHKMWQZJHT-FPYGCLRLSA-N
+172,777,JOOXLOJCABQBSG-UHFFFAOYSA-N,inchikey,Fedratinib,,small_molecule,,Suppressor,,ferreg,777,inchikey,1,JOOXLOJCABQBSG-UHFFFAOYSA-N
+173,778,BPKAHTKRCLCHEA-UBFJEZKGSA-N,inchikey,Paricalcitol,,small_molecule,,Suppressor,,ferreg,778,inchikey,1,BPKAHTKRCLCHEA-UBFJEZKGSA-N
+174,779,JRURYQJSLYLRLN-BJMVGYQFSA-N,inchikey,Entacapone,,small_molecule,,Suppressor,,ferreg,779,inchikey,1,JRURYQJSLYLRLN-BJMVGYQFSA-N
+175,781,SXRAPDIXXYFGJG-MDAHIHQXSA-N,inchikey,GAP 27,,small_molecule,,Suppressor,,ferreg,781,inchikey,1,SXRAPDIXXYFGJG-MDAHIHQXSA-N
+176,783,CAULGCQHVOVVRN-SWZPTJTJSA-N,inchikey,Germacrone,,small_molecule,,Suppressor,,ferreg,783,inchikey,1,CAULGCQHVOVVRN-SWZPTJTJSA-N
+177,785,HKQYGTCOTHHOMP-UHFFFAOYSA-N,inchikey,Formononetin,,small_molecule,,Suppressor,,ferreg,785,inchikey,1,HKQYGTCOTHHOMP-UHFFFAOYSA-N
+178,786,WQZGKKKJIJFFOK-GASJEMHNSA-N,inchikey,D-Glucose,,small_molecule,,Inducer,,ferreg,786,inchikey,1,WQZGKKKJIJFFOK-GASJEMHNSA-N
+179,789,IISBACLAFKSPIT-UHFFFAOYSA-N,inchikey,Bisphenol A,,small_molecule,,Inducer,,ferreg,789,inchikey,1,IISBACLAFKSPIT-UHFFFAOYSA-N
+180,791,OBBCRPUNCUPUOS-UHFFFAOYSA-N,inchikey,Tectorigenin,,small_molecule,,Suppressor,,ferreg,791,inchikey,1,OBBCRPUNCUPUOS-UHFFFAOYSA-N
+181,794,ILRCGYURZSFMEG-RKQHYHRCSA-N,inchikey,Salidroside,,small_molecule,,Inducer,,ferreg,794,inchikey,1,ILRCGYURZSFMEG-RKQHYHRCSA-N
+182,795,MQZIGYBFDRPAKN-UWFIBFSHSA-N,inchikey,Astaxanthin,,small_molecule,,Suppressor,,ferreg,795,inchikey,1,MQZIGYBFDRPAKN-UWFIBFSHSA-N
+183,796,GVLDSGIQZAFIAN-UHFFFAOYSA-N,inchikey,Panaxydol,,small_molecule,,Suppressor,,ferreg,796,inchikey,1,GVLDSGIQZAFIAN-UHFFFAOYSA-N
+184,797,ODVKSTFPQDVPJZ-UHFFFAOYSA-N,inchikey,Ulinastatin,,small_molecule,,Suppressor,,ferreg,797,inchikey,1,ODVKSTFPQDVPJZ-UHFFFAOYSA-N
+185,798,WGYGSZOQGYRGIP-MWDXBVQZSA-N,inchikey,Clausenamide,,small_molecule,,Suppressor,,ferreg,798,inchikey,1,WGYGSZOQGYRGIP-MWDXBVQZSA-N
+186,799,IKIIZLYTISPENI-ZFORQUDYSA-N,inchikey,Baicalin,,small_molecule,,Inducer,,ferreg,799,inchikey,1,IKIIZLYTISPENI-ZFORQUDYSA-N
+187,800,Xiaojianzhong,name,Xiaojianzhong,,small_molecule,,Suppressor,,ferreg,800,external_id,1,Xiaojianzhong
+188,801,BDOSMKKIYDKNTQ-UHFFFAOYSA-N,inchikey,Cadmium,,small_molecule,,Inducer,,ferreg,801,inchikey,1,BDOSMKKIYDKNTQ-UHFFFAOYSA-N
+189,803,YQHPCDPFXQXCMV-VIFPVBQESA-N,inchikey,Furosine dihydrochloride,,small_molecule,,Inducer,,ferreg,803,inchikey,1,YQHPCDPFXQXCMV-VIFPVBQESA-N
+190,805,YOZBGTLTNGAVFU-UHFFFAOYSA-N,inchikey,Roxadustat,,small_molecule,,Suppressor,,ferreg,805,inchikey,1,YOZBGTLTNGAVFU-UHFFFAOYSA-N
+191,806,BJQHLKABXJIVAM-BGYRXZFFSA-N,inchikey,Diethylhexylphthalate,,small_molecule,,Inducer,,ferreg,806,inchikey,1,BJQHLKABXJIVAM-BGYRXZFFSA-N
+192,807,IXAQOQZEOGMIQS-SSQFXEBMSA-N,inchikey,lipoxin A4,,small_molecule,,Suppressor,,ferreg,807,inchikey,1,IXAQOQZEOGMIQS-SSQFXEBMSA-N
+193,808,MYWUZJCMWCOHBA-VIFPVBQESA-N,inchikey,Methamphetamine,,small_molecule,,Inducer,,ferreg,808,inchikey,1,MYWUZJCMWCOHBA-VIFPVBQESA-N
+194,811,RZVAJINKPMORJF-UHFFFAOYSA-N,inchikey,Acetaminophen,,small_molecule,,Suppressor,,ferreg,811,inchikey,1,RZVAJINKPMORJF-UHFFFAOYSA-N
+195,812,CUHVIMMYOGQXCV-NSHDSACASA-N,inchikey,Dexmedetomidine,,small_molecule,,Suppressor,,ferreg,812,inchikey,1,CUHVIMMYOGQXCV-NSHDSACASA-N
+196,813,KSEBMYQBYZTDHS-HWKANZROSA-N,inchikey,Ferulic acid,,small_molecule,,Suppressor,,ferreg,813,inchikey,1,KSEBMYQBYZTDHS-HWKANZROSA-N
+197,816,NWYKIASJHFGEAN-CPMAONNBSA-N,inchikey,MCTR1,,small_molecule,,Suppressor,,ferreg,816,inchikey,1,NWYKIASJHFGEAN-CPMAONNBSA-N
+198,817,HARGZZNYNSYSGJ-JTQLQIEISA-N,inchikey,Dihydrotanshinone I,,small_molecule,,Inducer,,ferreg,817,inchikey,1,HARGZZNYNSYSGJ-JTQLQIEISA-N
+199,826,BVTBRVFYZUCAKH-UHFFFAOYSA-L,inchikey,Sodium Selenite,,small_molecule,,Inducer,,ferreg,826,inchikey,1,BVTBRVFYZUCAKH-UHFFFAOYSA-L
+200,827,XWAONOGAGZNUSF-UHFFFAOYSA-N,inchikey,Siramesine,,small_molecule,,Inducer,,ferreg,827,inchikey,1,XWAONOGAGZNUSF-UHFFFAOYSA-N
+201,828,HEFNNWSXXWATRW-UHFFFAOYSA-N,inchikey,Ibuprofen,,small_molecule,,Inducer,,ferreg,828,inchikey,1,HEFNNWSXXWATRW-UHFFFAOYSA-N
+202,830,BPEGJWRSRHCHSN-UHFFFAOYSA-N,inchikey,Temozolomide,,small_molecule,,Inducer,,ferreg,830,inchikey,1,BPEGJWRSRHCHSN-UHFFFAOYSA-N
+203,836,Polygonatum cyrtonemaHua Polysaccharides,name,Polygonatum cyrtonemaHua Polysaccharides,,small_molecule,,Suppressor,,ferreg,836,external_id,1,Polygonatum cyrtonemaHua Polysaccharides
+204,837,XAUDJQYHKZQPEU-KVQBGUIXSA-N,inchikey,Decitabine,,small_molecule,,Inducer,,ferreg,837,inchikey,1,XAUDJQYHKZQPEU-KVQBGUIXSA-N
+205,838,SUVMJBTUFCVSAD-UHFFFAOYSA-N,inchikey,Sulforaphane,,small_molecule,,Inducer,,ferreg,838,inchikey,1,SUVMJBTUFCVSAD-UHFFFAOYSA-N
+206,839,RUMOYJJNUMEFDD-UHFFFAOYSA-N,inchikey,Perillaldehyde,,small_molecule,,Inducer,,ferreg,839,inchikey,1,RUMOYJJNUMEFDD-UHFFFAOYSA-N
+207,840,BGBNULCRKBVAKL-UHFFFAOYSA-N,inchikey,APR-246,,small_molecule,,Inducer,,ferreg,840,inchikey,1,BGBNULCRKBVAKL-UHFFFAOYSA-N
+208,841,FVYXIJYOAGAUQK-UHFFFAOYSA-N,inchikey,Honokiol,,small_molecule,,Inducer,,ferreg,841,inchikey,1,FVYXIJYOAGAUQK-UHFFFAOYSA-N
+209,842,All-trans retinoic acid derivative,name,All-trans retinoic acid derivative,,small_molecule,,Inducer,,ferreg,842,external_id,1,All-trans retinoic acid derivative
+210,843,RSTKLPZEZYGQPY-UHFFFAOYSA-N,inchikey,Indole-3-pyruvic acid,,small_molecule,,Suppressor,,ferreg,843,inchikey,1,RSTKLPZEZYGQPY-UHFFFAOYSA-N
+211,844,PSPXJPWGVFNGQI-UHFFFAOYSA-N,inchikey,Imidazole ketone erastin,,small_molecule,,Inducer,,ferreg,844,inchikey,1,PSPXJPWGVFNGQI-UHFFFAOYSA-N
+212,845,DFBIRQPKNDILPW-CIVMWXNOSA-N,inchikey,Triptolide,,small_molecule,,Inducer,,ferreg,845,inchikey,1,DFBIRQPKNDILPW-CIVMWXNOSA-N
+213,847,WCGUUGGRBIKTOS-GPOJBZKASA-N,inchikey,Ursolic Acid,,small_molecule,,Inducer,,ferreg,847,inchikey,1,WCGUUGGRBIKTOS-GPOJBZKASA-N
+214,849,ILMJCEBAMHGBAA-XETSTSIRSA-N,inchikey,"3,5-bis((E)-2-fluorobenzylidene)piperidin-4-one hydrochloride",,small_molecule,,Inducer,,ferreg,849,inchikey,1,ILMJCEBAMHGBAA-XETSTSIRSA-N
+215,850,XRASPMIURGNCCH-UHFFFAOYSA-N,inchikey,Zoledronic acid,,small_molecule,,Inducer,,ferreg,850,inchikey,1,XRASPMIURGNCCH-UHFFFAOYSA-N
+216,851,ORYDPOVDJJZGHQ-UHFFFAOYSA-N,inchikey,Tirapazamine,,small_molecule,,Inducer,,ferreg,851,inchikey,1,ORYDPOVDJJZGHQ-UHFFFAOYSA-N
+217,854,SNQXJPARXFUULZ-UHFFFAOYSA-N,inchikey,"1,2-Dioxolane",,small_molecule,,Inducer,,ferreg,854,inchikey,1,SNQXJPARXFUULZ-UHFFFAOYSA-N
+218,859,QFXKXRXFBRLLPQ-UHFFFAOYSA-N,inchikey,Diphenyleneiodonium,,small_molecule,,Suppressor,,ferreg,859,inchikey,1,QFXKXRXFBRLLPQ-UHFFFAOYSA-N
+219,860,RGYQPQARIQKJKH-UHFFFAOYSA-N,inchikey,GKT137831,,small_molecule,,Suppressor,,ferreg,860,inchikey,1,RGYQPQARIQKJKH-UHFFFAOYSA-N
+220,861,YBHILYKTIRIUTE-UHFFFAOYSA-N,inchikey,Berberine,,small_molecule,,Inducer,,ferreg,861,inchikey,1,YBHILYKTIRIUTE-UHFFFAOYSA-N
+221,863,IXQKXEUSCPEQRD-DKRGWESNSA-N,inchikey,Cucurbitacin B,,small_molecule,,Inducer,,ferreg,863,inchikey,1,IXQKXEUSCPEQRD-DKRGWESNSA-N
+222,864,JGKXEMYIHDYWCZ-JFUSQASVSA-N,inchikey,Cephalosporin,,small_molecule,,Inducer,,ferreg,864,inchikey,1,JGKXEMYIHDYWCZ-JFUSQASVSA-N
+223,865,QRYRORQUOLYVBU-VBKZILBWSA-N,inchikey,Carnosic acid,,small_molecule,,Inducer,,ferreg,865,inchikey,1,QRYRORQUOLYVBU-VBKZILBWSA-N
+224,870,ZGXJTSGNIOSYLO-UHFFFAOYSA-N,inchikey,5-aminolevulinic acid,,small_molecule,,Inducer,,ferreg,870,inchikey,1,ZGXJTSGNIOSYLO-UHFFFAOYSA-N
+225,880,JDLKFOPOAOFWQN-UHFFFAOYSA-N,inchikey,Allicin,,small_molecule,,Inducer,,ferreg,880,inchikey,1,JDLKFOPOAOFWQN-UHFFFAOYSA-N
+226,889,Polyphyllin I,name,Polyphyllin I,,small_molecule,,Inducer,,ferreg,889,external_id,1,Polyphyllin I
+227,890,Polyphyllin B,name,Polyphyllin B,,small_molecule,,Inducer,,ferreg,890,external_id,1,Polyphyllin B
+228,891,YLOYKYXNDHOHHT-UHFFFAOYSA-N,inchikey,Atranorin,,small_molecule,,Inducer,,ferreg,891,inchikey,1,YLOYKYXNDHOHHT-UHFFFAOYSA-N
+229,892,WYWHKKSPHMUBEB-UHFFFAOYSA-N,inchikey,Thioguanine,,small_molecule,,Inducer,,ferreg,892,inchikey,1,WYWHKKSPHMUBEB-UHFFFAOYSA-N
+230,893,POBHWQSJZMJUAH-QFIPXVFZSA-N,inchikey,XN4,,small_molecule,,Inducer,,ferreg,893,inchikey,1,POBHWQSJZMJUAH-QFIPXVFZSA-N
+231,894,"(6R,6aR,9S,11bS,14R)-4,4-Dimethyl-8-methylene-7,11,12-trioxododecahydro-1H-6,11b-(epoxymethano)-6a,9-methanocyclohepta[a]naphthalen-14-yl valinate",name,"(6R,6aR,9S,11bS,14R)-4,4-Dimethyl-8-methylene-7,11,12-trioxododecahydro-1H-6,11b-(epoxymethano)-6a,9-methanocyclohepta[a]naphthalen-14-yl valinate",,small_molecule,,Inducer,,ferreg,894,external_id,1,"(6R,6aR,9S,11bS,14R)-4,4-Dimethyl-8-methylene-7,11,12-trioxododecahydro-1H-6,11b-(epoxymethano)-6a,9-methanocyclohepta[a]naphthalen-14-yl valinate"
+232,895,Actinidia chinensis Planch,name,Actinidia chinensis Planch,,small_molecule,,Inducer,,ferreg,895,external_id,1,Actinidia chinensis Planch
+233,903,Pt3R5G,name,Pt3R5G,,small_molecule,,Inducer,,ferreg,903,uniprot_id,1,Pt3R5G
+234,907,QCTUYJGFLVZOTL-NKPJVERHSA-N,inchikey,Talaroconvolutin A,,small_molecule,,Inducer,,ferreg,907,inchikey,1,QCTUYJGFLVZOTL-NKPJVERHSA-N
+235,913,DUQSSEQKLJQACA-FESGBCJUSA-N,inchikey,tagitinin C,,small_molecule,,Inducer,,ferreg,913,inchikey,1,DUQSSEQKLJQACA-FESGBCJUSA-N
+236,915,LUCOUNTXDLWPQS-UHFFFAOYSA-N,inchikey,2-Imino-6-methoxy-2H-chromene-3-carbothioamide,,small_molecule,,Inducer,,ferreg,915,inchikey,1,LUCOUNTXDLWPQS-UHFFFAOYSA-N
+237,919,XLTFNNCXVBYBSX-UHFFFAOYSA-N,inchikey,Wogonin,,small_molecule,,Inducer,,ferreg,919,inchikey,1,XLTFNNCXVBYBSX-UHFFFAOYSA-N
+238,920,QD394-Me,name,QD394-Me,,small_molecule,,Inducer,,ferreg,920,external_id,1,QD394-Me
+239,921,QD394,name,QD394,,small_molecule,,Inducer,,ferreg,921,external_id,1,QD394
+240,924,LVHBHZANLOWSRM-UHFFFAOYSA-N,inchikey,Itaconic acid,,small_molecule,,Inducer,,ferreg,924,inchikey,1,LVHBHZANLOWSRM-UHFFFAOYSA-N
+241,927,GRBKWAXRYIITKG-QFMFQGICSA-N,inchikey,Atractylodin,,small_molecule,,Inducer,,ferreg,927,inchikey,1,GRBKWAXRYIITKG-QFMFQGICSA-N
+242,928,Seco-Lupane Triterpene Derivatives,name,Seco-Lupane Triterpene Derivatives,,small_molecule,,Inducer,,ferreg,928,external_id,1,Seco-Lupane Triterpene Derivatives
+243,929,OZIHYFWYFUSXIS-HDDFSWBLSA-N,inchikey,Formosanin C,,small_molecule,,Inducer,,ferreg,929,inchikey,1,OZIHYFWYFUSXIS-HDDFSWBLSA-N
+244,930,KJQFBVYMGADDTQ-CVSPRKDYSA-N,inchikey,l-Buthionine sulfoximine,,small_molecule,,Inducer,,ferreg,930,inchikey,1,KJQFBVYMGADDTQ-CVSPRKDYSA-N
+245,931,AUJRCFUBUPVWSZ-UHFFFAOYSA-M,inchikey,Auranofin,,small_molecule,,Inducer,,ferreg,931,inchikey,1,AUJRCFUBUPVWSZ-UHFFFAOYSA-M
+246,932,2-pyridylhydrazone dithiocarbamate s-acetic acid,name,2-pyridylhydrazone dithiocarbamate s-acetic acid,,small_molecule,,Inducer,,ferreg,932,external_id,1,2-pyridylhydrazone dithiocarbamate s-acetic acid
+247,942,LNEPOXFFQSENCJ-UHFFFAOYSA-N,inchikey,Haloperidol,,small_molecule,,Inducer,,ferreg,942,inchikey,1,LNEPOXFFQSENCJ-UHFFFAOYSA-N
+248,943,HPWMABTYJYZFLK-FHEQDPKSSA-N,inchikey,Eupalinolide B,,small_molecule,,Inducer,,ferreg,943,inchikey,1,HPWMABTYJYZFLK-FHEQDPKSSA-N
+249,945,VSJKWCGYPAHWDS-FQEVSTJZSA-N,inchikey,Camptothecin,,small_molecule,,Inducer,,ferreg,945,inchikey,1,VSJKWCGYPAHWDS-FQEVSTJZSA-N
+250,949,TXUWMXQFNYDOEZ-UHFFFAOYSA-N,inchikey,Necrostatin-1,,small_molecule,,Suppressor,,ferreg,949,inchikey,1,TXUWMXQFNYDOEZ-UHFFFAOYSA-N
+251,957,DTGKSKDOIYIVQL-WEDXCCLWSA-N,inchikey,Borneol,,small_molecule,,Inducer,,ferreg,957,inchikey,1,DTGKSKDOIYIVQL-WEDXCCLWSA-N
+252,963,XGALLCVXEZPNRQ-UHFFFAOYSA-N,inchikey,Gefitinib,,small_molecule,,Inducer,,ferreg,963,inchikey,1,XGALLCVXEZPNRQ-UHFFFAOYSA-N
+253,964,FVWJYYTZTCVBKE-ROUWMTJPSA-N,inchikey,Betulin,,small_molecule,,Inducer,,ferreg,964,inchikey,1,FVWJYYTZTCVBKE-ROUWMTJPSA-N
+254,966,AIFCFBUSLAEIBR-UHFFFAOYSA-N,inchikey,Ginkgetin,,small_molecule,,Inducer,,ferreg,966,inchikey,1,AIFCFBUSLAEIBR-UHFFFAOYSA-N
+255,967,YKPUWZUDDOIDPM-SOFGYWHQSA-N,inchikey,Capsaicin,,small_molecule,,Inducer,,ferreg,967,inchikey,1,YKPUWZUDDOIDPM-SOFGYWHQSA-N
+256,970,AHLBNYSZXLDEJQ-FWEHEUNISA-N,inchikey,Orlistat,,small_molecule,,Inducer,,ferreg,970,inchikey,1,AHLBNYSZXLDEJQ-FWEHEUNISA-N
+257,972,"S-3'-hydroxy-7', 2', 4'-trimethoxyisoxane",name,"S-3'-hydroxy-7', 2', 4'-trimethoxyisoxane",,small_molecule,,Inducer,,ferreg,972,external_id,1,"S-3'-hydroxy-7', 2', 4'-trimethoxyisoxane"
+258,974,FGJIDQWRRLDGDB-CPIXEKRISA-N,inchikey,Manoalide,,small_molecule,,Suppressor,,ferreg,974,inchikey,1,FGJIDQWRRLDGDB-CPIXEKRISA-N
+259,983,KLGQSVMIPOVQAX-UHFFFAOYSA-N,inchikey,XAV939,,small_molecule,,Inducer,,ferreg,983,inchikey,1,KLGQSVMIPOVQAX-UHFFFAOYSA-N
+260,991,VIBHJPDPEVVDTB-UHFFFAOYSA-N,inchikey,"[4-[Bis(4-chlorophenyl)methyl]piperazin-1-yl]-(5-methyl-4-nitro-1,2-oxazol-3-yl)methanone",,small_molecule,,Inducer,,ferreg,991,inchikey,1,VIBHJPDPEVVDTB-UHFFFAOYSA-N
+261,992,DETD-35,name,DETD-35,,small_molecule,,Inducer,,ferreg,992,external_id,1,DETD-35
+262,993,DET,name,DET,,small_molecule,,Inducer,,ferreg,993,external_id,1,DET
+263,995,IIXWYSCJSQVBQM-LLVKDONJSA-N,inchikey,Lorlatinib,,small_molecule,,Inducer,,ferreg,995,inchikey,1,IIXWYSCJSQVBQM-LLVKDONJSA-N
+264,996,CUXYLFPMQMFGPL-WPOADVJFSA-N,inchikey,alpha-Eleostearic acid,,small_molecule,,Inducer,,ferreg,996,inchikey,1,CUXYLFPMQMFGPL-WPOADVJFSA-N
+265,999,"Robustaflavone 7,5'-dimethyl ether",name,"Robustaflavone 7,5'-dimethyl ether",,small_molecule,,Inducer,,ferreg,999,external_id,1,"Robustaflavone 7,5'-dimethyl ether"
+266,1000,Lycium barbarumpolysaccharide,name,Lycium barbarumpolysaccharide,,small_molecule,,Inducer,,ferreg,1000,external_id,1,Lycium barbarumpolysaccharide
+267,1001,VJJPUSNTGOMMGY-MRVIYFEKSA-N,inchikey,Etoposide,,small_molecule,,Inducer,,ferreg,1001,inchikey,1,VJJPUSNTGOMMGY-MRVIYFEKSA-N
+268,1002,GOVYBPLHWIEHEJ-UHFFFAOYSA-N,inchikey,Tubastatin A,,small_molecule,,Inducer,,ferreg,1002,inchikey,1,GOVYBPLHWIEHEJ-UHFFFAOYSA-N
+269,1005,Shuganning injection,name,Shuganning injection,,small_molecule,,Inducer,,ferreg,1005,external_id,1,Shuganning injection
+270,1012,FDLYAMZZIXQODN-UHFFFAOYSA-N,inchikey,Olaparib,,small_molecule,,Inducer,,ferreg,1012,inchikey,1,FDLYAMZZIXQODN-UHFFFAOYSA-N
+271,1014,JAABVEXCGCXWRR-UHFFFAOYSA-N,inchikey,Norcantharidin,,small_molecule,,Inducer,,ferreg,1014,inchikey,1,JAABVEXCGCXWRR-UHFFFAOYSA-N
+272,1032,DZACSLYTXLZAAF-UHFFFAOYSA-N,inchikey,MI463,,small_molecule,,Inducer,,ferreg,1032,inchikey,1,DZACSLYTXLZAAF-UHFFFAOYSA-N
+273,1033,KQPYUDDGWXQXHS-UHFFFAOYSA-N,inchikey,Juglone,,small_molecule,,Inducer,,ferreg,1033,inchikey,1,KQPYUDDGWXQXHS-UHFFFAOYSA-N
+274,1037,MIJYXULNPSFWEK-GTOFXWBISA-N,inchikey,Oleanolic acid,,small_molecule,,Inducer,,ferreg,1037,inchikey,1,MIJYXULNPSFWEK-GTOFXWBISA-N
+275,1046,KJQFBVYMGADDTQ-UHFFFAOYSA-N,inchikey,Buthionine sulfoximine,,small_molecule,,Inducer,,ferreg,1046,inchikey,1,KJQFBVYMGADDTQ-UHFFFAOYSA-N
+276,1047,Isothiocyanate-containing hybrid AR antagonist 13,name,Isothiocyanate-containing hybrid AR antagonist 13,,small_molecule,,Inducer,,ferreg,1047,external_id,1,Isothiocyanate-containing hybrid AR antagonist 13
+277,1052,XGVJWXAYKUHDOO-DANNLKNASA-N,inchikey,Lycorine,,small_molecule,,Inducer,,ferreg,1052,inchikey,1,XGVJWXAYKUHDOO-DANNLKNASA-N
+278,1053,UGNWTBMOAKPKBL-UHFFFAOYSA-N,inchikey,Tetrachlorobenzoquinone,,small_molecule,,Inducer,,ferreg,1053,inchikey,1,UGNWTBMOAKPKBL-UHFFFAOYSA-N
+279,1060,Quinazolinyl-arylurea derivatives 7J,name,Quinazolinyl-arylurea derivatives 7J,,small_molecule,,Inducer,,ferreg,1060,external_id,1,Quinazolinyl-arylurea derivatives 7J
+280,1061,JLCFMMIWBSZOIS-UHFFFAOYSA-N,inchikey,FIN56,,small_molecule,,Inducer,,ferreg,1061,inchikey,1,JLCFMMIWBSZOIS-UHFFFAOYSA-N
+281,1063,UXDFUVFNIAJEGM-UHFFFAOYSA-N,inchikey,Erianin,,small_molecule,,Inducer,,ferreg,1063,inchikey,1,UXDFUVFNIAJEGM-UHFFFAOYSA-N
+282,1088,GYFFKZTYYAFCTR-AVXJPILUSA-N,inchikey,Cryptochlorogenic acid,,small_molecule,,Suppressor,,ferreg,1088,inchikey,1,GYFFKZTYYAFCTR-AVXJPILUSA-N
+283,1089,BPYKTIZUTYGOLE-IFADSCNNSA-N,inchikey,Bilirubin,,small_molecule,,Suppressor,,ferreg,1089,inchikey,1,BPYKTIZUTYGOLE-IFADSCNNSA-N
+284,1092,PWKSKIMOESPYIA-BYPYZUCNSA-N,inchikey,N-acetylcysteine,,small_molecule,,Suppressor,,ferreg,1092,inchikey,1,PWKSKIMOESPYIA-BYPYZUCNSA-N
+285,1094,YSDQQAXHVYUZIW-QCIJIYAXSA-N,inchikey,Liraglutide,,small_molecule,,Suppressor,,ferreg,1094,inchikey,1,YSDQQAXHVYUZIW-QCIJIYAXSA-N
+286,1095,DIVDFFZHCJEHGG-UHFFFAOYSA-N,inchikey,Oxidopamine,,small_molecule,,Inducer,,ferreg,1095,inchikey,1,DIVDFFZHCJEHGG-UHFFFAOYSA-N
+287,1096,INFDPOAKFNIJBF-UHFFFAOYSA-N,inchikey,Paraquat,,small_molecule,,Inducer,,ferreg,1096,inchikey,1,INFDPOAKFNIJBF-UHFFFAOYSA-N
+288,1100,WMBWREPUVVBILR-WIYYLYMNSA-N,inchikey,Epigallocatechin Gallate,,small_molecule,,Suppressor,,ferreg,1100,inchikey,1,WMBWREPUVVBILR-WIYYLYMNSA-N
+289,1101,DTOUWTJYUCZJQD-UJERWXFOSA-N,inchikey,Forsythoside A,,small_molecule,,Suppressor,,ferreg,1101,inchikey,1,DTOUWTJYUCZJQD-UJERWXFOSA-N
+290,1102,SQOJOAFXDQDRGF-MMQTXUMRSA-N,inchikey,ginkgolide-B,,small_molecule,,Suppressor,,ferreg,1102,inchikey,1,SQOJOAFXDQDRGF-MMQTXUMRSA-N
+291,1103,Tetrahydroxy stilbene glycoside,name,Tetrahydroxy stilbene glycoside,,small_molecule,,Suppressor,,ferreg,1103,external_id,1,Tetrahydroxy stilbene glycoside
+292,1104,Klotho,name,Klotho,,small_molecule,,Suppressor,,ferreg,1104,external_id,1,Klotho
+293,1105,GVJHHUAWPYXKBD-IEOSBIPESA-N,inchikey,Alpha-Tocopherol,,small_molecule,,Suppressor,,ferreg,1105,inchikey,1,GVJHHUAWPYXKBD-IEOSBIPESA-N
+294,1107,NNDIXBJHNLFJJP-DTLRTWKJSA-N,inchikey,20-Hydroxyeicosatetraenoic acid,,small_molecule,,Inducer,,ferreg,1107,inchikey,1,NNDIXBJHNLFJJP-DTLRTWKJSA-N
+295,1108,AQASRZOCERRGBL-ROJLCIKYSA-N,inchikey,Dauricine,,small_molecule,,Suppressor,,ferreg,1108,inchikey,1,AQASRZOCERRGBL-ROJLCIKYSA-N
+296,1109,NLMDZXKCTWKRSQ-IBISWUOJSA-N,inchikey,Fucoidan,,small_molecule,,Suppressor,,ferreg,1109,inchikey,1,NLMDZXKCTWKRSQ-IBISWUOJSA-N
+297,1110,JUVIOZPCNVVQFO-HBGVWJBISA-N,inchikey,Rotenone,,small_molecule,,Inducer,,ferreg,1110,inchikey,1,JUVIOZPCNVVQFO-HBGVWJBISA-N
+298,1115,Naotaifang Extract,name,Naotaifang Extract,,small_molecule,,Suppressor,,ferreg,1115,external_id,1,Naotaifang Extract
+299,1116,RECUKUPTGUEGMW-UHFFFAOYSA-N,inchikey,Carvacrol,,small_molecule,,Suppressor,,ferreg,1116,inchikey,1,RECUKUPTGUEGMW-UHFFFAOYSA-N
+300,1117,NPNUFJAVOOONJE-FLFDDASRSA-N,inchikey,Caryophyllene,,small_molecule,,Suppressor,,ferreg,1117,inchikey,1,NPNUFJAVOOONJE-FLFDDASRSA-N
+301,1118,Panax notoginseng saponins,name,Panax notoginseng saponins,,small_molecule,,Suppressor,,ferreg,1118,external_id,1,Panax notoginseng saponins
+302,1119,VCCRNZQBSJXYJD-UHFFFAOYSA-N,inchikey,Galangin,,small_molecule,,Suppressor,,ferreg,1119,inchikey,1,VCCRNZQBSJXYJD-UHFFFAOYSA-N
+303,1123,Carthamin yellow,name,Carthamin yellow,,small_molecule,,Suppressor,,ferreg,1123,external_id,1,Carthamin yellow
+304,1125,IYRMWMYZSQPJKC-UHFFFAOYSA-N,inchikey,Kaempferol,,small_molecule,,Suppressor,,ferreg,1125,inchikey,1,IYRMWMYZSQPJKC-UHFFFAOYSA-N
+305,1128,ADA-409-052,name,ADA-409-052,,small_molecule,,Suppressor,,ferreg,1128,external_id,1,ADA-409-052
+306,1130,N2L,name,N2L,,small_molecule,,Suppressor,,ferreg,1130,external_id,1,N2L
+307,1131,JLGKQTAYUIMGRK-UHFFFAOYSA-N,inchikey,Sertaconazole,,small_molecule,,Suppressor,,ferreg,1131,inchikey,1,JLGKQTAYUIMGRK-UHFFFAOYSA-N
+308,1132,WBSCSIABHGPAMC-UHFFFAOYSA-N,inchikey,moracin N,,small_molecule,,Suppressor,,ferreg,1132,inchikey,1,WBSCSIABHGPAMC-UHFFFAOYSA-N
+309,1133,Ajudecunoid C,name,Ajudecunoid C,,small_molecule,,Suppressor,,ferreg,1133,external_id,1,Ajudecunoid C
+310,1140,WTCBONOLBHEDIL-UHFFFAOYSA-M,inchikey,Sodium iodate,,small_molecule,,Inducer,,ferreg,1140,inchikey,1,WTCBONOLBHEDIL-UHFFFAOYSA-M
+311,1141,WQZGKKKJIJFFOK-SVZMEOIVSA-N,inchikey,D-Galactose,,small_molecule,,Inducer,,ferreg,1141,inchikey,1,WQZGKKKJIJFFOK-SVZMEOIVSA-N
+312,1148,HSYSVXKJIVUNBR-UHFFFAOYSA-N,inchikey,4-(cyclohexylamino)-3-[(phenylmethyl)amino]-N-[2-(1-piperazinyl)ethyl]-benzenesulfonamide,,small_molecule,,Suppressor,,ferreg,1148,inchikey,1,HSYSVXKJIVUNBR-UHFFFAOYSA-N
+313,1150,XTNGUQKDFGDXSJ-ZXGKGEBGSA-N,inchikey,Canagliflozin,,small_molecule,,Suppressor,,ferreg,1150,inchikey,1,XTNGUQKDFGDXSJ-ZXGKGEBGSA-N
+314,1151,DEMKZLAVQYISIA-ZRWXNEIDSA-N,inchikey,Liquiritin,,small_molecule,,Suppressor,,ferreg,1151,inchikey,1,DEMKZLAVQYISIA-ZRWXNEIDSA-N
+315,1152,LUKBXSAWLPMMSZ-OWOJBTEDSA-N,inchikey,Resveratrol,,small_molecule,,Suppressor,,ferreg,1152,inchikey,1,LUKBXSAWLPMMSZ-OWOJBTEDSA-N
+316,1154,DECIPOUIJURFOJ-UHFFFAOYSA-N,inchikey,Ethoxyquin,,small_molecule,,Suppressor,,ferreg,1154,inchikey,1,DECIPOUIJURFOJ-UHFFFAOYSA-N
+317,1161,HKEAFJYKMMKDOR-VPRICQMDSA-N,inchikey,Puerarin,,small_molecule,,Suppressor,,ferreg,1161,inchikey,1,HKEAFJYKMMKDOR-VPRICQMDSA-N
+318,1162,WHXMKTBCFHIYNQ-SECBINFHSA-N,inchikey,Levosimendan,,small_molecule,,Suppressor,,ferreg,1162,inchikey,1,WHXMKTBCFHIYNQ-SECBINFHSA-N
+319,1164,HGINCPLSRVDWNT-UHFFFAOYSA-N,inchikey,Acrolein,,small_molecule,,Inducer,,ferreg,1164,inchikey,1,HGINCPLSRVDWNT-UHFFFAOYSA-N
+320,1165,FUSUHKVFWTUUBE-UHFFFAOYSA-N,inchikey,Methyl vinyl ketone,,small_molecule,,Inducer,,ferreg,1165,inchikey,1,FUSUHKVFWTUUBE-UHFFFAOYSA-N
+321,1166,PEYUIKBAABKQKQ-AFHBHXEDSA-N,inchikey,Sesamin,,small_molecule,,Suppressor,,ferreg,1166,inchikey,1,PEYUIKBAABKQKQ-AFHBHXEDSA-N
+322,1169,OYVAGSVQBOHSSS-UAPAGMARSA-O,inchikey,Bleomycin,,small_molecule,,Inducer,,ferreg,1169,inchikey,1,OYVAGSVQBOHSSS-UAPAGMARSA-O
+323,1170,FERIUCNNQQJTOY-UHFFFAOYSA-M,inchikey,Butyrate,,small_molecule,,Inducer,,ferreg,1170,inchikey,1,FERIUCNNQQJTOY-UHFFFAOYSA-M
+324,1176,SQOJOAFXDQDRGF-UHFFFAOYSA-N,inchikey,Ginkgolide B,,small_molecule,,Suppressor,,ferreg,1176,inchikey,1,SQOJOAFXDQDRGF-UHFFFAOYSA-N
+325,1177,LQGUBLBATBMXHT-UHFFFAOYSA-N,inchikey,Chrysophanol,,small_molecule,,Inducer,,ferreg,1177,inchikey,1,LQGUBLBATBMXHT-UHFFFAOYSA-N
+326,1178,SXYIRMFQILZOAM-HVNFFKDJSA-N,inchikey,Artemether,,small_molecule,,Inducer,,ferreg,1178,inchikey,1,SXYIRMFQILZOAM-HVNFFKDJSA-N
+327,1182,QMMRZOWCJAIUJA-UHFFFAOYSA-L,inchikey,Nickel Chloride,,small_molecule,,Inducer,,ferreg,1182,inchikey,1,QMMRZOWCJAIUJA-UHFFFAOYSA-L
+328,1185,NIOHNDKHQHVLKA-UHFFFAOYSA-N,inchikey,Gossypol acetic acid,,small_molecule,,Suppressor,,ferreg,1185,inchikey,1,NIOHNDKHQHVLKA-UHFFFAOYSA-N
+329,1186,ORXQGKIUCDPEAJ-YRNVUSSQSA-N,inchikey,Xanthohumol,,small_molecule,,Suppressor,,ferreg,1186,inchikey,1,ORXQGKIUCDPEAJ-YRNVUSSQSA-N
+330,1187,IQPNAANSBPBGFQ-UHFFFAOYSA-N,inchikey,Luteolin,,small_molecule,,Suppressor,,ferreg,1187,inchikey,1,IQPNAANSBPBGFQ-UHFFFAOYSA-N
+331,1194,Histochrome,name,Histochrome,,small_molecule,,Suppressor,,ferreg,1194,external_id,1,Histochrome
+332,1195,IAVUBSCVWHLRGE-UXEKTNMQSA-N,inchikey,Hydroxysafflor Yellow A,,small_molecule,,Suppressor,,ferreg,1195,inchikey,1,IAVUBSCVWHLRGE-UXEKTNMQSA-N
+333,1197,NOXZTJVQKYBYAV-SOPRAFLBSA-N,inchikey,Anhydrosafflor yellow B,,small_molecule,,Suppressor,,ferreg,1197,inchikey,1,NOXZTJVQKYBYAV-SOPRAFLBSA-N
+334,1199,LDCRTTXIJACKKU-ONEGZZNKSA-N,inchikey,Dimethyl fumarate,,small_molecule,,Suppressor,,ferreg,1199,inchikey,1,LDCRTTXIJACKKU-ONEGZZNKSA-N
+335,1200,DNA (cytosine-5)-methyltransferase 1,name,DNA (cytosine-5)-methyltransferase 1,,small_molecule,,Inducer,,ferreg,1200,external_id,1,DNA (cytosine-5)-methyltransferase 1
+336,1201,YTMNONATNXDQJF-UHFFFAOYSA-N,inchikey,Cyanidin-3-glucoside,,small_molecule,,Suppressor,,ferreg,1201,inchikey,1,YTMNONATNXDQJF-UHFFFAOYSA-N
+337,1202,NPUKDXXFDDZOKR-LLVKDONJSA-N,inchikey,Etomidate,,small_molecule,,Suppressor,,ferreg,1202,inchikey,1,NPUKDXXFDDZOKR-LLVKDONJSA-N
+338,1203,FTVWIRXFELQLPI-ZDUSSCGKSA-N,inchikey,Naringenin,,small_molecule,,Suppressor,,ferreg,1203,inchikey,1,FTVWIRXFELQLPI-ZDUSSCGKSA-N
+339,1206,XQDCKJKKMFWXGB-UHFFFAOYSA-N,inchikey,Wedelolactone,,small_molecule,,Suppressor,,ferreg,1206,inchikey,1,XQDCKJKKMFWXGB-UHFFFAOYSA-N
+340,1207,KVWDHTXUZHCGIO-UHFFFAOYSA-N,inchikey,Olanzapine,,small_molecule,,Suppressor,,ferreg,1207,inchikey,1,KVWDHTXUZHCGIO-UHFFFAOYSA-N
+341,1208,RWXIFXNRCLMQCD-JBVRGBGGSA-N,inchikey,Ginsenoside Rg3,,small_molecule,,Suppressor,,ferreg,1208,inchikey,1,RWXIFXNRCLMQCD-JBVRGBGGSA-N
+342,1210,SJJRKHVKAXVFJQ-QKYBYQKWSA-N,inchikey,Curculigoside,,small_molecule,,Suppressor,,ferreg,1210,inchikey,1,SJJRKHVKAXVFJQ-QKYBYQKWSA-N
+343,1211,BGNXCDMCOKJUMV-UHFFFAOYSA-N,inchikey,Tert-Butylhydroquinone,,small_molecule,,Suppressor,,ferreg,1211,inchikey,1,BGNXCDMCOKJUMV-UHFFFAOYSA-N
+344,1212,Astragalus polysaccharide,name,Astragalus polysaccharide,,small_molecule,,Suppressor,,ferreg,1212,external_id,1,Astragalus polysaccharide
+345,1215,WUADCCWRTIWANL-UHFFFAOYSA-N,inchikey,Biochanin A,,small_molecule,,Suppressor,,ferreg,1215,inchikey,1,WUADCCWRTIWANL-UHFFFAOYSA-N
+346,1219,FFFHZYDWPBMWHY-VKHMYHEASA-N,inchikey,L-Homocysteine,,small_molecule,,Inducer,,ferreg,1219,inchikey,1,FFFHZYDWPBMWHY-VKHMYHEASA-N
+347,1221,QUQPHWDTPGMPEX-QJBIFVCTSA-N,inchikey,Hesperidin,,small_molecule,,Suppressor,,ferreg,1221,inchikey,1,QUQPHWDTPGMPEX-QJBIFVCTSA-N
+348,1228,COVZYZSDYWQREU-UHFFFAOYSA-N,inchikey,Busulfan,,small_molecule,,Inducer,,ferreg,1228,inchikey,1,COVZYZSDYWQREU-UHFFFAOYSA-N
+349,1229,MBWXNTAXLNYFJB-NKFFZRIASA-N,inchikey,Vitamin K1,,small_molecule,,Suppressor,,ferreg,1229,inchikey,1,MBWXNTAXLNYFJB-NKFFZRIASA-N
+350,1231,HSTZMXCBWJGKHG-CUYWLFDKSA-N,inchikey,Polydatin,,small_molecule,,Suppressor,,ferreg,1231,inchikey,1,HSTZMXCBWJGKHG-CUYWLFDKSA-N
+351,1233,VNONINPVFQTJOC-ZGXDEBHDSA-N,inchikey,Dioscin,,small_molecule,,Suppressor,,ferreg,1233,inchikey,1,VNONINPVFQTJOC-ZGXDEBHDSA-N
+352,1235,VDYCLYGKCGVBHN-DRCQUEPLSA-N,inchikey,Pachymic acid,,small_molecule,,Suppressor,,ferreg,1235,inchikey,1,VDYCLYGKCGVBHN-DRCQUEPLSA-N
+353,1236,BSYNRYMUTXBXSQ-UHFFFAOYSA-N,inchikey,Aspirin,,small_molecule,,Suppressor,,ferreg,1236,inchikey,1,BSYNRYMUTXBXSQ-UHFFFAOYSA-N
+354,1237,CYBWUNOAQPMRBA-NDTOZIJESA-N,inchikey,Platycodin D,,small_molecule,,Suppressor,,ferreg,1237,inchikey,1,CYBWUNOAQPMRBA-NDTOZIJESA-N
+355,1241,MUBZPKHOEPUJKR-UHFFFAOYSA-L,inchikey,Oxalate,,small_molecule,,Inducer,,ferreg,1241,inchikey,1,MUBZPKHOEPUJKR-UHFFFAOYSA-L
+356,1244,QJKMIJNRNRLQSS-WEVVVXLNSA-N,inchikey,Echinatin,,small_molecule,,Suppressor,,ferreg,1244,inchikey,1,QJKMIJNRNRLQSS-WEVVVXLNSA-N
+357,1247,HFNKQEVNSGCOJV-OAHLLOKOSA-N,inchikey,Ruxolitinib,,small_molecule,,Suppressor,,ferreg,1247,inchikey,1,HFNKQEVNSGCOJV-OAHLLOKOSA-N
+358,1249,DYEFUKCXAQOFHX-UHFFFAOYSA-N,inchikey,Ebselen,,small_molecule,,Suppressor,,ferreg,1249,inchikey,1,DYEFUKCXAQOFHX-UHFFFAOYSA-N
+359,1250,XJOTXKZIRSHZQV-RXHOOSIZSA-N,inchikey,Hepcidin,,small_molecule,,Inducer,,ferreg,1250,inchikey,1,XJOTXKZIRSHZQV-RXHOOSIZSA-N
+360,1251,LXNHXLLTXMVWPM-UHFFFAOYSA-N,inchikey,Pyridoxine,,small_molecule,,Suppressor,,ferreg,1251,inchikey,1,LXNHXLLTXMVWPM-UHFFFAOYSA-N
+361,1253,Lipopolysaccharide,name,Lipopolysaccharide,,small_molecule,,Inducer,,ferreg,1253,external_id,1,Lipopolysaccharide
+362,1254,UJHBVMHOBZBWMX-UHFFFAOYSA-N,inchikey,Ferrostatin-1,,small_molecule,,Suppressor,,ferreg,1254,inchikey,1,UJHBVMHOBZBWMX-UHFFFAOYSA-N
+363,1257,KXMTXZACPVCDMH-UHFFFAOYSA-N,inchikey,Bicyclol,,small_molecule,,Suppressor,,ferreg,1257,inchikey,1,KXMTXZACPVCDMH-UHFFFAOYSA-N
+364,1258,AUZONCFQVSMFAP-UHFFFAOYSA-N,inchikey,Disulfiram,,small_molecule,,Suppressor,,ferreg,1258,inchikey,1,AUZONCFQVSMFAP-UHFFFAOYSA-N
+365,1259,RTZKSTLPRTWFEV-UHFFFAOYSA-N,inchikey,Schisandrin B,,small_molecule,,Suppressor,,ferreg,1259,inchikey,1,RTZKSTLPRTWFEV-UHFFFAOYSA-N
+366,1260,RSWGJHLUYNHPMX-ONCXSQPRSA-N,inchikey,Abietic acid,,small_molecule,,Suppressor,,ferreg,1260,inchikey,1,RSWGJHLUYNHPMX-ONCXSQPRSA-N
+367,1263,OAIJSZIZWZSQBC-GYZMGTAESA-N,inchikey,Lycopene,,small_molecule,,Suppressor,,ferreg,1263,inchikey,1,OAIJSZIZWZSQBC-GYZMGTAESA-N
+368,1269,DAYLJWODMCOQEW-TURQNECASA-N,inchikey,Nicotinamide mononucleotide,,small_molecule,,Suppressor,,ferreg,1269,inchikey,1,DAYLJWODMCOQEW-TURQNECASA-N
+369,1270,WSFSSNUMVMOOMR-UHFFFAOYSA-N,inchikey,Formaldehyde,,small_molecule,,Inducer,,ferreg,1270,inchikey,1,WSFSSNUMVMOOMR-UHFFFAOYSA-N
+370,1272,IPCSVZSSVZVIGE-UHFFFAOYSA-N,inchikey,Palmitic acid,,small_molecule,,Inducer,,ferreg,1272,inchikey,1,IPCSVZSSVZVIGE-UHFFFAOYSA-N
+371,1273,ACPOUJIDANTYHO-UHFFFAOYSA-N,inchikey,SP600125,,small_molecule,,Suppressor,,ferreg,1273,inchikey,1,ACPOUJIDANTYHO-UHFFFAOYSA-N
+372,1274,GMRQFYUYWCNGIN-NKMMMXOESA-N,inchikey,Calcitriol,,small_molecule,,Suppressor,,ferreg,1274,inchikey,1,GMRQFYUYWCNGIN-NKMMMXOESA-N
+373,1279,RWSOTUBLDIXVET-UHFFFAOYSA-N,inchikey,Hydrogen Sulfide,,small_molecule,,Suppressor,,ferreg,1279,inchikey,1,RWSOTUBLDIXVET-UHFFFAOYSA-N
+374,1282,MWLSOWXNZPKENC-UHFFFAOYSA-N,inchikey,Zileuton,,small_molecule,,Suppressor,,ferreg,1282,inchikey,1,MWLSOWXNZPKENC-UHFFFAOYSA-N
+375,1283,FJLGEFLZQAZZCD-MCBHFWOFSA-N,inchikey,Fluvastatin,,small_molecule,,Suppressor,,ferreg,1283,inchikey,1,FJLGEFLZQAZZCD-MCBHFWOFSA-N
+376,1284,HWXBTNAVRSUOJR-GSVOUGTGSA-N,inchikey,D-2-hydroxyglutarate,,small_molecule,,Inducer,,ferreg,1284,inchikey,1,HWXBTNAVRSUOJR-GSVOUGTGSA-N
+377,1286,BUGBHKTXTAQXES-UHFFFAOYSA-N,inchikey,Selenium,,small_molecule,,Suppressor,,ferreg,1286,inchikey,1,BUGBHKTXTAQXES-UHFFFAOYSA-N
+378,1289,BXFOFFBJRFZBQZ-QYWOHJEZSA-N,inchikey,T-2 Toxin,,small_molecule,,Inducer,,ferreg,1289,inchikey,1,BXFOFFBJRFZBQZ-QYWOHJEZSA-N

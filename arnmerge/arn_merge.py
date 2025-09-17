@@ -21,7 +21,7 @@ def merge_strings(string_1, string_2, separator="|"):
 
 def main():
     SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
-    FERROPTOSIS_DB = OUTPUTS_DIR / "merged_ferroptosis_w_omnipat.db"
+    FERROPTOSIS_DB = OUTPUTS_DIR / "merged_ferroptosis_w_omnipath.db"
     ARN_DB = SOURCES_DIR / "arn" / "arn.db"
     OUTPUT_DB = OUTPUTS_DIR / "ferroptosis_autophagy.db"
 

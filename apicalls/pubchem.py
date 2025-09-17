@@ -1,4 +1,4 @@
-from .base import APIClient
+from apicalls.base import APIClient
 import requests
 from typing import Dict
 
@@ -25,6 +25,16 @@ class PubChemClient(APIClient):
             return None, response.status_code
         except requests.exceptions.HTTPError as e:
             print(f"Error retrieving SID for {name}: {e}")
+            return None, getattr(e.response, "status_code", None)
+
+    def name_to_inchikey(self, name: str) -> tuple[int, str]:
+        try:
+            response = self._make_request("GET", f"compound/name/{name}/property/InChIKey/TXT")
+            if response.text.strip():
+                return response.text.strip().split('\n')[0]
+            return None, response.status_code
+        except requests.exceptions.HTTPError as e:
+            print(f"Error retrieving inchikey for {name}: {e}")
             return None, getattr(e.response, "status_code", None)
 
     def get_primary_cid_or_sid(self, name: str) -> Dict[str, int]:

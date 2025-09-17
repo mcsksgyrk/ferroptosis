@@ -5,7 +5,7 @@ from typing import List, Union, Optional, Any
 
 
 class DBconnector:
-    def __init__(self, db_path: str = str(OUTPUTS_DIR / "ferreg.db")):
+    def __init__(self, db_path: str):
         self.db_path = db_path
 
     def _get_connection(self):

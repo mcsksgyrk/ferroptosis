@@ -1,4 +1,4 @@
-from .base import APIClient
+from apicalls.base import APIClient
 import requests
 from typing import List, Dict, Union
 
