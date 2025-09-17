@@ -19507,3 +19507,7 @@ C23070	5,20-Epoxy-9alpha-hydroxytaxa-11-en-4alpha-yl acetate
 C23071	5,20-Epoxy-9-oxotaxa-11-en-4alpha-yl acetate
 C23073	C23073; Carbapenem biosynthesis intermediate 8
 C23074	4-Hydroxylaminobenzoate; 4-(Hydroxyamino)benzoic acid
+C23075	Sorgomol; (+)-Sorgomol; 10-Hydroxy-5-deoxystrigol
+C23076	(11R)-Carlactonoic acid; (11R)-Carlactonoate
+C23077	(11R)-Methyl carlactonoate; (11R)-Methyl carlactonoic acid
+C23078	(11R)-Hydroxymethyl carlactonoate; (11R)-Hydroxymethyl carlactonic acid
