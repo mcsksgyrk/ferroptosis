@@ -24,6 +24,31 @@ class UniProtClient(APIClient):
             human=human
         )
 
+    def batch_convert_to_uniprot_id(self, db: str, ids: List[str], batch_size: int = 25, human=False) -> tuple[Dict, List]:
+        self.polling_interval = max(1.0, batch_size / 20)
+        results_dict = {}
+        failed_ids = []
+
+        for i in range(0, len(ids), batch_size):
+            batch = ids[i:i+batch_size]
+
+            try:
+                job_id = self._submit_id_mapping(db, "UniProtKB-Swiss-Prot", batch, human=human)
+                results = self._get_id_mapping_results(job_id)
+                for result in results.get('results', []):
+                    from_id = result['from']
+                    to_id = result['to']['primaryAccession']
+                    results_dict[from_id] = to_id
+                    print(f"from: {from_id}, to: {to_id}")
+                if 'failedIds' in results:
+                    failed_ids.extend(results['failedIds'])
+            except Exception as e:
+                print(f"ERROR: {e}")
+                print(f"Error type: {type(e)}")
+                traceback.print_exc()
+                failed_ids.extend(batch)
+        return results_dict, failed_ids
+
     def batch_convert_from_uniprot_id(self, db: str, ids: List[str], batch_size: int = 25) -> tuple[Dict, List]:
         self.polling_interval = max(1.0, batch_size / 20)
         results_dict = {}
@@ -31,7 +56,6 @@ class UniProtClient(APIClient):
 
         for i in range(0, len(ids), batch_size):
             batch = ids[i:i+batch_size]
-            print(f"Processing batch {i//batch_size + 1}: IDs {i} to {i+len(batch)-1}")  # Debug line
 
             try:
                 job_id = self._submit_id_mapping("UniProtKB_AC-ID", db, batch, human=False)
