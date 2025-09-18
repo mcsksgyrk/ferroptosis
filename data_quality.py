@@ -1,4 +1,4 @@
-from config import OUTPUTS_DIR, SOURCES_DIR
+from config import OUTPUTS_DIR, SOURCES_DIR, Path
 from database.external_db import DBconnector
 import re
 from apicalls.uniprot import UniProtClient
@@ -23,6 +23,8 @@ class TestInterface:
         with self._get_connection() as conn:
             cursor = conn.cursor()
             res = cursor.execute(query).fetchall()
+            if not res:
+                return []
             if len(res[0]) == 1:
                 return [row[0] for row in res]
             else:
@@ -63,7 +65,7 @@ cpd_path = SOURCES_DIR / "kegg/kegg_compounds.txt"
 drug_path = SOURCES_DIR / "kegg/kegg_drugs.txt"
 compounds, revc = make_compound_dict(cpd_path)
 drugs, revd = make_compound_dict(drug_path)
-db_path = OUTPUTS_DIR / "test_final.db"
+db_path = OUTPUTS_DIR / "ferr_test.db"
 db = DBconnector(db_path)
 
 query = """
@@ -82,11 +84,17 @@ for idx, row in res.iterrows():
     else:
         pr_w_invalid_uniprot.append(row['name'])
 
-uniprot = UniProtClient()
-r, f = uniprot.batch_convert_to_uniprot_id("Gene_Name", pr_w_invalid_uniprot, human=True)
-with open('filename.pickle', 'wb') as handle:
-    pickle.dump(r, handle, protocol=pickle.HIGHEST_PROTOCOL)
+if Path("filename.pickle").exists():
+    with open('filename.pickle', 'rb') as handle:
+        r = pickle.load(handle)
+else:
+    uniprot = UniProtClient()
+    r, f = uniprot.batch_convert_to_uniprot_id("Gene_Name", pr_w_invalid_uniprot, human=True)
+    with open('filename.pickle', 'wb') as handle:
+        pickle.dump(r, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
 test_db = TestInterface(db_path)
+
 for geneName, uniprotID in r.items():
     existing_uniprot_entry = test_db.custom_query(f"SELECT id, name FROM node WHERE name = '{uniprotID}'")
     if existing_uniprot_entry:
@@ -113,3 +121,17 @@ for geneName, uniprotID in r.items():
         WHERE interactor_b_node_name = '{geneName}'
     """
     test_db.update_entry(query)
+
+for geneName, uniprotID in r.items():
+    query = f"""
+        SELECT n.id, n.name, ni.id_type, ni.id_value, ni.is_primary
+        FROM node n
+        LEFT JOIN node_identifier ni ON n.id = ni.node_id
+        WHERE n.name = '{uniprotID}'
+    """
+    results = test_db.custom_query(query)
+    print(results)
+
+    if not results:
+        print(f"Node with name {uniprotID} not found")
+        continue
