@@ -68,6 +68,11 @@ drugs, revd = make_compound_dict(drug_path)
 db_path = OUTPUTS_DIR / "ferr_test.db"
 db = DBconnector(db_path)
 
+if Path("filename.pickle").exists():
+    uniprot = UniProtClient()
+    with open('filename.pickle', 'rb') as handle:
+        existing_gn_up_pairs = pickle.load(handle)
+
 query = """
     SELECT n.*
     FROM node n
@@ -83,19 +88,19 @@ for idx, row in res.iterrows():
         continue
     else:
         pr_w_invalid_uniprot.append(row['name'])
+pr_w_invalid_uniprot.remove('_NA_')
 
-if Path("filename.pickle").exists():
-    with open('filename.pickle', 'rb') as handle:
-        r = pickle.load(handle)
-else:
-    uniprot = UniProtClient()
+if len(pr_w_invalid_uniprot) != 0:
     r, f = uniprot.batch_convert_to_uniprot_id("Gene_Name", pr_w_invalid_uniprot, human=True)
-    with open('filename.pickle', 'wb') as handle:
-        pickle.dump(r, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    if not existing_gn_up_pairs:
+        with open('filename.pickle', 'wb') as handle:
+            pickle.dump(r, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    else:
+        for k, v in r.items():
+            existing_gn_up_pairs[k] = v
 
 test_db = TestInterface(db_path)
-
-for geneName, uniprotID in r.items():
+for geneName, uniprotID in existing_gn_up_pairs.items():
     existing_uniprot_entry = test_db.custom_query(f"SELECT id, name FROM node WHERE name = '{uniprotID}'")
     if existing_uniprot_entry:
         print(f"{geneName} id {uniprotID} exists")
@@ -135,3 +140,17 @@ for geneName, uniprotID in r.items():
     if not results:
         print(f"Node with name {uniprotID} not found")
         continue
+
+nd_query = """
+    SELECT name FROM node
+    WHERE type = 'nd'
+"""
+
+checking_bro = test_db.custom_query(nd_query)
+uniprot = UniProtClient()
+r, f = uniprot.batch_convert_to_uniprot_id("GeneCard", checking_bro, human=True)
+uniprot.batch_convert_to_uniprot_id("Gene_Name", ['HERC2'], human=True)
+
+res[res['name']=='PRAP1']
+is_uniprot_id('PRAP1')
+uniprot.convert_to_uniprot_id('Gene_Name', ['PRAP1'], True)

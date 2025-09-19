@@ -14,4 +14,4 @@
 - Bugs:
     - [] there are some nd molecule type (from ferrdb could not decide what is that with mprotein and kegg compounds)
     - [] rnas calssified as protein type
-    - [] some entries has uniprot\_d primary id type, but id value is not uniprot
+    - [x] some entries has uniprot\_d primary id type, but id value is not uniprot
