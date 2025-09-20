@@ -31,6 +31,23 @@ class TestInterface:
                 return res
 
 
+def classify_gene_info(symbol):
+    patterns = {
+        r'^MI\d{7}$': 'microRNA_precursor',
+        r'^[Cc]irc.*': 'circRNA',
+        r'^mmu_circRNA_\d+$': 'mouse_circRNA',
+        r'^MIR\d+': 'microRNA_gene',
+        r'^LOC\d+': 'predicted_gene',
+        r'P\d*$': 'pseudogene',
+    }
+
+    for pattern, classification in patterns.items():
+        if re.match(pattern, symbol):
+            return classification
+
+    return "protein_coding_or_other"
+
+
 def make_kegg_dict(f):
     kegg_dict = dict()
     rev_dict = dict()
@@ -127,7 +144,7 @@ for geneName, uniprotID in existing_gn_up_pairs.items():
     """
     test_db.update_entry(query)
 
-for geneName, uniprotID in r.items():
+for geneName, uniprotID in existing_gn_up_pairs.items():
     query = f"""
         SELECT n.id, n.name, ni.id_type, ni.id_value, ni.is_primary
         FROM node n
@@ -145,12 +162,16 @@ nd_query = """
     SELECT name FROM node
     WHERE type = 'nd'
 """
-
+wp_query = """
+    SELECT name FROM node
+    WHERE type = 'protein'
+    AND primary_id_type != 'uniprot_id'
+"""
 checking_bro = test_db.custom_query(nd_query)
+checking_bro2 = test_db.custom_query(wp_query)
+checking_bro2
+for id in checking_bro2:
+    print(classify_gene_info(id))
 uniprot = UniProtClient()
 r, f = uniprot.batch_convert_to_uniprot_id("GeneCard", checking_bro, human=True)
 uniprot.batch_convert_to_uniprot_id("Gene_Name", ['HERC2'], human=True)
-
-res[res['name']=='PRAP1']
-is_uniprot_id('PRAP1')
-uniprot.convert_to_uniprot_id('Gene_Name', ['PRAP1'], True)
