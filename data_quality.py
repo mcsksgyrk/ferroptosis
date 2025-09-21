@@ -2,6 +2,7 @@ from config import OUTPUTS_DIR, SOURCES_DIR, Path
 from database.external_db import DBconnector
 import re
 from apicalls.uniprot import UniProtClient
+from apicalls.mygene import MyGeneClient
 import sqlite3
 from typing import List
 import pickle
@@ -33,19 +34,25 @@ class TestInterface:
 
 def classify_gene_info(symbol):
     patterns = {
-        r'^MI\d{7}$': 'microRNA_precursor',
-        r'^[Cc]irc.*': 'circRNA',
-        r'^mmu_circRNA_\d+$': 'mouse_circRNA',
-        r'^MIR\d+': 'microRNA_gene',
+        r'^MI\d{7}$': 'microRNA',
+        r'.*[Cc]irc.*': 'circRNA',
+        r'^circRNA_\d+$': 'circRNA',
+        r'^MIR\d+': 'microRNA',
         r'^LOC\d+': 'predicted_gene',
-        r'P\d*$': 'pseudogene',
+        r'^LINC\d+': 'lncRNA',
+        r'.*-IT\d*$': 'lncRNA',
+        r'.*P\d+$': 'pseudogene',
+        r'.*P$': 'pseudogene'
     }
 
     for pattern, classification in patterns.items():
         if re.match(pattern, symbol):
             return classification
 
-    return "protein_coding_or_other"
+    if is_uniprot_id(symbol):
+        return 'protein'
+
+    return "nd"
 
 
 def make_kegg_dict(f):
@@ -73,6 +80,8 @@ def is_uniprot_id(identifier):
     if identifier is None:
         return False
     identifier_str = str(identifier).upper().strip()
+    if re.search(r'P\d+$', identifier_str):
+        return False
     swiss_prot = r'^([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9][A-Z][A-Z0-9]{2}[0-9])$'
     trembl = r'^[A-NR-Z][0-9][A-Z][A-Z0-9]{2}[0-9][A-Z][A-Z0-9]{2}[0-9]$'
     return bool(re.match(swiss_prot, identifier_str) or re.match(trembl, identifier_str))
@@ -159,19 +168,31 @@ for geneName, uniprotID in existing_gn_up_pairs.items():
         continue
 
 nd_query = """
-    SELECT name FROM node
+    SELECT id, name FROM node
     WHERE type = 'nd'
 """
 wp_query = """
-    SELECT name FROM node
+    SELECT id, name FROM node
     WHERE type = 'protein'
     AND primary_id_type != 'uniprot_id'
 """
-checking_bro = test_db.custom_query(nd_query)
-checking_bro2 = test_db.custom_query(wp_query)
-checking_bro2
-for id in checking_bro2:
-    print(classify_gene_info(id))
-uniprot = UniProtClient()
-r, f = uniprot.batch_convert_to_uniprot_id("GeneCard", checking_bro, human=True)
-uniprot.batch_convert_to_uniprot_id("Gene_Name", ['HERC2'], human=True)
+mygene = MyGeneClient()
+not_defined_types = test_db.custom_query(nd_query)
+protein_type_not_protein = test_db.custom_query(wp_query)
+combined_bad = not_defined_types + protein_type_not_protein
+
+node_id_type = dict()
+for id in combined_bad:
+    res = classify_gene_info(id[1])
+    if res == 'nd':
+        info = mygene.query_gene('SMANTIS', fields='name,type_of_gene')
+        res = info['hits'][0]['type_of_gene']
+    node_id_type[id[0]] = res
+
+for id, id_type in node_id_type.items():
+    query = f"""
+        UPDATE node
+        SET type = '{id_type}'
+        WHERE id = '{id}'
+    """
+    test_db.update_entry(query)
