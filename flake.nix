@@ -13,7 +13,6 @@
                         pkgs.python314
                         pkgs.poetry
                         pkgs.pyright
-                        pkgs.sqlite
                     ];
 
                     shellHook = ''

@@ -73,7 +73,7 @@ class PsimiSQL:
         return res[0] if res else None
 
     def check_node_dict_identifiers(self, node_dict):
-        for id_type in ['kegg_id', 'uniprot_id', 'pubchem_id', "pubmed_id", "hgnc_id", "ensg_id"]:
+        for id_type in ['kegg_id', 'uniprot_id', 'pubchem_id', "pubmed_id", "hgnc_id", "ensg_id", 'entrez_id']:
             if id_type in node_dict and node_dict[id_type]:
                 is_primary = False
                 if node_dict['primary_id_type'] == id_type:

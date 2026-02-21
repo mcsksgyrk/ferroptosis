@@ -1,5 +1,3 @@
-# datawrangling/transform_ferreg.py - CORRECTED version
-
 from database.sqlite_db_api3 import PsimiSQL
 from config import PROJECT_ROOT, OUTPUTS_DIR
 from parsers.ferreg_parser import FerregParser
@@ -166,10 +164,10 @@ def save_to_database(output_path, parser):
     db_api.save_db_to_file(str(output_path))
 
 
-# Main execution
-db_path = OUTPUTS_DIR / "ferreg.db"
-parser = FerregParser(db_path)
-parser.parse_interactions()
+def convert_ferreg_source():
+    db_path = OUTPUTS_DIR / "ferreg.db"
+    parser = FerregParser(db_path)
+    parser.parse_interactions()
 
-db_final = OUTPUTS_DIR / "ferreg_network.db"
-save_to_database(db_final, parser)
+    db_final = OUTPUTS_DIR / "ferreg_network.db"
+    save_to_database(db_final, parser)

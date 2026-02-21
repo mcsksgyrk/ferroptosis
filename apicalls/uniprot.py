@@ -34,14 +34,13 @@ class UniProtClient(APIClient):
 
             try:
                 job_id = self._submit_id_mapping(db, "UniProtKB-Swiss-Prot", batch, human=human)
-                results = self._get_id_mapping_results(job_id)
+                results, fails = self._get_id_mapping_results(job_id)
                 for result in results.get('results', []):
                     from_id = result['from']
-                    to_id = result['to']['primaryAccession']
+                    to_id = result['to']
                     results_dict[from_id] = to_id
                     print(f"from: {from_id}, to: {to_id}")
-                if 'failedIds' in results:
-                    failed_ids.extend(results['failedIds'])
+                failed_ids.extend(fails)
             except Exception as e:
                 print(f"ERROR: {e}")
                 print(f"Error type: {type(e)}")
@@ -131,7 +130,8 @@ class UniProtClient(APIClient):
                 else:
                     raise Exception(job["jobStatus"])
             else:
-                return job
+                results = self._make_request("GET", f"idmapping/results/{job_id}?size=500")
+                return results.json(), list(set(job.get('failedIds', [])))
 
     def _parse_results(self, results: Dict, from_db: str, to_db: str) -> Union[str, Dict]:
         if "UniProt" in to_db:
