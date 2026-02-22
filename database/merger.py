@@ -35,7 +35,7 @@ def get_union_of_nodes(node_1, node_2):
     }
 
 
-def main():
+def merger_sources():
     SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
     OUTPUT_DB = OUTPUTS_DIR / "merged_ferroptosis_network.db"
 
@@ -306,7 +306,3 @@ def main():
 
     parser.save_db_to_file(str(OUTPUT_DB))
     print(f"Merge complete: {OUTPUT_DB}")
-
-
-if __name__ == "__main__":
-    main()

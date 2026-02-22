@@ -29,7 +29,3 @@ def make_sql_db(name: str):
 def sources_to_sql_schema():
     make_sql_db("ferrdb")
     make_sql_db("ferreg")
-
-
-if __name__ == "__main__":
-    sources_to_sql_schema()

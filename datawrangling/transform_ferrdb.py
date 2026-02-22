@@ -34,7 +34,7 @@ def check_id_type(id):
         return 'entrez_id'
 
 
-def convert_ferdb_source():
+def convert_ferrdb_source():
     ferrdb_path = OUTPUTS_DIR / "ferrdb.db"
     f_path = SOURCES_DIR / "kegg/kegg_compounds.txt"
     db = DBconnector(ferrdb_path)

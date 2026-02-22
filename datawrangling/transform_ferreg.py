@@ -29,8 +29,6 @@ def save_to_database(output_path, parser):
     SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
     db_api = PsimiSQL(SQL_SEED)
 
-    print("Analyzing data structure...")
-    # MODIFICATION: First, let's understand the data structure
     unique_id_disease_map = {}
     for disease_key, disease_dict in parser.diseases.items():
         for unique_id in disease_dict['unique_ids']:

@@ -88,7 +88,7 @@ def convert_kegg(res: Dict, id: int, kegg_id: str) -> Dict:
         return {}
 
 
-def parse_kegg():
+def convert_kegg_source():
     kegg_parser = KEGGPathwayParser()
     kegg = KEGGClient()
     kegg_src = kegg_parser.read_pathway("hsa04216.xml")
