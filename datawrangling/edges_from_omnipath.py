@@ -71,12 +71,33 @@ def extend_merged_db_with_omnipath():
     layer2_proteins = set()
     new_nodes_added = set()
 
+    # only considers directions pointing towards KEGG proteins
+    #for _, row in omnipath_df.iterrows():
+    #    source_id, target_id = row['source'], row['target']
+    #    if target_id in kegg_proteins and source_id not in kegg_proteins:
+    #        layer1_proteins.add(source_id)
+    #        if source_id not in all_existing_proteins:
+    #            new_nodes_added.add(source_id)
+
+    #for _, row in omnipath_df.iterrows():
+    #    source_id, target_id = row['source'], row['target']
+    #    if target_id in layer1_proteins and source_id not in kegg_proteins:
+    #        layer2_proteins.add(source_id)
+    #        if source_id not in all_existing_proteins:
+    #            new_nodes_added.add(source_id)
+
+
+    # considers both directions, but same distance.
     for _, row in omnipath_df.iterrows():
         source_id, target_id = row['source'], row['target']
         if target_id in kegg_proteins and source_id not in kegg_proteins:
             layer1_proteins.add(source_id)
             if source_id not in all_existing_proteins:
                 new_nodes_added.add(source_id)
+        if source_id in kegg_proteins and target_id not in kegg_proteins:
+            layer1_proteins.add(target_id)
+            if target_id not in all_existing_proteins:
+                new_nodes_added.add(target_id)
 
     for _, row in omnipath_df.iterrows():
         source_id, target_id = row['source'], row['target']
@@ -84,6 +105,10 @@ def extend_merged_db_with_omnipath():
             layer2_proteins.add(source_id)
             if source_id not in all_existing_proteins:
                 new_nodes_added.add(source_id)
+        if source_id in layer1_proteins and target_id not in kegg_proteins:
+            layer2_proteins.add(target_id)
+            if target_id not in all_existing_proteins:
+                new_nodes_added.add(target_id)
 
     logger.info(f"Layer 1: {len(layer1_proteins)} proteins, Layer 2: {len(layer2_proteins)} proteins")
     logger.info(f"New nodes to add: {len(new_nodes_added)}")
@@ -198,7 +223,3 @@ def extend_merged_db_with_omnipath():
     db_api.save_db_to_file(str(output_db_path))
 
     logger.info("OmniPath integration complete!")
-
-
-if __name__ == "__main__":
-    extend_merged_db_with_omnipath()

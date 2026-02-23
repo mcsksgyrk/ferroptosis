@@ -188,7 +188,3 @@ def extend_arn_ferr_with_cross_edges():
     logger.info(f"\nSaving final database: {output_db_path}")
     db_api.save_db_to_file(str(output_db_path))
     logger.info("Cross-network integration complete!")
-
-
-if __name__ == "__main__":
-    extend_arn_ferr_with_cross_edges()

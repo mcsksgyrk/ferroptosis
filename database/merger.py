@@ -178,7 +178,8 @@ def merger_sources():
                 print(f"Q13772 found in group {group_idx} with {len(group)} nodes:")
                 print(f"  Canonical name will be: {all_nodes[group[0]]['name']}")
                 for idx in group:
-                    print(f"  - {all_nodes[idx]['name']} from {all_nodes[idx]['db_file']}")
+#                    print(f"  - {all_nodes[idx]['name']} from {all_nodes[idx]['db_file']}")
+                    print(f"  - {all_nodes[idx]['name']} from {all_nodes[idx]['source_db']}")
                 break
     # Merge nodes
     nodes = {}

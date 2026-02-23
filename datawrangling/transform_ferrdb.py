@@ -7,7 +7,10 @@ import pandas as pd
 from database.sqlite_db_api3 import PsimiSQL
 
 
-def get_node_dict(identifier, db_api, edge_node_dict, mygene):
+def get_node_dict(identifier, db_api, edge_node_dict, mygene, alias_map=None):
+    # MODIFICATION: check alias_map for merged node names
+    if alias_map and identifier in alias_map:
+        identifier = alias_map[identifier]
     node_dict = db_api.get_node_by_any_identifier(identifier)
     if node_dict:
         return node_dict
@@ -32,6 +35,34 @@ def check_id_type(id):
         return 'ensambl_id'
     else:
         return 'entrez_id'
+
+
+# MODIFICATION: deduplicate nodes with different display_names but same identifiers, return alias map
+def deduplicate_by_identifiers(df):
+    alias_map = {}
+    id_cols = ['uniprot_id', 'ensg_id', 'entrez_id']
+    for col in id_cols:
+        if col not in df.columns:
+            continue
+        valid = df[df[col].notna() & (df[col] != '') & (df[col] != '_NA_')]
+        duplicated_ids = valid[valid.duplicated(subset=[col], keep=False)]
+        if duplicated_ids.empty:
+            continue
+        for id_value, group in duplicated_ids.groupby(col):
+            if len(group) <= 1:
+                continue
+            keep_idx = group.index[0]
+            drop_idxs = group.index[1:]
+            kept_name = df.loc[keep_idx, 'display_name']
+            print(f"Merging nodes with same {col}={id_value}: {group['display_name'].tolist()} -> keeping {kept_name}")
+            for drop_idx in drop_idxs:
+                dropped_name = df.loc[drop_idx, 'display_name']
+                alias_map[dropped_name] = kept_name
+                for c in df.columns:
+                    if pd.isna(df.loc[keep_idx, c]) and pd.notna(df.loc[drop_idx, c]):
+                        df.loc[keep_idx, c] = df.loc[drop_idx, c]
+            df = df.drop(drop_idxs)
+    return df.reset_index(drop=True), alias_map
 
 
 def convert_ferrdb_source():
@@ -102,9 +133,6 @@ def convert_ferrdb_source():
         (final_nodes.type != 'compound')
     ]
 
-
-
-
     mygene = MyGeneClient()
     genes_in_q = symbol_nodes.name.to_list()
 
@@ -144,11 +172,9 @@ def convert_ferrdb_source():
             final_nodes.loc[mask, 'ensg_id'] = node_dict['ensg_id']
         if node_dict.get('entrez_id'):
             final_nodes.loc[mask, 'entrez_id'] = node_dict['entrez_id']
-    # final_nodes['uniprot_id'] = final_nodes.apply(lambda row: r.get(row['display_name'])
-    #                                   if pd.isna(row['uniprot_id']) else row['uniprot_id'], axis=1)
-    # final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'primary_id_type'] = 'uniprot_id'
-    # final_nodes.loc[final_nodes['uniprot_id'].notna() & (final_nodes['uniprot_id'] != ''), 'type'] = 'protein'
-    # final_nodes['type'] = final_nodes['type'].fillna("nd")
+
+    # MODIFICATION: deduplicate nodes with different display_names but same identifiers
+    final_nodes, alias_map = deduplicate_by_identifiers(final_nodes)
 
     SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
     DB_DESTINATION = OUTPUTS_DIR / "ferrdb_network.db"
@@ -159,19 +185,25 @@ def convert_ferrdb_source():
         node_dict['type'] = node_dict.get('type') or 'nd'
         db_api.insert_node(node_dict)
         node_id = node_dict['id']
+        # MODIFICATION: skip tax_id and _NA_ values
         for key, value in node_dict.items():
-            if key.endswith('_id') and value is not None and value != '':
+            if key == 'tax_id':
+                continue
+            if key.endswith('_id') and value is not None and value != '' and value != '_NA_':
                 is_primary = 1 if node_dict['primary_id_type'] == key else 0
                 db_api.insert_node_identifier(node_id, key, value, is_primary)
-        node_id = node_dict['id']
+        # MODIFICATION: skip tax_id and _NA_ values
         for key, value in row.items():
-            if key.endswith('_id') and pd.notna(value) and value != '':
+            if key == 'tax_id':
+                continue
+            if key.endswith('_id') and pd.notna(value) and value != '' and value != '_NA_':
                 is_primary = 1 if row['primary_id_type'] == key else 0
                 db_api.insert_node_identifier(node_id, key, value, is_primary)
 
+    # MODIFICATION: pass alias_map to get_node_dict for edge resolution
     for idx, row in final_edges.iterrows():
-        source_dict = get_node_dict(row.source, db_api, edge_node_dict, mygene)
-        target_dict = get_node_dict(row.target, db_api, edge_node_dict, mygene)
+        source_dict = get_node_dict(row.source, db_api, edge_node_dict, mygene, alias_map)
+        target_dict = get_node_dict(row.target, db_api, edge_node_dict, mygene, alias_map)
         if not source_dict or not target_dict:
             print(f'Skipping {row.source} -> {row.target}: missing nodes')
             continue

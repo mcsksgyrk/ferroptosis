@@ -19,7 +19,7 @@ def merge_strings(string_1, string_2, separator="|"):
     return separator.join(merged)
 
 
-def main():
+def merge_arn():
     SQL_SEED = PROJECT_ROOT / "database" / "network_db_seed3.sql"
     FERROPTOSIS_DB = OUTPUTS_DIR / "merged_ferroptosis_w_omnipath.db"
     ARN_DB = SOURCES_DIR / "arn" / "arn.db"
@@ -142,7 +142,3 @@ def main():
 
     parser.save_db_to_file(str(OUTPUT_DB))
     print(f"Final merge complete: {OUTPUT_DB}")
-
-
-if __name__ == "__main__":
-    main()
