@@ -1,0 +1,15 @@
+,compound,target,interaction_types,layer
+0,RSL3,(RefSeq) glutathione peroxidase 4,is_directed:true|is_direct:true|inhibition,0
+1,ALZ003,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+2,Lapatinib,(RefSeq) glutathione peroxidase 4,Up regulation|Down regulation,ferreg
+3,Dihydroartemisinin,(RefSeq) glutathione peroxidase 4,Up regulation|Down regulation,ferreg
+4,Sodium Selenite,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+5,Artesunate,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+6,Dihydrotanshinone I,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+7,RSL3,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+8,Apatinib,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+9,Peoniflorin,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+10,Fatostatin,(RefSeq) glutathione peroxidase 4,Down regulation,ferreg
+11,Brucine,(RefSeq) solute carrier family 7 member 11,Down regulation,ferreg
+12,RSL3,(RefSeq) solute carrier family 7 member 11,Down regulation,ferreg
+13,Pseudolaric acid B,(RefSeq) solute carrier family 7 member 11,Down regulation,ferreg

@@ -23,6 +23,8 @@ packages = [
     { include = "apicalls" },
     { include = "database" },
 ]
+[tool.poetry.dependencies]
+networkx = {version = "^3.6.1", python = ">=3.14,<3.14.1 || >3.14.1,<4.0"}
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
